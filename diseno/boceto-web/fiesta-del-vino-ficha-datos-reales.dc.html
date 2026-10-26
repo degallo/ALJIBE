@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Fiesta del Vino, cuadro de mando</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#004C59}a:hover{color:#2E8C9C}
+button{font-family:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid #004C59;outline-offset:3px}
+.agua{transition:height 700ms cubic-bezier(.2,.7,.2,1)}
+.barra{transition:width 500ms cubic-bezier(.2,.7,.2,1)}
+@media (prefers-reduced-motion: reduce){.agua,.barra{transition:none}}
+</style>
+</helmet>
+<div style="background: #F6F3EE; color: #10262B; font-family: 'Schibsted Grotesk', Arial, Helvetica, sans-serif; min-height: 100%;">
+
+<header style="border-bottom: 1px solid #C9CFCC;">
+<nav aria-label="Principal" style="max-width: 1180px; margin: 0 auto; padding: 16px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+<a href="inicio.dc.html" aria-label="ALJIBE, inicio" style="display: flex; align-items: center;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1010 440" role="img" aria-label="ALJIBE" style="height: 32px; width: auto;"><g><g><circle cx="220" cy="220" r="220" fill="#004C59"></circle><path transform="translate(85 40) scale(1.35)" d="M51 240 V150 A70 70 0 1 1 149 150 V240 Z" fill="#F6F3EE"></path><rect x="172" y="245" width="24" height="70" fill="#004C59"></rect><rect x="208" y="205" width="24" height="110" fill="#004C59"></rect><rect x="244" y="165" width="24" height="150" fill="#004C59"></rect><path transform="translate(154 295)" d="M0 10 C22 0 44 20 66 10 C88 0 110 20 132 10 V69 H0 Z" fill="#2E8C9C"></path></g></g><g transform="translate(515 163) scale(1.05)"><path d="M7 107 V47 A35 35 0 0 1 77 47 V107 M7 67 H77 M110 0 V100 H170 M196 7 H246 V72 A25 25 0 0 1 196 72 M279 0 V107 M312 100 V7 H347 A23 23 0 0 1 347 53 H312 M312 53 H350 A23.5 23.5 0 0 1 350 100 H312 M463 7 H403 V100 H463 M403 53 H451" fill="none" stroke="#004C59" stroke-width="14" stroke-linejoin="miter"></path></g></svg>
+</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 15px; font-weight: 500;">
+<a href="inicio.dc.html" style="color: #4E6368; text-decoration: none; padding: 10px 0;">Inicio</a>
+<a href="fiesta-del-vino-ficha-datos-reales.dc.html" aria-current="page" style="color: #10262B; text-decoration: none; padding: 10px 0; border-bottom: 2px solid #004C59;">Cuadros de mando</a>
+<a href="#metodologia" style="color: #4E6368; text-decoration: none; padding: 10px 0;">Metodología</a>
+<span style="font-size: 13px; color: #4E6368;">Prototipo académico, UGR</span>
+</div>
+</nav>
+</header>
+
+<main style="max-width: 1180px; margin: 0 auto; padding: 56px 32px 72px; display: flex; flex-direction: column; gap: 56px;">
+
+<section style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 48px;">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
+<h1 style="margin: 0; font-size: 76px; line-height: 0.94; font-weight: 800; letter-spacing: -0.035em; color: #004C59;">Fiesta del Vino<br><span style="color: #10262B; font-weight: 500; letter-spacing: -0.03em;">de Alhama de Granada</span></h1>
+<p style="margin: 0; max-width: 34em; font-size: 19px; line-height: 30px; color: #4E6368;">Qué deja la fiesta en el pueblo, edición a edición. Solo con datos comprobables.</p>
+</div>
+
+<figure style="flex: 0 0 auto; margin: 0; display: flex; align-items: flex-end; gap: 24px;" aria-label="{{ nivel.aria }}">
+<div style="position: relative; width: 196px; height: 260px; border-radius: 98px 98px 6px 6px; background: #E6DFD3; overflow: hidden; border: 2px solid #004C59; box-sizing: border-box;">
+<div class="agua" style="position: absolute; left: 0; right: 0; bottom: 0; height: {{ nivel.pct }}%; background: #2E8C9C;"></div>
+<div style="position: absolute; left: 0; right: 0; top: 33.3%; border-top: 1px dashed #004C59; opacity: 0.35;"></div>
+<div style="position: absolute; left: 0; right: 0; top: 66.6%; border-top: 1px dashed #004C59; opacity: 0.35;"></div>
+</div>
+<figcaption style="display: flex; flex-direction: column; gap: 4px; padding-bottom: 6px;">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 56px; line-height: 1; font-weight: 500; color: #004C59;">{{ nivel.sabemos }}<span style="font-size: 24px; color: #4E6368;">/{{ nivel.total }}</span></span>
+<span style="font-size: 15px; line-height: 22px; color: #4E6368; max-width: 11em;">indicadores con dato en {{ nivel.anio }}</span>
+</figcaption>
+</figure>
+</section>
+
+<section aria-label="Ediciones" style="display: flex; flex-direction: column; gap: 14px;">
+<div style="position: relative; height: 76px;">
+<div style="position: absolute; left: 0; right: 0; top: 22px; height: 2px; background: #C9CFCC;"></div>
+<div style="position: absolute; left: 10%; width: 60%; top: 22px; height: 2px; background-image: linear-gradient(90deg, #F6F3EE 50%, transparent 50%); background-size: 10px 2px;"></div>
+<sc-for list="{{ linea }}" as="p" hint-placeholder-count="11">
+<sc-if value="{{ p.edicion }}" hint-placeholder-val="{{ false }}">
+<button type="button" onClick="{{ p.pick }}" aria-pressed="{{ p.pressed }}" aria-label="{{ p.aria }}" style="position: absolute; left: {{ p.left }}%; top: 0; transform: translateX(-50%); background: none; border: none; padding: 0; min-width: 56px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+<span style="width: {{ p.size }}px; height: {{ p.size }}px; margin-top: {{ p.offset }}px; border-radius: 50%; background: {{ p.fondo }}; border: 2px solid #004C59; box-sizing: border-box;"></span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: {{ p.peso }}; color: {{ p.color }};">{{ p.anio }}</span>
+</button>
+</sc-if>
+<sc-if value="{{ p.hueco }}" hint-placeholder-val="{{ false }}">
+<span aria-hidden="true" style="position: absolute; left: {{ p.left }}%; top: 18px; width: 2px; height: 10px; background: #C9CFCC; transform: translateX(-50%);"></span>
+</sc-if>
+</sc-for>
+<span style="position: absolute; left: 40%; top: 44px; transform: translateX(-50%); font-size: 13px; color: #4E6368; white-space: nowrap;">2017–2023 sin datos publicados</span>
+</div>
+<sc-if value="{{ aviso.hay }}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; align-self: flex-end; font-size: 15px; font-weight: 600; color: #B4521A;">{{ aviso.texto }}</p>
+</sc-if>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 0;">
+<div role="tablist" aria-label="Dimensiones" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); border-bottom: 1px solid #C9CFCC;">
+<sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+<button type="button" role="tab" onClick="{{ t.pick }}" aria-selected="{{ t.pressed }}" style="text-align: left; background: none; border: none; border-bottom: 3px solid {{ t.linea }}; margin-bottom: -1px; padding: 16px 4px 18px; display: flex; flex-direction: column; gap: 6px; color: #10262B;">
+<span style="font-size: 16px; font-weight: {{ t.peso }}; color: {{ t.colorNombre }};">{{ t.nombre }}</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 500; color: {{ t.colorValor }};">{{ t.valor }}</span>
+</button>
+</sc-for>
+</div>
+
+<div role="tabpanel" style="display: flex; flex-wrap: wrap; gap: 56px; padding-top: 40px;">
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 14px;">
+<p style="margin: 0; font-size: 22px; line-height: 30px; font-weight: 600;">{{ escena.pregunta }}</p>
+<div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 96px; line-height: 1; font-weight: 500; letter-spacing: -0.04em; color: {{ escena.color }};">{{ escena.valor }}</span>
+<span style="font-size: 18px; color: #4E6368;">{{ escena.unidad }}</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 22px; color: #4E6368;">{{ escena.calidad }}</p>
+<sc-if value="{{ escena.contradiccion }}" hint-placeholder-val="{{ false }}">
+<p style="margin: 8px 0 0; padding-left: 14px; border-left: 3px solid #B4521A; font-size: 15px; line-height: 22px;"><span style="font-weight: 600; color: #B4521A;">Las cifras no cuadran.</span> {{ escena.contradiccion }}</p>
+</sc-if>
+</div>
+
+<div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 28px;">
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<sc-for list="{{ escena.barras }}" as="b" hint-placeholder-count="4">
+<button type="button" onClick="{{ b.pick }}" aria-label="{{ b.aria }}" style="background: none; border: none; padding: 4px 0; display: grid; grid-template-columns: 56px minmax(0, 1fr) 96px; align-items: center; gap: 16px; color: #10262B;">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; text-align: left; font-weight: {{ b.peso }}; color: {{ b.colorAnio }};">{{ b.anio }}</span>
+<span style="height: 28px; background: #E6DFD3; border-radius: 0 4px 4px 0; position: relative; overflow: hidden;">
+<span class="barra" style="position: absolute; left: 0; top: 0; bottom: 0; width: {{ b.ancho }}%; background: {{ b.relleno }}; border: 2px solid {{ b.borde }}; border-left: none; border-radius: 0 4px 4px 0; box-sizing: border-box;"></span>
+</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; text-align: right; color: {{ b.colorValor }};">{{ b.etiqueta }}</span>
+</button>
+</sc-for>
+<p style="margin: 4px 0 0; font-size: 13px; color: #4E6368;">Barra llena: dato real. Barra hueca: cifra declarada. Pulsa un año para verlo.</p>
+</div>
+
+<sc-if value="{{ escena.hayExtra }}" hint-placeholder-val="{{ true }}">
+<dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px 32px; padding-top: 24px; border-top: 1px solid #C9CFCC;">
+<sc-for list="{{ escena.extra }}" as="x" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 4px;">
+<dt style="font-size: 14px; color: #4E6368;">{{ x.label }}</dt>
+<dd style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 500;">{{ x.valor }}</dd>
+</div>
+</sc-for>
+</dl>
+</sc-if>
+</div>
+</div>
+</section>
+
+<section style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding: 28px 32px; background: #004C59; color: #F6F3EE; border-radius: 8px;">
+<p style="margin: 0; font-size: 20px; line-height: 28px; max-width: 30em;">Con los datos del Ayuntamiento y de la Asociación de Cosecheros, el aljibe se llena.</p>
+<a href="#pedir-datos" style="background: #F6F3EE; color: #004C59; text-decoration: none; font-size: 16px; font-weight: 600; border-radius: 8px; padding: 14px 24px; min-height: 20px;">Ver qué datos faltan</a>
+</section>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1340}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { anio: 2024, dim: 'participacion' };
+}
+renderVals() {
+const fmt = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+const EDIC = [2016, 2024, 2025, 2026];
+const CONOCIDOS = { 2016: 3, 2024: 6, 2025: 1, 2026: 3 };
+const TOTAL = 12;
+const DIMS = [
+{ id: 'participacion', nombre: 'Participación', pregunta: '¿Cuánta gente viene?', unidad: 'asistentes', sufijo: '',
+serie: { 2016: [2500, 'D'], 2024: [7000, 'D'] },
+extra: { 2024: [['Vasos vendidos', '4.400'], ['Se agotaron en', '3 horas'], ['Ritmo de venta', '1.467 / hora']], 2016: [['Vasos', 'Agotados']] } },
+{ id: 'patrimonio', nombre: 'Patrimonio vivo', pregunta: '¿Se mantiene la tradición?', unidad: 'familias cosecheras', sufijo: '',
+serie: { 2024: [27, 'R'], 2025: [27, 'D'], 2026: [27, 'R'] },
+extra: { 2024: [['Vino del terreno', '3.000 l'], ['Por familia', '111 l'], ['Variedad', 'Rome']], 2026: [['Vino del terreno', '4.000 l'], ['Por familia', '148 l'], ['Voto popular', 'Online']] },
+contradiccion: { 2026: 'Antes de la fiesta se anunciaron 26 familias y 2.500 litros; el balance da 27 y 4.000.' } },
+{ id: 'comunidad', nombre: 'Comunidad', pregunta: '¿Qué deja al pueblo?', unidad: 'euros para la causa', sufijo: '',
+serie: { 2016: [1500, 'R'] },
+extra: { 2016: [['Causa', 'Cáritas Alhama']], 2024: [['Causa', 'Fundación UAPO']], 2026: [['Causa', 'Asociación AUPA']] } },
+{ id: 'proyeccion', nombre: 'Proyección', pregunta: '¿Se conoce fuera de Alhama?', unidad: 'noticias en prensa', sufijo: '',
+serie: {}, extra: {} }
+];
+const anio = this.state.anio;
+const dim = DIMS.find((d) => d.id === this.state.dim);
+const pick = (a) => () => this.setState({ anio: a });
+
+const linea = [];
+for (let y = 2016; y <= 2026; y++) {
+const ed = EDIC.indexOf(y) >= 0;
+const sel = y === anio;
+linea.push({ anio: y, edicion: ed, hueco: !ed, left: ((y - 2016) / 10) * 100,
+size: sel ? 22 : 14, offset: sel ? 0 : 4,
+fondo: sel ? '#004C59' : '#F6F3EE', peso: sel ? 600 : 400, color: sel ? '#004C59' : '#4E6368',
+pressed: sel ? 'true' : 'false', aria: 'Edición ' + y, pick: pick(y) });
+}
+
+const tabs = DIMS.map((d) => {
+const v = d.serie[anio];
+const sel = d.id === dim.id;
+return { nombre: d.nombre, valor: v ? fmt(v[0]) : 'Sin dato',
+colorValor: v ? (sel ? '#004C59' : '#10262B') : '#4E6368',
+colorNombre: sel ? '#10262B' : '#4E6368', peso: sel ? 600 : 500,
+linea: sel ? '#004C59' : 'transparent', pressed: sel ? 'true' : 'false',
+pick: () => this.setState({ dim: d.id }) };
+});
+
+const v = dim.serie[anio];
+const max = Math.max(1, ...EDIC.map((y) => (dim.serie[y] ? dim.serie[y][0] : 0)));
+const barras = EDIC.map((y) => {
+const s = dim.serie[y];
+const sel = y === anio;
+const real = s && s[1] === 'R';
+return { anio: y, ancho: s ? Math.max(3, Math.round((s[0] / max) * 100)) : 0,
+relleno: real ? '#004C59' : 'transparent', borde: s ? '#004C59' : 'transparent',
+etiqueta: s ? fmt(s[0]) : 'sin dato', colorValor: s ? '#10262B' : '#4E6368',
+peso: sel ? 600 : 400, colorAnio: sel ? '#004C59' : '#4E6368',
+aria: y + ': ' + (s ? fmt(s[0]) : 'sin dato'), pick: pick(y) };
+});
+const extra = (dim.extra[anio] || []).map((x) => ({ label: x[0], valor: x[1] }));
+const sabemos = CONOCIDOS[anio];
+
+return {
+nivel: { pct: Math.round((sabemos / TOTAL) * 100), sabemos, total: TOTAL, anio,
+aria: 'En ' + anio + ' hay dato de ' + sabemos + ' de ' + TOTAL + ' indicadores' },
+linea, tabs,
+aviso: { hay: anio === 2026, texto: '2026: aplazada 21 días, del 7 al 28 de febrero' },
+escena: { pregunta: dim.pregunta, unidad: dim.unidad,
+valor: v ? fmt(v[0]) : '—', color: v ? '#004C59' : '#C9CFCC',
+calidad: v ? (v[1] === 'R' ? 'Dato real, con fuente.' : 'Cifra declarada por la organización, sin método de conteo.') : 'No hay dato publicado para ' + anio + '.',
+contradiccion: (dim.contradiccion && dim.contradiccion[anio]) || '',
+barras, extra, hayExtra: extra.length > 0 }
+};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/* Informe para el pleno: hojas A4 en pantalla y en papel */
+.documento { display: flex; flex-direction: column; align-items: center; gap: 28px; counter-reset: hoja; }
+.hoja {
+  counter-increment: hoja;
+  position: relative; width: min(210mm, 100%); min-height: 297mm;
+  background: #fff; color: var(--tinta); border-radius: 12px;
+  padding: 18mm 16mm 22mm; display: flex; flex-direction: column; gap: 18px;
+  box-shadow: 0 24px 60px rgba(16, 38, 43, 0.12);
+  font-size: 14px; line-height: 21px;
+}
+.hoja::after {
+  content: "ALJIBE · Informe para el pleno · página " counter(hoja);
+  position: absolute; left: 16mm; right: 16mm; bottom: 9mm;
+  padding-top: 8px; border-top: 1px solid var(--linea);
+  font-size: 11px; color: var(--tinta-suave);
+}
+.hoja h2 { font-size: 22px; line-height: 28px; font-weight: 600; color: var(--aljibe); margin-top: 6px; }
+.hoja h3 { font-size: 15px; line-height: 20px; font-weight: 600; }
+.hoja p { max-width: 65ch; }
+.hoja .tabla { font-size: 13px; }
+.hoja .tabla td, .hoja .tabla th { padding: 8px 10px; }
+.portada-doc { justify-content: space-between; }
+.portada-doc__logo { height: 44px; width: auto; }
+.portada-doc__tipo { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--tinta-suave); }
+.portada-doc h1 { font-size: 44px; line-height: 50px; font-weight: 700; color: var(--aljibe); letter-spacing: -0.01em; }
+.portada-doc__sub { font-size: 22px; line-height: 30px; color: var(--tinta); }
+.arco {
+  align-self: center; width: min(100%, 340px);
+  background: var(--aljibe); color: var(--on-aljibe);
+  border-radius: 999px 999px 0 0; padding: 150px 28px 30px;
+  display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.arco small { font-size: 13px; color: #EAF3F4; }
+.arco strong { font-family: var(--mono); font-size: 52px; line-height: 56px; font-weight: 500; }
+.arco span { font-size: 13px; color: #EAF3F4; }
+.portada-doc .cifras-doc { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ficha { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding-top: 14px; border-top: 1px solid var(--linea); }
+.ficha div { display: flex; flex-direction: column; gap: 2px; }
+.ficha small { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--tinta-suave); }
+.ficha span { font-size: 14px; font-weight: 500; }
+.resumen-doc { font-size: 16px; line-height: 25px; background: var(--agua-soft); border-radius: 16px; padding: 16px 18px; }
+.cifras-doc { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.cifra-doc { border: 1px solid #DCE0DC; border-radius: 14px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; break-inside: avoid; }
+.cifra-doc small { font-size: 12px; line-height: 16px; color: var(--tinta-suave); }
+.cifra-doc strong { font-family: var(--mono); font-size: 22px; line-height: 26px; font-weight: 500; color: var(--aljibe); }
+.cifra-doc .nivel { align-self: flex-start; font-size: 11px; padding: 2px 8px; }
+.nota-doc { font-size: 12px; line-height: 17px; color: var(--tinta-suave); }
+.propuestas { margin: 0; padding-left: 20px; display: grid; gap: 8px; font-size: 15px; line-height: 22px; }
+.propuestas li::marker { font-family: var(--mono); color: var(--aljibe); font-weight: 600; }
+.calendario-doc { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.calendario-doc li { display: grid; grid-template-columns: 150px 1fr auto; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid #ECEEEB; }
+.calendario-doc .mono { font-size: 12px; color: var(--tinta-suave); }
+.firma { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; padding-top: 16px; border-top: 1px solid var(--linea); }
+.firma img { height: 32px; width: auto; }
+.barra-doc { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; width: min(210mm, 100%); }
+.mini-historico { width: 100%; height: auto; }
+.mini-historico text { font-family: var(--mono); font-size: 9px; fill: var(--tinta-suave); }
+.estado--hecho { background: var(--agua-soft); color: var(--aljibe); }
+
+@media (max-width: 720px) {
+  .hoja { min-height: 0; padding: 24px 18px 48px; border-radius: 20px; }
+  .hoja::after { left: 18px; right: 18px; bottom: 14px; }
+  .portada-doc h1 { font-size: 32px; line-height: 38px; }
+  .arco { padding: 110px 20px 22px; }
+  .arco strong { font-size: 40px; line-height: 44px; }
+  .ficha, .cifras-doc { grid-template-columns: 1fr 1fr; }
+  .calendario-doc li { grid-template-columns: 1fr auto; }
+  .calendario-doc .mono { grid-column: 1 / -1; }
+}
+
+@media print {
+  @page { size: A4; margin: 0; }
+  body { background: #fff; }
+  .documento { gap: 0; display: block; }
+  .hoja { width: 210mm; height: 297mm; min-height: 0; border-radius: 0; box-shadow: none; break-after: page; overflow: hidden; }
+  .hoja:last-child { break-after: auto; }
+  .barra-doc { display: none !important; }
+  .tabla-scroll { overflow: visible; }
+  .hoja { gap: 12px; padding: 14mm 16mm 20mm; }
+  .hoja h2 { font-size: 19px; line-height: 24px; margin-top: 2px; }
+  .propuestas { gap: 4px; font-size: 13.5px; line-height: 20px; }
+  .calendario-doc li { padding: 5px 0; }
+  .resumen-doc, .estado, .nivel { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+.fuentes-doc { columns: 1; column-gap: 24px; font-size: 13px; line-height: 19px; }
+.fuentes-doc li { break-inside: avoid; margin-bottom: 4px; }

@@ -1,0 +1,142 @@
+/* Entregables: piezas comunes */
+.enlace { color: var(--aljibe); font-size: 15px; font-weight: 500; text-underline-offset: 3px; }
+.enlace:hover { text-decoration-thickness: 2px; }
+.cifras-tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.dato { background: #fff; border-radius: 28px; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; box-shadow: var(--sombra-tarjeta); }
+.dato__etiqueta { font-size: 14px; line-height: 20px; color: var(--tinta-suave); }
+.dato__valor { font-size: 40px; line-height: 44px; font-weight: 500; letter-spacing: -0.02em; }
+.dato__valor small { font-size: 18px; color: var(--tinta-suave); font-weight: 500; }
+.dato__nota { font-size: 13px; line-height: 18px; color: var(--tinta-suave); }
+.dato--oscuro { background: linear-gradient(150deg, #004C59 0%, #1F6F7D 100%); color: var(--on-aljibe); }
+.dato--oscuro .dato__etiqueta, .dato--oscuro .dato__nota, .dato--oscuro .dato__valor small { color: #EAF3F4; }
+.dato--alerta { box-shadow: 0 0 0 2px var(--alerta), var(--sombra-tarjeta); }
+.grafico-caja { position: relative; }
+.grafico-caja .burbuja { z-index: 2; }
+
+/* Índice */
+.destacado {
+  display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between;
+  border-radius: 36px; padding: 32px; text-decoration: none; color: var(--on-aljibe);
+  background: linear-gradient(150deg, #0C3F49 0%, #004C59 50%, #145C68 100%);
+  box-shadow: 0 24px 50px rgba(0, 76, 89, 0.25); transition: transform .3s var(--ease), box-shadow .3s;
+}
+.destacado:hover { transform: translateY(-4px); box-shadow: 0 30px 60px rgba(0, 76, 89, 0.32); }
+.destacado__texto { flex: 999 1 380px; display: flex; flex-direction: column; gap: 10px; }
+.destacado__titulo { font-size: 34px; line-height: 40px; font-weight: 600; letter-spacing: -0.01em; }
+.destacado__desc { font-size: 17px; line-height: 26px; color: #EAF3F4; max-width: 40em; }
+.destacado__cifras { flex: 1 1 280px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.destacado__cifra { background: rgba(246, 243, 238, 0.1); border-radius: 18px; padding: 14px 16px; display: flex; flex-direction: column; gap: 2px; }
+.destacado__cifra small { font-size: 13px; color: #EAF3F4; }
+.destacado__cifra strong { font-family: var(--mono); font-size: 22px; font-weight: 500; }
+.destacado .etiqueta { background: rgba(246, 243, 238, 0.16); color: var(--on-aljibe); }
+.destacado .boton-claro { margin-top: 8px; align-self: flex-start; }
+.entregable {
+  background: #fff; border-radius: 28px; padding: 22px; display: flex; flex-direction: column; gap: 14px;
+  color: var(--tinta); text-decoration: none; box-shadow: var(--sombra-tarjeta);
+  transition: transform .25s var(--ease), box-shadow .25s;
+}
+.entregable:hover { transform: translateY(-4px); box-shadow: 0 18px 38px rgba(16, 38, 43, 0.12); }
+.entregable[hidden] { display: none; }
+.entregable__cab { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.entregable__servicio { font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--tinta-suave); }
+.entregable__titulo { font-size: 20px; line-height: 26px; font-weight: 500; }
+.entregable__texto { font-size: 15px; line-height: 22px; color: var(--tinta-suave); flex: 1; }
+.entregable__pie { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.entregable .flecha { background: var(--tinta); color: var(--on-aljibe); }
+.entregable:hover .flecha { transform: scale(1.1); }
+.filtro[aria-pressed="true"] { background: var(--tinta); border-color: var(--tinta); color: var(--on-aljibe); }
+.filtro { font-family: inherit; cursor: pointer; }
+
+/* Radar */
+.componentes { display: grid; gap: 14px; }
+.componente { display: grid; grid-template-columns: minmax(150px, 1fr) 2fr 70px; gap: 14px; align-items: center; font-size: 14px; }
+.componente__pista { position: relative; height: 14px; background: #ECEEEB; border-radius: 4px; }
+.componente__pista::before { content: ""; position: absolute; left: 50%; top: -4px; bottom: -4px; width: 1px; background: var(--linea); }
+.componente__barra { position: absolute; top: 0; bottom: 0; border-radius: 4px; background: var(--aljibe); transition: width .8s var(--ease); }
+.componente__barra--baja { background: var(--alerta); }
+.componente__valor { font-family: var(--mono); text-align: right; }
+.componente__peso { display: block; font-size: 12px; color: var(--tinta-suave); }
+
+/* Programación */
+.pesos { display: grid; gap: 18px; }
+.peso { display: grid; gap: 4px; }
+.peso__cab { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 500; }
+.peso__ayuda { font-size: 13px; line-height: 18px; color: var(--tinta-suave); }
+.ranking { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.artista { display: grid; grid-template-columns: 46px 1fr auto; gap: 14px; align-items: center; background: #fff; border-radius: 24px; padding: 14px 18px; box-shadow: var(--sombra-tarjeta); }
+.artista--primero { box-shadow: 0 0 0 2px var(--aljibe), var(--sombra-tarjeta); }
+.artista__puesto { width: 46px; height: 46px; border-radius: 999px; border: 1.5px solid rgba(16, 38, 43, .35); display: inline-flex; align-items: center; justify-content: center; font-family: var(--mono); }
+.artista--primero .artista__puesto { background: var(--aljibe); border-color: var(--aljibe); color: var(--on-aljibe); }
+.artista__nombre { font-size: 16px; font-weight: 500; }
+.artista__det { font-size: 13px; color: var(--tinta-suave); }
+.artista__barra { height: 8px; border-radius: 4px; background: #ECEEEB; margin-top: 8px; overflow: hidden; }
+.artista__barra span { display: block; height: 100%; background: var(--aljibe); border-radius: 4px; transition: width .6s var(--ease); }
+.artista__puntos { text-align: right; font-family: var(--mono); }
+.artista__puntos strong { display: block; font-size: 24px; font-weight: 500; font-family: var(--sans); }
+.artista__puntos span { font-size: 12px; color: var(--tinta-suave); }
+
+/* Patrocinio */
+.paquete { min-height: 0; }
+.paquete__precio { font-family: var(--mono); font-size: 22px; font-weight: 500; }
+.paquete ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: 14px; line-height: 20px; }
+.paquete li { display: flex; gap: 8px; }
+.paquete li .ico { width: 16px; height: 16px; margin-top: 2px; color: var(--aljibe); }
+.paquete__marca { width: 26px; height: 26px; border-radius: 8px; border: 2px solid var(--tinta-suave); display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.paquete__marca .ico { width: 16px; height: 16px; stroke-width: 3; opacity: 0; }
+.paquete[aria-pressed="true"] .paquete__marca { background: var(--aljibe); border-color: var(--aljibe); color: var(--on-aljibe); }
+.paquete[aria-pressed="true"] .paquete__marca .ico { opacity: 1; }
+
+/* Conteo */
+.controles { gap: 16px; }
+.campo--fila { flex-direction: row; align-items: center; gap: 10px; }
+.reloj .mono { font-size: 20px; font-weight: 500; }
+.barra-dia { transition: fill .3s; }
+
+/* Sala */
+.fuentes { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.fuentes li { display: inline-flex; align-items: center; gap: 10px; background: #fff; border-radius: 999px; padding: 10px 16px; font-size: 14px; }
+.fuentes li::before { content: ""; width: 8px; height: 8px; border-radius: 999px; background: var(--agua); }
+.fuentes small { color: var(--tinta-suave); font-size: 13px; }
+.venta { min-width: 140px; }
+.venta .progreso-barra { height: 8px; margin-top: 6px; }
+
+/* Simulador */
+.segmento { background: #fff; border-radius: 24px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; box-shadow: var(--sombra-tarjeta); }
+.segmento strong { font-size: 32px; line-height: 36px; font-weight: 500; }
+.segmento span { font-size: 15px; font-weight: 500; }
+.segmento p { font-size: 13px; line-height: 19px; color: var(--tinta-suave); }
+.interruptor--claro { background: #C9CFCC; }
+.interruptor--claro::after { background: #fff; }
+.interruptor--claro[aria-checked="true"] { background: var(--aljibe); }
+.interruptor--claro[aria-checked="true"]::after { background: #fff; }
+.campo-interruptor { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 500; background: #F1F3F0; border-radius: 20px; padding: 12px 16px; }
+.resultado-sim { font-size: 15px; line-height: 22px; }
+.resultado-sim strong { font-weight: 600; }
+
+/* Impacto */
+.niveles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+.niveles li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 20px; }
+.nivel { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; border-radius: 999px; padding: 4px 10px; white-space: nowrap; }
+.nivel::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: currentColor; }
+.nivel--medido { background: var(--agua-soft); color: var(--aljibe); }
+.nivel--estimado { background: var(--arena); color: var(--tinta); }
+.nivel--declarado { background: #F1F3F0; color: var(--tinta-suave); }
+.nivel--declarado::before { background: none; border: 1.5px solid currentColor; }
+.dimension__cab { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; }
+.dimension__ambito { font-size: 13px; color: var(--tinta-suave); }
+.conclusiones { margin: 0; padding-left: 22px; display: grid; gap: 10px; font-size: 16px; line-height: 24px; }
+
+@media (max-width: 720px) {
+  .componente { grid-template-columns: 1fr 70px; }
+  .componente__pista { grid-column: 1 / -1; grid-row: 2; }
+  .destacado { padding: 24px; border-radius: 30px; }
+  .destacado__titulo { font-size: 28px; line-height: 34px; }
+  .artista { grid-template-columns: 40px 1fr auto; padding: 12px 14px; }
+  .artista__puesto { width: 40px; height: 40px; }
+  .dato__valor { font-size: 34px; line-height: 38px; }
+}
+@media print {
+  .destacado, .dato--oscuro { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .entregable, .dato, .artista, .segmento { box-shadow: none !important; border: 1px solid #DCE0DC; break-inside: avoid; }
+  .controles { display: none; }
+}

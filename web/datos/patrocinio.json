@@ -1,0 +1,33 @@
+{
+  "titulo": "Dossier para patrocinadores",
+  "subtitulo": "Fiesta del Vino 2027 · Alhama de Granada",
+  "publico": {
+    "previsto": 7600,
+    "fuera": 38,
+    "gastoMedio": 17,
+    "nuevos": 18,
+    "alcanceRedes": 52000,
+    "noticias": 41
+  },
+  "edades": [
+    { "tramo": "18–24", "pct": 12 },
+    { "tramo": "25–34", "pct": 31 },
+    { "tramo": "35–44", "pct": 26 },
+    { "tramo": "45–54", "pct": 19 },
+    { "tramo": "55 y más", "pct": 12 }
+  ],
+  "procedencia": [
+    { "zona": "Alhama de Granada", "pct": 32 },
+    { "zona": "Resto de la comarca", "pct": 30 },
+    { "zona": "Área de Granada", "pct": 26 },
+    { "zona": "Otras provincias", "pct": 12 }
+  ],
+  "paquetes": [
+    { "id": "principal", "nombre": "Patrocinador principal", "precio": 3000, "incluye": ["Logo en cartel y escenario", "Mención en la nota de prensa", "Espacio de 40 m² en el recinto"], "impactos": 59600 },
+    { "id": "vasos", "nombre": "Patrocinador de los vasos", "precio": 1500, "incluye": ["Logo en los 5.200 vasos", "Los vasos se quedan en casa del visitante"], "impactos": 5200 },
+    { "id": "colaborador", "nombre": "Colaborador", "precio": 600, "incluye": ["Logo en cartel", "Publicación en redes de la fiesta"], "impactos": 52000 },
+    { "id": "local", "nombre": "Producto local", "precio": 300, "incluye": ["Puesto en la ruta de tapas", "Mención en el mapa de la fiesta"], "impactos": 7600 }
+  ],
+  "honorarios": { "fijo": 300, "porcentaje": 10 },
+  "fuentes": "Encuesta de código postal en los accesos (2026), seguimiento de medios y estadísticas de las redes de la fiesta."
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es" data-raiz="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Previsiones y simulador, sala de conciertos</title>
+<meta name="description" content="Ejemplo de previsiones y simulador de escenarios de la suscripción avanzada.">
+<link rel="icon" type="image/svg+xml" href="../logos/aljibe-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/estilos.css">
+<link rel="stylesheet" href="../css/componentes.css">
+<link rel="stylesheet" href="../css/entregables.css">
+</head>
+<body data-seccion="entregables" data-ruta="entregables/simulador.html">
+<a class="saltar" href="#principal">Saltar al contenido</a>
+<div class="app">
+<aside class="lateral" id="lateral" aria-label="Navegación lateral"></aside>
+<main class="contenido" id="principal">
+
+<div class="cabecera-movil"><a href="../index.html" aria-label="ALJIBE, inicio"><img src="../logos/aljibe-lockup.svg" alt="ALJIBE"></a></div>
+
+<nav class="barra" aria-label="Entregable">
+<div class="pildoras">
+<a class="pildora pildora--icono" href="index.html"><svg class="ico ico--s" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Entregables</a>
+<a class="pildora" href="#simulador">Simulador</a>
+<a class="pildora" href="#prevision">Previsión</a>
+<a class="pildora" href="sala.html">Cuadro de mando</a>
+</div>
+<button type="button" class="pildora pildora--icono" data-imprimir><svg class="ico ico--s" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>Imprimir o guardar PDF</button>
+</nav>
+
+<div class="cabecera">
+<span class="etiqueta">Suscripción avanzada</span>
+<h1 class="titulo-pagina">Previsiones y simulador<br><span>Qué va a pasar y qué hago.</span></h1>
+<span class="chip-contorno"><span class="punto"></span>Cliente de ejemplo · sala de conciertos</span>
+</div>
+<section class="pila" aria-labelledby="t-seg" style="gap: 20px;">
+<h2 id="t-seg" class="bloque__titulo">Quién es tu público</h2>
+<div class="rejilla rejilla--auto" id="segmentos" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));"></div>
+</section>
+<div class="dos-zonas" id="simulador">
+<section class="zona-principal caja" aria-labelledby="t-sim">
+<div class="caja__cab"><h2 id="t-sim">Simulador de escenarios</h2><button type="button" class="boton boton--claro" id="restablecer">Volver al plan actual</button></div>
+<form class="formulario formulario--2" id="form-sim"></form>
+</section>
+<aside class="zona-lateral oscuro" id="salida-sim" aria-live="polite" aria-label="Resultado del escenario"></aside>
+</div>
+<section class="caja" aria-labelledby="t-prev" data-revelar id="prevision">
+<div class="caja__cab"><h2 id="t-prev">Previsión de demanda por concierto</h2><span class="texto-pie">Con el modelo de la sala y la venta de hoy</span></div>
+<div class="tabla-scroll"><table class="tabla" id="tabla-prevision"></table></div>
+</section>
+
+</main>
+</div>
+<script type="module" src="../js/paginas/simulador.js"></script>
+</body>
+</html>

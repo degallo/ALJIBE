@@ -1,0 +1,29 @@
+{
+  "titulo": ["Cada servicio responde", "a una decisión."],
+  "aviso": "La primera reunión de diagnóstico es gratuita",
+  "productos": [
+    { "id": "radar", "tono": "marca", "nombre": "Radar de temporada", "para": "Eventos de un día y fiestas de pueblos", "pregunta": "¿Cuánta gente vendrá y cuándo lanzo la campaña?", "incluye": "Un índice semanal de intención de asistencia desde meses antes, comparado con la edición anterior, con previsión y alertas.", "entregable": "Cuadro de mando del evento", "precio": "desde 800 €", "detallePrecio": "800–1.200 € por edición", "ejemplo": "fiesta-del-vino.html", "enlaceEntregable": "entregables/radar.html", "cliente": "alhama" },
+    { "id": "prog", "tono": "agua", "nombre": "Estudio de programación", "para": "Salas, festivales y promotoras", "pregunta": "¿A quién contrato y en qué fecha?", "incluye": "Puntuamos tu lista corta de artistas por afinidad con tu público, presencia local y tracción, y ordenamos las fechas posibles según meteorología, competencia y festivos.", "entregable": "Ranking de artistas y fechas", "precio": "desde 500 €", "detallePrecio": "500–800 € por estudio", "enlaceEntregable": "entregables/programacion.html", "cliente": "alhama" },
+    { "id": "patro", "tono": "calido", "nombre": "Informe de patrocinio", "para": "Cualquier organizador", "pregunta": "¿Cómo consigo y retengo patrocinadores?", "incluye": "El perfil y el alcance verificable de tu público, y el retorno de cada patrocinio, en un dossier listo para enviar a las marcas.", "entregable": "Dossier para patrocinadores", "precio": "300 € + 10 %", "detallePrecio": "300 € + 10 % del patrocinio nuevo", "enlaceEntregable": "entregables/patrocinio.html", "cliente": "alhama" },
+    { "id": "esen", "tono": "arena", "nombre": "Suscripción esencial", "para": "Salas, teatros y promotoras", "pregunta": "¿Cómo decido cada semana con datos?", "incluye": "Unimos tus datos de venta, web y redes, los vigilamos y te damos un cuadro de mando que se actualiza solo, con alertas y formación para tu equipo.", "entregable": "Cuadro de mando automático", "precio": "200 €/mes", "detallePrecio": "Implantación desde 1.500 € + 200 €/mes", "enlaceEntregable": "entregables/sala.html", "cliente": "otros" },
+    { "id": "avan", "tono": "blanco", "nombre": "Suscripción avanzada", "para": "Programación frecuente", "pregunta": "¿Qué va a pasar y qué hago?", "incluye": "Todo lo de la esencial, más segmentación del público, predicción de demanda por evento, un simulador de escenarios y dos estudios de programación al año.", "entregable": "Previsiones y simulador", "precio": "400 €/mes", "detallePrecio": "Implantación desde 1.500 € + 400 €/mes", "enlaceEntregable": "entregables/simulador.html", "cliente": "otros" },
+    { "id": "medida", "tono": "salvia", "nombre": "Proyectos a medida", "para": "Instituciones y Granada 2031", "pregunta": "¿Qué impacto tiene mi evento o programa?", "incluye": "Medición de impacto con los indicadores que pide la Comisión Europea, paneles de seguimiento e informes para justificar la inversión pública.", "entregable": "Informe de impacto", "precio": "a presupuesto", "detallePrecio": "Presupuesto por proyecto", "enlaceEntregable": "entregables/impacto.html", "cliente": "otros" }
+  ],
+  "paquete": {
+    "titulo": "Paquete Fiesta para ayuntamientos",
+    "descripcion": "Todo lo que necesita una edición, y un informe para justificar el gasto ante el pleno.",
+    "precio": "desde 2.500 € por edición",
+    "pasos": [
+      { "cuando": "4 meses antes", "que": "Elegimos la mejor fecha", "enlace": "fiesta-del-vino.html#fechas" },
+      { "cuando": "Hasta el día", "que": "Radar semanal de asistencia", "enlace": "entregables/radar.html" },
+      { "cuando": "2-3 meses antes", "que": "Dossier para patrocinadores", "enlace": "entregables/patrocinio.html" },
+      { "cuando": "El día de la fiesta", "que": "Conteo y procedencia del público", "enlace": "entregables/conteo.html" },
+      { "cuando": "Un mes después", "que": "Informe de impacto para el pleno", "enlace": "entregables/informe-pleno.html", "destacado": true }
+    ]
+  },
+  "agenda": {
+    "etiqueta": "Gratis para organizadores",
+    "titulo": "Agenda ALJIBE",
+    "texto": "Antes de fijar la fecha de tu evento, comprueba si choca con otros eventos de Granada y su provincia, con festivos o con mal tiempo. Y registra el tuyo para que los demás lo vean."
+  }
+}

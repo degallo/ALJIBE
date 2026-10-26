@@ -1,0 +1,18 @@
+{
+  "titulo": "Estudio de programación",
+  "subtitulo": "Fiesta del Vino 2027 · concierto de la tarde",
+  "nota": "Nombres ocultos hasta cerrar la contratación.",
+  "criterios": [
+    { "id": "afinidad", "nombre": "Afinidad con tu público", "peso": 40, "ayuda": "Cuánto escucha tu público a este artista o a artistas parecidos." },
+    { "id": "local", "nombre": "Presencia local", "peso": 30, "ayuda": "Vínculo con Alhama y la comarca, y público propio en la provincia." },
+    { "id": "traccion", "nombre": "Tracción", "peso": 30, "ayuda": "Crecimiento reciente en escuchas, redes y entradas vendidas." }
+  ],
+  "artistas": [
+    { "id": "a", "nombre": "Opción A", "estilo": "Rumba flamenca", "origen": "Granada", "cache": 3200, "afinidad": 88, "local": 80, "traccion": 72 },
+    { "id": "b", "nombre": "Opción B", "estilo": "Pop-rock andaluz", "origen": "Málaga", "cache": 4500, "afinidad": 74, "local": 45, "traccion": 90 },
+    { "id": "c", "nombre": "Opción C", "estilo": "Orquesta de verbena", "origen": "Jaén", "cache": 2400, "afinidad": 70, "local": 60, "traccion": 50 },
+    { "id": "d", "nombre": "Opción D", "estilo": "Cante y guitarra", "origen": "Alhama de Granada", "cache": 900, "afinidad": 76, "local": 98, "traccion": 40 },
+    { "id": "e", "nombre": "Opción E", "estilo": "Sesión de DJ, música de los 90", "origen": "Granada", "cache": 1500, "afinidad": 62, "local": 55, "traccion": 70 }
+  ],
+  "recomendacion": "Contratar la opción A para el sábado 20 de febrero. Si el presupuesto no llega a 2.000 €, la opción D es la que más puntos da por euro."
+}

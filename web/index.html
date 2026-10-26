@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es" data-raiz="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALJIBE, inicio</title>
+<meta name="description" content="ALJIBE convierte los datos de la cultura de Granada en decisiones.">
+<link rel="icon" type="image/svg+xml" href="logos/aljibe-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css">
+<link rel="stylesheet" href="css/componentes.css">
+</head>
+<body data-seccion="inicio" data-ruta="index.html">
+<a class="saltar" href="#principal">Saltar al contenido</a>
+<div class="app">
+
+<aside class="lateral" id="lateral" aria-label="Navegación lateral"></aside>
+
+<main class="contenido" id="principal">
+
+<nav class="barra" aria-label="Principal">
+<div class="pildoras">
+<a class="pildora pildora--activa" href="index.html" aria-current="page">Inicio</a>
+<a class="pildora" href="servicios.html">Servicios</a>
+<a class="pildora" href="fiesta-del-vino.html">Cuadros de mando</a>
+<a class="pildora" href="decisiones.html">Decisiones</a>
+<a class="pildora" href="entregables/index.html">Entregables</a>
+<a class="pildora" href="#equipo">Equipo</a>
+</div>
+<div class="fila">
+<button type="button" class="pildora pildora--presentar" data-presentar><svg class="ico ico--s" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>Presentar en clase</button>
+<span class="etiqueta-proto">Prototipo académico · UGR</span>
+</div>
+</nav>
+
+<section class="portada">
+<div class="portada__texto">
+<img class="portada__logo" src="logos/aljibe-lockup.svg" alt="ALJIBE">
+<h1>Convertimos los datos de la cultura<br><span>en decisiones.</span></h1>
+<p>Medimos lo que una fiesta deja en su pueblo: quién participa, qué patrimonio mantiene, cuánto implica a la comunidad y cuánto proyecta fuera. Y lo convertimos en qué hacer el año que viene.</p>
+<div class="botones">
+<a class="boton boton--primario" href="fiesta-del-vino.html">Ver la Fiesta del Vino<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+<a class="boton boton--contorno" href="servicios.html">Nuestros servicios</a>
+</div>
+</div>
+<div id="prevision" class="portada__panel-hueco"></div>
+</section>
+
+<section aria-labelledby="t-dim" class="bloque">
+<h2 id="t-dim" class="bloque__titulo">Lo que medimos de una fiesta</h2>
+<div id="dimensiones" class="rejilla rejilla--dim"></div>
+</section>
+
+<section aria-labelledby="t-serv" class="bloque">
+<div class="pestana">
+<h2 id="t-serv" class="pestana__titulo">Qué hacemos <span id="servicios-total" class="insignia"></span></h2>
+<a id="servicios-todos" class="pestana__enlace" href="servicios.html">Ver todos los servicios</a>
+</div>
+<div id="servicios" class="rejilla rejilla--serv"></div>
+<div id="servicios-otros" class="chips"></div>
+</section>
+
+<section id="equipo" aria-labelledby="t-eq" class="equipo"></section>
+
+</main>
+</div>
+<script type="module" src="js/paginas/inicio.js"></script>
+</body>
+</html>

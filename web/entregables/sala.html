@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es" data-raiz="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cuadro de mando automático, sala de conciertos</title>
+<meta name="description" content="Ejemplo de cuadro de mando automático de la suscripción esencial.">
+<link rel="icon" type="image/svg+xml" href="../logos/aljibe-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/estilos.css">
+<link rel="stylesheet" href="../css/componentes.css">
+<link rel="stylesheet" href="../css/entregables.css">
+</head>
+<body data-seccion="entregables" data-ruta="entregables/sala.html">
+<a class="saltar" href="#principal">Saltar al contenido</a>
+<div class="app">
+<aside class="lateral" id="lateral" aria-label="Navegación lateral"></aside>
+<main class="contenido" id="principal">
+
+<div class="cabecera-movil"><a href="../index.html" aria-label="ALJIBE, inicio"><img src="../logos/aljibe-lockup.svg" alt="ALJIBE"></a></div>
+
+<nav class="barra" aria-label="Entregable">
+<div class="pildoras">
+<a class="pildora pildora--icono" href="index.html"><svg class="ico ico--s" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Entregables</a>
+<a class="pildora" href="#cuadro">Cuadro de mando</a>
+<a class="pildora" href="#t-prox">Próximos conciertos</a>
+<a class="pildora" href="simulador.html">Simulador</a>
+</div>
+<button type="button" class="pildora pildora--icono" data-imprimir><svg class="ico ico--s" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>Imprimir o guardar PDF</button>
+</nav>
+
+<div class="cabecera">
+<span class="etiqueta">Suscripción esencial</span>
+<h1 class="titulo-pagina">Cuadro de mando automático<br><span>Se actualiza solo cada mañana.</span></h1>
+<span class="chip-contorno"><span class="punto"></span>Cliente de ejemplo · sala de conciertos</span>
+</div>
+<div id="cuadro" class="pila" style="gap: 24px;">
+<div class="rejilla rejilla--auto" id="kpis-sala" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));"></div>
+<div class="dos-zonas">
+<section class="zona-principal caja" aria-labelledby="t-ocup" data-revelar>
+<div class="caja__cab"><h2 id="t-ocup">Ocupación de los últimos 12 conciertos</h2><div class="leyenda"><span><i style="background: rgba(16, 38, 43, 0.35);"></i>Martes</span><span><i style="background: var(--aljibe);"></i>Resto de días</span></div></div>
+<div id="grafico-ocupacion" class="grafico-caja"></div>
+<p class="texto-pie" id="nota-ocupacion"></p>
+</section>
+<section class="zona-lateral pila" aria-labelledby="t-alertas-sala" style="flex-basis: 340px;">
+<h2 id="t-alertas-sala" class="bloque__titulo" style="font-size: 20px;">Alertas de esta semana</h2>
+<ul class="alertas" id="alertas-sala"></ul>
+</section>
+</div>
+<section class="caja" aria-labelledby="t-prox" data-revelar>
+<div class="caja__cab"><h2 id="t-prox">Venta de los próximos conciertos</h2><span class="texto-pie" id="actualizado"></span></div>
+<div class="tabla-scroll"><table class="tabla" id="tabla-proximos"></table></div>
+</section>
+<section class="caja caja--vidrio" aria-labelledby="t-fuentes" data-revelar>
+<h2 id="t-fuentes">Datos conectados</h2>
+<ul class="fuentes" id="fuentes"></ul>
+</section>
+</div>
+
+</main>
+</div>
+<script type="module" src="../js/paginas/sala.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "aljibe-prototipo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Prototipo web de ALJIBE: web, entregables y servidor de la demo",
+  "type": "module",
+  "scripts": {
+    "start": "node servidor/servidor.js",
+    "test": "node --test pruebas/*.test.js"
+  },
+  "engines": { "node": ">=18" }
+}

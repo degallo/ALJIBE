@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es" data-raiz="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALJIBE, decisiones</title>
+<meta name="description" content="Panel de decisiones de ALJIBE: KPIs, decisiones recomendadas y resultado previsto.">
+<link rel="icon" type="image/svg+xml" href="logos/aljibe-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css">
+<link rel="stylesheet" href="css/componentes.css">
+</head>
+<body data-seccion="decisiones" data-ruta="decisiones.html">
+<a class="saltar" href="#principal">Saltar al contenido</a>
+<div class="app">
+<aside class="lateral" id="lateral" aria-label="Navegación lateral"></aside>
+<main class="contenido" id="principal">
+
+<div class="cabecera-movil"><a href="index.html" aria-label="ALJIBE, inicio"><img src="logos/aljibe-lockup.svg" alt="ALJIBE"></a></div>
+
+<nav class="barra" aria-label="Cuadro de mando">
+<div class="pildoras">
+<a class="pildora" href="fiesta-del-vino.html#resumen">Resumen</a>
+<a class="pildora" href="fiesta-del-vino.html#asistencia">Histórico</a>
+<a class="pildora" href="fiesta-del-vino.html#fechas">Fechas</a>
+<a class="pildora" href="fiesta-del-vino.html#impacto">Impacto</a>
+<a class="pildora pildora--activa pildora--icono" href="decisiones.html" aria-current="page"><svg class="ico ico--s" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="2"/></svg>Decisiones</a>
+</div>
+</nav>
+
+<div class="cabecera">
+<h1 class="titulo-pagina" id="titulo"></h1>
+<div class="fila" role="group" aria-label="Caso" id="casos"></div>
+<p class="texto-suave" id="contexto" style="font-size: 15px;"></p>
+</div>
+
+<div class="dos-zonas" id="panel">
+<section class="zona-principal" aria-labelledby="t-kpis">
+<h2 id="t-kpis" class="solo-lectores">Indicadores</h2>
+<div class="rejilla rejilla--2" id="kpis"></div>
+</section>
+<aside class="zona-lateral oscuro decisiones-panel" aria-labelledby="t-dec">
+<h2 class="oscuro__titulo" id="t-dec">Decisiones recomendadas</h2>
+<ul class="decisiones" id="lista-decisiones"></ul>
+<div class="oscuro__filas" id="totales"></div>
+<button type="button" class="boton-claro no-imprimir" id="imprimir-plan"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>Descargar plan de acción</button>
+</aside>
+</div>
+
+<section class="caja resultado" aria-labelledby="t-res" id="resultado">
+<h2 id="t-res">Resultado si aplicas el plan</h2>
+<div class="cifras" id="cifras-resultado"></div>
+</section>
+<p class="solo-lectores" aria-live="polite" id="anuncio"></p>
+
+</main>
+</div>
+<script type="module" src="js/paginas/decisiones.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "titulo": "Fiesta del Vino de Alhama de Granada",
+  "subtitulo": "Balance de 2026 y plan para 2027",
+  "documento": "Informe para el pleno municipal",
+  "destinatario": "Ayuntamiento de Alhama de Granada",
+  "fecha": "Octubre de 2026",
+  "autor": "ALJIBE · Equipo 3",
+  "paquete": { "nombre": "Paquete Fiesta", "precio": 2500 },
+  "resumen": "Con la fecha del sábado 20 de febrero y cuatro medidas de bajo coste, la Fiesta del Vino puede llegar a 8.200 asistentes y alcanzar los cuatro objetivos de la edición. El plan cuesta 3.000 € y se espera que genere 13,4 € por cada euro invertido.",
+  "calendario": [
+    { "cuando": "Octubre 2026", "que": "Fecha recomendada y plan de acción", "estado": "hecho" },
+    { "cuando": "Nov–dic 2026", "que": "Dossier a patrocinadores y nota de prensa", "estado": "en curso" },
+    { "cuando": "11 de enero de 2027", "que": "Arranca la campaña digital", "estado": "pendiente" },
+    { "cuando": "Cada lunes", "que": "Radar semanal de asistencia", "estado": "en curso" },
+    { "cuando": "20 de febrero de 2027", "que": "Fiesta: conteo y procedencia del público", "estado": "pendiente" },
+    { "cuando": "Marzo de 2027", "que": "Informe de impacto de la edición", "estado": "pendiente" }
+  ],
+  "propuestas": [
+    "Fijar la XIV Fiesta del Vino el sábado 20 de febrero de 2027.",
+    "Aprobar el plan de acción con una inversión de 3.000 €.",
+    "Contratar el Paquete Fiesta de ALJIBE (2.500 €) para el seguimiento y el informe de impacto.",
+    "Presentar al pleno el informe de impacto de la edición en marzo de 2027."
+  ],
+  "fuentes": [
+    "Histórico de 13 ediciones (2013–2026, sin edición en 2021).",
+    "Agenda de eventos de la provincia y festivos de febrero de 2027.",
+    "Serie de lluvia de febrero en Alhama de Granada.",
+    "Encuesta de código postal y conteo en los accesos de 2026."
+  ]
+}

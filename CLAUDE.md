@@ -21,6 +21,10 @@ Vas a construir el prototipo web de ALJIBE a partir de los diseños de este repo
 - Iconos de línea estilo Lucide; sin emojis.
 - Contraste mínimo de 4,5:1, botones reales con estado accesible y diseño que funcione en móvil.
 
+## Presentación en clase
+
+La web se expone en clase con estilo keynote (una idea por pantalla, cifras enormes, mucho aire). Sigue la skill `presentacion-keynote` y construye al final un modo presentación a pantalla completa.
+
 ## Cómo trabajar
 
 - Empieza por una pantalla, enséñala y espera comentarios antes de seguir (el equipo prefiere iterar).

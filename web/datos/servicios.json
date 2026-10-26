@@ -1,0 +1,12 @@
+{
+  "titulo": "Qué hacemos",
+  "total": 6,
+  "enlaceTodos": {"texto": "Ver todos los servicios", "href": "servicios.html"},
+  "destacados": [
+    {"id": "radar-temporada", "tono": "marca", "nombre": ["Radar de", "temporada"], "descripcion": "Cuánta gente vendrá y cuándo lanzar la campaña."},
+    {"id": "estudio-programacion", "tono": "agua", "nombre": ["Estudio de", "programación"], "descripcion": "A quién contratar y en qué fecha."},
+    {"id": "paquete-fiesta", "tono": "arena", "nombre": ["Paquete", "Fiesta"], "descripcion": "Todo para la fiesta de tu pueblo, con informe para el pleno."},
+    {"id": "informe-patrocinio", "tono": "calido", "nombre": ["Informe de", "patrocinio"], "descripcion": "Datos del público para atraer a las marcas."}
+  ],
+  "otros": ["Suscripción esencial", "Suscripción avanzada", "Proyectos a medida", "Agenda ALJIBE gratuita"]
+}

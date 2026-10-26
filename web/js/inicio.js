@@ -1,5 +1,7 @@
 /* Pantalla Inicio: pinta las secciones a partir de los JSON de web/datos/ */
 (function () {
+  var reducir = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reducir) document.documentElement.classList.add('js');
   var NS = 'http://www.w3.org/2000/svg';
 
   // Iconos de línea estilo Lucide (contenido del <svg viewBox="0 0 24 24">)
@@ -34,6 +36,55 @@
     });
   }
 
+  // La cifra sube desde 0 hasta su valor, con puntos de millar
+  function contar(nodo) {
+    var final = nodo.textContent;
+    var meta = parseInt(final.replace(/\D/g, ''), 10);
+    if (reducir || !meta) return;
+    var inicio = null, duracion = 1400;
+    nodo.textContent = '0';
+    function paso(ts) {
+      if (inicio === null) inicio = ts;
+      var k = Math.min((ts - inicio) / duracion, 1);
+      var v = Math.round(meta * (1 - Math.pow(1 - k, 3)));
+      nodo.textContent = k < 1 ? String(v).replace(/\B(?=(\d{3})+(?!\d))/g, '.') : final;
+      if (k < 1) requestAnimationFrame(paso);
+    }
+    setTimeout(function () { requestAnimationFrame(paso); }, 500);
+  }
+
+  // Los bloques aparecen al entrar en pantalla, de uno en uno
+  function entradas() {
+    var grupos = [
+      ['.lateral > *'], ['.barra'], ['.portada__texto > *'], ['.portada__panel-hueco'],
+      ['#t-dim'], ['.tarjeta'], ['.pestana'], ['.servicio'], ['#servicios-otros .chip'], ['.equipo']
+    ];
+    var todos = [];
+    grupos.forEach(function (g) {
+      document.querySelectorAll(g[0]).forEach(function (n, i) {
+        n.classList.add('reveal');
+        n.addEventListener('transitionend', function fin(e) {
+          if (e.target !== n || e.propertyName !== 'opacity') return;
+          n.classList.remove('reveal', 'visible');
+          n.style.removeProperty('--i');
+          n.removeEventListener('transitionend', fin);
+        });
+        n.style.setProperty('--i', i);
+        todos.push(n);
+      });
+    });
+    if (!('IntersectionObserver' in window)) {
+      todos.forEach(function (n) { n.classList.add('visible'); });
+      return;
+    }
+    var obs = new IntersectionObserver(function (items) {
+      items.forEach(function (it) {
+        if (it.isIntersecting) { it.target.classList.add('visible'); obs.unobserve(it.target); }
+      });
+    }, { threshold: 0.12 });
+    todos.forEach(function (n) { obs.observe(n); });
+  }
+
   function cargar(archivo) {
     return fetch('datos/' + archivo).then(function (r) {
       if (!r.ok) throw new Error(archivo + ': ' + r.status);
@@ -65,6 +116,7 @@
     d.serie.forEach(function (h) {
       var b = document.createElement('span');
       b.style.height = h + 'px';
+      b.style.setProperty('--i', barras.children.length);
       barras.appendChild(b);
     });
 
@@ -77,6 +129,7 @@
 
     a.append(cab, cifra, barras, datos);
     document.getElementById('prevision').appendChild(a);
+    contar(cifra.querySelector('.panel__valor'));
   }
 
   function pintarDimensiones(d) {
@@ -142,6 +195,7 @@
     pintarDimensiones(r[1]);
     pintarServicios(r[2]);
     pintarEquipo(r[3]);
+    if (!reducir) entradas();
   }).catch(function (e) {
     var aviso = el('p', 'aviso-datos', 'No se han podido cargar los datos. Abre la web desde un servidor local (por ejemplo, python3 -m http.server en la carpeta web).');
     aviso.setAttribute('role', 'alert');

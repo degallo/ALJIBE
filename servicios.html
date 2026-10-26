@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es" data-raiz="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALJIBE, servicios</title>
+<meta name="description" content="Servicios de ALJIBE: cada servicio responde a una decisión.">
+<link rel="icon" type="image/svg+xml" href="logos/aljibe-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css">
+<link rel="stylesheet" href="css/componentes.css">
+</head>
+<body data-seccion="servicios" data-ruta="servicios.html">
+<a class="saltar" href="#principal">Saltar al contenido</a>
+<div class="app">
+<aside class="lateral" id="lateral" aria-label="Navegación lateral"></aside>
+<main class="contenido" id="principal">
+
+<div class="cabecera-movil"><a href="index.html" aria-label="ALJIBE, inicio"><img src="logos/aljibe-lockup.svg" alt="ALJIBE"></a></div>
+
+<nav class="barra" aria-label="Principal">
+<div class="pildoras">
+<a class="pildora" href="index.html">Inicio</a>
+<a class="pildora pildora--activa" href="servicios.html" aria-current="page">Servicios</a>
+<a class="pildora" href="fiesta-del-vino.html">Cuadros de mando</a>
+<a class="pildora" href="#paquete">Paquete Fiesta</a>
+<a class="pildora" href="#agenda">Agenda</a>
+<a class="pildora" href="entregables/index.html">Entregables</a>
+</div>
+</nav>
+
+<div class="cabecera">
+<h1 class="titulo-pagina" id="titulo">Cada servicio responde<br><span>a una decisión.</span></h1>
+<span class="chip-contorno"><span class="punto"></span>La primera reunión de diagnóstico es gratuita</span>
+</div>
+
+<div class="dos-zonas" id="catalogo">
+<div role="group" aria-label="Servicios" id="productos" class="zona-principal rejilla rejilla--opciones"></div>
+<aside class="zona-lateral oscuro" id="detalle" aria-live="polite" aria-label="Detalle del servicio"></aside>
+</div>
+
+<section id="paquete" aria-labelledby="t-paq" class="caja" data-revelar>
+<div class="caja__cab" style="align-items: flex-start;">
+<div class="caja__titulo">
+<span class="icono-redondo"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg></span>
+<span class="pila" style="gap: 2px;">
+<h2 id="t-paq" style="font-size: 24px; line-height: 30px;"></h2>
+<span class="texto-suave" id="paquete-desc" style="font-size: 15px;"></span>
+</span>
+</div>
+<span class="mono precio-destacado" id="paquete-precio"></span>
+</div>
+<ol class="pasos" id="paquete-pasos"></ol>
+</section>
+
+<section id="agenda" aria-labelledby="t-ag" class="caja caja--vidrio" data-revelar>
+<div class="agenda">
+<div class="pila agenda__texto" style="gap: 6px;">
+<span class="etiqueta" id="agenda-etiqueta"></span>
+<h2 id="t-ag" style="font-size: 24px; line-height: 30px;"></h2>
+<p class="texto-suave" id="agenda-texto" style="font-size: 15px; line-height: 23px;"></p>
+</div>
+<form class="agenda__form" id="form-agenda" novalidate>
+<label for="fecha-agenda" class="solo-lectores">Fecha tentativa</label>
+<input id="fecha-agenda" name="fecha" type="date" class="entrada" min="2026-01-01" max="2028-12-31" value="2027-02-20" required aria-describedby="error-fecha-agenda">
+<button type="submit" class="boton boton--primario">Comprobar</button>
+<span class="error campo--ancho" id="error-fecha-agenda" role="alert"></span>
+</form>
+</div>
+<div id="agenda-resultado" class="agenda__resultado" aria-live="polite"></div>
+</section>
+
+<section id="contacto" aria-labelledby="t-contacto" class="caja" data-revelar>
+<div class="pila" style="gap: 6px;">
+<h2 id="t-contacto" style="font-size: 24px; line-height: 30px;">Pide tu diagnóstico gratuito</h2>
+<p class="texto-suave" style="font-size: 15px;">Cuéntanos qué evento organizas. En la primera reunión vemos qué datos tienes y qué decisión te preocupa.</p>
+</div>
+<form class="formulario formulario--2" id="form-contacto" novalidate>
+<label class="campo">Nombre<input class="entrada" name="nombre" autocomplete="name" required aria-describedby="e-nombre"><span class="error" id="e-nombre"></span></label>
+<label class="campo">Organización<input class="entrada" name="organizacion" autocomplete="organization" aria-describedby="e-organizacion"><span class="error" id="e-organizacion"></span></label>
+<label class="campo">Correo<input class="entrada" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><span class="error" id="e-email"></span></label>
+<label class="campo">Servicio<select class="entrada" name="servicio" id="contacto-servicio"><option value="">Aún no lo sé</option></select></label>
+<label class="campo campo--ancho">Mensaje<textarea class="entrada" name="mensaje" maxlength="1000" aria-describedby="e-mensaje"></textarea><span class="error" id="e-mensaje"></span></label>
+<div class="fila campo--ancho">
+<button type="submit" class="boton boton--primario"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>Enviar</button>
+</div>
+<p class="mensaje campo--ancho" id="contacto-mensaje" role="status"></p>
+</form>
+</section>
+
+</main>
+</div>
+<script type="module" src="js/paginas/servicios.js"></script>
+</body>
+</html>

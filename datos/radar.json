@@ -1,0 +1,227 @@
+{
+  "titulo": "Radar de temporada",
+  "subtitulo": "Fiesta del Vino 2027 · índice semanal de intención de asistencia",
+  "actualizado": "2026-10-24",
+  "semanaActual": -17,
+  "fechaEvento": "2027-02-20",
+  "equivalencia": {
+    "indice": 100,
+    "asistentes": 6900,
+    "texto": "100 = intención de la semana de la fiesta de 2026 (6.900 asistentes)"
+  },
+  "resumen": {
+    "variacion": 6,
+    "texto": "por encima de 2026 en la misma semana"
+  },
+  "semanas": [
+    {
+      "semana": -20,
+      "fecha": "2026-10-03",
+      "anterior": 12,
+      "real": 13
+    },
+    {
+      "semana": -19,
+      "fecha": "2026-10-10",
+      "anterior": 13,
+      "real": 14
+    },
+    {
+      "semana": -18,
+      "fecha": "2026-10-17",
+      "anterior": 15,
+      "real": 16
+    },
+    {
+      "semana": -17,
+      "fecha": "2026-10-24",
+      "anterior": 17,
+      "real": 18
+    },
+    {
+      "semana": -16,
+      "fecha": "2026-10-31",
+      "anterior": 18,
+      "prevision": 19,
+      "min": 18,
+      "max": 20
+    },
+    {
+      "semana": -15,
+      "fecha": "2026-11-07",
+      "anterior": 20,
+      "prevision": 21,
+      "min": 20,
+      "max": 22
+    },
+    {
+      "semana": -14,
+      "fecha": "2026-11-14",
+      "anterior": 22,
+      "prevision": 23,
+      "min": 22,
+      "max": 24
+    },
+    {
+      "semana": -13,
+      "fecha": "2026-11-21",
+      "anterior": 24,
+      "prevision": 25,
+      "min": 24,
+      "max": 27
+    },
+    {
+      "semana": -12,
+      "fecha": "2026-11-28",
+      "anterior": 27,
+      "prevision": 29,
+      "min": 27,
+      "max": 30
+    },
+    {
+      "semana": -11,
+      "fecha": "2026-12-05",
+      "anterior": 26,
+      "prevision": 28,
+      "min": 26,
+      "max": 29
+    },
+    {
+      "semana": -10,
+      "fecha": "2026-12-12",
+      "anterior": 29,
+      "prevision": 31,
+      "min": 29,
+      "max": 33
+    },
+    {
+      "semana": -9,
+      "fecha": "2026-12-19",
+      "anterior": 33,
+      "prevision": 35,
+      "min": 33,
+      "max": 37
+    },
+    {
+      "semana": -8,
+      "fecha": "2026-12-26",
+      "anterior": 38,
+      "prevision": 40,
+      "min": 38,
+      "max": 43
+    },
+    {
+      "semana": -7,
+      "fecha": "2027-01-02",
+      "anterior": 43,
+      "prevision": 46,
+      "min": 42,
+      "max": 49
+    },
+    {
+      "semana": -6,
+      "fecha": "2027-01-09",
+      "anterior": 50,
+      "prevision": 53,
+      "min": 49,
+      "max": 57
+    },
+    {
+      "semana": -5,
+      "fecha": "2027-01-16",
+      "anterior": 58,
+      "prevision": 62,
+      "min": 57,
+      "max": 67
+    },
+    {
+      "semana": -4,
+      "fecha": "2027-01-23",
+      "anterior": 66,
+      "prevision": 71,
+      "min": 66,
+      "max": 77
+    },
+    {
+      "semana": -3,
+      "fecha": "2027-01-30",
+      "anterior": 74,
+      "prevision": 80,
+      "min": 74,
+      "max": 87
+    },
+    {
+      "semana": -2,
+      "fecha": "2027-02-06",
+      "anterior": 83,
+      "prevision": 90,
+      "min": 83,
+      "max": 99
+    },
+    {
+      "semana": -1,
+      "fecha": "2027-02-13",
+      "anterior": 92,
+      "prevision": 101,
+      "min": 92,
+      "max": 110
+    },
+    {
+      "semana": 0,
+      "fecha": "2027-02-20",
+      "anterior": 100,
+      "prevision": 110,
+      "min": 100,
+      "max": 120
+    }
+  ],
+  "componentes": [
+    {
+      "nombre": "Búsquedas en internet",
+      "peso": 35,
+      "variacion": 8
+    },
+    {
+      "nombre": "Interacción en redes",
+      "peso": 30,
+      "variacion": 9
+    },
+    {
+      "nombre": "Menciones en medios",
+      "peso": 15,
+      "variacion": -4
+    },
+    {
+      "nombre": "Consultas de alojamiento",
+      "peso": 20,
+      "variacion": 5
+    }
+  ],
+  "alertas": [
+    {
+      "tipo": "bien",
+      "titulo": "La intención va por delante",
+      "texto": "El índice está un 6 % por encima de 2026 a 17 semanas de la fiesta."
+    },
+    {
+      "tipo": "atencion",
+      "titulo": "Atención: bajan las menciones en medios",
+      "texto": "Un 4 % menos que en 2026. Conviene enviar una nota de prensa en diciembre."
+    },
+    {
+      "tipo": "plan",
+      "titulo": "Campaña digital el 11 de enero",
+      "texto": "Semana −6: a partir de ahí la intención sube más rápido."
+    },
+    {
+      "tipo": "plan",
+      "titulo": "Umbral para el bus lanzadera",
+      "texto": "Si en la semana −4 el índice no llega a 70, reforzar el bus desde Granada."
+    }
+  ],
+  "metodologia": [
+    "Búsquedas, redes, medios y alojamiento, cada semana",
+    "Índice ponderado comparado con la misma semana de 2026",
+    "Previsión con rango hasta el día de la fiesta"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "titulo": "Informe de impacto",
+  "subtitulo": "Ejemplo con la Fiesta del Vino 2026",
+  "edicion": 2026,
+  "niveles": {
+    "medido": "Medido: conteo o registro directo.",
+    "estimado": "Estimado: encuesta o modelo, con su margen.",
+    "declarado": "Declarado: cifra de la organización, sin método publicado."
+  },
+  "dimensiones": [
+    {
+      "id": "participacion", "nombre": "Participación", "ambito": "Acceso y participación de la ciudadanía",
+      "indicadores": [
+        { "nombre": "Asistentes", "valor": 6900, "tipo": "numero", "variacion": "−7 % vs 2025", "nivel": "medido", "fuente": "Contadores en los accesos" },
+        { "nombre": "Público que viene por primera vez", "valor": 18, "tipo": "pct", "variacion": "", "nivel": "estimado", "fuente": "Encuesta en los accesos" }
+      ]
+    },
+    {
+      "id": "patrimonio", "nombre": "Patrimonio vivo", "ambito": "Vitalidad cultural y tradición",
+      "indicadores": [
+        { "nombre": "Familias cosecheras", "valor": 27, "tipo": "numero", "variacion": "igual que 2025", "nivel": "medido", "fuente": "Asociación de Cosecheros" },
+        { "nombre": "Vino del terreno", "valor": 4000, "tipo": "litros", "variacion": "", "nivel": "declarado", "fuente": "Asociación de Cosecheros" }
+      ]
+    },
+    {
+      "id": "comunidad", "nombre": "Comunidad", "ambito": "Cohesión social e inclusión",
+      "indicadores": [
+        { "nombre": "Recaudación solidaria", "valor": 3200, "tipo": "euros", "variacion": "", "nivel": "medido", "fuente": "Organización de la fiesta" },
+        { "nombre": "Asociaciones del pueblo implicadas", "valor": 12, "tipo": "numero", "variacion": "", "nivel": "medido", "fuente": "Ayuntamiento" }
+      ]
+    },
+    {
+      "id": "proyeccion", "nombre": "Proyección", "ambito": "Perfil exterior y dimensión europea",
+      "indicadores": [
+        { "nombre": "Público de fuera de la comarca", "valor": 38, "tipo": "pct", "variacion": "", "nivel": "estimado", "fuente": "Encuesta de código postal" },
+        { "nombre": "Noticias en prensa", "valor": 41, "tipo": "numero", "variacion": "", "nivel": "medido", "fuente": "Seguimiento de medios" }
+      ]
+    },
+    {
+      "id": "economia", "nombre": "Economía local", "ambito": "Desarrollo económico del territorio",
+      "indicadores": [
+        { "nombre": "Gasto en comercios del pueblo", "valor": 117000, "tipo": "euros", "variacion": "", "nivel": "estimado", "fuente": "Encuesta de gasto × asistentes" },
+        { "nombre": "Ingresos de la fiesta", "valor": 15200, "tipo": "euros", "variacion": "", "nivel": "medido", "fuente": "Cuentas de la organización" }
+      ]
+    }
+  ],
+  "conclusiones": [
+    "La fiesta mantiene su base: 27 familias cosecheras y 4.000 litros de vino del terreno.",
+    "El aplazamiento al 28 de febrero costó un 7 % de asistencia: la fecha importa.",
+    "Cuatro de cada diez visitantes vienen de fuera de la comarca: hay margen para crecer con transporte y campaña."
+  ]
+}

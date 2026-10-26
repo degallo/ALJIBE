@@ -1,0 +1,23 @@
+{
+  "titulo": ["Lo que recibe", "el Ayuntamiento."],
+  "subtitulo": "Paquete Fiesta para Alhama de Granada: cada entregable responde a una decisión de la Fiesta del Vino 2027.",
+  "cliente": "Ayuntamiento de Alhama de Granada",
+  "filtros": [
+    { "id": "alhama", "nombre": "Para Alhama" },
+    { "id": "otros", "nombre": "Otros clientes" },
+    { "id": "todos", "nombre": "Todos" }
+  ],
+  "lista": [
+    { "id": "informe", "cliente": "alhama", "destacado": true, "icono": "documento", "servicio": "Paquete Fiesta", "titulo": "Informe para el pleno", "texto": "Balance de 2026, previsión y plan de 2027, presupuesto y retorno. Listo para imprimir.", "estado": "Para el pleno", "href": "entregables/informe-pleno.html" },
+    { "id": "cuadro", "cliente": "alhama", "icono": "barras", "servicio": "Radar de temporada", "titulo": "Cuadro de mando 2027", "texto": "Asistencia prevista, fecha recomendada, vasos y campaña.", "estado": "Entregado", "href": "fiesta-del-vino.html" },
+    { "id": "radar", "cliente": "alhama", "icono": "radar", "servicio": "Radar de temporada", "titulo": "Radar semanal", "texto": "Índice de intención de asistencia, semana a semana, frente a 2026.", "estado": "Cada lunes", "href": "entregables/radar.html" },
+    { "id": "programacion", "cliente": "alhama", "icono": "musica", "servicio": "Estudio de programación", "titulo": "Ranking de artistas y fechas", "texto": "Qué concierto contratar y en qué sábado de febrero.", "estado": "Entregado", "href": "entregables/programacion.html" },
+    { "id": "patrocinio", "cliente": "alhama", "icono": "apreton", "servicio": "Informe de patrocinio", "titulo": "Dossier para patrocinadores", "texto": "El público de la fiesta en cifras y los paquetes de patrocinio.", "estado": "Listo para enviar", "href": "entregables/patrocinio.html" },
+    { "id": "decisiones", "cliente": "alhama", "icono": "diana", "servicio": "Panel de decisiones", "titulo": "Plan de acción", "texto": "Cinco decisiones, su coste y lo que se espera de cada una.", "estado": "Entregado", "href": "decisiones.html" },
+    { "id": "conteo", "cliente": "alhama", "icono": "usuarios", "servicio": "Paquete Fiesta", "titulo": "Conteo del día", "texto": "Entradas por hora, personas dentro, vasos y procedencia, en directo.", "estado": "20 de febrero", "href": "entregables/conteo.html" },
+    { "id": "agenda", "cliente": "alhama", "icono": "calendario", "servicio": "Agenda ALJIBE", "titulo": "Comprobación de fecha", "texto": "Eventos, festivos y lluvia de cada sábado de febrero.", "estado": "Gratis", "href": "servicios.html#agenda" },
+    { "id": "sala", "cliente": "otros", "icono": "pulso", "servicio": "Suscripción esencial", "titulo": "Cuadro de mando automático", "texto": "Una sala de conciertos ve cada mañana sus ventas y alertas.", "estado": "Ejemplo", "href": "entregables/sala.html" },
+    { "id": "simulador", "cliente": "otros", "icono": "deslizadores", "servicio": "Suscripción avanzada", "titulo": "Previsiones y simulador", "texto": "Qué pasa si cambias el día, el precio o la promoción.", "estado": "Ejemplo", "href": "entregables/simulador.html" },
+    { "id": "impacto", "cliente": "otros", "icono": "mundo", "servicio": "Proyectos a medida", "titulo": "Informe de impacto", "texto": "Indicadores para justificar la inversión pública, camino de Granada 2031.", "estado": "Ejemplo", "href": "entregables/impacto.html" }
+  ]
+}

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es" data-raiz="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fiesta del Vino, previsión 2027</title>
+<meta name="description" content="Cuadro de mando de la Fiesta del Vino de Alhama de Granada: previsión de asistencia, fecha recomendada e histórico.">
+<link rel="icon" type="image/svg+xml" href="logos/aljibe-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css">
+<link rel="stylesheet" href="css/componentes.css">
+</head>
+<body data-seccion="cuadros" data-ruta="fiesta-del-vino.html">
+<a class="saltar" href="#principal">Saltar al contenido</a>
+<div class="app">
+<aside class="lateral" id="lateral" aria-label="Navegación lateral"></aside>
+<main class="contenido" id="principal">
+
+<div class="cabecera-movil"><a href="index.html" aria-label="ALJIBE, inicio"><img src="logos/aljibe-lockup.svg" alt="ALJIBE"></a></div>
+
+<nav class="barra" aria-label="Secciones">
+<div class="pildoras">
+<a class="pildora pildora--activa pildora--icono" href="#resumen" aria-current="true"><svg class="ico ico--s" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Resumen</a>
+<a class="pildora pildora--icono" href="#asistencia"><svg class="ico ico--s" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg>Histórico</a>
+<a class="pildora pildora--icono" href="#fechas"><svg class="ico ico--s" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>Fechas</a>
+<a class="pildora pildora--icono" href="#impacto"><svg class="ico ico--s" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"/></svg>Impacto</a>
+<a class="pildora pildora--icono" href="#metodologia"><svg class="ico ico--s" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2.5z"/></svg>Metodología</a>
+<a class="pildora pildora--icono" href="decisiones.html"><svg class="ico ico--s" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="2"/></svg>Decisiones</a>
+</div>
+</nav>
+
+<div id="resumen" class="dos-zonas" style="gap: 32px;">
+<div class="zona-principal" style="gap: 32px;">
+
+<div class="dos-zonas" style="gap: 32px;">
+<div class="pila resumen-kpi" style="gap: 20px;">
+<h1 class="titulo-pagina titulo-pagina--m" id="titulo"></h1>
+<a class="chip-contorno" href="#asistencia" id="chip-edicion"></a>
+<div class="cifra-hero">
+<span class="cifra-hero__valor" id="prevision-central" data-contar></span>
+<span class="cifra-hero__lado">
+<span class="cifra-hero__var" id="prevision-variacion"></span>
+<span class="texto-suave" id="prevision-etiqueta"></span>
+<span class="texto-suave" id="prevision-rango"></span>
+</span>
+</div>
+<div class="rango" id="rango" role="img"></div>
+</div>
+
+<div class="pila resumen-lado">
+<form class="buscador" role="search" id="buscador">
+<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+<label for="buscar-evento" class="solo-lectores">Buscar otro evento</label>
+<input id="buscar-evento" list="lista-eventos" placeholder="Buscar otro evento" autocomplete="off">
+<datalist id="lista-eventos"></datalist>
+</form>
+<p class="error" id="buscador-error" role="status"></p>
+<div class="mini luz">
+<div class="fila fila--entre" style="align-items: flex-start;">
+<span class="icono-redondo"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span class="icono-redondo__punto"></span></span>
+<a href="#fechas" aria-label="Ver ranking de fechas" class="boton-icono"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+</div>
+<span class="mini__nombre">Fecha recomendada</span>
+<div class="fila fila--entre" style="align-items: flex-end;">
+<span class="mini__cifra" id="fecha-rec"></span>
+<span class="mono puntos" id="fecha-rec-puntos"></span>
+</div>
+</div>
+<div class="mini luz">
+<span class="icono-redondo"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 22h8M12 15v7M7 2h10l-1 7a4 4 0 0 1-8 0z"/></svg></span>
+<span class="mini__nombre">Vasos a preparar</span>
+<div class="fila fila--entre" style="align-items: flex-end; flex-wrap: nowrap;">
+<span class="mini__cifra" id="vasos" data-contar></span>
+<span class="texto-suave" id="vasos-nota" style="font-size: 13px; line-height: 18px; text-align: right;"></span>
+</div>
+</div>
+</div>
+</div>
+
+<section id="fechas" aria-labelledby="t-fechas" class="pila" style="gap: 20px;">
+<div class="pestanas">
+<span id="t-fechas" class="pestanas__item pestanas__item--activa">Fechas candidatas <span class="insignia" id="n-fechas"></span></span>
+<a href="#asistencia" class="pestanas__item">Ediciones <span class="insignia insignia--clara" id="n-ediciones"></span></a>
+<a href="#impacto" class="pestanas__item">Impacto <span class="insignia insignia--clara" id="n-impacto"></span></a>
+</div>
+<div role="group" aria-label="Fechas candidatas" id="lista-fechas" class="rejilla rejilla--auto" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));"></div>
+</section>
+</div>
+
+<aside class="zona-lateral oscuro" id="panel-fecha" aria-live="polite" aria-label="Fecha elegida"></aside>
+</div>
+
+<div class="fila" style="align-items: stretch; gap: 16px;">
+<section id="asistencia" aria-labelledby="t-hist" class="caja historico" data-revelar>
+<div class="caja__cab">
+<div class="caja__titulo">
+<span class="icono-redondo"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg></span>
+<h2 id="t-hist">Histórico de asistencia</h2>
+</div>
+<div class="leyenda"><span><i></i>Ediciones</span><span><i style="background: var(--agua);"></i>Previsión</span></div>
+</div>
+<div id="grafico-historico"></div>
+<p class="texto-pie" id="nota-historico"></p>
+</section>
+<section id="impacto" aria-label="Impacto cultural" class="impacto"></section>
+</div>
+
+<section id="metodologia" aria-labelledby="t-met" class="caja caja--vidrio metodologia" data-revelar>
+<h2 id="t-met">Cómo lo calculamos</h2>
+<ol id="lista-metodo" class="metodo"></ol>
+</section>
+
+</main>
+</div>
+<script type="module" src="js/paginas/fiesta.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+{
+  "evento": "Fiesta del Vino",
+  "municipio": "Alhama de Granada",
+  "edicion": "XIV edición",
+  "anio": 2027,
+  "titulo": "Fiesta del Vino 2027",
+  "subtitulo": "Preparemos la próxima edición.",
+  "prevision": {
+    "central": 7600,
+    "minimo": 6900,
+    "maximo": 8300,
+    "escalaMin": 6000,
+    "escalaMax": 9000,
+    "variacion": "+3 %",
+    "referencia": "vs 2025",
+    "etiqueta": "Asistentes previstos"
+  },
+  "fechaRecomendada": { "dia": "20", "mes": "feb", "puntos": 86 },
+  "vasos": { "cantidad": 5200, "nota": ["en 2024 se", "agotaron en 3 h"] },
+  "fechas": [
+    { "id": "20", "iso": "2027-02-20", "dia": "Sábado 20", "mes": "febrero", "puntos": 86, "asis": 7600, "lluvia": "22 %", "comp": "1 evento", "fest": "Ninguno", "resumen": "La más seca", "nota": "Poca competencia, menor riesgo de lluvia y tres semanas de margen tras el carnaval." },
+    { "id": "13", "iso": "2027-02-13", "dia": "Sábado 13", "mes": "febrero", "puntos": 78, "asis": 7300, "lluvia": "28 %", "comp": "2 eventos", "fest": "San Valentín", "resumen": "Buena alternativa", "nota": "San Valentín al día siguiente atrae parejas, pero compite con dos eventos en la comarca." },
+    { "id": "27", "iso": "2027-02-27", "dia": "Sábado 27", "mes": "febrero", "puntos": 71, "asis": 7100, "lluvia": "25 %", "comp": "4 eventos", "fest": "Puente 28-F", "resumen": "Puente festivo", "nota": "El puente trae visitantes y también muchos eventos rivales. En 2026, con esta fecha, la asistencia bajó un 7 %." },
+    { "id": "06", "iso": "2027-02-06", "dia": "Sábado 6", "mes": "febrero", "puntos": 54, "asis": 6400, "lluvia": "32 %", "comp": "6 eventos", "fest": "Carnaval", "resumen": "Coincide con carnaval", "nota": "Carnaval en toda la provincia y la semana con más lluvia de las cuatro. Desaconsejada." }
+  ],
+  "campana": {
+    "titulo": "Campaña 2027",
+    "meses": [
+      { "mes": "Nov", "activo": false },
+      { "mes": "Dic", "activo": false },
+      { "mes": "Ene", "activo": true },
+      { "mes": "Feb", "activo": true }
+    ],
+    "nota": "Lanzar la campaña el 11 de enero, seis semanas antes."
+  },
+  "historico": {
+    "ediciones": [
+      { "anio": 2013, "asistentes": 900 },
+      { "anio": 2014, "asistentes": 1300 },
+      { "anio": 2015, "asistentes": 1900 },
+      { "anio": 2016, "asistentes": 2500 },
+      { "anio": 2017, "asistentes": 3100 },
+      { "anio": 2018, "asistentes": 3600 },
+      { "anio": 2019, "asistentes": 4300 },
+      { "anio": 2020, "asistentes": 4800 },
+      { "anio": 2022, "asistentes": 4600 },
+      { "anio": 2023, "asistentes": 6100 },
+      { "anio": 2024, "asistentes": 7000 },
+      { "anio": 2025, "asistentes": 7400 },
+      { "anio": 2026, "asistentes": 6900 }
+    ],
+    "puntosVisibles": [2013, 2016, 2020, 2024, 2026],
+    "etiquetasEje": [2013, 2016, 2020, 2023, 2025],
+    "nota": "13 ediciones; en 2021 no se celebró. En 2026 se aplazó al 28 de febrero y bajó un 7 %."
+  },
+  "impacto": [
+    { "nombre": "Público de fuera", "valor": 38, "unidad": "%" },
+    { "nombre": "Familias cosecheras", "valor": 27, "unidad": "" },
+    { "nombre": "Recaudación solidaria", "valor": 3200, "unidad": "€" },
+    { "nombre": "Noticias en prensa", "valor": 41, "unidad": "" }
+  ],
+  "metodologia": [
+    "13 ediciones, eventos de la comarca y tiempo de febrero",
+    "Regresión con tendencia y efecto de la fecha",
+    "Puntuación por fecha y previsión con rango"
+  ]
+}

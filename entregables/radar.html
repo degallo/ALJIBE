@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es" data-raiz="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar semanal, Fiesta del Vino 2027</title>
+<meta name="description" content="Índice semanal de intención de asistencia a la Fiesta del Vino 2027.">
+<link rel="icon" type="image/svg+xml" href="../logos/aljibe-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/estilos.css">
+<link rel="stylesheet" href="../css/componentes.css">
+<link rel="stylesheet" href="../css/entregables.css">
+</head>
+<body data-seccion="entregables" data-ruta="entregables/radar.html">
+<a class="saltar" href="#principal">Saltar al contenido</a>
+<div class="app">
+<aside class="lateral" id="lateral" aria-label="Navegación lateral"></aside>
+<main class="contenido" id="principal">
+
+<div class="cabecera-movil"><a href="../index.html" aria-label="ALJIBE, inicio"><img src="../logos/aljibe-lockup.svg" alt="ALJIBE"></a></div>
+
+<nav class="barra" aria-label="Entregable">
+<div class="pildoras">
+<a class="pildora pildora--icono" href="index.html"><svg class="ico ico--s" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Entregables</a>
+<a class="pildora" href="#radar">Índice</a>
+<a class="pildora" href="#t-comp">Señales</a>
+<a class="pildora" href="#alertas">Alertas</a>
+</div>
+<button type="button" class="pildora pildora--icono" data-imprimir><svg class="ico ico--s" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>Imprimir o guardar PDF</button>
+</nav>
+
+<div class="cabecera">
+<span class="etiqueta">Radar de temporada</span>
+<h1 class="titulo-pagina">Radar semanal<br><span>¿Vamos por delante o por detrás?</span></h1>
+<span class="chip-contorno"><span class="punto"></span>Para el Ayuntamiento de Alhama de Granada</span>
+</div>
+<div id="radar" class="pila" style="gap: 24px;">
+<div class="cifras-tarjetas" id="kpis-radar"></div>
+<section class="caja" aria-labelledby="t-indice" data-revelar>
+<div class="caja__cab">
+<div class="caja__titulo"><span class="icono-redondo"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><h2 id="t-indice">Intención de asistencia, semana a semana</h2></div>
+<div class="leyenda" id="leyenda-radar"></div>
+</div>
+<div id="grafico-radar" class="grafico-caja"></div>
+<p class="texto-pie" id="nota-radar"></p>
+</section>
+</div>
+<div class="dos-zonas">
+<section class="zona-principal caja" aria-labelledby="t-comp" data-revelar>
+<h2 id="t-comp">De qué se compone el índice</h2>
+<p class="texto-suave" style="font-size: 14px;">Variación frente a la misma semana de 2026 y peso de cada señal.</p>
+<div id="componentes" class="componentes"></div>
+</section>
+<section class="zona-lateral pila" aria-labelledby="t-alertas" style="max-width: 460px; flex-basis: 380px;">
+<h2 id="t-alertas" class="bloque__titulo" style="font-size: 20px;">Alertas y próximos pasos</h2>
+<ul class="alertas" id="alertas"></ul>
+</section>
+</div>
+<section class="caja caja--vidrio metodologia" aria-labelledby="t-met" data-revelar>
+<h2 id="t-met">Cómo lo calculamos</h2>
+<ol class="metodo" id="metodo"></ol>
+</section>
+
+</main>
+</div>
+<script type="module" src="../js/paginas/radar.js"></script>
+</body>
+</html>

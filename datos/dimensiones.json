@@ -1,0 +1,9 @@
+{
+  "titulo": "Lo que medimos de una fiesta",
+  "items": [
+    {"id": "participacion", "icono": "usuarios", "nombre": "Participación", "descripcion": "Cuánta gente participa y con qué intensidad."},
+    {"id": "patrimonio", "icono": "copa", "nombre": "Patrimonio vivo", "descripcion": "Si la fiesta mantiene y transmite lo que celebra."},
+    {"id": "comunidad", "icono": "corazon", "nombre": "Comunidad", "descripcion": "Implicación del pueblo y retorno solidario."},
+    {"id": "proyeccion", "icono": "mundo", "nombre": "Proyección", "descripcion": "Cuánto proyecta el municipio hacia fuera."}
+  ]
+}

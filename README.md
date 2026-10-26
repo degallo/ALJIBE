@@ -4,7 +4,7 @@ ALJIBE es una consultoría data driven para la cultura de Granada y su provincia
 
 Proyecto de la asignatura Creación de Empresas (Universidad de Granada, curso 2026-27), Equipo 3, vinculado a la candidatura de Granada a Capital Europea de la Cultura 2031.
 
-Este repositorio reúne el diseño del prototipo web para construirlo después con Claude Code. Todavía no hay código de producción: hay diseños de referencia y especificaciones.
+Este repositorio reúne el diseño del prototipo web y su construcción en `web/`: las cuatro pantallas, los entregables de cada servicio para el Ayuntamiento de Alhama de Granada, un servidor con API y un modo presentación para clase. Para verla: `cd web && npm start` y abre http://localhost:8080. Detalles en `web/README.md`.
 
 ## Contenido
 
@@ -13,7 +13,8 @@ Este repositorio reúne el diseño del prototipo web para construirlo después c
 | `marca/` | Identidad visual: guía de marca (`README.md`), tokens de color, tipografía y espacio (`tokens.json`) y logos en SVG |
 | `marca/logos/` | Logo Nivel de agua: completo, en negativo, solo símbolo y solo nombre |
 | `diseno/boceto-web/` | Pantallas del boceto web, exportadas del lienzo de diseño |
-| `docs/` | Especificaciones de pantallas pendientes de construir |
+| `docs/` | Especificaciones de pantallas y guion de la presentación en clase |
+| `web/` | Prototipo construido: web, entregables, servidor y pruebas |
 
 ### Pantallas del boceto
 

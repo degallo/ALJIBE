@@ -1,0 +1,42 @@
+{
+  "titulo": "Agenda ALJIBE",
+  "ambito": "Granada y su provincia",
+  "eventos": [
+    { "nombre": "Carnaval de Granada", "municipio": "Granada", "fecha": "2027-02-06" },
+    { "nombre": "Carnaval de la Costa Tropical", "municipio": "Almuñécar", "fecha": "2027-02-06" },
+    { "nombre": "Carnaval", "municipio": "Motril", "fecha": "2027-02-06" },
+    { "nombre": "Carnaval", "municipio": "Loja", "fecha": "2027-02-07" },
+    { "nombre": "Carnaval", "municipio": "Guadix", "fecha": "2027-02-05" },
+    { "nombre": "Jornadas gastronómicas de invierno", "municipio": "Alpujarra", "fecha": "2027-02-06" },
+    { "nombre": "Concierto de San Valentín", "municipio": "Granada", "fecha": "2027-02-13" },
+    { "nombre": "Feria del aceite nuevo", "municipio": "Poniente granadino", "fecha": "2027-02-14" },
+    { "nombre": "Ruta de la tapa de invierno", "municipio": "Loja", "fecha": "2027-02-21" },
+    { "nombre": "Actos del Día de Andalucía", "municipio": "Granada", "fecha": "2027-02-28" },
+    { "nombre": "Mercado de artesanía", "municipio": "Santa Fe", "fecha": "2027-02-27" },
+    { "nombre": "Fiesta de la matanza", "municipio": "Comarca de Alhama", "fecha": "2027-02-27" },
+    { "nombre": "Festival de bandas", "municipio": "Granada", "fecha": "2027-02-26" },
+    { "nombre": "Cabalgata de Reyes", "municipio": "Granada", "fecha": "2027-01-05" },
+    { "nombre": "Fiesta de la Toma", "municipio": "Granada", "fecha": "2027-01-02" },
+    { "nombre": "Semana Santa", "municipio": "Granada", "fecha": "2027-03-27" }
+  ],
+  "festivos": [
+    { "nombre": "Año Nuevo", "fecha": "2027-01-01", "peso": "alto" },
+    { "nombre": "Reyes", "fecha": "2027-01-06", "peso": "alto" },
+    { "nombre": "Carnaval", "fecha": "2027-02-06", "peso": "alto" },
+    { "nombre": "San Valentín", "fecha": "2027-02-14", "peso": "bajo" },
+    { "nombre": "Puente del 28-F", "fecha": "2027-02-28", "peso": "medio" },
+    { "nombre": "Día de Andalucía (traslado)", "fecha": "2027-03-01", "peso": "medio" },
+    { "nombre": "Jueves Santo", "fecha": "2027-03-25", "peso": "alto" },
+    { "nombre": "Viernes Santo", "fecha": "2027-03-26", "peso": "alto" }
+  ],
+  "clima": {
+    "nota": "Probabilidad de lluvia en Alhama de Granada según la serie de cada mes.",
+    "meses": [30, 27, 26, 25, 18, 8, 3, 5, 14, 25, 30, 31],
+    "semanas": [
+      { "fecha": "2027-02-06", "lluvia": 32 },
+      { "fecha": "2027-02-13", "lluvia": 28 },
+      { "fecha": "2027-02-20", "lluvia": 22 },
+      { "fecha": "2027-02-27", "lluvia": 25 }
+    ]
+  }
+}

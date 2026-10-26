@@ -1,0 +1,30 @@
+{
+  "titulo": "Conteo y procedencia del público",
+  "subtitulo": "Fiesta del Vino 2027 · sábado 20 de febrero",
+  "total": 7600,
+  "vasos": 5200,
+  "vasosPorPersona": 0.68,
+  "aforo": 3500,
+  "estancia": 3,
+  "apertura": 12,
+  "cierre": 22,
+  "llegadas": [
+    { "hora": 12, "cuota": 0.06 },
+    { "hora": 13, "cuota": 0.12 },
+    { "hora": 14, "cuota": 0.15 },
+    { "hora": 15, "cuota": 0.13 },
+    { "hora": 16, "cuota": 0.11 },
+    { "hora": 17, "cuota": 0.12 },
+    { "hora": 18, "cuota": 0.13 },
+    { "hora": 19, "cuota": 0.10 },
+    { "hora": 20, "cuota": 0.05 },
+    { "hora": 21, "cuota": 0.03 }
+  ],
+  "procedencia": [
+    { "zona": "Alhama de Granada", "pct": 32 },
+    { "zona": "Resto de la comarca", "pct": 30 },
+    { "zona": "Área de Granada", "pct": 26 },
+    { "zona": "Otras provincias", "pct": 12 }
+  ],
+  "metodo": "Contadores en los dos accesos y pregunta del código postal a 1 de cada 20 personas."
+}

@@ -1,0 +1,73 @@
+{
+  "nombre": "Sala de conciertos",
+  "contexto": "Cliente de ejemplo · temporada de 40 conciertos",
+  "aforo": 400,
+  "actualizado": "Hoy, 08:00",
+  "kpis": [
+    { "nombre": "Ocupación media", "valor": 61, "tipo": "pct", "objetivo": 75, "sentido": "mas" },
+    { "nombre": "Público que repite", "valor": 22, "tipo": "pct", "objetivo": 30, "sentido": "mas" },
+    { "nombre": "Ingreso medio por concierto", "valor": 3400, "tipo": "euros", "objetivo": 4000, "sentido": "mas" },
+    { "nombre": "Conciertos con pérdidas", "valor": 9, "tipo": "numero", "objetivo": 4, "sentido": "menos" }
+  ],
+  "ultimos": [
+    { "fecha": "2026-09-08", "dia": "mar", "ocupacion": 41 },
+    { "fecha": "2026-09-11", "dia": "vie", "ocupacion": 74 },
+    { "fecha": "2026-09-17", "dia": "jue", "ocupacion": 63 },
+    { "fecha": "2026-09-19", "dia": "sáb", "ocupacion": 82 },
+    { "fecha": "2026-09-22", "dia": "mar", "ocupacion": 38 },
+    { "fecha": "2026-09-26", "dia": "sáb", "ocupacion": 77 },
+    { "fecha": "2026-10-01", "dia": "jue", "ocupacion": 58 },
+    { "fecha": "2026-10-06", "dia": "mar", "ocupacion": 44 },
+    { "fecha": "2026-10-09", "dia": "vie", "ocupacion": 69 },
+    { "fecha": "2026-10-15", "dia": "jue", "ocupacion": 61 },
+    { "fecha": "2026-10-20", "dia": "mar", "ocupacion": 42 },
+    { "fecha": "2026-10-24", "dia": "sáb", "ocupacion": 83 }
+  ],
+  "proximos": [
+    { "fecha": "2026-10-29", "titulo": "Indie · gira de otoño", "genero": "indie", "dia": "jueves", "precio": 12, "cache": 1800, "vendidas": 212, "esperadas": 190 },
+    { "fecha": "2026-10-31", "titulo": "Rock · noche de Halloween", "genero": "rock", "dia": "sabado", "precio": 14, "cache": 2400, "vendidas": 251, "esperadas": 240 },
+    { "fecha": "2026-11-03", "titulo": "Jazz · cuarteto", "genero": "jazz", "dia": "martes", "precio": 11, "cache": 1200, "vendidas": 58, "esperadas": 105 },
+    { "fecha": "2026-11-06", "titulo": "Flamenco · nuevo disco", "genero": "flamenco", "dia": "viernes", "precio": 13, "cache": 2200, "vendidas": 140, "esperadas": 150 },
+    { "fecha": "2026-11-10", "titulo": "Cantautor · acústico", "genero": "cantautor", "dia": "martes", "precio": 10, "cache": 900, "vendidas": 31, "esperadas": 70 },
+    { "fecha": "2026-11-14", "titulo": "Electrónica · sesión larga", "genero": "electronica", "dia": "sabado", "precio": 15, "cache": 2000, "vendidas": 96, "esperadas": 120 }
+  ],
+  "fuentes": [
+    { "nombre": "Venta de entradas", "frecuencia": "Cada hora" },
+    { "nombre": "Web de la sala", "frecuencia": "Cada día" },
+    { "nombre": "Redes sociales", "frecuencia": "Cada día" },
+    { "nombre": "Caja de la barra", "frecuencia": "Cada día" }
+  ],
+  "segmentos": [
+    { "nombre": "Habituales", "pct": 22, "texto": "Vienen más de 4 veces por temporada. Responden al bono." },
+    { "nombre": "Universitarios", "pct": 31, "texto": "Compran tarde y entre semana. Sensibles al precio." },
+    { "nombre": "Ocasionales", "pct": 35, "texto": "Vienen por un artista concreto. Compran pronto." },
+    { "nombre": "Visitantes", "pct": 12, "texto": "De fuera de Granada. Fines de semana." }
+  ],
+  "modelo": {
+    "aforo": 400,
+    "precioReferencia": 11,
+    "elasticidad": 1.2,
+    "gastoBarra": 3,
+    "costeFijo": 900,
+    "costePromocion": 60,
+    "efectoPromocion": 4,
+    "efectoBono": 3,
+    "baseDia": { "martes": 45, "miercoles": 52, "jueves": 60, "viernes": 70, "sabado": 74 },
+    "afinidadGenero": { "indie": 6, "flamenco": 4, "rock": 2, "electronica": 0, "cantautor": -2, "jazz": -4 }
+  },
+  "dias": [
+    { "id": "martes", "nombre": "Martes" },
+    { "id": "miercoles", "nombre": "Miércoles" },
+    { "id": "jueves", "nombre": "Jueves" },
+    { "id": "viernes", "nombre": "Viernes" },
+    { "id": "sabado", "nombre": "Sábado" }
+  ],
+  "generos": [
+    { "id": "indie", "nombre": "Indie" },
+    { "id": "flamenco", "nombre": "Flamenco" },
+    { "id": "rock", "nombre": "Rock" },
+    { "id": "electronica", "nombre": "Electrónica" },
+    { "id": "cantautor", "nombre": "Cantautor" },
+    { "id": "jazz", "nombre": "Jazz" }
+  ]
+}

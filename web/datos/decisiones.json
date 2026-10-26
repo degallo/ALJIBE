@@ -1,0 +1,64 @@
+{
+  "titulo": "Del dato a la decisión",
+  "subtitulo": "Qué hacer y qué esperar si lo hacemos.",
+  "casos": [
+    {
+      "id": "fiesta",
+      "nombre": "Fiesta del Vino",
+      "contexto": "Alhama de Granada, edición 2027",
+      "partida": "Hoy = repetir el plan de 2026 (fecha del 27 de febrero, mismo formato).",
+      "kpiPrincipal": "asistentes",
+      "kpis": [
+        { "id": "asistentes", "nombre": "Asistentes", "corto": "asistentes", "tipo": "numero", "decimales": 0, "hoy": 7100, "objetivo": 8000, "sentido": "mas" },
+        { "id": "fuera", "nombre": "Público de fuera de la comarca", "corto": "fuera", "tipo": "pct", "decimales": 0, "hoy": 36, "objetivo": 45, "sentido": "mas" },
+        { "id": "ingresos", "nombre": "Ingresos de la fiesta", "corto": "ingresos", "tipo": "euros", "decimales": 0, "hoy": 15600, "objetivo": 19000, "sentido": "mas" },
+        { "id": "gasto", "nombre": "Gasto en comercios del pueblo", "corto": "gasto en el pueblo", "tipo": "euros", "decimales": 0, "hoy": 120000, "objetivo": 150000, "sentido": "mas" }
+      ],
+      "decisiones": [
+        { "id": "fecha", "titulo": "Celebrarla el sábado 20 de febrero", "coste": 0, "valor": 10100, "efectos": { "asistentes": 500, "fuera": 1, "ingresos": 1100, "gasto": 9000 } },
+        { "id": "campana", "titulo": "Campaña digital desde el 11 de enero", "coste": 600, "valor": 8300, "efectos": { "asistentes": 350, "fuera": 5, "ingresos": 800, "gasto": 7500 } },
+        { "id": "vasos", "titulo": "Preparar 5.200 vasos y una segunda barra", "coste": 900, "valor": 2600, "efectos": { "asistentes": 0, "fuera": 0, "ingresos": 2600, "gasto": 0 } },
+        { "id": "bus", "titulo": "Bus lanzadera desde Granada", "coste": 1200, "valor": 7100, "efectos": { "asistentes": 250, "fuera": 4, "ingresos": 600, "gasto": 6500 } },
+        { "id": "tapas", "titulo": "Ruta de tapas con los bares del pueblo", "coste": 300, "valor": 12000, "efectos": { "asistentes": 0, "fuera": 0, "ingresos": 0, "gasto": 12000 } }
+      ]
+    },
+    {
+      "id": "festival",
+      "nombre": "Festival de verano",
+      "contexto": "Ejemplo, 3 días",
+      "partida": "Hoy = repetir la edición anterior.",
+      "kpiPrincipal": "abonos",
+      "kpis": [
+        { "id": "abonos", "nombre": "Abonos vendidos", "corto": "abonos", "tipo": "numero", "decimales": 0, "hoy": 4200, "objetivo": 5000, "sentido": "mas" },
+        { "id": "fuera", "nombre": "Público de fuera de Granada", "corto": "fuera", "tipo": "pct", "decimales": 0, "hoy": 28, "objetivo": 35, "sentido": "mas" },
+        { "id": "patrocinio", "nombre": "Ingresos de patrocinio", "corto": "patrocinio", "tipo": "euros", "decimales": 0, "hoy": 18000, "objetivo": 25000, "sentido": "mas" },
+        { "id": "captacion", "nombre": "Coste de captación por abono", "corto": "coste de captación", "tipo": "euros", "decimales": 1, "hoy": 6.0, "objetivo": 4.5, "sentido": "menos" }
+      ],
+      "decisiones": [
+        { "id": "cartel", "titulo": "Cartel según la afinidad del público", "coste": 800, "valor": 16000, "efectos": { "abonos": 400, "fuera": 3, "patrocinio": 0, "captacion": -0.6 } },
+        { "id": "tramos", "titulo": "Precios por tramos con venta anticipada", "coste": 0, "valor": 12000, "efectos": { "abonos": 300, "fuera": 1, "patrocinio": 0, "captacion": -0.4 } },
+        { "id": "dossier", "titulo": "Dossier de patrocinio con datos del público", "coste": 300, "valor": 6000, "efectos": { "abonos": 0, "fuera": 0, "patrocinio": 6000, "captacion": 0 } },
+        { "id": "segmentada", "titulo": "Campaña segmentada fuera de Granada", "coste": 1500, "valor": 11500, "efectos": { "abonos": 250, "fuera": 5, "patrocinio": 1500, "captacion": -0.3 } }
+      ]
+    },
+    {
+      "id": "sala",
+      "nombre": "Sala de conciertos",
+      "contexto": "Temporada de 40 conciertos",
+      "partida": "Hoy = temporada actual sin cambios.",
+      "kpiPrincipal": "ocupacion",
+      "kpis": [
+        { "id": "ocupacion", "nombre": "Ocupación media", "corto": "ocupación", "tipo": "pct", "decimales": 0, "hoy": 61, "objetivo": 75, "sentido": "mas" },
+        { "id": "repite", "nombre": "Público que repite", "corto": "repite", "tipo": "pct", "decimales": 0, "hoy": 22, "objetivo": 30, "sentido": "mas" },
+        { "id": "ingreso", "nombre": "Ingreso medio por concierto", "corto": "ingreso medio", "tipo": "euros", "decimales": 0, "hoy": 3400, "objetivo": 4000, "sentido": "mas" },
+        { "id": "perdidas", "nombre": "Conciertos con pérdidas", "corto": "con pérdidas", "tipo": "numero", "decimales": 0, "hoy": 9, "objetivo": 4, "sentido": "menos" }
+      ],
+      "decisiones": [
+        { "id": "jueves", "titulo": "Pasar los conciertos flojos del martes al jueves", "coste": 0, "valor": 8000, "efectos": { "ocupacion": 5, "repite": 0, "ingreso": 200, "perdidas": -2 } },
+        { "id": "bono", "titulo": "Bono de 5 conciertos para habituales", "coste": 200, "valor": 6000, "efectos": { "ocupacion": 3, "repite": 6, "ingreso": 150, "perdidas": -1 } },
+        { "id": "alertas", "titulo": "Alertas semanales de venta lenta", "coste": 2400, "valor": 10000, "efectos": { "ocupacion": 4, "repite": 0, "ingreso": 250, "perdidas": -2 } },
+        { "id": "barra", "titulo": "Oferta de barra según el perfil del público", "coste": 500, "valor": 12000, "efectos": { "ocupacion": 0, "repite": 0, "ingreso": 300, "perdidas": -1 } }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es" data-raiz="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conteo del día, Fiesta del Vino 2027</title>
+<meta name="description" content="Conteo y procedencia del público el día de la Fiesta del Vino.">
+<link rel="icon" type="image/svg+xml" href="../logos/aljibe-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/estilos.css">
+<link rel="stylesheet" href="../css/componentes.css">
+<link rel="stylesheet" href="../css/entregables.css">
+</head>
+<body data-seccion="entregables" data-ruta="entregables/conteo.html">
+<a class="saltar" href="#principal">Saltar al contenido</a>
+<div class="app">
+<aside class="lateral" id="lateral" aria-label="Navegación lateral"></aside>
+<main class="contenido" id="principal">
+
+<div class="cabecera-movil"><a href="../index.html" aria-label="ALJIBE, inicio"><img src="../logos/aljibe-lockup.svg" alt="ALJIBE"></a></div>
+
+<nav class="barra" aria-label="Entregable">
+<div class="pildoras">
+<a class="pildora pildora--icono" href="index.html"><svg class="ico ico--s" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Entregables</a>
+<a class="pildora" href="#directo">En directo</a>
+</div>
+<button type="button" class="pildora pildora--icono" data-imprimir><svg class="ico ico--s" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>Imprimir o guardar PDF</button>
+</nav>
+
+<div class="cabecera">
+<span class="etiqueta">Paquete Fiesta</span>
+<h1 class="titulo-pagina">El día de la fiesta<br><span>Conteo y procedencia del público.</span></h1>
+<span class="chip-contorno"><span class="punto"></span>Para el Ayuntamiento de Alhama de Granada · simulación del 20 de febrero</span>
+</div>
+<section id="directo" class="pila" aria-labelledby="t-directo" style="gap: 20px;">
+<div class="controles caja caja--vidrio">
+<h2 id="t-directo" class="solo-lectores">Simulación del día de la fiesta</h2>
+<div class="fila">
+<button type="button" class="boton boton--primario" id="reproducir"></button>
+<button type="button" class="boton boton--claro" id="reiniciar"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>Reiniciar</button>
+<label class="campo campo--fila">Velocidad
+<select class="entrada" id="velocidad"><option value="6">Una hora cada 10 segundos</option><option value="15" selected>Una hora cada 4 segundos</option><option value="60">Una hora por segundo</option></select>
+</label>
+</div>
+<label class="campo reloj">
+<span class="fila fila--entre"><span>Hora del día</span><span class="mono" id="hora-texto"></span></span>
+<input type="range" class="deslizador" id="hora" step="0.05">
+</label>
+</div>
+<div class="cifras-tarjetas" id="contadores"></div>
+<div class="rejilla rejilla--2">
+<section class="caja" aria-labelledby="t-horas"><div class="caja__cab"><h3 id="t-horas">Entradas por hora</h3><span class="texto-pie">Previsto para el día</span></div><div id="grafico-horas" class="grafico-caja"></div></section>
+<section class="caja" aria-labelledby="t-proc"><div class="caja__cab"><h3 id="t-proc">De dónde viene el público</h3><span class="texto-pie">Hasta esta hora</span></div><div class="barras-h" id="procedencia"></div></section>
+</div>
+<section class="pila" aria-labelledby="t-avisos"><h3 id="t-avisos" class="bloque__titulo" style="font-size: 20px;">Avisos del día</h3><ul class="alertas" id="avisos" aria-live="polite"></ul></section>
+<p class="texto-pie" id="metodo"></p>
+</section>
+
+</main>
+</div>
+<script type="module" src="../js/paginas/conteo.js"></script>
+</body>
+</html>

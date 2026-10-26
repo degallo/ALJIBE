@@ -1,12 +1,17 @@
 {
   "titulo": "Qué hacemos",
   "total": 6,
-  "enlaceTodos": {"texto": "Ver todos los servicios", "href": "servicios.html"},
+  "enlaceTodos": { "texto": "Ver todos los servicios", "href": "servicios.html" },
   "destacados": [
-    {"id": "radar-temporada", "tono": "marca", "nombre": ["Radar de", "temporada"], "descripcion": "Cuánta gente vendrá y cuándo lanzar la campaña."},
-    {"id": "estudio-programacion", "tono": "agua", "nombre": ["Estudio de", "programación"], "descripcion": "A quién contratar y en qué fecha."},
-    {"id": "paquete-fiesta", "tono": "arena", "nombre": ["Paquete", "Fiesta"], "descripcion": "Todo para la fiesta de tu pueblo, con informe para el pleno."},
-    {"id": "informe-patrocinio", "tono": "calido", "nombre": ["Informe de", "patrocinio"], "descripcion": "Datos del público para atraer a las marcas."}
+    { "id": "radar-temporada", "tono": "marca", "nombre": ["Radar de", "temporada"], "descripcion": "Cuánta gente vendrá y cuándo lanzar la campaña.", "href": "servicios.html#radar" },
+    { "id": "estudio-programacion", "tono": "agua", "nombre": ["Estudio de", "programación"], "descripcion": "A quién contratar y en qué fecha.", "href": "servicios.html#prog" },
+    { "id": "paquete-fiesta", "tono": "arena", "nombre": ["Paquete", "Fiesta"], "descripcion": "Todo para la fiesta de tu pueblo, con informe para el pleno.", "href": "servicios.html#paquete" },
+    { "id": "informe-patrocinio", "tono": "calido", "nombre": ["Informe de", "patrocinio"], "descripcion": "Datos del público para atraer a las marcas.", "href": "servicios.html#patro" }
   ],
-  "otros": ["Suscripción esencial", "Suscripción avanzada", "Proyectos a medida", "Agenda ALJIBE gratuita"]
+  "otros": [
+    { "texto": "Suscripción esencial", "href": "servicios.html#esen" },
+    { "texto": "Suscripción avanzada", "href": "servicios.html#avan" },
+    { "texto": "Proyectos a medida", "href": "servicios.html#medida" },
+    { "texto": "Agenda ALJIBE gratuita", "href": "servicios.html#agenda" }
+  ]
 }

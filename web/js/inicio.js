@@ -56,7 +56,7 @@
   // Los bloques aparecen al entrar en pantalla, de uno en uno
   function entradas() {
     var grupos = [
-      ['.lateral > *'], ['.barra'], ['.portada__texto > *'], ['.portada__panel-hueco'],
+      ['.lateral > *'], ['.barra'], ['.portada__texto > :not(h1)'], ['.portada__panel-hueco'],
       ['#t-dim'], ['.tarjeta'], ['.pestana'], ['.servicio'], ['#servicios-otros .chip'], ['.equipo']
     ];
     var todos = [];
@@ -83,6 +83,59 @@
       });
     }, { threshold: 0.12 });
     todos.forEach(function (n) { obs.observe(n); });
+  }
+
+  // Titular: las palabras entran una a una
+  function titular() {
+    var h = document.querySelector('.portada h1');
+    var n = 0;
+    (function recorrer(nodo) {
+      Array.prototype.slice.call(nodo.childNodes).forEach(function (c) {
+        if (c.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          c.nodeValue.split(/\s+/).filter(Boolean).forEach(function (w, i, a) {
+            var s = el('span', 'palabra', w);
+            s.style.setProperty('--i', n++);
+            frag.appendChild(s);
+            frag.appendChild(document.createTextNode(' '));
+          });
+          nodo.replaceChild(frag, c);
+        } else if (c.nodeType === 1 && c.tagName !== 'BR') {
+          recorrer(c);
+        }
+      });
+    })(h);
+  }
+
+  // Panel oscuro: se inclina siguiendo el cursor
+  function inclinar() {
+    if (!window.matchMedia('(hover: hover)').matches) return;
+    var a = document.querySelector('.panel');
+    a.addEventListener('mousemove', function (e) {
+      var r = a.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      a.style.setProperty('--ry', (x * 8).toFixed(2) + 'deg');
+      a.style.setProperty('--rx', (-y * 8).toFixed(2) + 'deg');
+    });
+    a.addEventListener('mouseleave', function () {
+      a.style.removeProperty('--rx');
+      a.style.removeProperty('--ry');
+    });
+  }
+
+  // Barra de progreso de lectura
+  function progreso() {
+    var b = el('div', 'progreso');
+    b.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(b);
+    function act() {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      b.style.setProperty('--p', max > 0 ? Math.min(window.scrollY / max, 1) : 0);
+    }
+    window.addEventListener('scroll', act, { passive: true });
+    window.addEventListener('resize', act);
+    act();
   }
 
   function cargar(archivo) {
@@ -195,7 +248,7 @@
     pintarDimensiones(r[1]);
     pintarServicios(r[2]);
     pintarEquipo(r[3]);
-    if (!reducir) entradas();
+    if (!reducir) { titular(); entradas(); inclinar(); progreso(); }
   }).catch(function (e) {
     var aviso = el('p', 'aviso-datos', 'No se han podido cargar los datos. Abre la web desde un servidor local (por ejemplo, python3 -m http.server en la carpeta web).');
     aviso.setAttribute('role', 'alert');

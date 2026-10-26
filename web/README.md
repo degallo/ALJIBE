@@ -18,15 +18,9 @@ Sin servidor: la carpeta `web/` funciona también como web estática (GitHub Pag
 
 No se puede abrir con doble clic (`file://`), porque el navegador bloquea la lectura de los JSON.
 
-### Publicarla en GitHub Pages
+### Publicada en GitHub Pages
 
-El flujo `.github/workflows/pages.yml` publica `web/` cada vez que cambia en `main`, después de pasar las pruebas. Deja fuera el servidor, las pruebas y las capturas.
-
-1. Lleva estos cambios a `main`.
-2. En GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. La web queda en `https://degallo.github.io/ALJIBE/`. También se puede lanzar a mano desde **Actions → Publicar la web en GitHub Pages → Run workflow**.
-
-Con el repositorio privado, GitHub Pages necesita GitHub Pro (gratis con el GitHub Student Developer Pack).
+La web está en **https://degallo.github.io/ALJIBE/**. El flujo `.github/workflows/pages.yml` la vuelve a publicar cada vez que cambia `web/` en `main`, después de pasar las pruebas (si fallan, no se publica). Deja fuera el servidor, las pruebas y las capturas. También se puede lanzar a mano desde **Actions → Publicar la web en GitHub Pages → Run workflow**.
 
 ## Presentar en clase
 

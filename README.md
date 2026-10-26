@@ -19,9 +19,9 @@ Este repositorio reúne el diseño del prototipo web para construirlo después c
 
 | Archivo | Pantalla | Estado |
 | --- | --- | --- |
-| `inicio.dc.html` | Portada: propuesta de valor, avance de la previsión, servicios y caso piloto | Diseño de referencia |
-| `servicios.dc.html` | Catálogo de servicios, Paquete Fiesta y Agenda ALJIBE | Diseño de referencia |
-| `fiesta-del-vino-prevision.dc.html` | Cuadro de mando de la Fiesta del Vino 2027 en estilo app: fecha óptima, asistencia prevista, histórico y campaña | **Estilo visual de referencia** para las pantallas de producto |
+| `inicio.dc.html` | Portada: propuesta de valor, avance de la previsión, lo que medimos, servicios y equipo | Diseño de referencia, estilo app |
+| `servicios.dc.html` | Catálogo de servicios con detalle al pulsar, Paquete Fiesta y Agenda ALJIBE | Diseño de referencia, estilo app |
+| `fiesta-del-vino-prevision.dc.html` | Cuadro de mando de la Fiesta del Vino 2027 en estilo app: fecha óptima, asistencia prevista, histórico y campaña | Diseño de referencia, estilo app |
 | `fiesta-del-vino-ficha-datos-reales.dc.html` | Ficha alternativa con solo datos publicados ("el aljibe se llena") | Variante; aún lleva el logo antiguo |
 | `docs/diseno-panel-decisiones.md` | Panel de decisiones: KPIs por caso, decisiones con interruptor y resultados previstos | Especificación, sin diseñar en el lienzo |
 
@@ -32,4 +32,5 @@ Los archivos `.dc.html` son componentes del editor de diseño de Claude: HTML co
 - **Logo:** opción C, Nivel de agua (bóveda con agua y línea de datos; nombre "aljibe" en minúsculas). Sustituye al logo del círculo con arco y barras.
 - **Datos de la demo:** se simulan 13 ediciones de la Fiesta del Vino (2013–2026, sin edición en 2021), coherentes con los datos publicados (unos 2.500 asistentes en 2016, unos 7.000 en 2024, aplazamiento al 28 de febrero en 2026). En la web no se etiquetan como simulados; se dice de palabra al exponer.
 - **Previsión 2027:** fecha recomendada, sábado 20 de febrero; asistencia prevista de 7.600 (entre 6.900 y 8.300); 5.200 vasos; campaña desde el 11 de enero.
+- **Estilo:** toda la web usa el mismo lenguaje que el cuadro de mando (estilo app).
 - Los precios de los servicios son hipótesis por validar.

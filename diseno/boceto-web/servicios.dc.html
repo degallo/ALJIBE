@@ -9,163 +9,151 @@
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
 body{margin:0}
 a{color:#004C59}a:hover{color:#2E8C9C}
+button{font-family:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid #004C59;outline-offset:3px}
 </style>
 </helmet>
-<div style="background: #F6F3EE; color: #10262B; font-family: 'Schibsted Grotesk', Arial, Helvetica, sans-serif; min-height: 100%;">
+<div style="min-height: 100%; background-color: #EEF0EC; background-image: radial-gradient(circle at 64% 14%, rgba(207,230,234,0.9) 0, rgba(207,230,234,0) 36%), radial-gradient(circle at 90% 75%, rgba(230,223,211,0.9) 0, rgba(230,223,211,0) 40%); color: #10262B; font-family: 'Schibsted Grotesk', Arial, Helvetica, sans-serif; display: flex; flex-wrap: wrap;">
 
-<header style="background: #FFFFFF; border-bottom: 1px solid #C9CFCC;">
-<nav aria-label="Principal" style="max-width: 1152px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
-<a href="inicio.dc.html" aria-label="ALJIBE, inicio" style="display: flex; align-items: center;">
-<img src="../../marca/logos/aljibe-lockup.svg" alt="ALJIBE" style="height: 40px; width: auto; display: block;">
-</a>
-<div style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 16px; font-weight: 600;">
-<a href="inicio.dc.html" style="color: #4E6368; text-decoration: none; padding: 10px 0;">Inicio</a>
-<a href="servicios.dc.html" aria-current="page" style="color: #004C59; text-decoration: none; padding: 10px 0; border-bottom: 2px solid #004C59;">Servicios</a>
-<a href="fiesta-del-vino-prevision.dc.html" style="color: #4E6368; text-decoration: none; padding: 10px 0;">Cuadros de mando</a>
-<a href="#metodologia" style="color: #4E6368; text-decoration: none; padding: 10px 0;">Metodología</a>
-</div>
+<aside aria-label="Navegación lateral" style="flex: 0 0 88px; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 28px 0;">
+<a href="inicio.dc.html" aria-label="ALJIBE, inicio" style="display: block; margin-bottom: 36px;"><img src="../../marca/logos/aljibe-mark.svg" alt="" style="width: 40px; height: 40px; display: block;"></a>
+<a href="inicio.dc.html" aria-label="Inicio" style="width: 48px; height: 48px; border-radius: 999px; border: 1px solid #C9CFCC; background: rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; color: #10262B;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"></path><path d="M9 21v-6h6v6"></path></svg></a>
+<a href="fiesta-del-vino-prevision.dc.html" aria-label="Cuadros de mando" style="width: 48px; height: 48px; border-radius: 999px; border: 1px solid #C9CFCC; background: rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; color: #10262B;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg></a>
+<a href="servicios.dc.html" aria-label="Servicios" aria-current="page" style="width: 48px; height: 48px; border-radius: 999px; background: #004C59; display: flex; align-items: center; justify-content: center; color: #F6F3EE;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg></a>
+<a href="#agenda" aria-label="Agenda" style="width: 48px; height: 48px; border-radius: 999px; border: 1px solid #C9CFCC; background: rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; color: #10262B;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path></svg></a>
+<span aria-label="Equipo 3" style="margin-top: 32px; width: 48px; height: 48px; border-radius: 999px; background: #10262B; color: #F6F3EE; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600;">G3</span>
+</aside>
+
+<div style="flex: 999 1 900px; min-width: 0; padding: 28px 32px 48px 8px; display: flex; flex-direction: column; gap: 36px;">
+
+<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px;">
+<a href="inicio.dc.html" style="background: rgba(255,255,255,0.7); border: 1px solid #DCE0DC; color: #10262B; text-decoration: none; font-size: 15px; font-weight: 500; border-radius: 999px; padding: 11px 20px;">Inicio</a>
+<a href="servicios.dc.html" aria-current="page" style="background: #10262B; color: #F6F3EE; text-decoration: none; font-size: 15px; font-weight: 500; border-radius: 999px; padding: 12px 22px;">Servicios</a>
+<a href="fiesta-del-vino-prevision.dc.html" style="background: rgba(255,255,255,0.7); border: 1px solid #DCE0DC; color: #10262B; text-decoration: none; font-size: 15px; font-weight: 500; border-radius: 999px; padding: 11px 20px;">Cuadros de mando</a>
+<a href="#paquete" style="background: rgba(255,255,255,0.7); border: 1px solid #DCE0DC; color: #10262B; text-decoration: none; font-size: 15px; font-weight: 500; border-radius: 999px; padding: 11px 20px;">Paquete Fiesta</a>
+<a href="#agenda" style="background: rgba(255,255,255,0.7); border: 1px solid #DCE0DC; color: #10262B; text-decoration: none; font-size: 15px; font-weight: 500; border-radius: 999px; padding: 11px 20px;">Agenda</a>
 </nav>
-</header>
 
-<main style="max-width: 1152px; margin: 0 auto; padding: 64px 24px; display: flex; flex-direction: column; gap: 64px;">
-
-<section style="display: flex; flex-direction: column; gap: 16px; max-width: 760px;">
-<p style="margin: 0; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #4E6368;">Servicios</p>
-<h1 style="margin: 0; font-size: 56px; line-height: 62px; font-weight: 700; color: #004C59;">Cada servicio responde a una decisión.</h1>
-<p style="margin: 0; font-size: 18px; line-height: 28px;">A quién programar y en qué fecha, cuánta gente vendrá, cómo conseguir patrocinio, cómo decidir cada semana y qué impacto tiene tu actividad. La primera reunión de diagnóstico es gratuita.</p>
-</section>
-
-<section aria-label="Productos" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px;">
-
-<article style="background: #FFFFFF; border: 1px solid #C9CFCC; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 12px;">
-<p style="margin: 0; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #4E6368;">Salas, festivales y promotoras</p>
-<h2 style="margin: 0; font-size: 24px; line-height: 32px; font-weight: 600; color: #004C59;">Estudio de programación</h2>
-<p style="margin: 0; font-size: 18px; line-height: 26px; font-weight: 600;">¿A quién contrato y en qué fecha?</p>
-<p style="margin: 0; font-size: 16px; line-height: 26px; flex-grow: 1;">Puntuamos tu lista corta de artistas por afinidad con tu público, presencia local y tracción, y ordenamos las fechas posibles según meteorología, competencia y festivos.</p>
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px; border-top: 1px solid #C9CFCC; font-size: 14px; line-height: 20px;">
-<span style="color: #4E6368;">Ranking de artistas y fechas</span>
-<span style="font-family: 'JetBrains Mono', Menlo, monospace; color: #004C59;">desde 500 €</span>
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<h1 style="margin: 0; font-size: 48px; line-height: 54px; font-weight: 600; letter-spacing: -0.02em;">Cada servicio responde<br><span style="font-weight: 400; color: #6B7C80;">a una decisión.</span></h1>
+<span style="align-self: flex-start; display: flex; align-items: center; gap: 8px; border: 1.5px solid #10262B; border-radius: 999px; padding: 10px 20px; font-size: 15px; font-weight: 500;"><span style="width: 8px; height: 8px; border-radius: 999px; background: #2E8C9C;"></span>La primera reunión de diagnóstico es gratuita</span>
 </div>
-</article>
 
-<article style="background: #FFFFFF; border: 2px solid #004C59; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 12px;">
-<p style="margin: 0; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #4E6368;">Eventos de un día y fiestas de pueblos</p>
-<h2 style="margin: 0; font-size: 24px; line-height: 32px; font-weight: 600; color: #004C59;">Radar de temporada</h2>
-<p style="margin: 0; font-size: 18px; line-height: 26px; font-weight: 600;">¿Cuánta gente vendrá y cuándo lanzo la campaña?</p>
-<p style="margin: 0; font-size: 16px; line-height: 26px; flex-grow: 1;">Un índice semanal de intención de asistencia desde meses antes, comparado con la edición anterior, con previsión y alertas.</p>
-<a href="fiesta-del-vino-prevision.dc.html" style="font-size: 16px; font-weight: 600; padding: 4px 0;">Ver el ejemplo de la Fiesta del Vino</a>
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px; border-top: 1px solid #C9CFCC; font-size: 14px; line-height: 20px;">
-<span style="color: #4E6368;">Cuadro de mando del evento</span>
-<span style="font-family: 'JetBrains Mono', Menlo, monospace; color: #004C59;">desde 800 €</span>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start;">
+<div role="group" aria-label="Servicios" style="flex: 999 1 560px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
+<sc-for list="{{ productos }}" as="p" hint-placeholder-count="6">
+<button type="button" onClick="{{ p.pick }}" aria-pressed="{{ p.pressed }}" style="text-align: left; min-height: 200px; border-radius: 32px; border: 3px solid {{ p.anillo }}; background: {{ p.fondo }}; color: {{ p.texto }}; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; box-shadow: 0 14px 30px rgba(16,38,43,0.08);">
+<span style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.8; max-width: 14em;">{{ p.para }}</span>
+<span style="width: 42px; height: 42px; flex: 0 0 42px; border-radius: 999px; background: {{ p.flecha }}; color: {{ p.flechaTexto }}; display: flex; align-items: center; justify-content: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"></path></svg></span>
+</span>
+<span style="display: flex; flex-direction: column; gap: 6px;">
+<span style="font-size: 22px; line-height: 28px; font-weight: 500;">{{ p.nombre }}</span>
+<span style="font-size: 15px; line-height: 21px; opacity: 0.85;">{{ p.pregunta }}</span>
+</span>
+<span style="align-self: flex-start; font-family: 'JetBrains Mono', Menlo, monospace; font-size: 13px; font-weight: 500; border-radius: 999px; padding: 5px 12px; background: {{ p.precioFondo }};">{{ p.precio }}</span>
+</button>
+</sc-for>
 </div>
-</article>
 
-<article style="background: #FFFFFF; border: 1px solid #C9CFCC; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 12px;">
-<p style="margin: 0; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #4E6368;">Cualquier organizador</p>
-<h2 style="margin: 0; font-size: 24px; line-height: 32px; font-weight: 600; color: #004C59;">Informe de patrocinio</h2>
-<p style="margin: 0; font-size: 18px; line-height: 26px; font-weight: 600;">¿Cómo consigo y retengo patrocinadores?</p>
-<p style="margin: 0; font-size: 16px; line-height: 26px; flex-grow: 1;">El perfil y el alcance verificable de tu público, y el retorno de cada patrocinio, en un dossier listo para enviar a las marcas.</p>
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px; border-top: 1px solid #C9CFCC; font-size: 14px; line-height: 20px;">
-<span style="color: #4E6368;">Dossier para patrocinadores</span>
-<span style="font-family: 'JetBrains Mono', Menlo, monospace; color: #004C59;">300 € + 10 %</span>
+<aside aria-live="polite" style="flex: 1 1 300px; min-width: 0; max-width: 360px; background: linear-gradient(170deg, #0C3F49 0%, #004C59 45%, #1F6F7D 100%); color: #F6F3EE; border-radius: 36px; padding: 26px; display: flex; flex-direction: column; gap: 20px; box-shadow: 0 24px 50px rgba(0,76,89,0.25);">
+<span style="font-size: 13px; color: #CFE6EA;">{{ sel.para }}</span>
+<span style="font-size: 30px; line-height: 36px; font-weight: 500; letter-spacing: -0.01em;">{{ sel.nombre }}</span>
+<span style="font-size: 18px; line-height: 26px; font-weight: 500; color: #CFE6EA;">{{ sel.pregunta }}</span>
+<p style="margin: 0; font-size: 15px; line-height: 23px; color: #E4EFF0;">{{ sel.incluye }}</p>
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; background: rgba(246,243,238,0.08); border-radius: 18px; padding: 12px 16px;">
+<span style="font-size: 14px; color: #CFE6EA;">Entregable</span>
+<span style="font-size: 14px; font-weight: 500; text-align: right;">{{ sel.entregable }}</span>
 </div>
-</article>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; background: rgba(246,243,238,0.08); border-radius: 18px; padding: 12px 16px;">
+<span style="font-size: 14px; color: #CFE6EA;">Precio orientativo</span>
+<span style="font-family: 'JetBrains Mono', Menlo, monospace; font-size: 14px; font-weight: 500; text-align: right;">{{ sel.detallePrecio }}</span>
+</div>
+</div>
+<sc-if value="{{ sel.ejemplo }}" hint-placeholder-val="{{ false }}">
+<a href="fiesta-del-vino-prevision.dc.html" style="color: #CFE6EA; font-size: 15px; font-weight: 600;">Ver el ejemplo de la Fiesta del Vino</a>
+</sc-if>
+<a href="#contacto" style="margin-top: auto; background: #F6F3EE; color: #004C59; text-decoration: none; border-radius: 999px; padding: 14px 20px; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 15px; font-weight: 600;">Pedir diagnóstico gratuito</a>
+</aside>
+</div>
 
-<article style="background: #FFFFFF; border: 1px solid #C9CFCC; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 12px;">
-<p style="margin: 0; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #4E6368;">Salas, teatros y promotoras</p>
-<h2 style="margin: 0; font-size: 24px; line-height: 32px; font-weight: 600; color: #004C59;">Suscripción esencial</h2>
-<p style="margin: 0; font-size: 18px; line-height: 26px; font-weight: 600;">¿Cómo decido cada semana con datos?</p>
-<p style="margin: 0; font-size: 16px; line-height: 26px; flex-grow: 1;">Unimos tus datos de venta, web y redes, los vigilamos y te damos un cuadro de mando que se actualiza solo, con alertas y formación para tu equipo.</p>
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px; border-top: 1px solid #C9CFCC; font-size: 14px; line-height: 20px;">
-<span style="color: #4E6368;">Cuadro de mando automático</span>
-<span style="font-family: 'JetBrains Mono', Menlo, monospace; color: #004C59;">200 €/mes</span>
+<section id="paquete" aria-labelledby="t-paq" style="background: #FFFFFF; border-radius: 32px; padding: 28px; display: flex; flex-direction: column; gap: 24px; box-shadow: 0 10px 30px rgba(16,38,43,0.06);">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 16px;">
+<div style="display: flex; align-items: center; gap: 14px;">
+<span style="width: 48px; height: 48px; border-radius: 999px; border: 1px solid #DCE0DC; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10262B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px;">
+<h2 id="t-paq" style="margin: 0; font-size: 24px; line-height: 30px; font-weight: 500;">Paquete Fiesta para ayuntamientos</h2>
+<span style="font-size: 15px; color: #4E6368;">Todo lo que necesita una edición, y un informe para justificar el gasto ante el pleno.</span>
+</span>
 </div>
-</article>
-
-<article style="background: #FFFFFF; border: 1px solid #C9CFCC; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 12px;">
-<p style="margin: 0; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #4E6368;">Programación frecuente</p>
-<h2 style="margin: 0; font-size: 24px; line-height: 32px; font-weight: 600; color: #004C59;">Suscripción avanzada</h2>
-<p style="margin: 0; font-size: 18px; line-height: 26px; font-weight: 600;">¿Qué va a pasar y qué hago?</p>
-<p style="margin: 0; font-size: 16px; line-height: 26px; flex-grow: 1;">Todo lo de la esencial, más segmentación del público, predicción de demanda por evento, un simulador de escenarios y dos estudios de programación al año.</p>
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px; border-top: 1px solid #C9CFCC; font-size: 14px; line-height: 20px;">
-<span style="color: #4E6368;">Previsiones y simulador</span>
-<span style="font-family: 'JetBrains Mono', Menlo, monospace; color: #004C59;">400 €/mes</span>
+<span style="font-family: 'JetBrains Mono', Menlo, monospace; font-size: 15px; font-weight: 500; color: #004C59; background: #CFE6EA; border-radius: 999px; padding: 8px 16px;">desde 2.500 € por edición</span>
 </div>
-</article>
-
-<article style="background: #FFFFFF; border: 1px solid #C9CFCC; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 12px;">
-<p style="margin: 0; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #4E6368;">Instituciones y Granada 2031</p>
-<h2 style="margin: 0; font-size: 24px; line-height: 32px; font-weight: 600; color: #004C59;">Proyectos a medida</h2>
-<p style="margin: 0; font-size: 18px; line-height: 26px; font-weight: 600;">¿Qué impacto tiene mi evento o programa?</p>
-<p style="margin: 0; font-size: 16px; line-height: 26px; flex-grow: 1;">Medición de impacto con los indicadores que pide la Comisión Europea, paneles de seguimiento e informes para justificar la inversión pública.</p>
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px; border-top: 1px solid #C9CFCC; font-size: 14px; line-height: 20px;">
-<span style="color: #4E6368;">Informe de impacto</span>
-<span style="font-family: 'JetBrains Mono', Menlo, monospace; color: #004C59;">a presupuesto</span>
-</div>
-</article>
-
-</section>
-
-<section style="background: #E6DFD3; border-radius: 8px; padding: 40px; display: flex; flex-direction: column; gap: 32px;">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px;">
-<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 8px;">
-<p style="margin: 0; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #4E6368;">Para ayuntamientos</p>
-<h2 style="margin: 0; font-size: 36px; line-height: 44px; font-weight: 700; color: #004C59;">Paquete Fiesta</h2>
-<p style="margin: 0; font-size: 18px; line-height: 28px; max-width: 640px;">Todo lo que necesita una edición de tu fiesta en una sola contratación, y un informe con datos para justificar el gasto ante el pleno.</p>
-</div>
-<span style="font-family: 'JetBrains Mono', Menlo, monospace; font-size: 18px; line-height: 24px; color: #004C59;">desde 2.500 € por edición</span>
-</div>
-<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px;">
-<li style="background: #FFFFFF; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 8px;">
-<span style="font-family: 'JetBrains Mono', Menlo, monospace; font-size: 14px; line-height: 20px; color: #4E6368;">4 meses antes</span>
-<span style="font-size: 16px; line-height: 24px; font-weight: 600;">Elegimos la mejor fecha</span>
-</li>
-<li style="background: #FFFFFF; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 8px;">
-<span style="font-family: 'JetBrains Mono', Menlo, monospace; font-size: 14px; line-height: 20px; color: #4E6368;">Hasta el día</span>
-<span style="font-size: 16px; line-height: 24px; font-weight: 600;">Radar semanal de asistencia</span>
-</li>
-<li style="background: #FFFFFF; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 8px;">
-<span style="font-family: 'JetBrains Mono', Menlo, monospace; font-size: 14px; line-height: 20px; color: #4E6368;">2-3 meses antes</span>
-<span style="font-size: 16px; line-height: 24px; font-weight: 600;">Dossier para patrocinadores</span>
-</li>
-<li style="background: #FFFFFF; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 8px;">
-<span style="font-family: 'JetBrains Mono', Menlo, monospace; font-size: 14px; line-height: 20px; color: #4E6368;">El día de la fiesta</span>
-<span style="font-size: 16px; line-height: 24px; font-weight: 600;">Conteo y procedencia del público</span>
-</li>
-<li style="background: #FFFFFF; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 8px;">
-<span style="font-family: 'JetBrains Mono', Menlo, monospace; font-size: 14px; line-height: 20px; color: #4E6368;">Un mes después</span>
-<span style="font-size: 16px; line-height: 24px; font-weight: 600;">Informe de impacto para el pleno</span>
-</li>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px;">
+<li style="background: #F1F3F0; border-radius: 22px; padding: 16px; display: flex; flex-direction: column; gap: 14px;"><span style="font-family: 'JetBrains Mono', Menlo, monospace; font-size: 13px; color: #4E6368;">4 meses antes</span><span style="font-size: 16px; line-height: 22px; font-weight: 500;">Elegimos la mejor fecha</span></li>
+<li style="background: #F1F3F0; border-radius: 22px; padding: 16px; display: flex; flex-direction: column; gap: 14px;"><span style="font-family: 'JetBrains Mono', Menlo, monospace; font-size: 13px; color: #4E6368;">Hasta el día</span><span style="font-size: 16px; line-height: 22px; font-weight: 500;">Radar semanal de asistencia</span></li>
+<li style="background: #F1F3F0; border-radius: 22px; padding: 16px; display: flex; flex-direction: column; gap: 14px;"><span style="font-family: 'JetBrains Mono', Menlo, monospace; font-size: 13px; color: #4E6368;">2-3 meses antes</span><span style="font-size: 16px; line-height: 22px; font-weight: 500;">Dossier para patrocinadores</span></li>
+<li style="background: #F1F3F0; border-radius: 22px; padding: 16px; display: flex; flex-direction: column; gap: 14px;"><span style="font-family: 'JetBrains Mono', Menlo, monospace; font-size: 13px; color: #4E6368;">El día de la fiesta</span><span style="font-size: 16px; line-height: 22px; font-weight: 500;">Conteo y procedencia del público</span></li>
+<li style="background: #CFE6EA; border-radius: 22px; padding: 16px; display: flex; flex-direction: column; gap: 14px;"><span style="font-family: 'JetBrains Mono', Menlo, monospace; font-size: 13px; color: #004C59;">Un mes después</span><span style="font-size: 16px; line-height: 22px; font-weight: 500;">Informe de impacto para el pleno</span></li>
 </ol>
 </section>
 
-<section style="background: #004C59; color: #F6F3EE; border-radius: 8px; padding: 40px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px;">
-<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 8px;">
-<p style="margin: 0; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #CFE6EA;">Gratis para organizadores</p>
-<h2 style="margin: 0; font-size: 36px; line-height: 44px; font-weight: 700;">Agenda ALJIBE</h2>
-<p style="margin: 0; font-size: 18px; line-height: 28px; max-width: 640px;">Antes de fijar la fecha de tu evento, comprueba si choca con otros eventos de Granada y su provincia, con festivos o con mal tiempo. Y registra el tuyo para que los demás lo vean.</p>
+<section id="agenda" aria-labelledby="t-ag" style="background: rgba(255,255,255,0.6); border: 1px solid #DCE0DC; border-radius: 32px; padding: 26px 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;">
+<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 6px;">
+<span style="align-self: flex-start; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #004C59; background: #CFE6EA; border-radius: 999px; padding: 4px 10px;">Gratis para organizadores</span>
+<h2 id="t-ag" style="margin: 0; font-size: 24px; line-height: 30px; font-weight: 500;">Agenda ALJIBE</h2>
+<p style="margin: 0; font-size: 15px; line-height: 23px; color: #4E6368;">Antes de fijar la fecha de tu evento, comprueba si choca con otros eventos de Granada y su provincia, con festivos o con mal tiempo. Y registra el tuyo para que los demás lo vean.</p>
 </div>
-<a href="#agenda" style="background: #F6F3EE; color: #004C59; text-decoration: none; font-size: 16px; font-weight: 600; border-radius: 8px; padding: 14px 24px;">Comprobar una fecha</a>
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+<label for="fecha-agenda" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Fecha tentativa</label>
+<input id="fecha-agenda" type="text" placeholder="Elige una fecha" style="flex: 1 1 180px; min-width: 0; font-family: inherit; font-size: 15px; color: #10262B; background: #FFFFFF; border: 1px solid #DCE0DC; border-radius: 999px; padding: 13px 18px;">
+<a href="#agenda" style="background: #10262B; color: #F6F3EE; text-decoration: none; border-radius: 999px; padding: 14px 22px; font-size: 15px; font-weight: 600;">Comprobar</a>
+</div>
 </section>
 
-</main>
-
-<footer style="background: #004C59; color: #F6F3EE; border-top: 1px solid #2E8C9C;">
-<div style="max-width: 1152px; margin: 0 auto; padding: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; line-height: 20px;">
-<span>ALJIBE · Convertimos los datos de la cultura en decisiones.</span>
-<span>Equipo 3 · Creación de Empresas · Universidad de Granada</span>
 </div>
-</footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2000}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1500}}'>
 class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { sel: 'radar' };
+}
 renderVals() {
-return {};
+const P = [
+{ id: 'radar', nombre: 'Radar de temporada', para: 'Eventos de un día y fiestas de pueblos', pregunta: '¿Cuánta gente vendrá y cuándo lanzo la campaña?', incluye: 'Un índice semanal de intención de asistencia desde meses antes, comparado con la edición anterior, con previsión y alertas.', entregable: 'Cuadro de mando del evento', precio: 'desde 800 €', detallePrecio: '800–1.200 € por edición', ejemplo: true },
+{ id: 'prog', nombre: 'Estudio de programación', para: 'Salas, festivales y promotoras', pregunta: '¿A quién contrato y en qué fecha?', incluye: 'Puntuamos tu lista corta de artistas por afinidad con tu público, presencia local y tracción, y ordenamos las fechas posibles según meteorología, competencia y festivos.', entregable: 'Ranking de artistas y fechas', precio: 'desde 500 €', detallePrecio: '500–800 € por estudio' },
+{ id: 'patro', nombre: 'Informe de patrocinio', para: 'Cualquier organizador', pregunta: '¿Cómo consigo y retengo patrocinadores?', incluye: 'El perfil y el alcance verificable de tu público, y el retorno de cada patrocinio, en un dossier listo para enviar a las marcas.', entregable: 'Dossier para patrocinadores', precio: '300 € + 10 %', detallePrecio: '300 € + 10 % del patrocinio nuevo' },
+{ id: 'esen', nombre: 'Suscripción esencial', para: 'Salas, teatros y promotoras', pregunta: '¿Cómo decido cada semana con datos?', incluye: 'Unimos tus datos de venta, web y redes, los vigilamos y te damos un cuadro de mando que se actualiza solo, con alertas y formación para tu equipo.', entregable: 'Cuadro de mando automático', precio: '200 €/mes', detallePrecio: 'Implantación desde 1.500 € + 200 €/mes' },
+{ id: 'avan', nombre: 'Suscripción avanzada', para: 'Programación frecuente', pregunta: '¿Qué va a pasar y qué hago?', incluye: 'Todo lo de la esencial, más segmentación del público, predicción de demanda por evento, un simulador de escenarios y dos estudios de programación al año.', entregable: 'Previsiones y simulador', precio: '400 €/mes', detallePrecio: 'Implantación desde 1.500 € + 400 €/mes' },
+{ id: 'medida', nombre: 'Proyectos a medida', para: 'Instituciones y Granada 2031', pregunta: '¿Qué impacto tiene mi evento o programa?', incluye: 'Medición de impacto con los indicadores que pide la Comisión Europea, paneles de seguimiento e informes para justificar la inversión pública.', entregable: 'Informe de impacto', precio: 'a presupuesto', detallePrecio: 'Presupuesto por proyecto' }
+];
+const FONDOS = [
+'linear-gradient(150deg, #004C59 0%, #1F6F7D 100%)',
+'linear-gradient(150deg, #CFE6EA 0%, #F2F7F7 100%)',
+'linear-gradient(150deg, #F1E3DA 0%, #F8F1EC 100%)',
+'linear-gradient(150deg, #E6DFD3 0%, #F6F3EE 100%)',
+'linear-gradient(150deg, #FFFFFF 0%, #F4F6F3 100%)',
+'linear-gradient(150deg, #DDE8E4 0%, #F4F7F5 100%)'
+];
+const productos = P.map((p, i) => {
+const s = p.id === this.state.sel;
+const oscuro = i === 0;
+return { nombre: p.nombre, para: p.para, pregunta: p.pregunta, precio: p.precio,
+fondo: FONDOS[i], texto: oscuro ? '#F6F3EE' : '#10262B',
+flecha: oscuro ? '#F6F3EE' : '#10262B', flechaTexto: oscuro ? '#004C59' : '#F6F3EE',
+precioFondo: oscuro ? 'rgba(246,243,238,0.16)' : 'rgba(255,255,255,0.8)',
+anillo: s ? (oscuro ? '#CFE6EA' : '#004C59') : 'transparent',
+pressed: s ? 'true' : 'false',
+pick: () => this.setState({ sel: p.id }) };
+});
+const x = P.find((p) => p.id === this.state.sel);
+return { productos, sel: { nombre: x.nombre, para: x.para, pregunta: x.pregunta, incluye: x.incluye, entregable: x.entregable, detallePrecio: x.detallePrecio, ejemplo: !!x.ejemplo } };
 }
 }
 </script>

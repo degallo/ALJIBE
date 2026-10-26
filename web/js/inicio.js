@@ -138,6 +138,27 @@
     act();
   }
 
+  // Foco de luz que sigue al cursor y botones con efecto imán
+  function cursor() {
+    if (!window.matchMedia('(hover: hover)').matches) return;
+    document.querySelectorAll('.tarjeta, .servicio').forEach(function (n) {
+      n.addEventListener('mousemove', function (e) {
+        var r = n.getBoundingClientRect();
+        n.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        n.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+    document.querySelectorAll('.boton, .icono-nav').forEach(function (n) {
+      n.addEventListener('mousemove', function (e) {
+        var r = n.getBoundingClientRect();
+        var dx = (e.clientX - (r.left + r.width / 2)) * 0.25;
+        var dy = (e.clientY - (r.top + r.height / 2)) * 0.25;
+        n.style.translate = dx.toFixed(1) + 'px ' + dy.toFixed(1) + 'px';
+      });
+      n.addEventListener('mouseleave', function () { n.style.translate = ''; });
+    });
+  }
+
   function cargar(archivo) {
     return fetch('datos/' + archivo).then(function (r) {
       if (!r.ok) throw new Error(archivo + ': ' + r.status);
@@ -248,7 +269,7 @@
     pintarDimensiones(r[1]);
     pintarServicios(r[2]);
     pintarEquipo(r[3]);
-    if (!reducir) { titular(); entradas(); inclinar(); progreso(); }
+    if (!reducir) { titular(); entradas(); inclinar(); progreso(); cursor(); }
   }).catch(function (e) {
     var aviso = el('p', 'aviso-datos', 'No se han podido cargar los datos. Abre la web desde un servidor local (por ejemplo, python3 -m http.server en la carpeta web).');
     aviso.setAttribute('role', 'alert');

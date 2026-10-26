@@ -13,6 +13,7 @@ Este repositorio reúne el diseño del prototipo web para construirlo después c
 | `marca/` | Identidad visual: guía de marca (`README.md`), tokens de color, tipografía y espacio (`tokens.json`) y logos en SVG |
 | `marca/logos/` | Logo Nivel de agua: completo, en negativo, solo símbolo y solo nombre |
 | `diseno/boceto-web/` | Pantallas del boceto web, exportadas del lienzo de diseño |
+| `diseno/capturas/` | Capturas PNG de cada pantalla del boceto (1280 px de ancho), para comparar visualmente |
 | `docs/` | Especificaciones de pantallas pendientes de construir |
 
 ### Pantallas del boceto
@@ -25,7 +26,7 @@ Este repositorio reúne el diseño del prototipo web para construirlo después c
 | `fiesta-del-vino-ficha-datos-reales.dc.html` | Ficha alternativa con solo datos publicados ("el aljibe se llena") | Variante; aún lleva el logo antiguo |
 | `docs/diseno-panel-decisiones.md` | Panel de decisiones: KPIs por caso, decisiones con interruptor y resultados previstos | Especificación, sin diseñar en el lienzo |
 
-Los archivos `.dc.html` son componentes del editor de diseño de Claude: HTML con estilos en línea más un bloque `<script type="text/x-dc">` con la lógica (`renderVals()`), y marcadores `{{ }}`, `<sc-for>` y `<sc-if>`. No se abren tal cual en el navegador; sirven como referencia exacta de estructura, estilos, textos y datos.
+Las capturas de `diseno/capturas/` muestran cómo debe verse cada pantalla: úsalas como referencia visual junto al código. Los archivos `.dc.html` son componentes del editor de diseño de Claude: HTML con estilos en línea más un bloque `<script type="text/x-dc">` con la lógica (`renderVals()`), y marcadores `{{ }}`, `<sc-for>` y `<sc-if>`. No se abren tal cual en el navegador; sirven como referencia exacta de estructura, estilos, textos y datos.
 
 ## Decisiones vigentes (26/10/2026)
 

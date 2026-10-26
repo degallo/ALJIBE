@@ -10,7 +10,7 @@ Vas a construir el prototipo web de ALJIBE a partir de los diseños de este repo
 ## Qué construir
 
 - Una web estática con cuatro pantallas: Inicio, Servicios, Fiesta del Vino (previsión 2027) y Decisiones.
-- Inicio, Servicios y Fiesta del Vino: reproducir los `.dc.html` de `diseno/boceto-web/` (estructura, textos, cifras e interacciones). Las tres comparten el mismo estilo app: barra lateral de iconos, pestañas tipo píldora, fondo con brillos suaves, tarjetas muy redondeadas con degradado y panel lateral oscuro.
+- Inicio, Servicios y Fiesta del Vino: reproducir los `.dc.html` de `diseno/boceto-web/` (estructura, textos, cifras e interacciones). Mira antes la captura de cada pantalla en `diseno/capturas/` para saber cómo debe verse. Las tres comparten el mismo estilo app: barra lateral de iconos, pestañas tipo píldora, fondo con brillos suaves, tarjetas muy redondeadas con degradado y panel lateral oscuro.
 - Decisiones: construirla desde `docs/diseno-panel-decisiones.md`, con el estilo visual de `fiesta-del-vino-prevision.dc.html`.
 - Los datos van en archivos JSON separados del código, de forma que más adelante se puedan sustituir por datos reales sin tocar las pantallas.
 

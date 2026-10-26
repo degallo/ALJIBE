@@ -20,7 +20,13 @@ No se puede abrir con doble clic (`file://`), porque el navegador bloquea la lec
 
 ### Publicarla en GitHub Pages
 
-La web está publicada en **https://degallo.github.io/ALJIBE/**. GitHub Pages sirve la rama `gh-pages`, y el flujo `.github/workflows/pages.yml` la actualiza solo cada vez que cambia `web/` en `main`, después de pasar las pruebas. Deja fuera el servidor, las pruebas y las capturas. También se puede lanzar a mano desde **Actions → Publicar la web en GitHub Pages → Run workflow**.
+El flujo `.github/workflows/pages.yml` publica `web/` cada vez que cambia en `main`, después de pasar las pruebas. Deja fuera el servidor, las pruebas y las capturas.
+
+1. Lleva estos cambios a `main`.
+2. En GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+3. La web queda en `https://degallo.github.io/ALJIBE/`. También se puede lanzar a mano desde **Actions → Publicar la web en GitHub Pages → Run workflow**.
+
+Con el repositorio privado, GitHub Pages necesita GitHub Pro (gratis con el GitHub Student Developer Pack).
 
 ## Presentar en clase
 

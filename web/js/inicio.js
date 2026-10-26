@@ -57,7 +57,7 @@
   function entradas() {
     var grupos = [
       ['.lateral > *'], ['.barra'], ['.portada__texto > :not(h1)'], ['.portada__panel-hueco'],
-      ['#t-dim'], ['.tarjeta'], ['.pestana'], ['.servicio'], ['#servicios-otros .chip'], ['.equipo']
+      []
     ];
     var todos = [];
     grupos.forEach(function (g) {
@@ -157,6 +157,46 @@
       });
       n.addEventListener('mouseleave', function () { n.style.translate = ''; });
     });
+  }
+
+  // Estilo Apple: las secciones se despliegan al ritmo del scroll y la portada se aleja
+  function apple() {
+    var items = [];
+    function marcar(sel, plano) {
+      document.querySelectorAll(sel).forEach(function (n, i) {
+        n.classList.add('scrub');
+        if (plano) n.classList.add('scrub--plano');
+        items.push({ n: n, i: i });
+      });
+    }
+    marcar('#t-dim', true); marcar('.tarjeta'); marcar('.pestana', true);
+    marcar('.servicio'); marcar('#servicios-otros', true); marcar('.equipo');
+    var portada = document.querySelector('.portada');
+    var barra = document.querySelector('.barra');
+    var pendiente = false;
+
+    function limitar(x) { return Math.max(0, Math.min(1, x)); }
+    function actualizar() {
+      pendiente = false;
+      var vh = window.innerHeight;
+      var max = document.documentElement.scrollHeight - vh;
+      var y = window.scrollY;
+      var final = limitar(1 - (max - y) / 260);
+      portada.style.setProperty('--hp', limitar(y / (vh * 0.75)).toFixed(3));
+      barra.classList.toggle('barra--fija', y > 24);
+      items.forEach(function (it) {
+        var r = it.n.getBoundingClientRect();
+        var arriba = r.top + (it.i % 4) * 36;
+        var p = limitar((vh * 0.98 - arriba) / (vh * 0.42));
+        if (r.top < vh) p = Math.max(p, final);
+        p = 1 - Math.pow(1 - p, 3);
+        it.n.style.setProperty('--sp', p.toFixed(3));
+      });
+    }
+    function pedir() { if (!pendiente) { pendiente = true; requestAnimationFrame(actualizar); } }
+    window.addEventListener('scroll', pedir, { passive: true });
+    window.addEventListener('resize', pedir);
+    actualizar();
   }
 
   function cargar(archivo) {
@@ -269,7 +309,7 @@
     pintarDimensiones(r[1]);
     pintarServicios(r[2]);
     pintarEquipo(r[3]);
-    if (!reducir) { titular(); entradas(); inclinar(); progreso(); cursor(); }
+    if (!reducir) { titular(); entradas(); apple(); inclinar(); progreso(); cursor(); }
   }).catch(function (e) {
     var aviso = el('p', 'aviso-datos', 'No se han podido cargar los datos. Abre la web desde un servidor local (por ejemplo, python3 -m http.server en la carpeta web).');
     aviso.setAttribute('role', 'alert');

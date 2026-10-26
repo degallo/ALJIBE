@@ -106,12 +106,19 @@ a:focus-visible, button:focus-visible {
   font-size: 15px; font-weight: 500;
   border-radius: 999px;
   padding: 11px 20px;
-  transition: background-color .15s;
+  transition: background-color .2s, border-color .2s, box-shadow .2s, transform .2s;
 }
-.pildora:hover { background: #fff; }
+.pildora:hover, .pildora:focus-visible {
+  background: #fff;
+  border-color: var(--aljibe);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 76, 89, 0.15);
+}
+.pildora:active { transform: translateY(0); box-shadow: none; }
 .pildora--activa, .pildora--activa:hover {
   background: var(--tinta); border-color: var(--tinta); color: var(--on-aljibe);
   padding: 12px 22px;
+  box-shadow: 0 8px 18px rgba(16, 38, 43, 0.25);
 }
 .etiqueta-proto {
   font-size: 13px; color: var(--tinta-suave);
@@ -264,6 +271,7 @@ a.chip:hover { box-shadow: 0 0 0 1.5px var(--tinta) inset; }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
+  .pildora:hover, .pildora:focus-visible { transform: none; }
 }
 
 /* Móvil: la barra lateral pasa a franja horizontal arriba */

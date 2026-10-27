@@ -71,6 +71,10 @@ export function crearServidor({ almacen = path.join(AQUI, 'almacen') } = {}) {
     const lista = (escrituras.get(ip) || []).filter((t) => ahora - t < 60000);
     lista.push(ahora);
     escrituras.set(ip, lista);
+    // Limpia las IP que llevan más de un minuto sin enviar nada
+    if (escrituras.size > 1000) {
+      for (const [clave, tiempos] of escrituras) if (ahora - tiempos[tiempos.length - 1] > 60000) escrituras.delete(clave);
+    }
     return lista.length > 20;
   }
 
@@ -103,7 +107,7 @@ export function crearServidor({ almacen = path.join(AQUI, 'almacen') } = {}) {
     const ruta = url.pathname.replace(/\/+$/, '');
     const metodo = req.method;
 
-    if (ruta === '/api/estado' && metodo === 'GET') {
+    if ((ruta === '/api/estado' || ruta === '/api/estado.json') && metodo === 'GET') {
       const registrados = await leerLista(archivoAgenda);
       return responder(res, 200, { ok: true, servidor: 'ALJIBE', version: 1, eventosRegistrados: registrados.length });
     }

@@ -92,7 +92,28 @@ export function iniciarMarco() {
 }
 
 // Para llamar cuando la pantalla ya ha pintado sus datos
+// Las tablas anchas se pueden desplazar con el teclado cuando no caben
+function tablasDesplazables() {
+  const revisar = () => document.querySelectorAll('.tabla-scroll').forEach((n) => {
+    if (n.scrollWidth > n.clientWidth + 1) {
+      n.tabIndex = 0;
+      n.setAttribute('role', 'region');
+      const titulo = n.closest('section, .hoja')?.querySelector('h2, h3');
+      n.setAttribute('aria-label', 'Tabla desplazable' + (titulo ? ': ' + titulo.textContent : ''));
+    } else {
+      n.removeAttribute('tabindex');
+      n.removeAttribute('role');
+      n.removeAttribute('aria-label');
+    }
+  });
+  revisar();
+  let espera;
+  window.addEventListener('resize', () => { clearTimeout(espera); espera = setTimeout(revisar, 200); });
+}
+
 export function listo() {
+  document.documentElement.classList.add('listo');
+  tablasDesplazables();
   iniciarEfectos();
   document.body.dataset.listo = '1';
   document.dispatchEvent(new CustomEvent('aljibe:listo'));
@@ -104,4 +125,8 @@ export function mostrarError(e) {
   const contenido = document.querySelector('.contenido');
   contenido.insertBefore(aviso, contenido.children[1] || null);
   console.error(e);
+  // La página se muestra igualmente y el modo presentación puede seguir
+  document.documentElement.classList.add('listo');
+  document.body.dataset.listo = '1';
+  document.dispatchEvent(new CustomEvent('aljibe:listo'));
 }

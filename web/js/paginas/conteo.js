@@ -62,6 +62,7 @@ function crearGrafico() {
 
 function crearProcedencia() {
   const cont = document.getElementById('procedencia');
+  refs.maxProcedencia = Math.max(...dia.procedencia.map((p) => p.pct));
   refs.proc = dia.procedencia.map((p) => {
     const fila = el('div', 'barras-h__fila');
     const pista = el('span', 'barras-h__pista');
@@ -136,7 +137,7 @@ function pintar() {
     b.lleno.setAttribute('height', alto);
   }
   for (const p of refs.proc) {
-    p.b.style.setProperty('--v', (p.pct / 32) * 100 * (c.llegadas / dia.total) + '%');
+    p.b.style.setProperty('--v', (p.pct / refs.maxProcedencia) * 100 * (c.llegadas / dia.total) + '%');
     p.n.textContent = numero(Math.round((c.llegadas * p.pct) / 100));
   }
   actualizarAvisos();

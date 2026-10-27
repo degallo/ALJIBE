@@ -53,16 +53,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .app::before, .app::after {
   content: ""; position: fixed; z-index: -1; pointer-events: none; border-radius: 50%;
-  filter: blur(40px);
+  will-change: transform;
 }
 .app::before {
   width: 46vw; height: 46vw; right: -8vw; top: -10vw;
-  background: radial-gradient(circle, rgba(46, 140, 156, 0.22) 0, rgba(46, 140, 156, 0) 65%);
+  background: radial-gradient(circle, rgba(46, 140, 156, 0.2) 0, rgba(46, 140, 156, 0.08) 35%, rgba(46, 140, 156, 0) 70%);
   animation: deriva-a 18s ease-in-out infinite alternate;
 }
 .app::after {
   width: 40vw; height: 40vw; left: -6vw; bottom: -12vw;
-  background: radial-gradient(circle, rgba(214, 196, 168, 0.55) 0, rgba(214, 196, 168, 0) 65%);
+  background: radial-gradient(circle, rgba(214, 196, 168, 0.5) 0, rgba(214, 196, 168, 0.2) 35%, rgba(214, 196, 168, 0) 70%);
   animation: deriva-b 24s ease-in-out infinite alternate;
 }
 @keyframes deriva-a { from { transform: translate(0, 0) scale(1); } to { transform: translate(-12vw, 14vh) scale(1.25); } }

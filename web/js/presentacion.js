@@ -1,7 +1,7 @@
 // Modo presentación para clase: recorre la web paso a paso con las flechas,
 // Av Pág/Re Pág (mandos de presentación), Espacio o los botones de la barra.
 //   P: empezar · N: notas · F: pantalla completa · Esc: salir
-import { el, icono, raiz } from './nucleo/dom.js';
+import { el, icono, raiz, reducirMovimiento } from './nucleo/dom.js';
 import { datos } from './nucleo/api.js';
 
 const CLAVE = 'aljibe-presentacion';
@@ -113,7 +113,7 @@ function mostrar(n) {
     enfocado = destino;
     destino.classList.add('foco-presentacion');
     const alto = destino.getBoundingClientRect().height;
-    destino.scrollIntoView({ block: alto > window.innerHeight * 0.75 ? 'start' : 'center', behavior: 'smooth' });
+    destino.scrollIntoView({ block: alto > window.innerHeight * 0.75 ? 'start' : 'center', behavior: reducirMovimiento() ? 'auto' : 'smooth' });
   }
   if (paso.accion) document.dispatchEvent(new CustomEvent('aljibe:accion', { detail: paso.accion }));
 }

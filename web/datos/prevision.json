@@ -1,11 +1,25 @@
 {
-  "titulo": ["Fiesta del Vino", "2027"],
+  "titulo": [
+    "Fiesta del Vino",
+    "2027"
+  ],
   "href": "fiesta-del-vino.html",
   "etiquetaCifra": "Asistencia prevista",
-  "cifra": "7.600",
-  "serie": [10, 14, 20, 27, 33, 39, 46, 52, 50, 66, 75, 80, 74, 82],
-  "datos": [
-    {"etiqueta": "Mejor fecha", "valor": "Sáb. 20 feb."},
-    {"etiqueta": "Ediciones", "valor": "13 analizadas"}
-  ]
+  "serie": [
+    10,
+    14,
+    20,
+    27,
+    33,
+    39,
+    46,
+    52,
+    50,
+    66,
+    75,
+    80,
+    74,
+    82
+  ],
+  "nota": "La cifra, la mejor fecha y el número de ediciones salen de fiesta-2027.json."
 }

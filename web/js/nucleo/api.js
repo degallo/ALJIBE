@@ -8,10 +8,13 @@ let estado = null;
 
 export function datos(nombre) {
   if (!cache.has(nombre)) {
-    cache.set(nombre, fetch(raiz() + 'datos/' + nombre + '.json').then((r) => {
+    const peticion = fetch(raiz() + 'datos/' + nombre + '.json').then((r) => {
       if (!r.ok) throw new Error('No se han podido cargar los datos (' + nombre + ').');
       return r.json();
-    }));
+    });
+    // Si falla, se olvida para poder reintentar
+    peticion.catch(() => cache.delete(nombre));
+    cache.set(nombre, peticion);
   }
   return cache.get(nombre);
 }
@@ -21,7 +24,7 @@ export function servidor() {
   if (!estado) {
     const control = new AbortController();
     const espera = setTimeout(() => control.abort(), 1500);
-    estado = fetch(raiz() + 'api/estado', { signal: control.signal, cache: 'no-store' })
+    estado = fetch(raiz() + 'api/estado.json', { signal: control.signal, cache: 'no-store' })
       .then((r) => (r.ok && /json/.test(r.headers.get('content-type') || '') ? r.json() : null))
       .then((j) => Boolean(j && j.ok && j.servidor === 'ALJIBE'))
       .catch(() => false)

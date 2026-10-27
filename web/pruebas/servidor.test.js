@@ -46,6 +46,8 @@ test('sirve la web y protege lo privado', async () => {
 test('estado y datos', async () => {
   const { cuerpo } = await json('/api/estado');
   assert.equal(cuerpo.ok, true);
+  // La web sondea api/estado.json: con servidor responde la API, sin servidor el archivo estático
+  assert.equal((await json('/api/estado.json')).cuerpo.servidor, 'ALJIBE');
   const datos = await json('/api/datos/fiesta-2027');
   assert.equal(datos.cuerpo.prevision.central, 7600);
   assert.equal((await json('/api/datos/no-existe')).estado, 404);

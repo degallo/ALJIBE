@@ -528,3 +528,22 @@ a.paso--destacado:hover { background: #BFDDE2; }
 }
 .oscuro__fila--apilada { flex-direction: column; align-items: flex-start; gap: 2px; }
 .oscuro__fila--apilada > :last-child { white-space: normal; text-align: left; font-size: 15px; }
+
+/* ---------- Carga sin saltos ----------
+   Las pantallas que se pintan con datos no se enseñan vacías: aparecen enteras
+   cuando ya están listas. Si el JavaScript fallara, se muestran a los 4 s. */
+body[data-espera] .contenido > :not(.barra):not(.cabecera-movil) { visibility: hidden; animation: mostrar-tarde 0s linear 4s forwards; }
+html.listo body[data-espera] .contenido > :not(.barra):not(.cabecera-movil) { visibility: visible; animation: entrar-pagina .45s var(--ease) both; }
+@keyframes mostrar-tarde { to { visibility: visible; } }
+@keyframes entrar-pagina { from { opacity: 0; transform: translateY(8px); } }
+@media (prefers-reduced-motion: reduce) {
+  html.listo body[data-espera] .contenido > :not(.barra):not(.cabecera-movil) { animation: none; }
+}
+.tabla-scroll { min-width: 0; max-width: 100%; }
+.tabla-scroll:focus-visible { outline: 2px solid var(--foco); outline-offset: 4px; border-radius: 8px; }
+.punto-grafico:focus .diana { stroke: var(--aljibe); stroke-width: 2; }
+@media (max-width: 400px) {
+  .oscuro__fila > :last-child { white-space: normal; overflow-wrap: anywhere; }
+  .campo--fila { flex-wrap: wrap; }
+  .campo--fila .entrada { width: 100%; }
+}

@@ -3,11 +3,17 @@ import { iniciarMarco, listo, mostrarError } from '../marco.js';
 import { datos } from '../nucleo/api.js';
 import { el, icono, lineas, reducirMovimiento } from '../nucleo/dom.js';
 import { contar } from '../efectos.js';
+import { numero } from '../nucleo/formato.js';
 
 iniciarMarco();
 const reducir = reducirMovimiento();
 
-function pintarPrevision(d) {
+function pintarPrevision(d, fiesta) {
+  const f = fiesta.fechaRecomendada;
+  d = { ...d, cifra: numero(fiesta.prevision.central), datos: [
+    { etiqueta: 'Mejor fecha', valor: 'Sáb. ' + f.dia + ' ' + f.mes + '.' },
+    { etiqueta: 'Ediciones', valor: fiesta.historico.ediciones.length + ' analizadas' }
+  ] };
   const a = el('a', 'panel');
   a.href = d.href;
   a.setAttribute('aria-label', 'Abrir la previsión de la ' + d.titulo.join(' '));
@@ -188,9 +194,9 @@ function inclinar() {
   a.addEventListener('mouseleave', () => { a.style.removeProperty('--rx'); a.style.removeProperty('--ry'); });
 }
 
-Promise.all([datos('prevision'), datos('dimensiones'), datos('servicios'), datos('equipo')])
-  .then(([prevision, dimensiones, servicios, equipo]) => {
-    pintarPrevision(prevision);
+Promise.all([datos('prevision'), datos('dimensiones'), datos('servicios'), datos('equipo'), datos('fiesta-2027')])
+  .then(([prevision, dimensiones, servicios, equipo, fiesta]) => {
+    pintarPrevision(prevision, fiesta);
     pintarDimensiones(dimensiones);
     pintarServicios(servicios);
     pintarEquipo(equipo);

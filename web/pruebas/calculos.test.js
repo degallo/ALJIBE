@@ -118,4 +118,6 @@ test('conteo: al cierre han entrado los 7.600 previstos y no faltan vasos', () =
 test('contacto: valida el correo', () => {
   assert.equal(validarContacto({ nombre: 'Ana', email: 'ana@alhama.es' }).valido, true);
   assert.equal(validarContacto({ nombre: 'Ana', email: 'ana' }).valido, false);
+  assert.equal(validarContacto({ nombre: 'Ana', email: 'ana@alhama.es', servicio: 'radar' }).valido, true);
+  assert.equal(validarContacto({ nombre: 'Ana', email: 'ana@alhama.es', servicio: '<script>' }).valido, false);
 });

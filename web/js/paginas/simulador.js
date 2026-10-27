@@ -96,6 +96,7 @@ function leer(e) {
     estado = desdeConcierto(Number(e.target.value));
     base = simularConcierto(sala.modelo, estado);
     pintarFormulario();
+    f.elements.concierto.focus();
   } else {
     estado = {
       indice: f.elements.concierto.value,

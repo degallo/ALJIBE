@@ -82,6 +82,7 @@ export function validarContacto(datos) {
   if (limpio.organizacion.length > 120) errores.organizacion = 'El nombre de la organización es demasiado largo.';
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(limpio.email) || limpio.email.length > 120) errores.email = 'Escribe un correo válido, por ejemplo nombre@ayuntamiento.es.';
   if (limpio.mensaje.length > 1000) errores.mensaje = 'El mensaje no puede pasar de 1.000 caracteres.';
+  if (!/^[a-z]{0,20}$/.test(limpio.servicio)) errores.servicio = 'Elige un servicio de la lista.';
   return { valido: Object.keys(errores).length === 0, errores, contacto: limpio };
 }
 

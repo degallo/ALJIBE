@@ -26,9 +26,9 @@ La web está en **https://degallo.github.io/ALJIBE/**. El flujo `.github/workflo
 
 - Pulsa **P** o el botón **Presentar en clase** de la barra lateral.
 - **→**, **Espacio** o **Av Pág** avanzan; **←** o **Re Pág** retroceden. Funciona con mandos de presentación.
-- **N** muestra las notas para quien presenta; **F** pone pantalla completa; **Esc** sale.
+- **N** muestra las notas para quien presenta; **F** pone pantalla completa; **−** y **+** (teclas o botones de la barra) cambian el tamaño y **0** lo devuelve al de partida; **Esc** sale.
 - Son 18 pasos que recorren la web de principio a fin y resaltan cada sección. En el paso del conteo, el día de la fiesta se reproduce solo.
-- **Modo proyector:** al presentar, la web se amplía según el ancho de la pantalla (1,78 veces en un proyector Full HD) y oculta la barra lateral, las pestañas y el pie, para que se lea desde el fondo del aula. Al salir vuelve a su tamaño.
+- **Modo proyector:** al presentar, la web se amplía según el ancho de la pantalla (1,2 veces en un proyector Full HD; en portátiles de 1.366 px no se amplía) y oculta la barra lateral, las pestañas y el pie, para que se lea desde el fondo del aula. Al salir vuelve a su tamaño. El ajuste con − / + se recuerda en ese equipo.
 - El guion completo está en `docs/guion-presentacion.md` y los pasos en `datos/presentacion.json`.
 
 ## Pantallas y entregables
@@ -94,3 +94,7 @@ Las cifras de los diseños y de la especificación de Decisiones se mantienen ex
 - `impacto.json`: balance de 2026 (6.900 asistentes y −7 % del histórico; 27 familias, 4.000 l, 3.200 €, 38 % y 41 noticias del diseño; el resto, nuevo).
 - `agenda.json`: eventos de la provincia y festivos de 2027, ajustados para que coincidan con las cuatro fechas del cuadro de mando.
 - `informe-pleno.json`: textos del informe, calendario y propuestas de acuerdo.
+
+## Caché tras publicar
+
+Al publicar en GitHub Pages, el flujo añade `?v=<commit>` a todos los JS y CSS (`servidor/versionar.js`) y los datos JSON se piden con `cache: 'no-cache'`. Así el navegador nunca mezcla archivos del despliegue anterior con los nuevos (un `marco.js` viejo rompía el paso 8 del recorrido).

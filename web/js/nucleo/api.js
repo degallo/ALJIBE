@@ -6,9 +6,11 @@ import { comprobarFecha as comprobarLocal, validarEvento, validarContacto } from
 const cache = new Map();
 let estado = null;
 
+// no-cache: el navegador pregunta si el archivo ha cambiado (respuesta 304 si no),
+// así nunca mezcla datos viejos con el código de un despliegue nuevo
 export function datos(nombre) {
   if (!cache.has(nombre)) {
-    const peticion = fetch(raiz() + 'datos/' + nombre + '.json').then((r) => {
+    const peticion = fetch(raiz() + 'datos/' + nombre + '.json', { cache: 'no-cache' }).then((r) => {
       if (!r.ok) throw new Error('No se han podido cargar los datos (' + nombre + ').');
       return r.json();
     });

@@ -1,6 +1,6 @@
 // Modo presentación para clase: recorre la web paso a paso con las flechas,
 // Av Pág/Re Pág (mandos de presentación), Espacio o los botones de la barra.
-//   P: empezar · N: notas · F: pantalla completa · Esc: salir
+//   P: empezar · N: notas · F: pantalla completa · + / − / 0: tamaño · Esc: salir
 import { el, icono, raiz, reducirMovimiento } from './nucleo/dom.js';
 import { datos } from './nucleo/api.js';
 
@@ -18,13 +18,32 @@ function guardarSesion(v) {
   try { v ? sessionStorage.setItem(CLAVE, JSON.stringify(v)) : sessionStorage.removeItem(CLAVE); } catch { /* sin almacenamiento */ }
 }
 
-// Modo proyector: amplía la web para que se lea desde el fondo del aula.
-// El contenido se maqueta como si la pantalla midiera unos 1.080 px de ancho,
-// así que en un proyector Full HD todo se ve 1,8 veces más grande.
-const ANCHO_PROYECTOR = 1080;
+// Modo proyector: amplía un poco la web para que se lea desde el fondo del aula.
+// El contenido se maqueta como si la pantalla midiera unos 1.600 px de ancho
+// (en un proyector Full HD, 1,2 veces más grande). Quien presenta puede
+// ajustarlo con los botones − / + o las teclas − / + / 0; se recuerda en el equipo.
+const ANCHO_PROYECTOR = 1600;
+const CLAVE_TAMANO = 'aljibe-presentacion-tamano';
+const PASO_TAMANO = 0.1;
+let tamano = leerTamano();
+
+function leerTamano() {
+  try {
+    const v = Number(localStorage.getItem(CLAVE_TAMANO));
+    return v >= 0.6 && v <= 1.6 ? v : 1;
+  } catch { return 1; }
+}
 function ajustarZoom() {
-  const zoom = window.innerWidth >= 900 ? Math.min(1.9, Math.max(1, window.innerWidth / ANCHO_PROYECTOR)) : 1;
+  // En móvil no se amplía ni se ajusta: la web ya está pensada para ese ancho
+  const zoom = window.innerWidth >= 900 ? Math.min(1.2, Math.max(1, window.innerWidth / ANCHO_PROYECTOR)) * tamano : 1;
   document.documentElement.style.setProperty('--zoom-proyector', zoom.toFixed(3));
+}
+function cambiarTamano(delta) {
+  tamano = delta ? Math.min(1.6, Math.max(0.6, Math.round((tamano + delta) * 10) / 10)) : 1;
+  try { localStorage.setItem(CLAVE_TAMANO, String(tamano)); } catch { /* sin almacenamiento */ }
+  ajustarZoom();
+  if (anuncio) anuncio.textContent = 'Tamaño ' + Math.round(tamano * 100) + ' %';
+  if (enfocado) enfocado.scrollIntoView({ block: 'center' });
 }
 
 function crearBarra() {
@@ -60,6 +79,18 @@ function crearBarra() {
   botonNotas.appendChild(icono('notas'));
   botonNotas.addEventListener('click', alternarNotas);
 
+  const menor = el('button', 'presenta__boton presenta__boton--tamano');
+  menor.type = 'button';
+  menor.setAttribute('aria-label', 'Reducir tamaño');
+  menor.appendChild(icono('menos'));
+  menor.addEventListener('click', () => cambiarTamano(-PASO_TAMANO));
+
+  const mayor = el('button', 'presenta__boton presenta__boton--tamano');
+  mayor.type = 'button';
+  mayor.setAttribute('aria-label', 'Aumentar tamaño');
+  mayor.appendChild(icono('mas'));
+  mayor.addEventListener('click', () => cambiarTamano(PASO_TAMANO));
+
   const completa = el('button', 'presenta__boton');
   completa.type = 'button';
   completa.setAttribute('aria-label', 'Pantalla completa');
@@ -74,7 +105,7 @@ function crearBarra() {
 
   const texto = el('span', 'presenta__texto');
   texto.append(contador, titulo);
-  fila.append(atras, texto, adelante, botonNotas, completa, salir);
+  fila.append(atras, texto, adelante, botonNotas, menor, mayor, completa, salir);
 
   anuncio = el('span', 'solo-lectores');
   anuncio.setAttribute('aria-live', 'polite');
@@ -178,6 +209,9 @@ function teclas(e) {
   else if (e.key === 'Escape') { e.preventDefault(); terminar(); }
   else if (e.key === 'n' || e.key === 'N') { e.preventDefault(); alternarNotas(); }
   else if (e.key === 'f' || e.key === 'F') { e.preventDefault(); pantallaCompleta(); }
+  else if (e.key === '+' || e.key === '=') { e.preventDefault(); cambiarTamano(PASO_TAMANO); }
+  else if (e.key === '-' || e.key === '_') { e.preventDefault(); cambiarTamano(-PASO_TAMANO); }
+  else if (e.key === '0') { e.preventDefault(); cambiarTamano(0); }
 }
 
 export function iniciarPresentacion() {

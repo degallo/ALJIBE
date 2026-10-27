@@ -39,6 +39,7 @@ export const ICONOS = {
   edificio: '<path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/>',
   servidor: '<rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01M6 17.5h.01"/>',
   mas: '<path d="M12 5v14M5 12h14"/>',
+  menos: '<path d="M5 12h14"/>',
   sube: '<path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/>',
   baja: '<path d="m22 17-8.5-8.5-5 5L2 7"/><path d="M16 17h6v-6"/>',
   euro: '<path d="M4 10h12M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/>'

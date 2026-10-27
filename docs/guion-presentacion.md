@@ -2,7 +2,7 @@
 
 Se genera a partir de `web/datos/presentacion.json`. En la web, pulsa **P** para empezar y **N** para ver estas notas en pantalla.
 
-Teclas: → o Espacio, siguiente · ← anterior · N notas · F pantalla completa · Esc salir.
+Teclas: → o Espacio, siguiente · ← anterior · N notas · F pantalla completa · − / + tamaño (0 lo restablece) · Esc salir.
 
 ## 1. Convertimos los datos de la cultura en decisiones
 

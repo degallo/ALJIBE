@@ -325,6 +325,7 @@ select.entrada { appearance: none; padding-right: 40px; background-image: linear
 .presenta__boton--principal { background: var(--agua-soft); color: var(--aljibe); }
 .presenta__boton--principal:hover { background: #fff; }
 .presenta__boton[aria-expanded="true"] { background: var(--on-aljibe); color: var(--tinta); }
+@media (max-width: 899px) { .presenta__boton--tamano { display: none; } }
 .presenta__notas {
   background: rgba(16, 38, 43, 0.94); color: var(--on-aljibe); border-radius: 24px; padding: 18px 22px;
   font-size: 17px; line-height: 26px; box-shadow: 0 18px 50px rgba(16, 38, 43, 0.35);

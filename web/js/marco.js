@@ -94,18 +94,29 @@ export function iniciarMarco() {
 // Para llamar cuando la pantalla ya ha pintado sus datos
 // Las tablas anchas se pueden desplazar con el teclado cuando no caben
 function tablasDesplazables() {
-  const revisar = () => document.querySelectorAll('.tabla-scroll').forEach((n) => {
+  // El nombre sale del título más cercano por encima de la tabla y nunca se repite
+  const titulo = (n) => {
+    for (let a = n.previousElementSibling; a; a = a.previousElementSibling) if (/^H[23]$/.test(a.tagName)) return a.textContent;
+    return n.closest('section, .hoja')?.querySelector('h2, h3')?.textContent || '';
+  };
+  const revisar = () => {
+    const usados = new Map();
+    document.querySelectorAll('.tabla-scroll').forEach((n) => {
     if (n.scrollWidth > n.clientWidth + 1) {
       n.tabIndex = 0;
       n.setAttribute('role', 'region');
-      const titulo = n.closest('section, .hoja')?.querySelector('h2, h3');
-      n.setAttribute('aria-label', 'Tabla desplazable' + (titulo ? ': ' + titulo.textContent : ''));
+      let nombre = 'Tabla desplazable' + (titulo(n) ? ': ' + titulo(n) : '');
+      const veces = (usados.get(nombre) || 0) + 1;
+      usados.set(nombre, veces);
+      if (veces > 1) nombre += ' (' + veces + ')';
+      n.setAttribute('aria-label', nombre);
     } else {
       n.removeAttribute('tabindex');
       n.removeAttribute('role');
       n.removeAttribute('aria-label');
     }
-  });
+    });
+  };
   revisar();
   let espera;
   window.addEventListener('resize', () => { clearTimeout(espera); espera = setTimeout(revisar, 200); });

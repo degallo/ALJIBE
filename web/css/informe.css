@@ -86,3 +86,8 @@
 
 .fuentes-doc { columns: 1; column-gap: 24px; font-size: 13px; line-height: 19px; }
 .fuentes-doc li { break-inside: avoid; margin-bottom: 4px; }
+.cifra-doc { min-width: 0; }
+.cifra-doc strong { overflow-wrap: anywhere; }
+@media (max-width: 400px) {
+  .cifras-doc, .portada-doc .cifras-doc { grid-template-columns: 1fr; }
+}

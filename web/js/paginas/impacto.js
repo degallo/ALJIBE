@@ -1,5 +1,5 @@
 // Proyectos a medida: informe de impacto con nivel de evidencia por indicador
-import { iniciarMarco, listo, mostrarError } from '../marco.js';
+import { iniciarMarco, listo, mostrarError, conclusion } from '../marco.js';
 import { datos } from '../nucleo/api.js';
 import { el } from '../nucleo/dom.js';
 import { conUnidad, numero } from '../nucleo/formato.js';
@@ -11,6 +11,8 @@ const valor = (i) => (i.tipo === 'litros' ? numero(i.valor) + ' l' : conUnidad(
 
 datos('impacto')
   .then((d) => {
+    const indicador = (dim, n) => d.dimensiones.find((x) => x.id === dim).indicadores[n];
+    conclusion(d.edicion + ': ' + numero(indicador('participacion', 0).valor) + ' personas y ' + indicador('patrimonio', 0).valor + ' familias cosecheras.');
     const niveles = document.getElementById('niveles');
     for (const [id, texto] of Object.entries(d.niveles)) {
       const li = el('li');

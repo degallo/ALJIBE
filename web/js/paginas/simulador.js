@@ -1,5 +1,5 @@
 // Suscripción avanzada: segmentos, previsión de demanda y simulador de escenarios
-import { iniciarMarco, listo, mostrarError } from '../marco.js';
+import { iniciarMarco, listo, mostrarError, conclusion } from '../marco.js';
 import { datos } from '../nucleo/api.js';
 import { simularConcierto } from '../nucleo/calculos.js';
 import { el, icono } from '../nucleo/dom.js';
@@ -162,6 +162,10 @@ datos('sala')
   .then((s) => {
     sala = s;
     const flojo = s.proximos.findIndex((c) => c.dia === 'martes');
+    // Titular que afirma: lo que gana el concierto más flojo si pasa del martes al jueves
+    const plan = desdeConcierto(flojo);
+    const suma = simularConcierto(sala.modelo, { ...plan, dia: 'jueves' }).ocupacion - simularConcierto(sala.modelo, plan).ocupacion;
+    conclusion('Pasar un concierto del martes al jueves suma ' + suma + ' puntos de ocupación.');
     const empezar = () => { estado = desdeConcierto(flojo); base = simularConcierto(sala.modelo, estado); pintarFormulario(); pintarSalida(); };
     pintarSegmentos();
     empezar();

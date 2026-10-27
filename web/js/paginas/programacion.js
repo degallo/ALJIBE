@@ -1,5 +1,5 @@
 // Estudio de programación: ranking de artistas con pesos ajustables y ranking de fechas
-import { iniciarMarco, listo, mostrarError } from '../marco.js';
+import { iniciarMarco, listo, mostrarError, conclusion } from '../marco.js';
 import { datos } from '../nucleo/api.js';
 import { puntuarArtistas } from '../nucleo/calculos.js';
 import { el, reducirMovimiento } from '../nucleo/dom.js';
@@ -92,6 +92,8 @@ function pintarRecomendacion(r) {
   const top = r[0];
   const eficiente = r.slice().sort((a, b) => b.puntos / b.cache - a.puntos / a.cache)[0];
   const fecha = fiesta.fechas[0];
+  // El titular cambia en directo al mover los pesos
+  conclusion(top.nombre + ' (' + top.estilo.toLowerCase() + '), el ' + fecha.dia.toLowerCase() + ' de ' + fecha.mes + '.');
   const p = document.getElementById('recomendacion');
   p.textContent = '';
   const filas = el('div', 'oscuro__filas');

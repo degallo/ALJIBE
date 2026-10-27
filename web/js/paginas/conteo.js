@@ -1,5 +1,5 @@
 // El día de la fiesta: simulación del conteo en directo
-import { iniciarMarco, listo, mostrarError } from '../marco.js';
+import { iniciarMarco, listo, mostrarError, conclusion } from '../marco.js';
 import { datos } from '../nucleo/api.js';
 import { conteoA } from '../nucleo/calculos.js';
 import { el, icono, svg, reducirMovimiento } from '../nucleo/dom.js';
@@ -87,6 +87,8 @@ function calcularAvisos() {
     if (!aforo && c.dentro >= dia.aforo * 0.8) { aforo = true; avisos.push({ hora: h, tipo: 'atencion', titulo: 'Atención: aforo al 80 %', texto: 'Abrir la zona de la plaza y reforzar la segunda barra.' }); }
     if (!vasos && c.vasosQuedan <= dia.vasos * 0.15) { vasos = true; avisos.push({ hora: h, tipo: 'atencion', titulo: 'Atención: quedan menos del 15 % de los vasos', texto: numero(c.vasosQuedan) + ' vasos. Avisar a las barras y priorizar la venta de recarga.' }); }
   }
+  const cierre = conteoA(dia.cierre, dia);
+  conclusion('Pico de ' + numero(pico.dentro) + ' personas a las ' + textoHora(pico.hora) + (cierre.vasosQuedan > 0 ? ', sin agotar los vasos.' : '.'));
   avisos.push({ hora: pico.hora + 0.5, tipo: 'plan', titulo: 'Pico de la tarde superado', texto: 'Máximo de ' + numero(pico.dentro) + ' personas dentro a las ' + textoHora(pico.hora) + '.' });
   avisos.push({ hora: dia.cierre, tipo: 'bien', titulo: 'Cierre: ' + numero(dia.total) + ' asistentes', texto: 'Los datos pasan al informe de impacto para el pleno.' });
   return avisos.sort((a, b) => a.hora - b.hora);

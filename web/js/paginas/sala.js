@@ -1,5 +1,5 @@
 // Suscripción esencial: cuadro de mando automático de una sala de conciertos
-import { iniciarMarco, listo, mostrarError } from '../marco.js';
+import { iniciarMarco, listo, mostrarError, conclusion } from '../marco.js';
 import { datos } from '../nucleo/api.js';
 import { el, icono, svg } from '../nucleo/dom.js';
 import { conUnidad, diferencia, fechaLarga, numero, porcentaje, leerFecha } from '../nucleo/formato.js';
@@ -55,6 +55,7 @@ function pintarOcupacion(s) {
   document.getElementById('grafico-ocupacion').appendChild(g);
   const martes = s.ultimos.filter((c) => c.dia === 'mar');
   const mediaMartes = Math.round(martes.reduce((t, c) => t + c.ocupacion, 0) / martes.length);
+  conclusion('Los martes pierden ' + (media - mediaMartes) + ' puntos de ocupación.');
   document.getElementById('nota-ocupacion').textContent = 'Los martes llenan de media un ' + mediaMartes + ' %, ' + (media - mediaMartes) + ' puntos menos que la media de la sala.';
 }
 

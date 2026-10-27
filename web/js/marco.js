@@ -130,6 +130,13 @@ export function listo() {
   document.dispatchEvent(new CustomEvent('aljibe:listo'));
 }
 
+// Titular que afirma: la segunda línea del título dice la conclusión de la pantalla,
+// calculada con sus datos (si cambian las cifras, cambia el titular)
+export function conclusion(texto) {
+  const n = document.getElementById('conclusion');
+  if (n && texto) n.textContent = texto;
+}
+
 export function mostrarError(e) {
   const aviso = el('p', 'aviso-datos', 'No se han podido cargar los datos. Abre la web desde el servidor (npm start en la carpeta web) o desde su dirección publicada.');
   aviso.setAttribute('role', 'alert');

@@ -185,7 +185,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .boton--contorno:hover { background: rgba(255, 255, 255, 0.7); }
 
 /* Tarjeta oscura de previsión */
-.portada__panel-hueco { flex: 1 1 320px; min-width: 0; max-width: 400px; display: flex; animation: flotar 7s ease-in-out 2.5s infinite alternate; }
+.portada__panel-hueco { flex: 1 1 372px; min-width: 0; max-width: 400px; display: flex; animation: flotar 7s ease-in-out 2.5s infinite alternate; }
 @keyframes flotar { from { translate: 0 0; } to { translate: 0 -10px; } }
 .panel {
   flex: 1;

@@ -11,10 +11,11 @@ const corta = (iso) => { const f = leerFecha(iso); return f.getUTCDate() + '/' +
 
 function pintarKpis(s) {
   const cont = document.getElementById('kpis-sala');
-  for (const k of s.kpis) {
+  s.kpis.forEach((k, i) => {
     const mas = k.sentido === 'mas';
     const ok = mas ? k.valor >= k.objetivo : k.valor <= k.objetivo;
-    const a = el('article', 'kpi luz');
+    // El primer indicador es el protagonista de la pantalla
+    const a = el('article', 'kpi luz' + (i === 0 ? ' kpi--principal' : ''));
     a.dataset.revelar = '';
     const objetivo = el('div', 'kpi__objetivo');
     objetivo.append(el('span', null, 'Objetivo'), el('strong', null, conUnidad(k.objetivo, k.tipo)));
@@ -25,22 +26,23 @@ function pintarKpis(s) {
       ok ? el('span', 'estado estado--ok', 'Objetivo alcanzado') : el('span', 'estado estado--falta', 'Faltan ' + diferencia(Math.abs(k.objetivo - k.valor), k.tipo))
     );
     cont.appendChild(a);
-  }
+  });
 }
 
 function pintarOcupacion(s) {
   const W = 640, H = 240, ABA = 30, ARR = 14;
   const n = s.ultimos.length;
-  const ancho = (W - 30) / n;
+  const IZQ = 64; // margen para el eje y la etiqueta de la media
+  const ancho = (W - IZQ) / n;
   const y = (v) => ARR + (1 - v / 100) * (H - ARR - ABA);
   const media = Math.round(s.ultimos.reduce((t, c) => t + c.ocupacion, 0) / n);
   const g = svg('svg', { viewBox: `0 0 ${W} ${H}`, class: 'grafico', role: 'img', 'aria-label': 'Ocupación de los últimos ' + n + ' conciertos. Media del ' + media + ' %. Los martes se quedan por debajo del 45 %.' });
   for (const v of [0, 50, 100]) {
-    g.appendChild(svg('line', { x1: 30, x2: W, y1: y(v), y2: y(v), stroke: v ? '#ECEEEB' : '#D5DAD6' }));
+    g.appendChild(svg('line', { x1: IZQ, x2: W, y1: y(v), y2: y(v), stroke: v ? '#ECEEEB' : '#D5DAD6' }));
     const t = svg('text', { x: 0, y: y(v) + 4 }); t.textContent = v + '%'; g.appendChild(t);
   }
   s.ultimos.forEach((c, i) => {
-    const x = 30 + i * ancho + 6;
+    const x = IZQ + i * ancho + 6;
     const martes = c.dia === 'mar';
     const r = svg('rect', { x, y: y(c.ocupacion), width: ancho - 12, height: H - ABA - y(c.ocupacion), rx: 4, fill: martes ? '#10262B' : '#004C59', 'fill-opacity': martes ? 0.35 : 1 });
     const tt = svg('title'); tt.textContent = c.dia + ' ' + corta(c.fecha) + ': ' + c.ocupacion + ' %'; r.appendChild(tt);
@@ -48,8 +50,8 @@ function pintarOcupacion(s) {
     const t = svg('text', { x: x + (ancho - 12) / 2, y: H - 10, 'text-anchor': 'middle' }); t.textContent = c.dia; g.appendChild(t);
     const v = svg('text', { x: x + (ancho - 12) / 2, y: y(c.ocupacion) - 5, 'text-anchor': 'middle' }); v.textContent = c.ocupacion; g.appendChild(v);
   });
-  g.appendChild(svg('line', { x1: 30, x2: W, y1: y(media), y2: y(media), stroke: '#2E8C9C', 'stroke-width': 2, 'stroke-dasharray': '6 5' }));
-  const tm = svg('text', { x: 34, y: y(media) + 14, style: 'fill:#004C59;font-weight:600' }); tm.textContent = 'Media ' + media + ' %'; g.appendChild(tm);
+  g.appendChild(svg('line', { x1: IZQ, x2: W, y1: y(media), y2: y(media), stroke: '#2E8C9C', 'stroke-width': 2, 'stroke-dasharray': '6 5' }));
+  const tm = svg('text', { x: 0, y: y(media) + 4, style: 'fill:#004C59;font-weight:600' }); tm.textContent = 'Media ' + media; g.appendChild(tm);
   document.getElementById('grafico-ocupacion').appendChild(g);
   const martes = s.ultimos.filter((c) => c.dia === 'mar');
   const mediaMartes = Math.round(martes.reduce((t, c) => t + c.ocupacion, 0) / martes.length);

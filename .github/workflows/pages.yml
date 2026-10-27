@@ -38,6 +38,7 @@ jobs:
       - name: Preparar la carpeta publicada
         run: |
           cp -r web _sitio
+          node web/servidor/versionar.js _sitio "${GITHUB_SHA::8}"
           rm -rf _sitio/servidor _sitio/pruebas _sitio/capturas _sitio/package.json _sitio/README.md _sitio/.gitignore
           touch _sitio/.nojekyll
 

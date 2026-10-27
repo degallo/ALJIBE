@@ -1,5 +1,5 @@
 // Radar semanal de asistencia: Fiesta del Vino 2027
-import { iniciarMarco, listo, mostrarError } from '../marco.js';
+import { iniciarMarco, listo, mostrarError, conclusion } from '../marco.js';
 import { datos } from '../nucleo/api.js';
 import { el, icono, svg } from '../nucleo/dom.js';
 import { numero, porcentaje, conSigno, leerFecha } from '../nucleo/formato.js';
@@ -20,6 +20,8 @@ function dato(etiqueta, valor, nota, clase = '') {
 }
 
 function pintarKpis(r, fiesta) {
+  const v = r.resumen.variacion;
+  conclusion('Vamos un ' + Math.abs(v) + ' % ' + (v >= 0 ? 'por delante' : 'por detrás') + ' de ' + (fiesta.anio - 1) + '.');
   const actual = r.semanas.find((s) => s.semana === r.semanaActual);
   const final = r.semanas[r.semanas.length - 1];
   const asis = (i) => Math.round((i / r.equivalencia.indice) * r.equivalencia.asistentes / 100) * 100;
@@ -33,7 +35,7 @@ function pintarKpis(r, fiesta) {
 }
 
 function pintarGrafico(r) {
-  const W = 1040, H = 380, IZQ = 40, DER = 24, ARR = 20, ABA = 40;
+  const W = 1040, H = 380, IZQ = 40, DER = 120, ARR = 20, ABA = 40;
   const n = r.semanas.length;
   const x = (i) => IZQ + (i * (W - IZQ - DER)) / (n - 1);
   const y = (v) => ARR + (1 - v / 125) * (H - ARR - ABA);
@@ -72,6 +74,14 @@ function pintarGrafico(r) {
   const th = svg('text', { x: x(ultimoReal.i), y: y(ultimoReal.real) - 14, 'text-anchor': 'middle', style: 'fill:#004C59;font-weight:600' }); th.textContent = 'Hoy'; s.appendChild(th);
   const fin = prev[prev.length - 1];
   s.appendChild(svg('circle', { cx: x(fin.i), cy: y(fin.prevision), r: 5, fill: '#CFE6EA', stroke: '#2E8C9C', 'stroke-width': 2 }));
+  // Etiquetas directas al final de cada línea, en asistentes
+  const asistentes = (indice) => numero(Math.round((indice / r.equivalencia.indice) * r.equivalencia.asistentes / 100) * 100);
+  const ultimo = r.semanas[r.semanas.length - 1];
+  const tPrev = svg('text', { x: x(fin.i) + 12, y: y(fin.prevision) + 5, style: 'font-family: var(--sans); font-size: 14px; font-weight: 600; fill: #004C59' });
+  tPrev.textContent = asistentes(fin.prevision) + ' en 2027';
+  const tAnt = svg('text', { x: x(fin.i) + 12, y: y(ultimo.anterior) + 5, style: 'font-family: var(--sans); font-size: 14px; fill: #4E6368' });
+  tAnt.textContent = asistentes(ultimo.anterior) + ' en 2026';
+  s.append(tPrev, tAnt);
 
   // Zonas interactivas por semana
   const caja = document.getElementById('grafico-radar');

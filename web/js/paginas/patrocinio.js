@@ -1,5 +1,5 @@
 // Dossier para patrocinadores con calculadora de paquetes
-import { iniciarMarco, listo, mostrarError } from '../marco.js';
+import { iniciarMarco, listo, mostrarError, conclusion } from '../marco.js';
 import { datos } from '../nucleo/api.js';
 import { el, icono } from '../nucleo/dom.js';
 import { numero, euros, porcentaje } from '../nucleo/formato.js';
@@ -92,6 +92,7 @@ datos('patrocinio')
   .then((x) => {
     d = x;
     const p = d.publico;
+    conclusion(numero(p.previsto) + ' personas, el ' + p.fuera + ' % de fuera de la comarca.');
     document.getElementById('cifras-publico').append(
       dato('Asistentes previstos', numero(p.previsto), '', 'Fiesta del Vino 2027', true),
       dato('De fuera de la comarca', String(p.fuera), '%', 'Encuesta de código postal'),

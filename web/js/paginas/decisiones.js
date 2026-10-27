@@ -119,18 +119,28 @@ function recalcular(anunciar) {
     tot.appendChild(f);
   }
 
-  // Franja de resultado
+  // Resultado del plan: la cifra protagonista de la pantalla
   const principal = r.kpis.find((k) => k.id === actual.kpiPrincipal);
-  const cifras = document.getElementById('cifras-resultado');
-  cifras.textContent = '';
-  const cifra = (etq, valor) => {
-    const c = el('div', 'cifra');
-    c.append(el('span', 'cifra__etiqueta', etq), el('span', 'cifra-xl', valor));
-    cifras.appendChild(c);
-  };
-  cifra(principal.nombre, conUnidad(principal.previsto, principal.tipo, principal.decimales));
-  cifra('Inversión total', euros(r.inversion));
-  cifra('Retorno por euro', r.retorno === null ? 'sin coste' : numero(r.retorno, 1) + ' €');
+  const cifra = document.getElementById('res-cifra');
+  cifra.textContent = conUnidad(principal.previsto, principal.tipo, principal.decimales);
+  if (anterior && anterior.kpis.find((k) => k.id === principal.id).previsto !== principal.previsto) {
+    cifra.classList.remove('cambia');
+    void cifra.offsetWidth;
+    cifra.classList.add('cambia');
+  }
+  document.getElementById('res-texto').textContent = principal.nombre.toLowerCase() + ' con el plan · objetivo ' +
+    conUnidad(principal.objetivo, principal.tipo, principal.decimales) + ' · hoy ' + conUnidad(principal.hoy, principal.tipo, principal.decimales);
+  const apoyo = document.getElementById('res-apoyo');
+  apoyo.textContent = '';
+  for (const [k, v] of [
+    ['Inversión', euros(r.inversion)],
+    ['Retorno por euro', r.retorno === null ? 'sin coste' : numero(r.retorno, 1) + '\u00a0€'],
+    ['Objetivos alcanzados', r.alcanzados + ' de ' + r.kpis.length]
+  ]) {
+    const d = el('div', 'resultado-hero__dato');
+    d.append(el('dt', null, k), el('dd', 'mono', v));
+    apoyo.appendChild(d);
+  }
 
   if (anunciar) {
     document.getElementById('anuncio').textContent =

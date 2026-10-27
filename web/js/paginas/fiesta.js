@@ -13,7 +13,10 @@ let elegida;
 function pintarResumen() {
   const f = fiesta;
   const h1 = document.getElementById('titulo');
-  h1.append(f.titulo, document.createElement('br'), el('span', null, f.subtitulo));
+  // Titular que afirma: la fecha recomendada y la asistencia prevista
+  const rec = f.fechas.find((x) => x.id === f.fechaRecomendada.dia) || f.fechas[0];
+  const conclusion = 'El ' + rec.dia.toLowerCase() + ' de ' + rec.mes + ', ' + numero(f.prevision.central) + ' personas.';
+  h1.append(f.titulo, document.createElement('br'), el('span', null, conclusion));
   document.getElementById('chip-edicion').append(f.municipio + ' · ' + f.edicion, icono('abajo', 'ico ico--s'));
   const p = f.prevision;
   document.getElementById('prevision-central').textContent = numero(p.central);
@@ -200,6 +203,28 @@ function pintarHistorico() {
   const anio = svg('text', { x: xp, y: 224, 'text-anchor': 'middle', style: 'fill: #10262B' });
   anio.textContent = fiesta.anio;
   s.appendChild(anio);
+
+  // Anotaciones: lo que explica la curva sin tener que contarlo de palabra
+  for (const a of h.anotaciones || []) {
+    const i = ed.findIndex((e) => e.anio === a.anio);
+    if (i >= 0) {
+      // Un año con dato: anillo en su punto y texto debajo, a la izquierda
+      const cx = X0 + i * PASO, cy = y(ed[i].asistentes);
+      s.appendChild(svg('circle', { cx, cy, r: 6, fill: 'none', stroke: a.tipo === 'caida' ? '#B4521A' : '#10262B', 'stroke-width': 1.5 }));
+      const t = svg('text', { x: cx - 8, y: cy + 30, 'text-anchor': 'end', style: 'font-family: var(--sans); font-size: 11px; font-weight: 600; fill: ' + (a.tipo === 'caida' ? '#B4521A' : '#10262B') });
+      t.textContent = a.texto;
+      s.appendChild(t);
+    } else {
+      // Un año sin edición: marca entre los años vecinos
+      const j = ed.findIndex((e) => e.anio > a.anio);
+      if (j <= 0) continue;
+      const xm = X0 + (j - 0.5) * PASO, ym = (y(ed[j - 1].asistentes) + y(ed[j].asistentes)) / 2;
+      s.appendChild(svg('line', { x1: xm, x2: xm, y1: ym + 8, y2: ym + 18, stroke: '#4E6368', 'stroke-width': 1.5 }));
+      const t = svg('text', { x: xm, y: ym + 32, 'text-anchor': 'middle', style: 'font-family: var(--sans); font-size: 11px; font-weight: 600; fill: #4E6368' });
+      t.textContent = a.texto;
+      s.appendChild(t);
+    }
+  }
 
   // Puntos: visibles los del diseño; todos con objetivo táctil y título
   const contenedor = document.getElementById('grafico-historico');

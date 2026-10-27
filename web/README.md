@@ -28,6 +28,7 @@ La web está en **https://degallo.github.io/ALJIBE/**. El flujo `.github/workflo
 - **→**, **Espacio** o **Av Pág** avanzan; **←** o **Re Pág** retroceden. Funciona con mandos de presentación.
 - **N** muestra las notas para quien presenta; **F** pone pantalla completa; **Esc** sale.
 - Son 18 pasos que recorren la web de principio a fin y resaltan cada sección. En el paso del conteo, el día de la fiesta se reproduce solo.
+- **Modo proyector:** al presentar, la web se amplía según el ancho de la pantalla (1,78 veces en un proyector Full HD) y oculta la barra lateral, las pestañas y el pie, para que se lea desde el fondo del aula. Al salir vuelve a su tamaño.
 - El guion completo está en `docs/guion-presentacion.md` y los pasos en `datos/presentacion.json`.
 
 ## Pantallas y entregables

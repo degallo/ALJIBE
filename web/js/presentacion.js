@@ -18,6 +18,15 @@ function guardarSesion(v) {
   try { v ? sessionStorage.setItem(CLAVE, JSON.stringify(v)) : sessionStorage.removeItem(CLAVE); } catch { /* sin almacenamiento */ }
 }
 
+// Modo proyector: amplía la web para que se lea desde el fondo del aula.
+// El contenido se maqueta como si la pantalla midiera unos 1.080 px de ancho,
+// así que en un proyector Full HD todo se ve 1,8 veces más grande.
+const ANCHO_PROYECTOR = 1080;
+function ajustarZoom() {
+  const zoom = window.innerWidth >= 900 ? Math.min(1.9, Math.max(1, window.innerWidth / ANCHO_PROYECTOR)) : 1;
+  document.documentElement.style.setProperty('--zoom-proyector', zoom.toFixed(3));
+}
+
 function crearBarra() {
   barra = el('div', 'presenta');
   barra.setAttribute('role', 'region');
@@ -72,6 +81,8 @@ function crearBarra() {
 
   barra.append(notas, fila, anuncio);
   document.body.appendChild(barra);
+  ajustarZoom();
+  window.addEventListener('resize', ajustarZoom);
   document.documentElement.classList.add('presentando');
 }
 
@@ -135,7 +146,9 @@ function terminar() {
   guardarSesion(null);
   barra?.remove();
   barra = null;
+  window.removeEventListener('resize', ajustarZoom);
   document.documentElement.classList.remove('presentando');
+  document.documentElement.style.removeProperty('--zoom-proyector');
   const url = new URL(location.href);
   url.searchParams.delete('presentar');
   history.replaceState(null, '', url);

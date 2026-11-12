@@ -10,7 +10,7 @@ const SECCIONES = [
   { id: 'decisiones', nombre: 'Decisiones', href: 'decisiones.html', icono: 'diana' },
   { id: 'servicios', nombre: 'Servicios', href: 'servicios.html', icono: 'cuadricula' },
   { id: 'entregables', nombre: 'Entregables', href: 'entregables/index.html', icono: 'documento' },
-  { id: 'exposicion', nombre: 'Exposición (10 diapositivas)', href: 'presentacion.html', icono: 'pantalla' }
+  { id: 'exposicion', nombre: 'Exposición Granada 2031', href: 'presentacion.html', icono: 'pantalla' }
 ];
 
 function pintarLateral(aside, actual) {

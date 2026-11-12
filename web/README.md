@@ -31,14 +31,15 @@ La web está en **https://degallo.github.io/ALJIBE/**. El flujo `.github/workflo
 - **Modo proyector:** al presentar, la web se amplía según el ancho de la pantalla (1,2 veces en un proyector Full HD; en portátiles de 1.366 px no se amplía) y oculta la barra lateral, las pestañas y el pie, para que se lea desde el fondo del aula. Al salir vuelve a su tamaño. El ajuste con − / + se recuerda en ese equipo.
 - El guion completo está en `docs/guion-presentacion.md` y los pasos en `datos/presentacion.json`.
 
-## Exposición Granada 2031 (10 diapositivas)
+## Exposición Granada 2031
 
-`presentacion.html` (botón **Exposición** en Inicio y en la barra lateral) es la exposición de 4 minutos que piden las indicaciones de la asignatura: identidad, problema, solución, prototipo, propuesta de valor, clientes, impacto y Granada 2031, enfoque financiero, viabilidad y equipo, con el cierre «ALJIBE cambiará … porque …».
+`presentacion.html` (botón **Exposición** en Inicio y en la barra lateral) es la exposición de 4 minutos de la asignatura. Tiene una diapositiva por cada contenido mínimo de las indicaciones, en su orden y sin nada más: identidad del proyecto, problema u oportunidad, solución, propuesta de valor, clientes y usuarios objetivo, impacto (con Granada 2031), enfoque financiero, viabilidad y próximos pasos, y equipo, que cierra con «ALJIBE cambiará … porque …».
 
-- **→**, **Espacio**, **Av Pág** o clic avanzan; **←**, **Re Pág** o clic en el tercio izquierdo retroceden; **1–9** y **0** saltan a una diapositiva; en móvil se desliza.
-- **N** abre las notas de cada diapositiva (unos 24 segundos de discurso); **T** pone en marcha la cuenta atrás de 4:00, que se vuelve naranja y suma con «+» si os pasáis; **F** pantalla completa.
+- **→**, **Espacio**, **Av Pág** o clic avanzan; **←**, **Re Pág** o clic en el tercio izquierdo retroceden; **1–9** saltan a una diapositiva; en móvil se desliza.
+- **N** abre las notas de cada diapositiva (unos 25 segundos de discurso); **T** pone en marcha la cuenta atrás de 4:00, que se vuelve naranja y suma con «+» si os pasáis; **F** pantalla completa.
+- **Movimiento:** cada diapositiva entra deslizándose y enfocándose desde el lado hacia el que se avanza; el titular sube palabra a palabra, las tarjetas aparecen en cadena, las cifras cuentan desde cero, las marcas se dibujan y la línea de tiempo se traza. Con «reducir movimiento» activado en el sistema, todo aparece quieto.
 - Cada diapositiva se maqueta a 1920 × 1080 y se escala a la pantalla, así que se ve igual en el proyector, en un portátil y en el PDF.
-- Textos y cifras en `datos/exposicion.json`; las del prototipo salen de `datos/fiesta-2027.json`. Las cifras de negocio vienen del plan de empresa y son hipótesis a validar.
+- Textos en `datos/exposicion.json`, sacados de la pestaña «Exposición 17 noviembre» del plan de empresa; las cifras del prototipo (asistencia, fecha, vasos e indicadores de impacto) salen de `datos/fiesta-2027.json`. Una prueba comprueba que están todos los contenidos mínimos.
 - **PDF para el profesor:** `descargas/aljibe-presentacion-granada-2031.pdf` (también desde el botón de descarga). Si cambiáis el JSON, regeneradlo con el servidor en marcha: `npm run pdf` (necesita Playwright con Chromium).
 
 ## Pantallas y entregables

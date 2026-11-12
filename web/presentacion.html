@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es" data-raiz="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exposición ALJIBE</title>
+<meta name="description" content="Las 10 diapositivas de la exposición de ALJIBE para Granada 2031: problema, solución, prototipo, clientes, impacto, finanzas, viabilidad y equipo.">
+<link rel="icon" type="image/svg+xml" href="logos/aljibe-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="modulepreload" href="js/nucleo/api.js">
+<link rel="modulepreload" href="js/nucleo/dom.js">
+<link rel="modulepreload" href="js/nucleo/iconos.js">
+<link rel="modulepreload" href="js/nucleo/calculos.js">
+<link rel="modulepreload" href="js/nucleo/formato.js">
+<link rel="modulepreload" href="js/paginas/diapositivas.js">
+<link rel="stylesheet" href="css/diapositivas.css">
+</head>
+<body>
+<a class="saltar" href="#controles">Ir a los controles</a>
+<div class="progreso-diapo" aria-hidden="true"><span id="progreso"></span></div>
+<main class="escenario" id="escenario" aria-roledescription="presentación" aria-label="Exposición de ALJIBE"></main>
+
+<nav class="mandos" id="controles" aria-label="Controles de la presentación">
+<div class="mandos__notas" id="notas" hidden></div>
+<div class="mandos__fila" role="toolbar" aria-label="Diapositivas">
+<a class="mando" id="salir" href="index.html" aria-label="Volver a la web"></a>
+<button class="mando" id="anterior" type="button" aria-label="Diapositiva anterior"></button>
+<span class="mandos__contador" id="contador" aria-hidden="true"></span>
+<button class="mando mando--principal" id="siguiente" type="button" aria-label="Diapositiva siguiente"></button>
+<button class="mando" id="boton-notas" type="button" aria-label="Notas para quien presenta" aria-expanded="false" aria-controls="notas"></button>
+<button class="mando mando--reloj" id="reloj" type="button" aria-label="Cronómetro de 4 minutos" aria-pressed="false"><span id="reloj-texto">4:00</span></button>
+<button class="mando" id="completa" type="button" aria-label="Pantalla completa"></button>
+<a class="mando" id="pdf" download aria-label="Descargar la presentación en PDF"></a>
+</div>
+</nav>
+<p class="solo-lectores" id="anuncio" aria-live="polite"></p>
+<noscript><p class="sin-js">Esta presentación necesita JavaScript. Puedes descargarla en PDF desde descargas/aljibe-presentacion-granada-2031.pdf.</p></noscript>
+<script type="module" src="js/paginas/diapositivas.js"></script>
+</body>
+</html>

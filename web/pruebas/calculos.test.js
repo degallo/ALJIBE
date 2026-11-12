@@ -121,3 +121,20 @@ test('contacto: valida el correo', () => {
   assert.equal(validarContacto({ nombre: 'Ana', email: 'ana@alhama.es', servicio: 'radar' }).valido, true);
   assert.equal(validarContacto({ nombre: 'Ana', email: 'ana@alhama.es', servicio: '<script>' }).valido, false);
 });
+
+test('exposición: cumple las indicaciones de Granada 2031', () => {
+  const expo = leer('exposicion');
+  const d = expo.diapositivas;
+  assert.ok(d.length <= 10, 'máximo 10 diapositivas');
+  assert.equal(expo.duracionSegundos, 240, '4 minutos');
+  // Contenidos mínimos que pide la guía, en el orden que hemos decidido
+  const etiquetas = d.map((x) => x.etiqueta);
+  for (const e of ['Problema', 'Solución', 'Propuesta de valor', 'Clientes', 'Impacto', 'Enfoque financiero', 'Viabilidad y próximos pasos', 'Equipo']) {
+    assert.ok(etiquetas.includes(e), 'falta ' + e);
+  }
+  assert.ok(d.every((x) => x.nota && x.titular), 'cada diapositiva tiene titular y notas');
+  assert.match(d.at(-1).titular, /cambiará .+, porque /, 'cierre: «cambiará ___ porque ___»');
+  // La previsión de ingresos cuadra con su desglose
+  const f = d.find((x) => x.tipo === 'finanzas');
+  assert.equal(f.desglose.reduce((a, x) => a + x.valor, 0), f.cifra.valor);
+});

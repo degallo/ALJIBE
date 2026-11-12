@@ -4,7 +4,7 @@ ALJIBE es una consultoría data driven para la cultura de Granada y su provincia
 
 Proyecto de la asignatura Creación de Empresas (Universidad de Granada, curso 2026-27), Equipo 3, vinculado a la candidatura de Granada a Capital Europea de la Cultura 2031.
 
-Este repositorio reúne el diseño del prototipo web y su construcción en `web/`: las cuatro pantallas, los entregables de cada servicio para el Ayuntamiento de Alhama de Granada, un servidor con API y un modo presentación para clase. Para verla: `cd web && npm start` y abre http://localhost:8080. Detalles en `web/README.md`.
+Este repositorio reúne el diseño del prototipo web y su construcción en `web/`: las cuatro pantallas, los entregables de cada servicio para el Ayuntamiento de Alhama de Granada, un servidor con API, un modo presentación para clase y la exposición de Granada 2031 en 10 diapositivas (con su PDF). Para verla: `cd web && npm start` y abre http://localhost:8080. Detalles en `web/README.md`.
 
 ## Contenido
 

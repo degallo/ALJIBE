@@ -134,9 +134,7 @@ const TIPOS = {
     const cifras = el('div', 'problema__cifras');
     const a = entra(el('div'), 2, 'pop');
     a.append(cifra(d.cifra.valor, 'cifra--xl'), el('p', 'cifra-texto', d.cifra.texto));
-    const b = entra(el('div'), 3, 'pop');
-    b.append(cifra(d.cifra2.valor, 'cifra--l', d.cifra2.sufijo), el('p', 'cifra-texto', d.cifra2.texto));
-    cifras.append(a, b);
+    cifras.append(a);
 
     const lado = el('div', 'problema__lado');
     const nec = entra(el('div', 'tarjeta problema__bloque'), 4, 'derecha');

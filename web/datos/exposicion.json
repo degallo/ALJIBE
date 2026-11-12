@@ -20,7 +20,6 @@
       "etiqueta": "Problema u oportunidad",
       "titular": "La cultura de Granada tiene datos, pero sigue decidiendo a ojo.",
       "cifra": { "valor": 4813, "texto": "empresas culturales en Granada" },
-      "cifra2": { "valor": 69, "sufijo": " %", "texto": "no tiene ni un asalariado" },
       "necesidad": {
         "titulo": "La necesidad",
         "fuentes": ["Venta de entradas", "Redes sociales", "Web", "Encuestas"],
@@ -31,7 +30,7 @@
         "puntos": ["Menos incertidumbre y presupuestos mejor aprovechados", "Patrocinios justificados con datos", "Granada 2031 tendrá que saber a quién llega su cultura"]
       },
       "fuente": "Fuente: Junta de Andalucía, TECA 2023.",
-      "nota": "En Granada hay 4.813 empresas culturales y el 69 % no tiene asalariados. Tienen datos de taquilla, redes, web y encuestas, pero nadie los cruza, así que deciden a ojo. Merece la pena resolverlo: con datos se gasta mejor, se consiguen patrocinios y Granada 2031 podrá saber a quién llega su cultura."
+      "nota": "En Granada hay 4.813 empresas culturales. Tienen datos de taquilla, redes, web y encuestas, pero nadie los cruza, así que deciden a ojo. Merece la pena resolverlo: con datos se gasta mejor, se consiguen patrocinios y Granada 2031 podrá saber a quién llega su cultura."
     },
     {
       "id": "solucion",

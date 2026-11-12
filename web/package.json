@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node servidor/servidor.js",
-    "test": "node --test pruebas/*.test.js"
+    "test": "node --test pruebas/*.test.js",
+    "pdf": "node servidor/exportar-pdf.js"
   },
   "engines": { "node": ">=18" }
 }

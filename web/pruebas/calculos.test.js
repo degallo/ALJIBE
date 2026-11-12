@@ -127,14 +127,18 @@ test('exposición: cumple las indicaciones de Granada 2031', () => {
   const d = expo.diapositivas;
   assert.ok(d.length <= 10, 'máximo 10 diapositivas');
   assert.equal(expo.duracionSegundos, 240, '4 minutos');
-  // Contenidos mínimos que pide la guía, en el orden que hemos decidido
-  const etiquetas = d.map((x) => x.etiqueta);
-  for (const e of ['Problema', 'Solución', 'Propuesta de valor', 'Clientes', 'Impacto', 'Enfoque financiero', 'Viabilidad y próximos pasos', 'Equipo']) {
-    assert.ok(etiquetas.includes(e), 'falta ' + e);
-  }
+  // Solo los contenidos mínimos de la guía, uno por diapositiva y en su orden
+  assert.deepEqual(d.map((x) => x.etiqueta), ['Identidad del proyecto', 'Problema u oportunidad', 'Solución', 'Propuesta de valor', 'Clientes y usuarios objetivo', 'Impacto', 'Enfoque financiero', 'Viabilidad y próximos pasos', 'Equipo']);
   assert.ok(d.every((x) => x.nota && x.titular), 'cada diapositiva tiene titular y notas');
-  assert.match(d.at(-1).titular, /cambiará .+, porque /, 'cierre: «cambiará ___ porque ___»');
-  // La previsión de ingresos cuadra con su desglose
-  const f = d.find((x) => x.tipo === 'finanzas');
-  assert.equal(f.desglose.reduce((a, x) => a + x.valor, 0), f.cifra.valor);
+  const por = (id) => d.find((x) => x.id === id);
+  assert.ok(por('problema').necesidad && por('problema').merece, 'necesidad y por qué merece la pena');
+  assert.ok(por('clientes').segmentos.every((x) => x.quien && x.porque) && por('clientes').validacion.length, 'quiénes, por qué comprarían y validación');
+  assert.ok(por('impacto').capitalidad, 'conexión con Granada 2031');
+  const titulos = por('finanzas').bloques.map((x) => x.titulo);
+  for (const t of ['Inversión inicial', 'Gastos operativos', 'Ingresos', 'Financiación']) assert.ok(titulos.includes(t), 'falta ' + t);
+  assert.ok(por('viabilidad').porque.length && por('viabilidad').necesitamos.length, 'por qué es factible y qué hace falta');
+  assert.match(por('equipo').cierre, /cambiará .+, porque /, 'cierre: «cambiará ___ porque ___»');
+  // Los indicadores de impacto existen en los datos del prototipo
+  const fiesta = leer('fiesta-2027');
+  por('impacto').impactos.filter((x) => x.dato !== 'vasos').forEach((x) => assert.ok(fiesta.impacto.some((k) => k.nombre === x.dato), x.dato));
 });

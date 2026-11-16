@@ -163,9 +163,9 @@
         {
           "icono": "euro",
           "tipo": "Económico",
-          "dato": "vasos",
-          "texto": "Se gasta lo justo y se ingresa más: recursos ajustados a la asistencia y patrocinios justificados con datos.",
-          "ejemplo": "vasos previstos, ni uno más"
+          "dato": "Gasto en comercios del pueblo",
+          "texto": "Más dinero que se queda en el pueblo: medimos lo que gastan los visitantes y ajustamos los recursos a la asistencia.",
+          "ejemplo": "gastados en los comercios del pueblo"
         },
         {
           "icono": "usuarios",
@@ -209,7 +209,7 @@
         "propuesta": "Y queda funcionando después de 2031."
       },
       "fuente": "Ejemplos: datos de demostración del prototipo de ALJIBE en la Fiesta del Vino de Alhama de Granada.",
-      "nota": "Nuestro impacto tiene cuatro caras. Económico: se gasta lo justo y se justifican patrocinios. Social: más participación de vecinos y asociaciones. Cultural: cuidar las tradiciones midiendo cómo evolucionan. Territorial: que los pueblos sepan a quién atraen. Y para Granada 2031, medimos participación e impacto con un cuadro de mando común que siga después de la capitalidad."
+      "nota": "Nuestro impacto tiene cuatro caras. Económico: el dinero que deja la fiesta, como los 117.000 euros gastados en los comercios del pueblo. Social: más participación de vecinos y asociaciones. Cultural: cuidar las tradiciones midiendo cómo evolucionan. Territorial: que los pueblos sepan a quién atraen. Y para Granada 2031, medimos participación e impacto con un cuadro de mando común que siga después de la capitalidad."
     },
     {
       "id": "finanzas",
@@ -298,6 +298,7 @@
       "nota": "Somos cinco y cada área de la empresa tiene un responsable. Javier dirige y coordina; Daniel lleva el marketing; Alejandro, la investigación de mercados; Andrés, el análisis de datos, y Cucu, la parte comercial. Y nos quedamos con una idea: ALJIBE cambiará cómo decide la cultura de Granada, porque convierte sus datos en decisiones. Gracias.",
       "organigrama": {
         "direccion": {
+          "icono": "diana",
           "cargo": "Dirección general",
           "nombre": "Javier Benítez Escobedo",
           "funcion": "Estrategia, finanzas y coordinación del equipo"
@@ -329,6 +330,15 @@
           }
         ]
       }
+    },
+    {
+      "id": "gracias",
+      "tipo": "gracias",
+      "etiqueta": "Gracias",
+      "titular": "¡Muchas gracias!",
+      "subtitulo": "Convertimos los datos de la cultura en decisiones.",
+      "pie": "Equipo 3 · Creación de Empresas · Granada 2031",
+      "nota": "Gracias por vuestra atención. Quedamos a vuestra disposición para cualquier pregunta."
     }
   ]
 }

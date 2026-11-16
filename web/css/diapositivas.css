@@ -267,30 +267,29 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
 
 /* ---------- 9 · Equipo: organigrama ---------- */
 .equipo { grid-template-rows: 1fr auto; gap: 28px; }
-.organigrama { display: grid; justify-items: center; align-content: center; }
-.nodo { display: grid; gap: 6px; text-align: center; justify-items: center; border-radius: 28px; padding: 22px 26px; }
-.nodo--direccion { background: var(--agua-soft); color: var(--aljibe); min-width: 560px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25); }
-.nodo--area { background: rgba(246, 243, 238, 0.08); border: 1px solid rgba(246, 243, 238, 0.28); }
-.nodo__cargo { font-size: 21px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--agua-soft); }
-.nodo--direccion .nodo__cargo { color: var(--aljibe); }
-.nodo__nombre { font-size: 32px; font-weight: 700; letter-spacing: -0.01em; }
-.nodo__funcion { font-size: 22px; line-height: 1.3; color: var(--texto-oscuro); }
-.nodo--direccion .nodo__funcion { color: var(--tinta); }
-.nodo--area .icono-redondo { width: 56px; height: 56px; margin-bottom: 4px; }
-.nodo--area .icono-redondo .ico { width: 26px; height: 26px; }
-/* Conectores: un tronco que baja de la dirección y una barra que reparte a las cuatro áreas */
-.organigrama__lineas { position: relative; width: 75%; height: 56px; }
-.organigrama__lineas::before { content: ""; position: absolute; left: 50%; top: 0; height: 28px; border-left: 3px solid rgba(207, 230, 234, 0.6); }
-.organigrama__lineas::after {
-  content: ""; position: absolute; left: 0; right: 0; top: 28px; height: 28px;
-  border: 3px solid rgba(207, 230, 234, 0.6); border-bottom: 0; border-radius: 12px 12px 0 0;
+.organigrama { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; align-content: center; }
+.nodo {
+  display: grid; gap: 8px; align-content: start; justify-items: center; text-align: center;
+  padding: 28px 22px; border-radius: 28px; background: rgba(246, 243, 238, 0.08); border: 1px solid rgba(246, 243, 238, 0.28);
 }
-.organigrama__ramas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; width: 100%; position: relative; }
-.organigrama__ramas::before { content: ""; position: absolute; left: 37.5%; right: 37.5%; top: -28px; height: 28px; border-left: 3px solid rgba(207, 230, 234, 0.6); border-right: 3px solid rgba(207, 230, 234, 0.6); }
+.nodo .icono-redondo { width: 60px; height: 60px; margin-bottom: 6px; }
+.nodo .icono-redondo .ico { width: 28px; height: 28px; }
+.nodo__cargo { font-size: 19px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--agua-soft); line-height: 1.25; min-height: 3.75em; display: grid; align-items: center; }
+.nodo__nombre { font-size: 30px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.15; }
+.nodo__funcion { font-size: 21px; line-height: 1.3; color: var(--texto-oscuro); }
 .cierre { display: flex; align-items: center; justify-content: space-between; gap: 48px; padding-top: 26px; border-top: 1px solid rgba(246, 243, 238, 0.3); }
 .cierre__frase { font-size: 48px; line-height: 1.12; font-weight: 700; letter-spacing: -0.02em; max-width: 1280px; text-wrap: balance; }
 .cierre__frase em { font-style: normal; color: var(--agua-soft); }
 .cierre__logo { width: 240px; height: auto; flex: none; }
+
+/* ---------- 10 · Gracias ---------- */
+.gracias { justify-content: space-between; }
+.gracias__centro { flex: 1; display: grid; align-content: center; gap: 36px; }
+.gracias__logo { width: 300px; height: auto; }
+.gracias__titulo { font-size: 180px; line-height: 1; font-weight: 700; letter-spacing: -0.04em; }
+.gracias__sub { font-size: 40px; color: var(--agua-soft); font-weight: 600; }
+.gracias__pie { display: flex; justify-content: space-between; align-items: center; font-size: 26px; color: var(--texto-oscuro); padding-top: 24px; border-top: 1px solid rgba(246, 243, 238, 0.3); }
+.gracias__pie .web-chip { font-family: var(--mono); }
 
 /* ---------- Movimiento ----------
    Al cambiar de diapositiva, la nueva entra deslizándose y enfocándose desde
@@ -400,10 +399,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
   .diapo__cabecera { min-height: 36px; }
   .titular { font-size: 30px; }
   .diapo__cuerpo > * { min-width: 0; }
-  .impactos, .organigrama__ramas { grid-template-columns: 1fr; gap: 12px; }
-  .organigrama__lineas, .organigrama__ramas::before { display: none; }
-  .organigrama { gap: 12px; }
-  .nodo--direccion { min-width: 0; width: 100%; }
+  .impactos, .organigrama { grid-template-columns: 1fr; gap: 12px; }
+  .gracias__titulo { font-size: 52px; }
+  .gracias__sub { font-size: 20px; }
+  .gracias__logo { width: 180px; }
+  .gracias__pie { flex-direction: column; align-items: flex-start; gap: 8px; font-size: 14px; }
+  .nodo__cargo { min-height: 0; }
   .nodo { padding: 16px; }
   .nodo__nombre, .impacto-caja__tipo { font-size: 22px; }
   .nodo__cargo, .nodo__funcion, .impacto-caja__texto, .impacto-caja__ejemplo, .capitalidad__detalle { font-size: 15px; }

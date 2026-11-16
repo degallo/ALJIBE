@@ -1,7 +1,7 @@
 // Exposición de 4 minutos: una diapositiva por cada contenido mínimo de las
 // indicaciones de Granada 2031. El texto sale de datos/exposicion.json y las
-// cifras del prototipo, de datos/fiesta-2027.json (no se duplican).
-//   → Espacio Av Pág: siguiente · ← Re Pág: anterior · Inicio/Fin · 1–9: ir a
+// cifras del prototipo, de datos/fiesta-2027.json e impacto.json (no se duplican).
+//   → Espacio Av Pág: siguiente · ← Re Pág: anterior · Inicio/Fin · 1–9 y 0: ir a
 //   N: notas · T: cronómetro de 4 minutos · F: pantalla completa
 import { datos } from '../nucleo/api.js';
 import { el, icono, raiz, reducirMovimiento } from '../nucleo/dom.js';
@@ -14,6 +14,7 @@ const imprimir = new URLSearchParams(location.search).has('imprimir');
 let diapos = [];
 let actual = 0;
 let expo;
+let informe; // datos/impacto.json, para los ejemplos de impacto
 
 // ---------- Piezas ----------
 
@@ -234,11 +235,13 @@ const TIPOS = {
     s.append(titular(d.titular));
     const c = cuerpo('impacto');
     const rejilla = el('ul', 'impactos');
-    // El ejemplo de cada impacto sale del prototipo de la Fiesta del Vino
+    // El ejemplo de cada impacto sale del prototipo de la Fiesta del Vino:
+    // primero sus indicadores y, si no está ahí, el informe de impacto
     const valor = (dato) => {
-      if (dato === 'vasos') return cifra(f.vasos.cantidad, 'cifra--s');
       const x = f.impacto.find((k) => k.nombre === dato);
-      return cifra(x.valor, 'cifra--s', x.unidad ? ' ' + x.unidad : '');
+      if (x) return cifra(x.valor, 'cifra--s', x.unidad ? ' ' + x.unidad : '');
+      const y = informe.dimensiones.flatMap((dim) => dim.indicadores).find((k) => k.nombre === dato);
+      return cifra(y.valor, 'cifra--s', y.tipo === 'euros' ? ' €' : y.tipo === 'pct' ? ' %' : '');
     };
     d.impactos.forEach((x, i) => {
       const li = entra(el('li', 'tarjeta impacto-caja'), 2 + i * 0.6, 'pop');
@@ -307,26 +310,13 @@ const TIPOS = {
     s.querySelector('.marca').remove(); // el logo ya cierra la diapositiva
     s.append(titular(d.titular));
     const c = cuerpo('equipo');
-    // Organigrama: la dirección arriba y las cuatro áreas debajo
-    const org = el('div', 'organigrama');
-    org.setAttribute('role', 'list');
-    const nodo = (x, clase) => {
-      const n = el('div', 'nodo ' + clase);
-      n.setAttribute('role', 'listitem');
-      n.append(el('p', 'nodo__cargo', x.cargo), el('p', 'nodo__nombre', x.nombre), el('p', 'nodo__funcion', x.funcion));
-      return n;
-    };
-    const dir = d.organigrama.direccion;
-    org.append(entra(nodo(dir, 'nodo--direccion'), 2, 'pop'));
-    const ramas = el('div', 'organigrama__ramas');
-    const lineas = entra(el('div', 'organigrama__lineas'), 3, 'enfoque');
-    lineas.setAttribute('aria-hidden', 'true');
-    d.organigrama.areas.forEach((a, i) => {
-      const n = entra(nodo(a, 'nodo--area'), 3.5 + i * 0.5, 'pop');
-      n.prepend(iconoRedondo(a.icono));
-      ramas.appendChild(n);
+    // Equipo: los cinco al mismo nivel, cada uno con su cargo y su función
+    const org = el('ul', 'organigrama');
+    [d.organigrama.direccion, ...d.organigrama.areas].forEach((x, i) => {
+      const n = entra(el('li', 'nodo'), 2 + i * 0.5, 'pop');
+      n.append(iconoRedondo(x.icono), el('p', 'nodo__cargo', x.cargo), el('p', 'nodo__nombre', x.nombre), el('p', 'nodo__funcion', x.funcion));
+      org.appendChild(n);
     });
-    org.append(lineas, ramas);
     // Cierre recomendado: «Nuestro proyecto cambiará ___ porque ___»
     const cierre = entra(el('div', 'cierre'), 7, 'enfoque');
     const frase = el('p', 'cierre__frase');
@@ -335,6 +325,20 @@ const TIPOS = {
     cierre.append(frase, logo('aljibe-lockup-inverse.svg', 'cierre__logo', 'ALJIBE'));
     c.append(org, cierre);
     s.append(c);
+  },
+
+  gracias(d, s) {
+    s.classList.add('gracias');
+    s.querySelector('.diapo__cabecera').remove();
+    const centro = el('div', 'gracias__centro');
+    centro.append(
+      entra(logo('aljibe-lockup-inverse.svg', 'gracias__logo', 'ALJIBE'), 1, 'pop'),
+      palabras(el('h2', 'gracias__titulo'), d.titular, 3),
+      entra(el('p', 'gracias__sub', d.subtitulo), 5, 'enfoque')
+    );
+    const pie = entra(el('div', 'gracias__pie'), 6, 'sube');
+    pie.append(el('span', null, d.pie), el('span', 'web-chip', expo.web));
+    s.append(centro, pie);
   }
 };
 
@@ -452,7 +456,7 @@ function teclas(e) {
   else if (['ArrowLeft', 'PageUp'].includes(k)) { e.preventDefault(); ir(actual - 1); }
   else if (k === 'Home') { e.preventDefault(); ir(0); }
   else if (k === 'End') { e.preventDefault(); ir(diapos.length - 1); }
-  else if (/^[1-9]$/.test(k)) { e.preventDefault(); ir(Number(k) - 1); }
+  else if (/^[0-9]$/.test(k)) { e.preventDefault(); ir(k === '0' ? 9 : Number(k) - 1); }
   else if (k === 'n' || k === 'N') { e.preventDefault(); alternarNotas(); }
   else if (k === 't' || k === 'T') { e.preventDefault(); alternarReloj(); }
   else if (k === 'f' || k === 'F') { e.preventDefault(); pantallaCompleta(); }
@@ -495,12 +499,13 @@ function prepararMandos() {
 async function iniciar() {
   if (!imprimir) document.documentElement.classList.add('js-anima');
   try {
-    const [e, fiesta] = await Promise.all([datos('exposicion'), datos('fiesta-2027')]);
+    const [e, fiesta, impacto] = await Promise.all([datos('exposicion'), datos('fiesta-2027'), datos('impacto')]);
+    informe = impacto;
     expo = e;
     const escenario = document.getElementById('escenario');
     const total = expo.diapositivas.length;
     expo.diapositivas.forEach((d, i) => {
-      const oscura = d.tipo === 'portada' || d.tipo === 'equipo';
+      const oscura = ['portada', 'equipo', 'gracias'].includes(d.tipo);
       const s = marco(d, i + 1, total, oscura);
       TIPOS[d.tipo](d, s, fiesta);
       escenario.appendChild(s);

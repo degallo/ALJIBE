@@ -127,8 +127,8 @@ test('exposición: cumple las indicaciones de Granada 2031', () => {
   const d = expo.diapositivas;
   assert.ok(d.length <= 10, 'máximo 10 diapositivas');
   assert.equal(expo.duracionSegundos, 240, '4 minutos');
-  // Solo los contenidos mínimos de la guía, uno por diapositiva y en su orden
-  assert.deepEqual(d.map((x) => x.etiqueta), ['Identidad del proyecto', 'Problema u oportunidad', 'Solución', 'Propuesta de valor', 'Clientes y usuarios objetivo', 'Impacto', 'Enfoque financiero', 'Viabilidad y próximos pasos', 'Equipo']);
+  // Los contenidos mínimos de la guía, uno por diapositiva y en su orden, y el agradecimiento final
+  assert.deepEqual(d.map((x) => x.etiqueta), ['Identidad del proyecto', 'Problema u oportunidad', 'Solución', 'Propuesta de valor', 'Clientes y usuarios objetivo', 'Impacto', 'Enfoque financiero', 'Viabilidad y próximos pasos', 'Equipo', 'Gracias']);
   assert.ok(d.every((x) => x.nota && x.titular), 'cada diapositiva tiene titular y notas');
   const por = (id) => d.find((x) => x.id === id);
   assert.ok(por('problema').necesidad && por('problema').merece, 'necesidad y por qué merece la pena');
@@ -147,5 +147,6 @@ test('exposición: cumple las indicaciones de Granada 2031', () => {
   assert.equal(new Set(personas.map((x) => x.nombre)).size, 5, 'cada integrante una vez');
   // Los indicadores de impacto existen en los datos del prototipo
   const fiesta = leer('fiesta-2027');
-  por('impacto').impactos.filter((x) => x.dato !== 'vasos').forEach((x) => assert.ok(fiesta.impacto.some((k) => k.nombre === x.dato), x.dato));
+  const informe = leer('impacto').dimensiones.flatMap((dim) => dim.indicadores);
+  por('impacto').impactos.forEach((x) => assert.ok(fiesta.impacto.some((k) => k.nombre === x.dato) || informe.some((k) => k.nombre === x.dato), x.dato));
 });

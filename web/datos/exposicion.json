@@ -19,15 +19,27 @@
       "tipo": "problema",
       "etiqueta": "Problema u oportunidad",
       "titular": "La cultura de Granada tiene datos, pero sigue decidiendo a ojo.",
-      "cifra": { "valor": 4813, "texto": "empresas culturales en Granada" },
+      "cifra": {
+        "valor": 4813,
+        "texto": "empresas culturales en Granada"
+      },
       "necesidad": {
         "titulo": "La necesidad",
-        "fuentes": ["Venta de entradas", "Redes sociales", "Web", "Encuestas"],
+        "fuentes": [
+          "Venta de entradas",
+          "Redes sociales",
+          "Web",
+          "Encuestas"
+        ],
         "texto": "Tienen datos, pero nadie los cruza. Fecha, precio, programación y presupuesto se deciden por intuición."
       },
       "merece": {
         "titulo": "Por qué merece la pena",
-        "puntos": ["Menos incertidumbre y presupuestos mejor aprovechados", "Patrocinios justificados con datos", "Granada 2031 tendrá que saber a quién llega su cultura"]
+        "puntos": [
+          "Menos incertidumbre y presupuestos mejor aprovechados",
+          "Patrocinios justificados con datos",
+          "Granada 2031 tendrá que saber a quién llega su cultura"
+        ]
       },
       "fuente": "Fuente: Junta de Andalucía, TECA 2023.",
       "nota": "En Granada hay 4.813 empresas culturales. Tienen datos de taquilla, redes, web y encuestas, pero nadie los cruza, así que deciden a ojo. Merece la pena resolverlo: con datos se gasta mejor, se consiguen patrocinios y Granada 2031 podrá saber a quién llega su cultura."
@@ -38,12 +50,35 @@
       "etiqueta": "Solución",
       "titular": "Recogemos sus datos y se los devolvemos como decisiones.",
       "pasos": [
-        { "icono": "descarga", "nombre": "Recoger", "texto": "Taquilla, redes, web y encuestas" },
-        { "icono": "cuadricula", "nombre": "Ordenar", "texto": "Todo en un cuadro de mando" },
-        { "icono": "pulso", "nombre": "Prever", "texto": "Asistencia, fechas y escenarios" },
-        { "icono": "diana", "nombre": "Recomendar", "texto": "Qué hacer, en un informe claro" }
+        {
+          "icono": "descarga",
+          "nombre": "Recoger",
+          "texto": "Taquilla, redes, web y encuestas"
+        },
+        {
+          "icono": "cuadricula",
+          "nombre": "Ordenar",
+          "texto": "Todo en un cuadro de mando"
+        },
+        {
+          "icono": "pulso",
+          "nombre": "Prever",
+          "texto": "Asistencia, fechas y escenarios"
+        },
+        {
+          "icono": "diana",
+          "nombre": "Recomendar",
+          "texto": "Qué hacer, en un informe claro"
+        }
       ],
-      "servicios": ["Radar de temporada", "Estudio de programación", "Informe de patrocinio", "Suscripciones de seguimiento", "Paquete Fiesta", "Proyectos a medida"],
+      "servicios": [
+        "Radar de temporada",
+        "Estudio de programación",
+        "Informe de patrocinio",
+        "Suscripciones de seguimiento",
+        "Paquete Fiesta",
+        "Proyectos a medida"
+      ],
       "gratis": "Agenda ALJIBE gratuita",
       "ejemplo": "Así funciona: Fiesta del Vino 2027",
       "nota": "Funciona en cuatro pasos: recogemos los datos que el cliente ya tiene, los ordenamos en un cuadro de mando, hacemos previsiones y le decimos qué hacer. Lo ofrecemos en seis servicios y una agenda gratuita. Nuestro prototipo lo aplica a la Fiesta del Vino de Alhama: 7.600 asistentes, el 20 de febrero y 5.200 vasos."
@@ -54,9 +89,32 @@
       "etiqueta": "Propuesta de valor",
       "titular": "Ni datos sueltos ni consultora cara: decisiones a precio de pyme.",
       "columnas": [
-        { "nombre": "Herramientas gratuitas", "ejemplo": "Excel, Google Analytics, ticketeras", "puntos": ["Datos sueltos, cada uno en su sitio", "Hay que saber cruzarlos e interpretarlos"] },
-        { "nombre": "ALJIBE", "destacado": true, "ejemplo": "Especialistas en la cultura de Granada", "puntos": ["Previsiones y recomendaciones, no solo estadísticas", "Acompañamiento y cuadros de mando fáciles de usar", "Precio de pyme: estudios desde 500 €"] },
-        { "nombre": "Grandes consultoras", "ejemplo": "Pensadas para grandes instituciones", "puntos": ["Solo el trabajo de campo de un estudio de impacto: 11.650 €", "Lejos del pequeño gestor"] }
+        {
+          "nombre": "Herramientas gratuitas",
+          "ejemplo": "Excel, Google Analytics, ticketeras",
+          "puntos": [
+            "Datos sueltos, cada uno en su sitio",
+            "Hay que saber cruzarlos e interpretarlos"
+          ]
+        },
+        {
+          "nombre": "ALJIBE",
+          "destacado": true,
+          "ejemplo": "Especialistas en la cultura de Granada",
+          "puntos": [
+            "Previsiones y recomendaciones, no solo estadísticas",
+            "Acompañamiento y cuadros de mando fáciles de usar",
+            "Precio de pyme: estudios desde 500 €"
+          ]
+        },
+        {
+          "nombre": "Grandes consultoras",
+          "ejemplo": "Pensadas para grandes instituciones",
+          "puntos": [
+            "Solo el trabajo de campo de un estudio de impacto: 11.650 €",
+            "Lejos del pequeño gestor"
+          ]
+        }
       ],
       "fuente": "Estudio de impacto dFERIA 2025, adjudicado por 11.650 € sin IVA. Precios de ALJIBE orientativos.",
       "nota": "Nos diferenciamos en tres cosas. Conocemos la cultura de Granada. No damos solo estadísticas, sino previsiones y recomendaciones, y acompañamos al gestor. Y somos accesibles: las herramientas gratis dan datos sueltos y una gran consultora cobra más de 11.000 euros solo por el trabajo de campo; nosotros, estudios desde 500."
@@ -67,11 +125,32 @@
       "etiqueta": "Clientes y usuarios objetivo",
       "titular": "Tres clientes con la misma necesidad: decidir con datos.",
       "segmentos": [
-        { "icono": "musica", "nombre": "Salas, festivales y promotoras", "quien": "Pequeñas y medianas, con eventos todo el año", "porque": "Programar con acierto, mejorar la rentabilidad y reducir la incertidumbre.", "principal": true },
-        { "icono": "edificio", "nombre": "Instituciones de Granada 2031", "quien": "Entidades ligadas a la capitalidad", "porque": "Medir la participación y el impacto, y justificar los recursos." },
-        { "icono": "apreton", "nombre": "Marcas patrocinadoras", "quien": "Empresas que patrocinan cultura", "porque": "Saber qué obtienen: el 75 % pide medir el retorno." }
+        {
+          "icono": "musica",
+          "nombre": "Salas, festivales y promotoras",
+          "quien": "Pequeñas y medianas, con eventos todo el año",
+          "porque": "Programar con acierto, mejorar la rentabilidad y reducir la incertidumbre.",
+          "principal": true
+        },
+        {
+          "icono": "edificio",
+          "nombre": "Instituciones de Granada 2031",
+          "quien": "Entidades ligadas a la capitalidad",
+          "porque": "Medir la participación y el impacto, y justificar los recursos."
+        },
+        {
+          "icono": "apreton",
+          "nombre": "Marcas patrocinadoras",
+          "quien": "Empresas que patrocinan cultura",
+          "porque": "Saber qué obtienen: el 75 % pide medir el retorno."
+        }
       ],
-      "validacion": ["Estudio del sector y sus alternativas", "Prototipo con un caso real", "Encuesta a gestores (en curso)", "Pilotos con los primeros clientes"],
+      "validacion": [
+        "Estudio del sector y sus alternativas",
+        "Prototipo con un caso real",
+        "Encuesta a gestores (en curso)",
+        "Pilotos con los primeros clientes"
+      ],
       "fuente": "Patrocinio: PULSO 2026, IPMARK (marcas que invierten en música en directo).",
       "nota": "Tenemos tres clientes. Primero, salas, festivales y promotoras: quieren programar mejor y ganar más. Segundo, las instituciones de Granada 2031: necesitan medir su impacto. Tercero, las marcas: el 75 % pide medir el retorno. Lo validamos con el estudio del sector, el prototipo, una encuesta a gestores y los primeros pilotos."
     },
@@ -79,33 +158,96 @@
       "id": "impacto",
       "tipo": "impacto",
       "etiqueta": "Impacto",
-      "titular": "Granada 2031 necesitará saber a quién llega su cultura.",
+      "titular": "Ayudamos a que cada evento sepa qué deja en su territorio.",
       "impactos": [
-        { "icono": "euro", "tipo": "Económico", "dato": "vasos", "texto": "vasos, ni uno de más: recursos ajustados a la asistencia prevista" },
-        { "icono": "corazon", "tipo": "Social y cultural", "dato": "Familias cosecheras", "texto": "familias cosecheras implicadas y 3.200 € de recaudación solidaria" },
-        { "icono": "mundo", "tipo": "Territorial", "dato": "Público de fuera", "texto": "del público viene de fuera del municipio, con 41 noticias en prensa" }
+        {
+          "icono": "euro",
+          "tipo": "Económico",
+          "dato": "Gasto en comercios del pueblo",
+          "texto": "Más dinero que se queda en el pueblo: medimos lo que gastan los visitantes y ajustamos los recursos a la asistencia.",
+          "ejemplo": "gastados en los comercios del pueblo"
+        },
+        {
+          "icono": "usuarios",
+          "tipo": "Social",
+          "dato": "Recaudación solidaria",
+          "texto": "Actividades pensadas para su público, con más participación de vecinos y asociaciones.",
+          "ejemplo": "de recaudación solidaria"
+        },
+        {
+          "icono": "corazon",
+          "tipo": "Cultural",
+          "dato": "Familias cosecheras",
+          "texto": "Las tradiciones se cuidan mejor cuando se mide cómo evolucionan año a año.",
+          "ejemplo": "familias cosecheras implicadas"
+        },
+        {
+          "icono": "lugar",
+          "tipo": "Territorial",
+          "dato": "Público de fuera",
+          "texto": "Los pueblos saben a quién atraen y pueden ganar visitantes y visibilidad.",
+          "ejemplo": "del público viene de fuera"
+        }
       ],
       "capitalidad": {
         "titulo": "Granada 2031",
-        "texto": "Indicadores comunes para evaluar la capitalidad en cuatro dimensiones:",
-        "dimensiones": ["Participación", "Patrimonio vivo", "Comunidad", "Proyección"],
-        "propuesta": "Un sistema de medición que siga sirviendo después de 2031."
+        "texto": "La capitalidad tendrá que demostrar que la cultura llega a la gente. Así lo medimos:",
+        "pasos": [
+          {
+            "nombre": "Participación",
+            "texto": "Cuánta gente va y quién es"
+          },
+          {
+            "nombre": "Impacto",
+            "texto": "Qué deja en cada uno de estos cuatro ámbitos"
+          },
+          {
+            "nombre": "Cuadro de mando común",
+            "texto": "Los mismos indicadores para todas las actividades"
+          }
+        ],
+        "propuesta": "Y queda funcionando después de 2031."
       },
-      "fuente": "Datos de demostración del prototipo de ALJIBE en la Fiesta del Vino de Alhama de Granada.",
-      "nota": "El impacto se mide. En la Fiesta del Vino: económico, porque se preparan 5.200 vasos y no más; social y cultural, con 27 familias cosecheras y 3.200 euros solidarios; territorial, con un 38 % de público de fuera. Para Granada 2031 proponemos indicadores comunes en cuatro dimensiones que sigan después de la capitalidad."
+      "fuente": "Ejemplos: datos de demostración del prototipo de ALJIBE en la Fiesta del Vino de Alhama de Granada.",
+      "nota": "Nuestro impacto tiene cuatro caras. Económico: el dinero que deja la fiesta, como los 117.000 euros gastados en los comercios del pueblo. Social: más participación de vecinos y asociaciones. Cultural: cuidar las tradiciones midiendo cómo evolucionan. Territorial: que los pueblos sepan a quién atraen. Y para Granada 2031, medimos participación e impacto con un cuadro de mando común que siga después de la capitalidad."
     },
     {
       "id": "finanzas",
       "tipo": "finanzas",
       "etiqueta": "Enfoque financiero",
       "titular": "Poca inversión, costes flexibles y ingresos recurrentes.",
-      "cifra": { "valor": 12000, "sufijo": " €", "texto": "de facturación en los primeros 12 meses" },
-      "cifra2": { "valor": 600, "sufijo": " €/mes", "texto": "recurrentes con 3 suscripciones de 200 €" },
+      "cifra": {
+        "valor": 12000,
+        "sufijo": " €",
+        "texto": "de facturación en los primeros 12 meses"
+      },
+      "cifra2": {
+        "valor": 600,
+        "sufijo": " €/mes",
+        "texto": "recurrentes con 3 suscripciones de 200 €"
+      },
       "bloques": [
-        { "icono": "servidor", "titulo": "Inversión inicial", "texto": "Equipos, licencias de BI, web, constitución y promoción. Aprovechamos los equipos que ya tenemos." },
-        { "icono": "deslizadores", "titulo": "Gastos operativos", "texto": "Fijos: licencias, web, gestoría y seguros. Variables: desplazamientos, colaboradores y encuestas." },
-        { "icono": "sube", "titulo": "Ingresos", "texto": "Proyectos puntuales desde 500 € y suscripciones de 1.500 € + 200 €/mes." },
-        { "icono": "euro", "titulo": "Financiación", "texto": "Aportación de los socios, financiación privada o ayudas públicas, con reserva para 3 meses de gastos.", "destacado": true }
+        {
+          "icono": "servidor",
+          "titulo": "Inversión inicial",
+          "texto": "Equipos, licencias de BI, web, constitución y promoción. Aprovechamos los equipos que ya tenemos."
+        },
+        {
+          "icono": "deslizadores",
+          "titulo": "Gastos operativos",
+          "texto": "Fijos: licencias, web, gestoría y seguros. Variables: desplazamientos, colaboradores y encuestas."
+        },
+        {
+          "icono": "sube",
+          "titulo": "Ingresos",
+          "texto": "Proyectos puntuales desde 500 € y suscripciones de 1.500 € + 200 €/mes."
+        },
+        {
+          "icono": "euro",
+          "titulo": "Financiación",
+          "texto": "Aportación de los socios, financiación privada o ayudas públicas, con reserva para 3 meses de gastos.",
+          "destacado": true
+        }
       ],
       "fuente": "Precios orientativos, antes de IVA, a validar con los primeros clientes.",
       "nota": "Arrancamos con poca inversión: equipos, licencias, web y constitución, aprovechando lo que ya tenemos. Los gastos fijos son licencias, web, gestoría y seguros; los variables, desplazamientos y colaboradores. Ingresamos con proyectos y suscripciones. Lo financiamos con aportaciones de los socios, financiación privada o ayudas, y una reserva de tres meses."
@@ -116,28 +258,87 @@
       "etiqueta": "Viabilidad y próximos pasos",
       "titular": "Es viable: cuesta poco empezar y el prototipo ya funciona.",
       "hitos": [
-        { "cuando": "Nov–dic 2026", "texto": "Encuesta, entrevistas y acuerdo del piloto" },
-        { "cuando": "Feb 2027", "texto": "Piloto en la Fiesta del Vino de Alhama" },
-        { "cuando": "Primeros 6 meses", "texto": "3 pilotos con salas y festivales" },
-        { "cuando": "Primer año", "texto": "6 clientes de pago y 12.000 €" }
+        {
+          "cuando": "Nov–dic 2026",
+          "texto": "Encuesta, entrevistas y acuerdo del piloto"
+        },
+        {
+          "cuando": "Feb 2027",
+          "texto": "Piloto en la Fiesta del Vino de Alhama"
+        },
+        {
+          "cuando": "Primeros 6 meses",
+          "texto": "3 pilotos con salas y festivales"
+        },
+        {
+          "cuando": "Primer año",
+          "texto": "6 clientes de pago y 12.000 €"
+        }
       ],
-      "porque": ["Sin local ni stock: inversión contenida", "Herramientas que ya existen, como Power BI", "Prototipo web funcionando", "Ingresos puntuales y recurrentes"],
-      "necesitamos": ["3 pilotos que nos den casos de éxito", "Las respuestas de los gestores a la encuesta", "Una reserva para 3 meses de gastos", "Prescriptores: GECA, Diputación y UGR"],
+      "porque": [
+        "Sin local ni stock: inversión contenida",
+        "Herramientas que ya existen, como Power BI",
+        "Prototipo web funcionando",
+        "Ingresos puntuales y recurrentes"
+      ],
+      "necesitamos": [
+        "3 pilotos que nos den casos de éxito",
+        "Las respuestas de los gestores a la encuesta",
+        "Una reserva para 3 meses de gastos",
+        "Prescriptores: GECA, Diputación y UGR"
+      ],
       "nota": "Es factible porque no necesitamos local ni stock, las herramientas ya existen, el prototipo funciona y combinamos proyectos con suscripciones. Para despegar necesitamos tres pilotos que nos den casos de éxito, las respuestas de la encuesta, una reserva de tres meses y el apoyo de GECA, la Diputación y la UGR."
     },
     {
       "id": "equipo",
       "tipo": "equipo",
       "etiqueta": "Equipo",
-      "titular": "Cinco personas que unen marketing, investigación de mercados y datos.",
-      "capacidades": [
-        { "icono": "usuarios", "nombre": "Marketing", "texto": "Llegar al gestor cultural y vender" },
-        { "icono": "buscar", "nombre": "Investigación de mercados", "texto": "Entender al público y validar" },
-        { "icono": "barras", "nombre": "Análisis de datos", "texto": "Previsiones y cuadros de mando" }
-      ],
-      "miembros": ["Javier Benítez Escobedo", "Daniel Ruiz García", "Alejandro Manchón Alfonso", "Andrés Afonso González", "Cucu Marinela-Adriana"],
+      "titular": "Cada área de ALJIBE tiene un responsable.",
       "cierre": "ALJIBE cambiará cómo decide la cultura de Granada, porque convierte sus datos en decisiones.",
-      "nota": "Somos cinco personas que juntamos marketing, investigación de mercados y análisis de datos: sabemos llegar al gestor, entender a su público y convertir sus datos en previsiones. Y nos quedamos con una idea: ALJIBE cambiará cómo decide la cultura de Granada, porque convierte sus datos en decisiones. Gracias."
+      "nota": "Somos cinco y cada área de la empresa tiene un responsable. Javier dirige y coordina; Daniel lleva el marketing; Alejandro, la investigación de mercados; Andrés, el análisis de datos, y Cucu, la parte comercial. Y nos quedamos con una idea: ALJIBE cambiará cómo decide la cultura de Granada, porque convierte sus datos en decisiones. Gracias.",
+      "organigrama": {
+        "direccion": {
+          "icono": "diana",
+          "cargo": "Dirección general",
+          "nombre": "Javier Benítez Escobedo",
+          "funcion": "Estrategia, finanzas y coordinación del equipo"
+        },
+        "areas": [
+          {
+            "icono": "presentacion",
+            "cargo": "Responsable de marketing",
+            "nombre": "Daniel Ruiz García",
+            "funcion": "Marca, web y comunicación"
+          },
+          {
+            "icono": "buscar",
+            "cargo": "Responsable de investigación de mercados",
+            "nombre": "Alejandro Manchón Alfonso",
+            "funcion": "Encuestas, estudios de público y validación"
+          },
+          {
+            "icono": "barras",
+            "cargo": "Responsable de análisis de datos",
+            "nombre": "Andrés Afonso González",
+            "funcion": "Previsiones y cuadros de mando"
+          },
+          {
+            "icono": "apreton",
+            "cargo": "Responsable comercial",
+            "nombre": "Cucu Marinela-Adriana",
+            "funcion": "Clientes, pilotos y patrocinadores"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gracias",
+      "tipo": "gracias",
+      "etiqueta": "Gracias",
+      "titular": "¡Muchas gracias!",
+      "subtitulo": "Convertimos los datos de la cultura en decisiones.",
+      "pie": "Equipo 3 · Creación de Empresas · Granada 2031",
+      "nota": "Gracias por vuestra atención. Quedamos a vuestra disposición para cualquier pregunta."
     }
   ]
 }

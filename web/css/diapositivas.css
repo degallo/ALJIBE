@@ -216,16 +216,25 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
 .validacion .check .ico { width: 28px; height: 28px; }
 
 /* ---------- 6 · Impacto ---------- */
-.impacto { grid-template-columns: 1.25fr 1fr; }
-.impactos { display: grid; gap: 18px; align-content: center; }
-.impacto-fila { display: grid; grid-template-columns: 72px 220px 1fr; gap: 28px; align-items: center; padding: 22px 36px; border-radius: 32px; }
-.impacto-fila__tipo { font-size: 22px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tinta-suave); display: block; margin-bottom: 4px; }
-.impacto-fila__texto { font-size: 28px; line-height: 1.3; }
-.capitalidad { display: grid; align-content: center; gap: 26px; }
-.capitalidad__titulo { font-size: 64px; font-weight: 700; letter-spacing: -0.02em; }
-.capitalidad__texto { font-size: 32px; line-height: 1.3; font-weight: 600; }
-.capitalidad__dims { display: flex; flex-wrap: wrap; gap: 12px; }
-.capitalidad__propuesta { font-size: 28px; line-height: 1.35; color: var(--texto-oscuro); border-top: 1px solid rgba(246, 243, 238, 0.3); padding-top: 22px; }
+.impacto { grid-template-columns: 1.4fr 1fr; }
+.impactos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-content: center; }
+.impacto-caja { display: grid; gap: 10px; align-content: start; padding: 22px 28px; border-radius: 32px; }
+.impacto-caja__cab { display: flex; align-items: center; gap: 16px; }
+.impacto-caja__cab .icono-redondo { width: 56px; height: 56px; }
+.impacto-caja__cab .icono-redondo .ico { width: 26px; height: 26px; }
+.impacto-caja__tipo { font-size: 32px; font-weight: 700; letter-spacing: -0.01em; }
+.impacto-caja__texto { font-size: 22px; line-height: 1.32; color: var(--tinta); }
+.impacto-caja__ejemplo { display: flex; align-items: baseline; gap: 14px; padding-top: 12px; border-top: 1px solid var(--linea); font-size: 21px; color: var(--tinta-suave); }
+.impacto-caja__ejemplo .cifra--s { font-size: 40px; }
+.capitalidad { display: grid; align-content: center; gap: 18px; padding: 36px 44px; }
+.capitalidad__titulo { font-size: 54px; font-weight: 700; letter-spacing: -0.02em; }
+.capitalidad__texto { font-size: 26px; line-height: 1.3; font-weight: 600; }
+.capitalidad__pasos { display: grid; gap: 16px; }
+.capitalidad__paso { display: grid; grid-template-columns: 48px 1fr; column-gap: 18px; align-items: center; }
+.capitalidad__num { grid-row: span 2; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: var(--agua-soft); color: var(--aljibe); font-family: var(--mono); font-size: 24px; font-weight: 500; }
+.capitalidad__nombre { font-size: 27px; font-weight: 700; }
+.capitalidad__detalle { font-size: 22px; color: var(--texto-oscuro); }
+.capitalidad__propuesta { font-size: 25px; line-height: 1.35; color: var(--agua-soft); font-weight: 600; border-top: 1px solid rgba(246, 243, 238, 0.3); padding-top: 18px; }
 
 /* ---------- 7 · Enfoque financiero ---------- */
 .finanzas { grid-template-columns: 0.72fr 1.28fr; }
@@ -256,18 +265,31 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
 .hoja__columnas .check { font-size: 28px; }
 .hoja__columnas .lista { gap: 16px; }
 
-/* ---------- 9 · Equipo ---------- */
-.equipo { grid-template-rows: auto auto 1fr; gap: 32px; }
-.capacidades { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.capacidad { display: flex; gap: 22px; align-items: center; padding: 24px 30px; border-radius: 32px; background: rgba(246, 243, 238, 0.08); border: 1px solid rgba(246, 243, 238, 0.2); }
-.capacidad__nombre { font-size: 32px; font-weight: 700; }
-.capacidad__texto { font-size: 25px; color: var(--texto-oscuro); margin-top: 4px; }
-.equipo__miembros { display: flex; flex-wrap: wrap; gap: 14px; }
-.equipo__miembros .chip { font-size: 28px; padding: 14px 28px; }
-.cierre { display: flex; align-items: center; justify-content: space-between; gap: 48px; padding-top: 30px; border-top: 1px solid rgba(246, 243, 238, 0.3); align-self: end; }
-.cierre__frase { font-size: 52px; line-height: 1.12; font-weight: 700; letter-spacing: -0.02em; max-width: 1280px; text-wrap: balance; }
+/* ---------- 9 · Equipo: organigrama ---------- */
+.equipo { grid-template-rows: 1fr auto; gap: 28px; }
+.organigrama { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; align-content: center; }
+.nodo {
+  display: grid; gap: 8px; align-content: start; justify-items: center; text-align: center;
+  padding: 28px 22px; border-radius: 28px; background: rgba(246, 243, 238, 0.08); border: 1px solid rgba(246, 243, 238, 0.28);
+}
+.nodo .icono-redondo { width: 60px; height: 60px; margin-bottom: 6px; }
+.nodo .icono-redondo .ico { width: 28px; height: 28px; }
+.nodo__cargo { font-size: 19px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--agua-soft); line-height: 1.25; min-height: 3.75em; display: grid; align-items: center; }
+.nodo__nombre { font-size: 30px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.15; }
+.nodo__funcion { font-size: 21px; line-height: 1.3; color: var(--texto-oscuro); }
+.cierre { display: flex; align-items: center; justify-content: space-between; gap: 48px; padding-top: 26px; border-top: 1px solid rgba(246, 243, 238, 0.3); }
+.cierre__frase { font-size: 48px; line-height: 1.12; font-weight: 700; letter-spacing: -0.02em; max-width: 1280px; text-wrap: balance; }
 .cierre__frase em { font-style: normal; color: var(--agua-soft); }
-.cierre__logo { width: 260px; height: auto; flex: none; }
+.cierre__logo { width: 240px; height: auto; flex: none; }
+
+/* ---------- 10 · Gracias ---------- */
+.gracias { justify-content: space-between; }
+.gracias__centro { flex: 1; display: grid; align-content: center; gap: 36px; }
+.gracias__logo { width: 300px; height: auto; }
+.gracias__titulo { font-size: 180px; line-height: 1; font-weight: 700; letter-spacing: -0.04em; }
+.gracias__sub { font-size: 40px; color: var(--agua-soft); font-weight: 600; }
+.gracias__pie { display: flex; justify-content: space-between; align-items: center; font-size: 26px; color: var(--texto-oscuro); padding-top: 24px; border-top: 1px solid rgba(246, 243, 238, 0.3); }
+.gracias__pie .web-chip { font-family: var(--mono); }
 
 /* ---------- Movimiento ----------
    Al cambiar de diapositiva, la nueva entra deslizándose y enfocándose desde
@@ -377,9 +399,22 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
   .diapo__cabecera { min-height: 36px; }
   .titular { font-size: 30px; }
   .diapo__cuerpo > * { min-width: 0; }
-  .diapo__cuerpo, .problema, .comparativa, .impacto, .finanzas, .finanzas__bloques, .hoja__columnas, .pasos, .hitos, .segmentos, .proceso__abajo, .capacidades, .clientes, .equipo, .proceso { grid-template-columns: 1fr; grid-template-rows: none; gap: 16px; }
+  .impactos, .organigrama { grid-template-columns: 1fr; gap: 12px; }
+  .gracias__titulo { font-size: 52px; }
+  .gracias__sub { font-size: 20px; }
+  .gracias__logo { width: 180px; }
+  .gracias__pie { flex-direction: column; align-items: flex-start; gap: 8px; font-size: 14px; }
+  .nodo__cargo { min-height: 0; }
+  .nodo { padding: 16px; }
+  .nodo__nombre, .impacto-caja__tipo { font-size: 22px; }
+  .nodo__cargo, .nodo__funcion, .impacto-caja__texto, .impacto-caja__ejemplo, .capitalidad__detalle { font-size: 15px; }
+  .capitalidad__nombre { font-size: 18px; }
+  .impacto-caja { padding: 16px; }
+  .impacto-caja__ejemplo .cifra--s { font-size: 26px; }
+  .diapo__cuerpo, .problema, .comparativa, .impacto, .finanzas, .finanzas__bloques, .hoja__columnas, .pasos, .hitos, .segmentos, .proceso__abajo, .clientes, .equipo, .proceso { grid-template-columns: 1fr; grid-template-rows: none; gap: 16px; }
   .cifra--xl { font-size: min(72px, 18vw); }
   .finanzas__principal .cifra--xl { font-size: min(64px, 16vw); }
+  .problema__cifras .cifra--xl { font-size: min(72px, 18vw); }
   .proceso__abajo > *, .finanzas > *, .finanzas__principal > * { min-width: 0; }
   .subtitulo { overflow-wrap: anywhere; }
   .cifra--l { font-size: 60px; }
@@ -389,31 +424,28 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
   .tarjeta, .panel, .columna--destacada, .paso, .segmento, .bloque, .ejemplo, .problema__bloque, .hoja__columnas > * { padding: 20px; border-radius: 24px; }
   .icono-redondo, .bloque__cab .icono-redondo { width: 46px; height: 46px; }
   .icono-redondo .ico, .bloque__cab .icono-redondo .ico { width: 22px; height: 22px; }
-  .chip, .servicios .chip, .equipo__miembros .chip { font-size: 15px; padding: 8px 14px; }
+  .chip, .servicios .chip { font-size: 15px; padding: 8px 14px; }
   .check, .columna .check, .validacion .check, .problema__bloque .check, .hoja__columnas .check { font-size: 17px; white-space: normal; }
   .check .ico, .validacion .check .ico { width: 22px; height: 22px; }
   .fuente, .portada__origen, .portada__pie, .subtitulo, .portada__etiqueta, .segmento__porque .subtitulo { font-size: 14px; }
   .portada__logo { width: 220px; }
   .portada__claim { font-size: 42px; }
   .portada__arco { width: 300px; height: 420px; right: -80px; bottom: -40px; }
-  .problema__flecha, .paso__texto, .columna__ejemplo, .segmento__quien, .segmento__texto, .impacto-fila__texto, .capitalidad__propuesta, .bloque__texto, .hito__texto, .capacidad__texto, .ejemplo__kpi { font-size: 17px; }
-  .paso__nombre, .columna__nombre, .columna--destacada .columna__nombre, .segmento__nombre, .bloque__titulo, .capacidad__nombre { font-size: 23px; }
+  .problema__flecha, .paso__texto, .columna__ejemplo, .segmento__quien, .segmento__texto, .capitalidad__propuesta, .bloque__texto, .hito__texto, .ejemplo__kpi { font-size: 17px; }
+  .paso__nombre, .columna__nombre, .columna--destacada .columna__nombre, .segmento__nombre, .bloque__titulo { font-size: 23px; }
   .paso:not(:last-child)::after { display: none; }
-  .paso__num, .hito__cuando, .impacto-fila__tipo { font-size: 14px; }
+  .paso__num, .hito__cuando { font-size: 14px; }
   .ejemplo__kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
   .ejemplo { min-width: 0; }
   .ejemplo .cifra--s { font-size: min(30px, 7.5vw); }
   .validacion { border-radius: 24px; flex-direction: column; align-items: flex-start; gap: 10px; padding: 18px 20px; }
   .validacion__lista { flex-direction: column; gap: 10px; }
-  .impacto-fila { grid-template-columns: 46px 1fr; padding: 16px; gap: 12px; }
-  .impacto-fila > div:last-child { grid-column: 1 / -1; }
   .capitalidad__titulo { font-size: 30px; }
   .capitalidad__texto { font-size: 20px; }
   .finanzas__recurrente { padding-left: 16px; }
   .hitos { padding-top: 0; gap: 18px; }
   .hitos::before { display: none; }
   .hito::before { width: 18px; height: 18px; border-width: 4px; }
-  .capacidad { padding: 16px; gap: 14px; }
   .cierre { flex-direction: column; align-items: flex-start; gap: 18px; }
   .cierre__frase { font-size: 28px; }
   .cierre__logo { width: 160px; }

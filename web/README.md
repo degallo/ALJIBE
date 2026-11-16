@@ -33,9 +33,9 @@ La web está en **https://degallo.github.io/ALJIBE/**. El flujo `.github/workflo
 
 ## Exposición Granada 2031
 
-`presentacion.html` (botón **Exposición** en Inicio y en la barra lateral) es la exposición de 4 minutos de la asignatura. Tiene una diapositiva por cada contenido mínimo de las indicaciones, en su orden y sin nada más: identidad del proyecto, problema u oportunidad, solución, propuesta de valor, clientes y usuarios objetivo, impacto (con Granada 2031), enfoque financiero, viabilidad y próximos pasos, y equipo, que cierra con «ALJIBE cambiará … porque …».
+`presentacion.html` (botón **Exposición** en Inicio y en la barra lateral) es la exposición de 4 minutos de la asignatura. Tiene una diapositiva por cada contenido mínimo de las indicaciones, en su orden y sin nada más: identidad del proyecto, problema u oportunidad, solución, propuesta de valor, clientes y usuarios objetivo, impacto (con Granada 2031), enfoque financiero, viabilidad y próximos pasos, y equipo (organigrama con el cargo de cada integrante y el cierre «ALJIBE cambiará … porque …»), más una diapositiva final de agradecimiento.
 
-- **→**, **Espacio**, **Av Pág** o clic avanzan; **←**, **Re Pág** o clic en el tercio izquierdo retroceden; **1–9** saltan a una diapositiva; en móvil se desliza.
+- **→**, **Espacio**, **Av Pág** o clic avanzan; **←**, **Re Pág** o clic en el tercio izquierdo retroceden; **1–9** y **0** saltan a una diapositiva; en móvil se desliza.
 - **N** abre las notas de cada diapositiva (unos 25 segundos de discurso); **T** pone en marcha la cuenta atrás de 4:00, que se vuelve naranja y suma con «+» si os pasáis; **F** pantalla completa.
 - **Movimiento:** cada diapositiva entra deslizándose y enfocándose desde el lado hacia el que se avanza; el titular sube palabra a palabra, las tarjetas aparecen en cadena, las cifras cuentan desde cero, las marcas se dibujan y la línea de tiempo se traza. Con «reducir movimiento» activado en el sistema, todo aparece quieto.
 - Cada diapositiva se maqueta a 1920 × 1080 y se escala a la pantalla, así que se ve igual en el proyector, en un portátil y en el PDF.

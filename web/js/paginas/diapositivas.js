@@ -233,27 +233,33 @@ const TIPOS = {
   impacto(d, s, f) {
     s.append(titular(d.titular));
     const c = cuerpo('impacto');
-    const filas = el('ul', 'impactos');
-    // Los valores salen del prototipo: vasos e indicadores de impacto de la fiesta
+    const rejilla = el('ul', 'impactos');
+    // El ejemplo de cada impacto sale del prototipo de la Fiesta del Vino
     const valor = (dato) => {
-      if (dato === 'vasos') return cifra(f.vasos.cantidad, 'cifra--m');
+      if (dato === 'vasos') return cifra(f.vasos.cantidad, 'cifra--s');
       const x = f.impacto.find((k) => k.nombre === dato);
-      return cifra(x.valor, 'cifra--m', x.unidad ? ' ' + x.unidad : '');
+      return cifra(x.valor, 'cifra--s', x.unidad ? ' ' + x.unidad : '');
     };
     d.impactos.forEach((x, i) => {
-      const li = entra(el('li', 'tarjeta impacto-fila'), 2 + i * 0.8, 'izquierda');
-      const txt = el('div');
-      txt.append(el('span', 'impacto-fila__tipo', x.tipo), el('span', 'impacto-fila__texto', x.texto));
-      li.append(iconoRedondo(x.icono), valor(x.dato), txt);
-      filas.appendChild(li);
+      const li = entra(el('li', 'tarjeta impacto-caja'), 2 + i * 0.6, 'pop');
+      const cab = el('div', 'impacto-caja__cab');
+      cab.append(iconoRedondo(x.icono), el('h3', 'impacto-caja__tipo', x.tipo));
+      const ej = el('p', 'impacto-caja__ejemplo');
+      ej.append(valor(x.dato), el('span', null, x.ejemplo));
+      li.append(cab, el('p', 'impacto-caja__texto', x.texto), ej);
+      rejilla.appendChild(li);
     });
     const k = d.capitalidad;
     const panel = entra(el('div', 'panel capitalidad'), 4, 'derecha');
-    const dims = el('ul', 'capitalidad__dims');
-    k.dimensiones.forEach((t) => dims.appendChild(el('li', 'chip chip--claro', t)));
-    enCadena(dims.children, 5);
-    panel.append(el('p', 'capitalidad__titulo', k.titulo), el('p', 'capitalidad__texto', k.texto), dims, entra(el('p', 'capitalidad__propuesta', k.propuesta), 7, 'enfoque'));
-    c.append(filas, panel);
+    const pasos = el('ol', 'capitalidad__pasos');
+    k.pasos.forEach((p, n) => {
+      const li = el('li', 'capitalidad__paso');
+      li.append(el('span', 'capitalidad__num', String(n + 1)), el('p', 'capitalidad__nombre', p.nombre), el('p', 'capitalidad__detalle', p.texto));
+      pasos.appendChild(li);
+    });
+    enCadena(pasos.children, 5, 'izquierda');
+    panel.append(el('p', 'capitalidad__titulo', k.titulo), el('p', 'capitalidad__texto', k.texto), pasos, entra(el('p', 'capitalidad__propuesta', k.propuesta), 7, 'enfoque'));
+    c.append(rejilla, panel);
     s.append(c, fuente(d.fuente));
   },
 
@@ -301,24 +307,33 @@ const TIPOS = {
     s.querySelector('.marca').remove(); // el logo ya cierra la diapositiva
     s.append(titular(d.titular));
     const c = cuerpo('equipo');
-    const caps = el('ul', 'capacidades');
-    d.capacidades.forEach((x, i) => {
-      const li = entra(el('li', 'capacidad'), 2 + i * 0.6, 'pop');
-      const t = el('div');
-      t.append(el('p', 'capacidad__nombre', x.nombre), el('p', 'capacidad__texto', x.texto));
-      li.append(iconoRedondo(x.icono), t);
-      caps.appendChild(li);
+    // Organigrama: la dirección arriba y las cuatro áreas debajo
+    const org = el('div', 'organigrama');
+    org.setAttribute('role', 'list');
+    const nodo = (x, clase) => {
+      const n = el('div', 'nodo ' + clase);
+      n.setAttribute('role', 'listitem');
+      n.append(el('p', 'nodo__cargo', x.cargo), el('p', 'nodo__nombre', x.nombre), el('p', 'nodo__funcion', x.funcion));
+      return n;
+    };
+    const dir = d.organigrama.direccion;
+    org.append(entra(nodo(dir, 'nodo--direccion'), 2, 'pop'));
+    const ramas = el('div', 'organigrama__ramas');
+    const lineas = entra(el('div', 'organigrama__lineas'), 3, 'enfoque');
+    lineas.setAttribute('aria-hidden', 'true');
+    d.organigrama.areas.forEach((a, i) => {
+      const n = entra(nodo(a, 'nodo--area'), 3.5 + i * 0.5, 'pop');
+      n.prepend(iconoRedondo(a.icono));
+      ramas.appendChild(n);
     });
-    const mi = el('ul', 'equipo__miembros');
-    d.miembros.forEach((m) => mi.appendChild(el('li', 'chip chip--claro', m)));
-    enCadena(mi.children, 4);
+    org.append(lineas, ramas);
     // Cierre recomendado: «Nuestro proyecto cambiará ___ porque ___»
     const cierre = entra(el('div', 'cierre'), 7, 'enfoque');
     const frase = el('p', 'cierre__frase');
     const [antes, despues] = d.cierre.split(', porque ');
     frase.append(antes + ', ', el('em', null, 'porque ' + despues));
     cierre.append(frase, logo('aljibe-lockup-inverse.svg', 'cierre__logo', 'ALJIBE'));
-    c.append(caps, mi, cierre);
+    c.append(org, cierre);
     s.append(c);
   }
 };

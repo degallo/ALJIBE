@@ -133,11 +133,18 @@ test('exposición: cumple las indicaciones de Granada 2031', () => {
   const por = (id) => d.find((x) => x.id === id);
   assert.ok(por('problema').necesidad && por('problema').merece, 'necesidad y por qué merece la pena');
   assert.ok(por('clientes').segmentos.every((x) => x.quien && x.porque) && por('clientes').validacion.length, 'quiénes, por qué comprarían y validación');
-  assert.ok(por('impacto').capitalidad, 'conexión con Granada 2031');
+  assert.deepEqual(por('impacto').impactos.map((x) => x.tipo), ['Económico', 'Social', 'Cultural', 'Territorial']);
+  assert.ok(por('impacto').capitalidad.pasos.length, 'conexión con Granada 2031');
   const titulos = por('finanzas').bloques.map((x) => x.titulo);
   for (const t of ['Inversión inicial', 'Gastos operativos', 'Ingresos', 'Financiación']) assert.ok(titulos.includes(t), 'falta ' + t);
   assert.ok(por('viabilidad').porque.length && por('viabilidad').necesitamos.length, 'por qué es factible y qué hace falta');
   assert.match(por('equipo').cierre, /cambiará .+, porque /, 'cierre: «cambiará ___ porque ___»');
+  // Organigrama: una dirección y cada integrante con un cargo, sin repetir
+  const org = por('equipo').organigrama;
+  const personas = [org.direccion, ...org.areas];
+  assert.equal(personas.length, 5);
+  assert.ok(personas.every((x) => x.cargo && x.nombre && x.funcion));
+  assert.equal(new Set(personas.map((x) => x.nombre)).size, 5, 'cada integrante una vez');
   // Los indicadores de impacto existen en los datos del prototipo
   const fiesta = leer('fiesta-2027');
   por('impacto').impactos.filter((x) => x.dato !== 'vasos').forEach((x) => assert.ok(fiesta.impacto.some((k) => k.nombre === x.dato), x.dato));

@@ -176,14 +176,14 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
 .cifra--baja { color: var(--alerta); }
 
 /* ---------- 4 · Propuesta de valor ---------- */
-.frase { grid-template-rows: auto auto auto; align-content: center; gap: 40px; }
-.frase__texto { font-size: 40px; line-height: 1.3; font-weight: 500; max-width: 1500px; color: var(--tinta); }
-.frase__pilares { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; align-content: center; }
-.frase__pilar { display: grid; gap: 10px; align-content: start; padding: 30px 34px; border-radius: 32px; }
-.frase__pilar .icono-redondo { margin-bottom: 8px; }
-.frase__titulo { font-size: 34px; font-weight: 700; letter-spacing: -0.01em; }
-.frase__detalle { font-size: 24px; color: var(--tinta-suave); }
-.frase__pie { font-size: 36px; font-weight: 700; color: var(--aljibe); }
+.valor { grid-template-columns: 0.95fr 1.05fr; gap: 40px; }
+.valor__clave { display: grid; gap: 24px; align-content: center; padding: 52px 56px; }
+.valor__texto { font-size: 44px; line-height: 1.22; font-weight: 600; letter-spacing: -0.015em; }
+.valor__dims { display: grid; gap: 18px; align-content: center; }
+.valor__dim { display: flex; align-items: center; gap: 26px; padding: 24px 34px; border-radius: 32px; }
+.valor__titulo { font-size: 34px; font-weight: 700; letter-spacing: -0.01em; }
+.valor__detalle { font-size: 26px; line-height: 1.3; color: var(--tinta-suave); margin-top: 4px; }
+.valor__pie { font-size: 30px; font-weight: 600; color: var(--aljibe); margin-top: -8px; }
 
 /* ---------- 5 · Clientes y usuarios objetivo ---------- */
 .clientes { grid-template-columns: minmax(0, 1fr); grid-template-rows: 1fr auto; gap: 28px; }
@@ -369,17 +369,18 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
   .diapo__cabecera { min-height: 36px; }
   .titular { font-size: 30px; }
   .diapo__cuerpo > * { min-width: 0; }
-  .impactos, .organigrama, .frase__pilares, .hoja__porque { grid-template-columns: 1fr; gap: 12px; }
+  .impactos, .organigrama, .hoja__porque { grid-template-columns: 1fr; gap: 12px; }
   .portada__pregunta { font-size: 18px; }
   .solucion__ofrecemos { padding: 20px; }
   .solucion__texto { font-size: 22px; }
   .solucion__incluye .check, .solucion__pasotexto { font-size: 17px; }
   .solucion__paso { padding: 14px 16px; gap: 12px; }
   .solucion__num { font-size: 28px; min-width: 24px; }
-  .problema__punto, .frase__pilar, .impacto-caja { padding: 16px; gap: 10px; min-height: 0; }
-  .problema__titulo, .frase__titulo, .impacto-caja__tipo, .hito__texto { font-size: 21px; }
-  .problema__texto, .frase__detalle, .frase__texto, .impacto-caja__texto { font-size: 16px; min-width: 0; }
-  .frase__pie { font-size: 20px; }
+  .problema__punto, .impacto-caja { padding: 16px; gap: 10px; min-height: 0; }
+  .problema__titulo, .valor__titulo, .impacto-caja__tipo, .hito__texto { font-size: 21px; }
+  .problema__texto, .valor__detalle, .valor__texto, .impacto-caja__texto { font-size: 16px; min-width: 0; }
+  .valor__clave, .valor__dim { padding: 18px; gap: 12px; }
+  .valor__pie { font-size: 18px; margin-top: 0; }
   .segmento__orden { font-size: 32px; }
   .impacto-caja .icono-redondo { width: 48px; height: 48px; }
   .impacto-caja .icono-redondo .ico { width: 24px; height: 24px; }
@@ -393,7 +394,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
   .nodo__nombre, .impacto-caja__tipo { font-size: 22px; }
   .nodo__cargo, .nodo__funcion, .impacto-caja__texto { font-size: 15px; }
   .impacto-caja { padding: 16px; }
-  .diapo__cuerpo, .problema, .impacto, .finanzas, .hitos, .segmentos, .clientes, .equipo, .solucion, .frase, .hoja { grid-template-columns: 1fr; grid-template-rows: none; gap: 16px; }
+  .diapo__cuerpo, .problema, .impacto, .finanzas, .hitos, .segmentos, .clientes, .equipo, .solucion, .valor, .hoja { grid-template-columns: 1fr; grid-template-rows: none; gap: 16px; }
   .cifra--xl { font-size: min(72px, 18vw); }
   .problema__cifras .cifra--xl { font-size: min(72px, 18vw); }
   .finanzas > * { min-width: 0; }

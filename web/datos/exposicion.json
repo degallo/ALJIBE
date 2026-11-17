@@ -83,34 +83,37 @@
     },
     {
       "id": "valor",
-      "tipo": "frase",
       "etiqueta": "Propuesta de valor",
-      "titular": "En 15 días, la memoria de resultados de tu fiesta.",
-      "frase": "Asistencia contada en los accesos, gasto estimado en el pueblo y comparación con la edición anterior, lista para el pleno o un patrocinador.",
-      "pilares": [
-        {
-          "icono": "calendario",
-          "titulo": "En 15 días",
-          "texto": "tras la fiesta"
-        },
+      "tipo": "valor",
+      "titular": "Medimos el impacto cultural de los eventos de Granada.",
+      "clave": {
+        "etiqueta": "Clave para Granada 2031",
+        "texto": "Medir el impacto cultural es un criterio fundamental para Granada 2031: demostrar con datos lo que la cultura aporta a la ciudad."
+      },
+      "dimensiones": [
         {
           "icono": "usuarios",
-          "titulo": "Contada, no a ojo",
-          "texto": "conteo en los accesos"
+          "titulo": "Participación",
+          "texto": "Cuánta gente asiste y cómo evoluciona"
         },
         {
-          "icono": "historico",
-          "titulo": "Comparable",
-          "texto": "año a año"
+          "icono": "corazon",
+          "titulo": "Patrimonio vivo",
+          "texto": "Cómo se mantienen las tradiciones y los colectivos"
         },
         {
-          "icono": "documento",
-          "titulo": "Lista para usar",
-          "texto": "pleno, Intervención o patrocinador"
+          "icono": "apreton",
+          "titulo": "Comunidad",
+          "texto": "Cuánto se implican vecinos y asociaciones"
+        },
+        {
+          "icono": "mundo",
+          "titulo": "Proyección",
+          "texto": "Hasta dónde llega y cuántos visitantes atrae"
         }
       ],
-      "pie": "Mismo método, cada edición.",
-      "nota": "¿Qué nos diferencia? Las herramientas gratuitas dan datos por zonas, no el resultado de una fiesta concreta, y las grandes consultoras hacen estudios pensados para grandes eventos. ALJIBE entrega al ayuntamiento, en 15 días, una memoria con la asistencia contada en accesos, el gasto estimado y la comparación con la edición anterior, con el mismo método cada año."
+      "pie": "Mismo método para todos los eventos: así se pueden comparar.",
+      "nota": "¿Qué nos diferencia? Que somos capaces de medir el impacto cultural de los eventos de Granada. Y eso es un criterio fundamental para Granada 2031: la ciudad tendrá que demostrar con datos lo que la cultura aporta. Lo medimos en cuatro dimensiones: participación, patrimonio vivo, comunidad y proyección, con el mismo método en todos los eventos, para que se puedan comparar."
     },
     {
       "id": "clientes",

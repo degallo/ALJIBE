@@ -165,19 +165,22 @@ const TIPOS = {
     s.append(c);
   },
 
-  // Propuesta de valor: una frase en grande y cuatro pilares sin precio
-  frase(d, s) {
+  // Propuesta de valor: medimos el impacto cultural, clave para Granada 2031
+  valor(d, s) {
     s.append(titular(d.titular));
-    const c = cuerpo('frase');
-    c.append(entra(el('p', 'frase__texto', d.frase), 2, 'enfoque'));
-    const pil = el('ul', 'frase__pilares');
-    d.pilares.forEach((x, i) => {
-      const li = entra(el('li', 'tarjeta frase__pilar'), 3 + i * 0.6, 'pop');
-      li.append(iconoRedondo(x.icono), el('p', 'frase__titulo', x.titulo), el('p', 'frase__detalle', x.texto));
-      pil.appendChild(li);
+    const c = cuerpo('valor');
+    const clave = entra(el('div', 'panel valor__clave'), 2, 'izquierda');
+    clave.append(el('p', 'subtitulo', d.clave.etiqueta), el('p', 'valor__texto', d.clave.texto));
+    const dims = el('ul', 'valor__dims');
+    d.dimensiones.forEach((x, i) => {
+      const li = entra(el('li', 'tarjeta valor__dim'), 3 + i * 0.6, 'derecha');
+      const t = el('div');
+      t.append(el('p', 'valor__titulo', x.titulo), el('p', 'valor__detalle', x.texto));
+      li.append(iconoRedondo(x.icono), t);
+      dims.appendChild(li);
     });
-    c.append(pil, entra(el('p', 'frase__pie', d.pie), 6, 'sube'));
-    s.append(c);
+    c.append(clave, dims);
+    s.append(c, entra(el('p', 'valor__pie', d.pie), 6, 'sube'));
   },
 
   clientes(d, s) {

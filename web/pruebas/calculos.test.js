@@ -135,6 +135,10 @@ test('exposición: cumple las indicaciones de Granada 2031', () => {
   const sinPrecio = d.filter((x) => x.id !== 'finanzas').map((x) => JSON.stringify(x).replace(x.nota, '')).join(' ');
   assert.doesNotMatch(sinPrecio, /\d\s?€|precio|barat/i, 'sin precio fuera del enfoque financiero');
   assert.doesNotMatch(JSON.stringify(expo), /mejores decisiones/i);
+  // Propuesta de valor: medir el impacto cultural, clave para Granada 2031
+  const val = por('valor');
+  assert.match(val.clave.texto, /Granada 2031/);
+  assert.deepEqual(val.dimensiones.map((x) => x.titulo), ['Participación', 'Patrimonio vivo', 'Comunidad', 'Proyección']);
   assert.equal(por('clientes').segmentos[0].nombre, 'Ayuntamientos y fiestas municipales', 'empezamos por los ayuntamientos');
   assert.ok(por('clientes').segmentos.every((x) => x.quien && x.porque));
   assert.deepEqual(por('impacto').impactos.map((x) => x.tipo), ['Pueblos', 'Patrocinadores', 'Granada 2031', 'Empleo']);

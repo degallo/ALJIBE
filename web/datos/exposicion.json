@@ -55,8 +55,7 @@
           "Elegir el mejor día",
           "Elegir el mejor artista",
           "Prever el gasto",
-          "Prever el impacto cultural",
-          "Y muchas métricas más"
+          "Prever el impacto cultural"
         ]
       },
       "funciona": {
@@ -80,7 +79,7 @@
           }
         ]
       },
-      "nota": "¿Qué ofrecemos? Analizamos lo que ya existe, los datos que ya tiene el organizador, y predecimos muchas métricas que le permiten decidir: elegir el mejor día, elegir el mejor artista, prever el gasto, prever el impacto cultural y mucho más. ¿Cómo funciona? Recogemos lo que ya hay, entradas, redes, web, encuestas e históricos; lo ordenamos y analizamos para ver patrones y tendencias; predecimos las métricas que necesita para decidir, y le entregamos un cuadro de mando y un informe con recomendaciones."
+      "nota": "¿Qué ofrecemos? Analizamos lo que ya existe, los datos que ya tiene el organizador, y predecimos muchas métricas que le permiten decidir: elegir el mejor día, elegir el mejor artista, prever el gasto, prever el impacto cultural. ¿Cómo funciona? Recogemos lo que ya hay, entradas, redes, web, encuestas e históricos; lo ordenamos y analizamos para ver patrones y tendencias; predecimos las métricas que necesita para decidir, y le entregamos un cuadro de mando y un informe con recomendaciones."
     },
     {
       "id": "valor",

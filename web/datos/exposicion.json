@@ -45,33 +45,40 @@
     },
     {
       "id": "solucion",
-      "tipo": "memoria",
       "etiqueta": "Solución",
       "titular": "Tu fiesta, con cifras.",
-      "subtitulo": "La memoria de resultados de cada fiesta, lista para presentar en pleno o a un patrocinador.",
-      "bloques": [
-        {
-          "icono": "usuarios",
-          "titulo": "Cuánta gente vino",
-          "detalle": "contada en los accesos",
-          "dato": "Asistentes"
-        },
-        {
-          "icono": "euro",
-          "titulo": "Cuánto gasto generó en el pueblo",
-          "detalle": "estimado",
-          "dato": "Gasto en comercios del pueblo"
-        },
-        {
-          "icono": "historico",
-          "titulo": "Frente a la edición anterior",
-          "detalle": "mismo método",
-          "dato": "comparacion"
-        }
-      ],
-      "ejemplo": "Prototipo · Fiesta del Vino de Alhama · datos simulados de ejemplo",
-      "despues": "Medir primero, prever después: con varias ediciones medidas, prevemos la asistencia y recomendamos la fecha.",
-      "nota": "¿Cómo lo solucionamos? ALJIBE entrega al ayuntamiento, tras la fiesta, una memoria de resultados: cuánta gente asistió, contada en los accesos; cuánto gasto generó en el pueblo, y cómo fue frente a la edición anterior. Es un documento listo para el pleno o para un patrocinador. Nuestro prototipo lo aplica a la Fiesta del Vino con datos simulados. Medir primero y prever después: cada fiesta medida construye el histórico para acertar la siguiente, por ejemplo unas 7.600 personas en 2027."
+      "tipo": "solucion",
+      "ofrecemos": {
+        "titulo": "Qué ofrecemos",
+        "texto": "La memoria de resultados de cada fiesta, lista para presentar en el pleno o a un patrocinador.",
+        "incluye": [
+          "Cuánta gente vino",
+          "Cuánto gasto generó en el pueblo",
+          "Cómo fue frente a la edición anterior"
+        ]
+      },
+      "funciona": {
+        "titulo": "Cómo funciona",
+        "pasos": [
+          {
+            "icono": "usuarios",
+            "texto": "Contamos la asistencia en los accesos de la fiesta"
+          },
+          {
+            "icono": "euro",
+            "texto": "Estimamos el gasto que genera en el pueblo"
+          },
+          {
+            "icono": "historico",
+            "texto": "Lo comparamos con la edición anterior, con el mismo método"
+          },
+          {
+            "icono": "documento",
+            "texto": "Entregamos la memoria en 15 días"
+          }
+        ]
+      },
+      "nota": "¿Qué ofrecemos? Una memoria de resultados de cada fiesta, lista para presentar en el pleno o a un patrocinador: cuánta gente vino, cuánto gasto generó en el pueblo y cómo fue frente a la edición anterior. ¿Cómo funciona? Contamos la asistencia en los accesos de la fiesta, estimamos el gasto que genera en el pueblo, lo comparamos con la edición anterior con el mismo método y entregamos la memoria en 15 días."
     },
     {
       "id": "valor",

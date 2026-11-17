@@ -146,7 +146,8 @@ test('exposición: cumple las indicaciones de Granada 2031', () => {
   assert.equal(personas.length, 5);
   assert.ok(personas.every((x) => x.cargo && x.nombre && x.funcion));
   assert.equal(new Set(personas.map((x) => x.nombre)).size, 5, 'cada integrante una vez');
-  // Las cifras de la memoria existen en los datos del prototipo
-  const informe = leer('impacto').dimensiones.flatMap((dim) => dim.indicadores);
-  por('solucion').bloques.filter((x) => x.dato !== 'comparacion').forEach((x) => assert.ok(informe.some((k) => k.nombre === x.dato), x.dato));
+  // Solución: solo responde a qué ofrecemos y cómo funciona
+  const sol = por('solucion');
+  assert.deepEqual(Object.keys(sol).filter((k) => !['id', 'tipo', 'etiqueta', 'titular', 'nota'].includes(k)), ['ofrecemos', 'funciona']);
+  assert.ok(sol.ofrecemos.texto && sol.ofrecemos.incluye.length === 3 && sol.funciona.pasos.length === 4);
 });

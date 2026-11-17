@@ -132,10 +132,9 @@
       ],
       "validacion": [
         "Estudio del sector",
-        "Prototipo desarrollado",
-        "Entrevistas con gestores y ayuntamientos (en preparación)"
+        "Prototipo desarrollado"
       ],
-      "nota": "Nos dirigimos a tres tipos de clientes, en este orden. Primero, ayuntamientos y fiestas municipales, que necesitan cifras propias para justificar el gasto; empezamos con la Fiesta del Vino. Segundo, salas, festivales y promotoras, que quieren conocer a su público. Y tercero, instituciones de Granada 2031 y marcas patrocinadoras, que quieren medir impacto y retorno. Hemos estudiado el sector, desarrollado un prototipo y preparamos entrevistas."
+      "nota": "Nos dirigimos a tres tipos de clientes, en este orden. Primero, ayuntamientos y fiestas municipales, que necesitan cifras propias para justificar el gasto; empezamos con la Fiesta del Vino. Segundo, salas, festivales y promotoras, que quieren conocer a su público. Y tercero, instituciones de Granada 2031 y marcas patrocinadoras, que quieren medir impacto y retorno. Para comprobarlo, hemos estudiado el sector y desarrollado un prototipo."
     },
     {
       "id": "impacto",
@@ -187,8 +186,7 @@
           "icono": "documento",
           "titulo": "Memoria por edición",
           "cifra": "2.500–3.500 €",
-          "texto": "Hipótesis a validar en las entrevistas",
-          "hipotesis": true
+          "texto": "Precio de partida por fiesta"
         },
         {
           "icono": "deslizadores",
@@ -203,17 +201,17 @@
         }
       ],
       "fuente": "Importes antes de IVA.",
-      "nota": "En la parte económica, no necesitamos local físico ni grandes inversiones iniciales. Los gastos principales son licencias, web, gestoría y colaboradores externos. Los ingresos vendrán de la memoria por edición, de estudios puntuales y de suscripciones; partimos de 2.500 a 3.500 euros por memoria, que validaremos en las entrevistas. El objetivo es 12.000 euros el primer año y tres suscripciones de 200 euros: 600 euros recurrentes al mes. Empezamos con aportaciones de los socios y posibles ayudas públicas."
+      "nota": "En la parte económica, no necesitamos local físico ni grandes inversiones iniciales. Los gastos principales son licencias, web, gestoría y colaboradores externos. Los ingresos vendrán de la memoria por edición, de estudios puntuales y de suscripciones; partimos de 2.500 a 3.500 euros por memoria. El objetivo es 12.000 euros el primer año y tres suscripciones de 200 euros: 600 euros recurrentes al mes. Empezamos con aportaciones de los socios y posibles ayudas públicas."
     },
     {
       "id": "viabilidad",
       "tipo": "hoja",
       "etiqueta": "Viabilidad y próximos pasos",
-      "titular": "Primero validar, después medir la primera fiesta.",
+      "titular": "Del prototipo a la primera fiesta medida.",
       "hitos": [
         {
           "cuando": "Nov–dic 2026",
-          "texto": "Entrevistas con ayuntamientos y salas"
+          "texto": "Acuerdo del piloto con el Ayuntamiento de Alhama"
         },
         {
           "cuando": "Feb 2027 (por confirmar)",
@@ -229,7 +227,7 @@
         "Costes de inicio reducidos",
         "Prototipo desarrollado"
       ],
-      "nota": "ALJIBE es viable porque usa herramientas que ya existen, tiene costes de inicio reducidos y cuenta con un prototipo desarrollado. El siguiente paso es validar la demanda con entrevistas a ayuntamientos y salas. Después, un primer piloto en la Fiesta del Vino de Alhama, en febrero de 2027, contando la asistencia en los accesos. Y a partir de ahí, otras fiestas, salas y festivales, hasta seis clientes de pago el primer año."
+      "nota": "ALJIBE es viable porque usa herramientas que ya existen, tiene costes de inicio reducidos y cuenta con un prototipo desarrollado. El siguiente paso es cerrar con el Ayuntamiento de Alhama un primer piloto en la Fiesta del Vino, en febrero de 2027, contando la asistencia en los accesos. Y a partir de ahí, otras fiestas, salas y festivales, hasta seis clientes de pago el primer año."
     },
     {
       "id": "equipo",

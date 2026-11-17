@@ -149,5 +149,5 @@ test('exposición: cumple las indicaciones de Granada 2031', () => {
   // Solución: solo responde a qué ofrecemos y cómo funciona
   const sol = por('solucion');
   assert.deepEqual(Object.keys(sol).filter((k) => !['id', 'tipo', 'etiqueta', 'titular', 'nota'].includes(k)), ['ofrecemos', 'funciona']);
-  assert.ok(sol.ofrecemos.texto && sol.ofrecemos.incluye.length === 3 && sol.funciona.pasos.length === 4);
+  assert.ok(sol.ofrecemos.texto && sol.ofrecemos.incluye.length >= 4 && sol.funciona.pasos.length === 4);
 });

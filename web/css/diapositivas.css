@@ -165,9 +165,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
 /* ---------- 3 · Solución: memoria de resultados ---------- */
 .solucion { grid-template-columns: 0.9fr 1.1fr; gap: 40px; }
 .solucion__ofrecemos { display: grid; gap: 22px; align-content: center; padding: 40px 48px; }
-.solucion__texto { font-size: 34px; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; }
-.solucion__incluye { display: grid; gap: 14px; padding-top: 22px; border-top: 1px solid rgba(246, 243, 238, 0.3); }
-.solucion__incluye .check { font-size: 27px; }
+.solucion__texto { font-size: 32px; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; }
+.solucion__incluye { display: grid; gap: 12px; padding-top: 20px; border-top: 1px solid rgba(246, 243, 238, 0.3); }
+.solucion__incluye .check { font-size: 28px; }
 .solucion__funciona { display: grid; gap: 22px; align-content: center; }
 .solucion__pasos { display: grid; gap: 16px; }
 .solucion__paso { display: flex; align-items: center; gap: 24px; padding: 18px 30px; border-radius: 32px; }

@@ -46,15 +46,17 @@
     {
       "id": "solucion",
       "etiqueta": "Solución",
-      "titular": "Analizamos tus datos y predecimos tu próxima edición.",
+      "titular": "Analizamos lo que ya tienes y predecimos lo que viene.",
       "tipo": "solucion",
       "ofrecemos": {
         "titulo": "Qué ofrecemos",
-        "texto": "Análisis de los datos de cada evento y predicción de su próxima edición, en un informe y un cuadro de mando fáciles de usar.",
+        "texto": "Analizamos los datos que ya existen de tu evento y predecimos las métricas clave, para que decidas con datos:",
         "incluye": [
-          "Análisis: patrones y tendencias de tu público",
-          "Predicción: la asistencia prevista, con su rango",
-          "Recomendación: la mejor fecha y los recursos"
+          "Elegir el mejor día",
+          "Elegir el mejor artista",
+          "Prever el gasto",
+          "Prever el impacto cultural",
+          "Y muchas métricas más"
         ]
       },
       "funciona": {
@@ -62,23 +64,23 @@
         "pasos": [
           {
             "icono": "descarga",
-            "texto": "Recogemos tus datos: entradas, redes, web, encuestas e históricos"
+            "texto": "Recogemos lo que ya hay: entradas, redes, web, encuestas e históricos"
           },
           {
             "icono": "cuadricula",
-            "texto": "Los ordenamos en un cuadro de mando"
+            "texto": "Lo ordenamos y analizamos para ver patrones y tendencias"
           },
           {
             "icono": "pulso",
-            "texto": "Los analizamos y predecimos la asistencia"
+            "texto": "Predecimos las métricas que necesitas para decidir"
           },
           {
             "icono": "diana",
-            "texto": "Te entregamos el informe con recomendaciones"
+            "texto": "Te entregamos un cuadro de mando y un informe con recomendaciones"
           }
         ]
       },
-      "nota": "¿Qué ofrecemos? Análisis de los datos de cada evento y predicción de su próxima edición, en un informe y un cuadro de mando fáciles de usar: qué patrones y tendencias tiene tu público, cuánta gente prevemos, con su rango, y cuál es la mejor fecha. ¿Cómo funciona? Recogemos tus datos de entradas, redes, web, encuestas e históricos; los ordenamos en un cuadro de mando; los analizamos y predecimos la asistencia, y te entregamos un informe con recomendaciones."
+      "nota": "¿Qué ofrecemos? Analizamos lo que ya existe, los datos que ya tiene el organizador, y predecimos muchas métricas que le permiten decidir: elegir el mejor día, elegir el mejor artista, prever el gasto, prever el impacto cultural y mucho más. ¿Cómo funciona? Recogemos lo que ya hay, entradas, redes, web, encuestas e históricos; lo ordenamos y analizamos para ver patrones y tendencias; predecimos las métricas que necesita para decidir, y le entregamos un cuadro de mando y un informe con recomendaciones."
     },
     {
       "id": "valor",

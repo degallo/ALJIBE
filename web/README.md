@@ -39,10 +39,12 @@ La web está en **https://degallo.github.io/ALJIBE/**. El flujo `.github/workflo
 - **N** abre las notas de cada diapositiva (unos 25 segundos de discurso); **T** pone en marcha la cuenta atrás de 4:00, que se vuelve naranja y suma con «+» si os pasáis; **F** pantalla completa.
 - **Movimiento:** cada diapositiva entra deslizándose y enfocándose desde el lado hacia el que se avanza; el titular sube palabra a palabra, las tarjetas aparecen en cadena, las cifras cuentan desde cero, las marcas se dibujan y la línea de tiempo se traza. Con «reducir movimiento» activado en el sistema, todo aparece quieto.
 - Cada diapositiva se maqueta a 1920 × 1080 y se escala a la pantalla, así que se ve igual en el proyector, en un portátil y en el PDF.
-- Textos en `datos/exposicion.json`, sacados de la pestaña «Exposición 17 noviembre» del plan de empresa; las cifras del prototipo (asistencia, fecha, vasos e indicadores de impacto) salen de `datos/fiesta-2027.json`. Una prueba comprueba que están todos los contenidos mínimos.
+- Textos en `datos/exposicion.json`, según el guion v2 y la propuesta de valor del 16 de noviembre: el producto principal es la **memoria de resultados de una fiesta municipal** (asistencia contada en los accesos, gasto en el pueblo y comparación con la edición anterior) y la previsión pasa a siguiente fase. El precio solo aparece en el enfoque financiero, como hipótesis a validar; una prueba lo comprueba. Las cifras del prototipo salen de `datos/impacto.json` y `datos/fiesta-2027.json`, y en las diapositivas se marcan como datos simulados de ejemplo.
 - **PDF para el profesor:** `descargas/aljibe-presentacion-granada-2031.pdf` (también desde el botón de descarga). Si cambiáis el JSON, regeneradlo con el servidor en marcha: `npm run pdf` (necesita Playwright con Chromium).
 
 ## Pantallas y entregables
+
+- **Memoria de resultados** (`entregables/memoria.html`): el producto principal. Asistencia de la Fiesta del Vino 2026 contada en los accesos, gasto en los comercios del pueblo y comparación con 2025, con el nivel de evidencia de cada cifra (medido o estimado), el método y el enlace a la siguiente fase (previsión 2027). Textos en `datos/memoria.json`; cifras de `datos/impacto.json` y del histórico de `datos/fiesta-2027.json`.
 
 | Página | Qué es |
 | --- | --- |

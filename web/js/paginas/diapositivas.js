@@ -48,13 +48,6 @@ function check(texto) {
   return li;
 }
 
-function lista(textos, desde) {
-  const ul = el('ul', 'lista');
-  textos.forEach((t) => ul.appendChild(check(t)));
-  enCadena(ul.children, desde, 'izquierda');
-  return ul;
-}
-
 function iconoRedondo(nombre) {
   const r = el('span', 'icono-redondo');
   r.appendChild(icono(nombre));
@@ -118,13 +111,11 @@ const TIPOS = {
     s.querySelector('.marca').remove(); // el logo va grande debajo
     s.prepend(el('div', 'portada__arco'));
     const arriba = el('div', 'portada__arriba');
-    arriba.append(entra(logo('aljibe-lockup-inverse.svg', 'portada__logo', 'ALJIBE'), 1, 'pop'));
-    arriba.append(palabras(el('h1', 'portada__claim'), d.titular, 3));
-    const prop = entra(el('p', 'portada__sub'), 6, 'enfoque');
-    prop.append(el('span', 'portada__etiqueta', 'Propuesta central'), d.propuesta);
-    arriba.append(prop);
+    arriba.append(entra(el('p', 'portada__pregunta', d.pregunta), 1, 'enfoque'));
+    arriba.append(entra(logo('aljibe-lockup-inverse.svg', 'portada__logo', 'ALJIBE'), 2, 'pop'));
+    arriba.append(palabras(el('h1', 'portada__claim'), d.titular, 4));
     const abajo = el('div', 'portada__abajo');
-    abajo.append(entra(el('p', 'portada__origen', d.origen), 7));
+    abajo.append(entra(el('p', 'portada__sub', d.propuesta), 7, 'enfoque'));
     abajo.append(entra(el('p', 'portada__pie', d.pie), 8));
     s.append(arriba, abajo);
   },
@@ -136,89 +127,78 @@ const TIPOS = {
     const a = entra(el('div'), 2, 'pop');
     a.append(cifra(d.cifra.valor, 'cifra--xl'), el('p', 'cifra-texto', d.cifra.texto));
     cifras.append(a);
-
-    const lado = el('div', 'problema__lado');
-    const nec = entra(el('div', 'tarjeta problema__bloque'), 4, 'derecha');
-    const fuentes = el('ul', 'chips');
-    d.necesidad.fuentes.forEach((t) => fuentes.appendChild(el('li', 'chip chip--suelto', t)));
-    enCadena(fuentes.children, 5);
-    const aviso = el('p', 'problema__flecha');
-    aviso.append(icono('alerta'), el('span', null, d.necesidad.texto));
-    nec.append(el('p', 'subtitulo', d.necesidad.titulo), fuentes, aviso);
-    const mer = entra(el('div', 'panel problema__bloque'), 6, 'derecha');
-    mer.append(el('p', 'subtitulo', d.merece.titulo), lista(d.merece.puntos, 7));
-    lado.append(nec, mer);
+    const lado = el('ul', 'problema__lado');
+    d.puntos.forEach((x, i) => {
+      const li = entra(el('li', (i === d.puntos.length - 1 ? 'panel' : 'tarjeta') + ' problema__punto'), 3 + i * 0.7, 'derecha');
+      const t = el('div');
+      t.append(el('p', 'problema__titulo', x.titulo), el('p', 'problema__texto', x.texto));
+      li.append(iconoRedondo(x.icono), t);
+      lado.appendChild(li);
+    });
     c.append(cifras, lado);
     s.append(c, fuente(d.fuente));
   },
 
-  proceso(d, s, f) {
+  // Solución: la memoria de resultados, con las cifras del prototipo
+  memoria(d, s, f) {
     s.append(titular(d.titular));
-    const c = cuerpo('proceso');
-    const pasos = el('ol', 'pasos');
-    d.pasos.forEach((p, i) => {
-      const li = entra(el('li', 'tarjeta paso' + (i === d.pasos.length - 1 ? ' paso--final' : '')), 2 + i * 0.7, 'pop');
-      const fila = el('div', 'paso__fila');
-      fila.append(iconoRedondo(p.icono), el('span', 'paso__num', String(i + 1).padStart(2, '0')));
-      li.append(fila, el('h3', 'paso__nombre', p.nombre), el('p', 'paso__texto', p.texto));
-      pasos.appendChild(li);
+    s.append(entra(el('p', 'diapo__sub', d.subtitulo), 1, 'enfoque'));
+    const c = cuerpo('memoria-d');
+    const todos = informe.dimensiones.flatMap((dim) => dim.indicadores);
+    const ed = f.historico.ediciones;
+    const actual = ed.find((e) => e.anio === informe.edicion);
+    const anterior = ed[ed.indexOf(actual) - 1];
+    const valor = (dato) => {
+      if (dato === 'comparacion') {
+        const v = Math.round(((actual.asistentes - anterior.asistentes) / anterior.asistentes) * 100);
+        const n = cifra(Math.abs(v), 'cifra--l', ' %', v < 0 ? '−' : '+');
+        if (v < 0) n.classList.add('cifra--baja');
+        return [n, 'frente a ' + anterior.anio + ' (' + numero(anterior.asistentes) + ')'];
+      }
+      const x = todos.find((k) => k.nombre === dato);
+      return [cifra(x.valor, 'cifra--l', x.tipo === 'euros' ? ' €' : ''), null];
+    };
+    const fila = el('ul', 'memoria-d__bloques');
+    d.bloques.forEach((b, i) => {
+      const li = entra(el('li', (i === 0 ? 'panel' : 'tarjeta') + ' memoria-d__bloque'), 2 + i * 0.7, 'pop');
+      const cab = el('div', 'memoria-d__cab');
+      cab.append(iconoRedondo(b.icono), el('h3', 'memoria-d__titulo', b.titulo));
+      const [n, extra] = valor(b.dato);
+      li.append(cab, n, el('p', 'memoria-d__detalle', extra || b.detalle));
+      fila.appendChild(li);
     });
-    const abajo = el('div', 'proceso__abajo');
-    const serv = entra(el('div', 'servicios'), 5, 'izquierda');
-    serv.append(el('p', 'subtitulo', 'Qué ofrecemos: ' + d.servicios.length + ' servicios'));
-    const chips = el('div', 'chips');
-    d.servicios.forEach((t) => chips.appendChild(el('span', 'chip', t)));
-    chips.appendChild(el('span', 'chip chip--contorno', d.gratis));
-    enCadena(chips.children, 5.5);
-    serv.appendChild(chips);
-
-    // El prototipo, como prueba de cómo funciona
-    const rec = f.fechas.find((x) => x.id === f.fechaRecomendada.dia) || f.fechas[0];
-    const ej = entra(el('div', 'panel ejemplo'), 7, 'derecha');
-    ej.append(el('p', 'subtitulo', d.ejemplo));
-    const kpis = el('div', 'ejemplo__kpis');
-    [
-      [cifra(f.prevision.central, 'cifra--s'), 'asistentes'],
-      [el('p', 'cifra cifra--s', f.fechaRecomendada.dia + ' ' + f.fechaRecomendada.mes), rec.resumen.toLowerCase()],
-      [cifra(f.vasos.cantidad, 'cifra--s'), 'vasos']
-    ].forEach(([n, t], k) => {
-      const k1 = entra(el('div', 'ejemplo__kpi'), 8 + k * 0.6, 'pop');
-      k1.append(n, el('span', null, t));
-      kpis.appendChild(k1);
-    });
-    ej.append(kpis);
-    abajo.append(serv, ej);
-    c.append(pasos, abajo);
+    const pie = entra(el('div', 'memoria-d__pie'), 5, 'sube');
+    pie.append(el('span', 'chip chip--contorno', d.ejemplo), el('p', 'memoria-d__despues', d.despues));
+    c.append(fila, pie);
     s.append(c);
   },
 
-  comparativa(d, s) {
+  // Propuesta de valor: una frase en grande y cuatro pilares sin precio
+  frase(d, s) {
     s.append(titular(d.titular));
-    const c = cuerpo('comparativa');
-    const efectos = ['izquierda', 'pop', 'derecha'];
-    d.columnas.forEach((col, i) => {
-      const caja = entra(el('div', (col.destacado ? 'panel columna--destacada ' : 'tarjeta ') + 'columna'), col.destacado ? 4 : 2 + i * 0.6, efectos[i]);
-      caja.append(el('h3', 'columna__nombre', col.nombre), el('p', 'columna__ejemplo', col.ejemplo));
-      const ul = lista(col.puntos, col.destacado ? 5 : 3 + i * 0.6);
-      if (!col.destacado) ul.querySelectorAll('.check .ico').forEach((ic) => { ic.innerHTML = '<path d="M5 12h14"/>'; });
-      caja.append(ul);
-      c.appendChild(caja);
+    const c = cuerpo('frase');
+    c.append(entra(el('p', 'frase__texto', d.frase), 2, 'enfoque'));
+    const pil = el('ul', 'frase__pilares');
+    d.pilares.forEach((x, i) => {
+      const li = entra(el('li', 'tarjeta frase__pilar'), 3 + i * 0.6, 'pop');
+      li.append(iconoRedondo(x.icono), el('p', 'frase__titulo', x.titulo), el('p', 'frase__detalle', x.texto));
+      pil.appendChild(li);
     });
-    s.append(c, fuente(d.fuente));
+    c.append(pil, entra(el('p', 'frase__pie', d.pie), 6, 'sube'));
+    s.append(c);
   },
 
   clientes(d, s) {
     s.append(titular(d.titular));
     const c = cuerpo('clientes');
-    const seg = el('ul', 'segmentos');
+    const seg = el('ol', 'segmentos');
     d.segmentos.forEach((x, i) => {
       const li = entra(el('li', 'segmento ' + (x.principal ? 'panel' : 'tarjeta')), 2 + i * 0.8, 'pop');
       const cab = el('div', 'segmento__cab');
-      cab.append(iconoRedondo(x.icono));
-      if (x.principal) cab.append(el('span', 'chip chip--claro segmento__prioridad', 'Prioritario'));
+      cab.append(el('span', 'segmento__orden', String(i + 1)), iconoRedondo(x.icono));
       li.append(cab, el('h3', 'segmento__nombre', x.nombre), el('p', 'segmento__quien', x.quien));
       const pq = el('div', 'segmento__porque');
-      pq.append(el('p', 'subtitulo', 'Por qué comprarían'), el('p', 'segmento__texto', x.porque));
+      pq.append(el('p', 'subtitulo', 'Qué necesitan'), el('p', 'segmento__texto', x.porque));
       li.append(pq);
       seg.appendChild(li);
     });
@@ -226,44 +206,22 @@ const TIPOS = {
     const vl = el('ul', 'validacion__lista');
     d.validacion.forEach((t) => vl.appendChild(check(t)));
     enCadena(vl.children, 5.5, 'izquierda');
-    val.append(el('p', 'subtitulo', 'Cómo los validamos'), vl);
+    val.append(el('p', 'subtitulo', 'Cómo comprobamos la demanda'), vl);
     c.append(seg, val);
-    s.append(c, fuente(d.fuente));
+    s.append(c);
   },
 
-  impacto(d, s, f) {
+  impacto(d, s) {
     s.append(titular(d.titular));
     const c = cuerpo('impacto');
     const rejilla = el('ul', 'impactos');
-    // El ejemplo de cada impacto sale del prototipo de la Fiesta del Vino:
-    // primero sus indicadores y, si no está ahí, el informe de impacto
-    const valor = (dato) => {
-      const x = f.impacto.find((k) => k.nombre === dato);
-      if (x) return cifra(x.valor, 'cifra--s', x.unidad ? ' ' + x.unidad : '');
-      const y = informe.dimensiones.flatMap((dim) => dim.indicadores).find((k) => k.nombre === dato);
-      return cifra(y.valor, 'cifra--s', y.tipo === 'euros' ? ' €' : y.tipo === 'pct' ? ' %' : '');
-    };
     d.impactos.forEach((x, i) => {
-      const li = entra(el('li', 'tarjeta impacto-caja'), 2 + i * 0.6, 'pop');
-      const cab = el('div', 'impacto-caja__cab');
-      cab.append(iconoRedondo(x.icono), el('h3', 'impacto-caja__tipo', x.tipo));
-      const ej = el('p', 'impacto-caja__ejemplo');
-      ej.append(valor(x.dato), el('span', null, x.ejemplo));
-      li.append(cab, el('p', 'impacto-caja__texto', x.texto), ej);
+      const li = entra(el('li', (i === 2 ? 'panel' : 'tarjeta') + ' impacto-caja'), 2 + i * 0.6, 'pop');
+      li.append(iconoRedondo(x.icono), el('h3', 'impacto-caja__tipo', x.tipo), el('p', 'impacto-caja__texto', x.texto));
       rejilla.appendChild(li);
     });
-    const k = d.capitalidad;
-    const panel = entra(el('div', 'panel capitalidad'), 4, 'derecha');
-    const pasos = el('ol', 'capitalidad__pasos');
-    k.pasos.forEach((p, n) => {
-      const li = el('li', 'capitalidad__paso');
-      li.append(el('span', 'capitalidad__num', String(n + 1)), el('p', 'capitalidad__nombre', p.nombre), el('p', 'capitalidad__detalle', p.texto));
-      pasos.appendChild(li);
-    });
-    enCadena(pasos.children, 5, 'izquierda');
-    panel.append(el('p', 'capitalidad__titulo', k.titulo), el('p', 'capitalidad__texto', k.texto), pasos, entra(el('p', 'capitalidad__propuesta', k.propuesta), 7, 'enfoque'));
-    c.append(rejilla, panel);
-    s.append(c, fuente(d.fuente));
+    c.append(rejilla);
+    s.append(c);
   },
 
   finanzas(d, s) {
@@ -271,19 +229,23 @@ const TIPOS = {
     const c = cuerpo('finanzas');
     const izq = el('div', 'finanzas__principal');
     const a = entra(el('div'), 2, 'pop');
-    a.append(el('p', 'subtitulo', 'Objetivo año 1'), cifra(d.cifra.valor, 'cifra--xl', d.cifra.sufijo), el('p', 'cifra-texto', d.cifra.texto));
+    a.append(el('p', 'subtitulo', 'Objetivo'), cifra(d.cifra.valor, 'cifra--xl', d.cifra.sufijo), el('p', 'cifra-texto', d.cifra.texto));
+    const r = d.recurrente;
     const b = entra(el('div', 'finanzas__recurrente'), 3, 'sube');
-    b.append(cifra(d.cifra2.valor, 'cifra--m', d.cifra2.sufijo), el('p', 'cifra-texto', d.cifra2.texto));
+    b.append(el('p', 'finanzas__calculo', r.calculo + ' ='), cifra(r.valor, 'cifra--m', r.sufijo), el('p', 'cifra-texto', r.texto));
     izq.append(a, b);
-    const rejilla = el('div', 'finanzas__bloques');
+    const lado = el('div', 'finanzas__bloques');
     d.bloques.forEach((x, i) => {
       const t = entra(el('div', (x.destacado ? 'panel' : 'tarjeta') + ' bloque'), 4 + i * 0.6, 'pop');
       const cab = el('div', 'bloque__cab');
       cab.append(iconoRedondo(x.icono), el('h3', 'bloque__titulo', x.titulo));
-      t.append(cab, el('p', 'bloque__texto', x.texto));
-      rejilla.appendChild(t);
+      t.append(cab);
+      if (x.cifra) t.append(el('p', 'cifra cifra--s', x.cifra));
+      const txt = el('p', 'bloque__texto' + (x.hipotesis ? ' bloque__texto--hipotesis' : ''), x.texto);
+      t.append(txt);
+      lado.appendChild(t);
     });
-    c.append(izq, rejilla);
+    c.append(izq, lado);
     s.append(c, fuente(d.fuente));
   },
 
@@ -296,13 +258,12 @@ const TIPOS = {
       li.append(el('p', 'hito__cuando', h.cuando), el('p', 'hito__texto', h.texto));
       hitos.appendChild(li);
     });
-    const cols = el('div', 'hoja__columnas');
-    const porque = entra(el('div', 'tarjeta'), 5, 'izquierda');
-    porque.append(el('p', 'subtitulo', 'Por qué es factible'), lista(d.porque, 5.5));
-    const nec = entra(el('div', 'panel'), 6, 'derecha');
-    nec.append(el('p', 'subtitulo', 'Qué necesitamos para despegar'), lista(d.necesitamos, 6.5));
-    cols.append(porque, nec);
-    c.append(hitos, cols);
+    const viable = entra(el('div', 'panel hoja__viable'), 5, 'sube');
+    const ul = el('ul', 'hoja__porque');
+    d.porque.forEach((t) => ul.appendChild(check(t)));
+    enCadena(ul.children, 5.5, 'izquierda');
+    viable.append(el('p', 'subtitulo', 'Por qué es viable'), ul);
+    c.append(hitos, viable);
     s.append(c);
   },
 

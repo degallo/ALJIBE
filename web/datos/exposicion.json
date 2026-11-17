@@ -85,35 +85,31 @@
       "id": "valor",
       "etiqueta": "Propuesta de valor",
       "tipo": "valor",
-      "titular": "Medimos el impacto cultural de los eventos de Granada.",
+      "titular": "Cada fiesta, con su memoria de resultados: lo que pasó, lo que costó y qué decidir la próxima edición.",
       "clave": {
-        "etiqueta": "Clave para Granada 2031",
-        "texto": "Medir el impacto cultural es un criterio fundamental para Granada 2031: demostrar con datos lo que la cultura aporta a la ciudad."
+        "etiqueta": "La clave de nuestra propuesta",
+        "titulo": "Los pueblos",
+        "texto": "Nadie atiende a los eventos municipales pequeños de Granada con un informe que una artista, fecha y perfil real de los asistentes, en un entregable cerrado que el ayuntamiento pueda justificar."
       },
       "dimensiones": [
         {
           "icono": "usuarios",
-          "titulo": "Participación",
-          "texto": "Cuánta gente asiste y cómo evoluciona"
+          "titulo": "Lo que pasó",
+          "texto": "Cuánta gente vino y su perfil real"
         },
         {
-          "icono": "corazon",
-          "titulo": "Patrimonio vivo",
-          "texto": "Cómo se mantienen las tradiciones y los colectivos"
+          "icono": "euro",
+          "titulo": "Lo que costó",
+          "texto": "El gasto del evento, para poder justificarlo"
         },
         {
-          "icono": "apreton",
-          "titulo": "Comunidad",
-          "texto": "Cuánto se implican vecinos y asociaciones"
-        },
-        {
-          "icono": "mundo",
-          "titulo": "Proyección",
-          "texto": "Hasta dónde llega y cuántos visitantes atrae"
+          "icono": "calendario",
+          "titulo": "Qué decidir",
+          "texto": "Artista y fecha de la próxima edición"
         }
       ],
-      "pie": "Mismo método para todos los eventos: así se pueden comparar.",
-      "nota": "¿Qué nos diferencia? Que somos capaces de medir el impacto cultural de los eventos de Granada. Y eso es un criterio fundamental para Granada 2031: la ciudad tendrá que demostrar con datos lo que la cultura aporta. Lo medimos en cuatro dimensiones: participación, patrimonio vivo, comunidad y proyección, con el mismo método en todos los eventos, para que se puedan comparar."
+      "pie": "Medimos el evento de hoy para que programes mejor el de mañana.",
+      "nota": "¿Qué nos diferencia? Que ALJIBE llega donde nadie llega: a los pueblos. Nadie atiende a los eventos municipales pequeños de Granada con un informe que una artista, fecha y perfil real de los asistentes, en un entregable cerrado que el ayuntamiento pueda justificar. Cada fiesta recibe su memoria de resultados: lo que pasó, lo que costó y qué decidir en la próxima edición. Medimos el evento de hoy para que programe mejor el de mañana."
     },
     {
       "id": "clientes",

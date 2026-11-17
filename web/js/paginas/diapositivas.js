@@ -165,12 +165,12 @@ const TIPOS = {
     s.append(c);
   },
 
-  // Propuesta de valor: medimos el impacto cultural, clave para Granada 2031
+  // Propuesta de valor: la memoria de resultados de cada fiesta, con los pueblos como clave
   valor(d, s) {
     s.append(titular(d.titular));
     const c = cuerpo('valor');
     const clave = entra(el('div', 'panel valor__clave'), 2, 'izquierda');
-    clave.append(el('p', 'subtitulo', d.clave.etiqueta), el('p', 'valor__texto', d.clave.texto));
+    clave.append(el('p', 'subtitulo', d.clave.etiqueta), el('p', 'valor__nombre', d.clave.titulo), el('p', 'valor__texto', d.clave.texto));
     const dims = el('ul', 'valor__dims');
     d.dimensiones.forEach((x, i) => {
       const li = entra(el('li', 'tarjeta valor__dim'), 3 + i * 0.6, 'derecha');

@@ -45,64 +45,71 @@
     },
     {
       "id": "solucion",
-      "tipo": "memoria",
       "etiqueta": "Solución",
-      "titular": "Tu fiesta, con cifras.",
-      "subtitulo": "La memoria de resultados de cada fiesta, lista para presentar en pleno o a un patrocinador.",
-      "bloques": [
-        {
-          "icono": "usuarios",
-          "titulo": "Cuánta gente vino",
-          "detalle": "contada en los accesos",
-          "dato": "Asistentes"
-        },
-        {
-          "icono": "euro",
-          "titulo": "Cuánto gasto generó en el pueblo",
-          "detalle": "estimado",
-          "dato": "Gasto en comercios del pueblo"
-        },
-        {
-          "icono": "historico",
-          "titulo": "Frente a la edición anterior",
-          "detalle": "mismo método",
-          "dato": "comparacion"
-        }
-      ],
-      "ejemplo": "Prototipo · Fiesta del Vino de Alhama · datos simulados de ejemplo",
-      "despues": "Medir primero, prever después: con varias ediciones medidas, prevemos la asistencia y recomendamos la fecha.",
-      "nota": "¿Cómo lo solucionamos? ALJIBE entrega al ayuntamiento, tras la fiesta, una memoria de resultados: cuánta gente asistió, contada en los accesos; cuánto gasto generó en el pueblo, y cómo fue frente a la edición anterior. Es un documento listo para el pleno o para un patrocinador. Nuestro prototipo lo aplica a la Fiesta del Vino con datos simulados. Medir primero y prever después: cada fiesta medida construye el histórico para acertar la siguiente, por ejemplo unas 7.600 personas en 2027."
+      "titular": "Analizamos lo que ya tienes y predecimos lo que viene.",
+      "tipo": "solucion",
+      "ofrecemos": {
+        "titulo": "Qué ofrecemos",
+        "texto": "Analizamos los datos que ya existen de tu evento y predecimos las métricas clave, para que decidas con datos:",
+        "incluye": [
+          "Elegir el mejor día",
+          "Elegir el mejor artista",
+          "Prever el gasto",
+          "Prever el impacto cultural"
+        ]
+      },
+      "funciona": {
+        "titulo": "Cómo funciona",
+        "pasos": [
+          {
+            "icono": "descarga",
+            "texto": "Recogemos lo que ya hay: entradas, redes, web, encuestas e históricos"
+          },
+          {
+            "icono": "cuadricula",
+            "texto": "Lo ordenamos y analizamos para ver patrones y tendencias"
+          },
+          {
+            "icono": "pulso",
+            "texto": "Predecimos las métricas que necesitas para decidir"
+          },
+          {
+            "icono": "diana",
+            "texto": "Te entregamos un cuadro de mando y un informe con recomendaciones"
+          }
+        ]
+      },
+      "nota": "¿Qué ofrecemos? Analizamos lo que ya existe, los datos que ya tiene el organizador, y predecimos muchas métricas que le permiten decidir: elegir el mejor día, elegir el mejor artista, prever el gasto, prever el impacto cultural. ¿Cómo funciona? Recogemos lo que ya hay, entradas, redes, web, encuestas e históricos; lo ordenamos y analizamos para ver patrones y tendencias; predecimos las métricas que necesita para decidir, y le entregamos un cuadro de mando y un informe con recomendaciones."
     },
     {
       "id": "valor",
-      "tipo": "frase",
       "etiqueta": "Propuesta de valor",
-      "titular": "En 15 días, la memoria de resultados de tu fiesta.",
-      "frase": "Asistencia contada en los accesos, gasto estimado en el pueblo y comparación con la edición anterior, lista para el pleno o un patrocinador.",
-      "pilares": [
-        {
-          "icono": "calendario",
-          "titulo": "En 15 días",
-          "texto": "tras la fiesta"
-        },
+      "tipo": "valor",
+      "titular": "Cada fiesta, con su memoria de resultados: lo que pasó, lo que costó y qué decidir la próxima edición.",
+      "clave": {
+        "etiqueta": "La clave de nuestra propuesta",
+        "titulo": "Los pueblos",
+        "texto": "Nadie les da un único informe que relacione artista, fecha y público real."
+      },
+      "dimensiones": [
         {
           "icono": "usuarios",
-          "titulo": "Contada, no a ojo",
-          "texto": "conteo en los accesos"
+          "titulo": "Lo que pasó",
+          "texto": "Cuánta gente vino y su perfil real"
         },
         {
-          "icono": "historico",
-          "titulo": "Comparable",
-          "texto": "año a año"
+          "icono": "euro",
+          "titulo": "Lo que costó",
+          "texto": "El gasto del evento, para poder justificarlo"
         },
         {
-          "icono": "documento",
-          "titulo": "Lista para usar",
-          "texto": "pleno, Intervención o patrocinador"
+          "icono": "calendario",
+          "titulo": "Qué decidir",
+          "texto": "Artista y fecha de la próxima edición"
         }
       ],
-      "pie": "Mismo método, cada edición.",
-      "nota": "¿Qué nos diferencia? Las herramientas gratuitas dan datos por zonas, no el resultado de una fiesta concreta, y las grandes consultoras hacen estudios pensados para grandes eventos. ALJIBE entrega al ayuntamiento, en 15 días, una memoria con la asistencia contada en accesos, el gasto estimado y la comparación con la edición anterior, con el mismo método cada año."
+      "pie": "Medimos el evento de hoy para que programes mejor el de mañana.",
+      "nota": "¿Qué nos diferencia? Que ALJIBE llega donde nadie llega: a los pueblos. Nadie atiende a los eventos municipales pequeños de Granada con un informe que una artista, fecha y perfil real de los asistentes, en un entregable cerrado que el ayuntamiento pueda justificar. Cada fiesta recibe su memoria de resultados: lo que pasó, lo que costó y qué decidir en la próxima edición. Medimos el evento de hoy para que programe mejor el de mañana."
     },
     {
       "id": "clientes",

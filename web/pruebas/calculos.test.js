@@ -135,6 +135,11 @@ test('exposición: cumple las indicaciones de Granada 2031', () => {
   const sinPrecio = d.filter((x) => x.id !== 'finanzas').map((x) => JSON.stringify(x).replace(x.nota, '')).join(' ');
   assert.doesNotMatch(sinPrecio, /\d\s?€|precio|barat/i, 'sin precio fuera del enfoque financiero');
   assert.doesNotMatch(JSON.stringify(expo), /mejores decisiones/i);
+  // Propuesta de valor: la memoria de resultados de cada fiesta, con los pueblos como clave
+  const val = por('valor');
+  assert.match(val.titular, /memoria de resultados/);
+  assert.equal(val.clave.titulo, 'Los pueblos');
+  assert.deepEqual(val.dimensiones.map((x) => x.titulo), ['Lo que pasó', 'Lo que costó', 'Qué decidir']);
   assert.equal(por('clientes').segmentos[0].nombre, 'Ayuntamientos y fiestas municipales', 'empezamos por los ayuntamientos');
   assert.ok(por('clientes').segmentos.every((x) => x.quien && x.porque));
   assert.deepEqual(por('impacto').impactos.map((x) => x.tipo), ['Pueblos', 'Patrocinadores', 'Granada 2031', 'Empleo']);
@@ -146,7 +151,8 @@ test('exposición: cumple las indicaciones de Granada 2031', () => {
   assert.equal(personas.length, 5);
   assert.ok(personas.every((x) => x.cargo && x.nombre && x.funcion));
   assert.equal(new Set(personas.map((x) => x.nombre)).size, 5, 'cada integrante una vez');
-  // Las cifras de la memoria existen en los datos del prototipo
-  const informe = leer('impacto').dimensiones.flatMap((dim) => dim.indicadores);
-  por('solucion').bloques.filter((x) => x.dato !== 'comparacion').forEach((x) => assert.ok(informe.some((k) => k.nombre === x.dato), x.dato));
+  // Solución: solo responde a qué ofrecemos y cómo funciona
+  const sol = por('solucion');
+  assert.deepEqual(Object.keys(sol).filter((k) => !['id', 'tipo', 'etiqueta', 'titular', 'nota'].includes(k)), ['ofrecemos', 'funciona']);
+  assert.ok(sol.ofrecemos.texto && sol.ofrecemos.incluye.length >= 4 && sol.funciona.pasos.length === 4);
 });

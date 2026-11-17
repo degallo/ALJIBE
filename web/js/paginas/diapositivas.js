@@ -14,7 +14,6 @@ const imprimir = new URLSearchParams(location.search).has('imprimir');
 let diapos = [];
 let actual = 0;
 let expo;
-let informe; // datos/impacto.json, para los ejemplos de impacto
 
 // ---------- Piezas ----------
 
@@ -139,53 +138,49 @@ const TIPOS = {
     s.append(c, fuente(d.fuente));
   },
 
-  // Solución: la memoria de resultados, con las cifras del prototipo
-  memoria(d, s, f) {
+  // Solución: qué ofrecemos y cómo funciona
+  solucion(d, s) {
     s.append(titular(d.titular));
-    s.append(entra(el('p', 'diapo__sub', d.subtitulo), 1, 'enfoque'));
-    const c = cuerpo('memoria-d');
-    const todos = informe.dimensiones.flatMap((dim) => dim.indicadores);
-    const ed = f.historico.ediciones;
-    const actual = ed.find((e) => e.anio === informe.edicion);
-    const anterior = ed[ed.indexOf(actual) - 1];
-    const valor = (dato) => {
-      if (dato === 'comparacion') {
-        const v = Math.round(((actual.asistentes - anterior.asistentes) / anterior.asistentes) * 100);
-        const n = cifra(Math.abs(v), 'cifra--l', ' %', v < 0 ? '−' : '+');
-        if (v < 0) n.classList.add('cifra--baja');
-        return [n, 'frente a ' + anterior.anio + ' (' + numero(anterior.asistentes) + ')'];
-      }
-      const x = todos.find((k) => k.nombre === dato);
-      return [cifra(x.valor, 'cifra--l', x.tipo === 'euros' ? ' €' : ''), null];
-    };
-    const fila = el('ul', 'memoria-d__bloques');
-    d.bloques.forEach((b, i) => {
-      const li = entra(el('li', (i === 0 ? 'panel' : 'tarjeta') + ' memoria-d__bloque'), 2 + i * 0.7, 'pop');
-      const cab = el('div', 'memoria-d__cab');
-      cab.append(iconoRedondo(b.icono), el('h3', 'memoria-d__titulo', b.titulo));
-      const [n, extra] = valor(b.dato);
-      li.append(cab, n, el('p', 'memoria-d__detalle', extra || b.detalle));
-      fila.appendChild(li);
+    const c = cuerpo('solucion');
+    const of = entra(el('div', 'panel solucion__ofrecemos'), 2, 'izquierda');
+    of.append(el('p', 'subtitulo', d.ofrecemos.titulo), el('p', 'solucion__texto', d.ofrecemos.texto));
+    const inc = el('ul', 'solucion__incluye');
+    d.ofrecemos.incluye.forEach((x) => {
+      const li = el('li', 'check');
+      li.append(icono('check'), el('span', null, x));
+      inc.appendChild(li);
     });
-    const pie = entra(el('div', 'memoria-d__pie'), 5, 'sube');
-    pie.append(el('span', 'chip chip--contorno', d.ejemplo), el('p', 'memoria-d__despues', d.despues));
-    c.append(fila, pie);
+    enCadena(inc.children, 3, 'izquierda');
+    of.append(inc);
+    const fu = el('div', 'solucion__funciona');
+    fu.append(entra(el('p', 'subtitulo', d.funciona.titulo), 2, 'derecha'));
+    const pasos = el('ol', 'solucion__pasos');
+    d.funciona.pasos.forEach((x, i) => {
+      const li = entra(el('li', 'tarjeta solucion__paso'), 3 + i * 0.7, 'derecha');
+      li.append(el('span', 'solucion__num', String(i + 1)), iconoRedondo(x.icono), el('p', 'solucion__pasotexto', x.texto));
+      pasos.appendChild(li);
+    });
+    fu.append(pasos);
+    c.append(of, fu);
     s.append(c);
   },
 
-  // Propuesta de valor: una frase en grande y cuatro pilares sin precio
-  frase(d, s) {
+  // Propuesta de valor: la memoria de resultados de cada fiesta, con los pueblos como clave
+  valor(d, s) {
     s.append(titular(d.titular));
-    const c = cuerpo('frase');
-    c.append(entra(el('p', 'frase__texto', d.frase), 2, 'enfoque'));
-    const pil = el('ul', 'frase__pilares');
-    d.pilares.forEach((x, i) => {
-      const li = entra(el('li', 'tarjeta frase__pilar'), 3 + i * 0.6, 'pop');
-      li.append(iconoRedondo(x.icono), el('p', 'frase__titulo', x.titulo), el('p', 'frase__detalle', x.texto));
-      pil.appendChild(li);
+    const c = cuerpo('valor');
+    const clave = entra(el('div', 'panel valor__clave'), 2, 'izquierda');
+    clave.append(el('p', 'subtitulo', d.clave.etiqueta), el('p', 'valor__nombre', d.clave.titulo), el('p', 'valor__texto', d.clave.texto));
+    const dims = el('ul', 'valor__dims');
+    d.dimensiones.forEach((x, i) => {
+      const li = entra(el('li', 'tarjeta valor__dim'), 3 + i * 0.6, 'derecha');
+      const t = el('div');
+      t.append(el('p', 'valor__titulo', x.titulo), el('p', 'valor__detalle', x.texto));
+      li.append(iconoRedondo(x.icono), t);
+      dims.appendChild(li);
     });
-    c.append(pil, entra(el('p', 'frase__pie', d.pie), 6, 'sube'));
-    s.append(c);
+    c.append(clave, dims);
+    s.append(c, entra(el('p', 'valor__pie', d.pie), 6, 'sube'));
   },
 
   clientes(d, s) {
@@ -451,8 +446,7 @@ function prepararMandos() {
 async function iniciar() {
   if (!imprimir) document.documentElement.classList.add('js-anima');
   try {
-    const [e, fiesta, impacto] = await Promise.all([datos('exposicion'), datos('fiesta-2027'), datos('impacto')]);
-    informe = impacto;
+    const [e, fiesta] = await Promise.all([datos('exposicion'), datos('fiesta-2027')]);
     expo = e;
     const escenario = document.getElementById('escenario');
     const total = expo.diapositivas.length;

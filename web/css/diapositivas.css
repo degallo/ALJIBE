@@ -219,19 +219,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
 .panel .impacto-caja__texto { color: var(--texto-oscuro); }
 
 /* ---------- 7 · Enfoque financiero ---------- */
-.finanzas { grid-template-columns: 0.95fr 1fr; }
-.finanzas__principal { display: grid; align-content: center; gap: 36px; }
-.finanzas__principal .subtitulo { margin-bottom: 8px; }
-.finanzas__principal .cifra--xl { font-size: 170px; }
-.finanzas__recurrente { display: grid; gap: 8px; padding-left: 28px; border-left: 4px solid var(--agua); }
-.finanzas__calculo { font-family: var(--mono); font-size: 26px; color: var(--tinta-suave); }
-.finanzas__bloques { display: grid; gap: 20px; align-content: center; }
-.bloque { display: grid; gap: 10px; align-content: start; padding: 26px 34px; border-radius: 32px; }
-.bloque__cab { display: flex; align-items: center; gap: 18px; }
-.bloque__cab .icono-redondo { width: 60px; height: 60px; }
-.bloque__cab .icono-redondo .ico { width: 28px; height: 28px; }
-.bloque__titulo { font-size: 32px; font-weight: 700; letter-spacing: -0.01em; }
-.bloque__texto { font-size: 25px; line-height: 1.35; color: var(--tinta-suave); }
+.finanzas { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 24px; align-content: center; }
+.bloque { display: grid; gap: 16px; align-content: start; padding: 36px 44px; border-radius: 36px; }
+.bloque__cab { display: flex; align-items: center; gap: 20px; }
+.bloque__cab .icono-redondo { width: 72px; height: 72px; }
+.bloque__titulo { font-size: 40px; font-weight: 700; letter-spacing: -0.015em; }
+.bloque__texto { font-size: 28px; line-height: 1.35; color: var(--tinta-suave); }
 .bloque.panel .bloque__texto { color: var(--texto-oscuro); }
 
 /* ---------- 8 · Viabilidad y próximos pasos ---------- */
@@ -384,7 +377,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
   .diapo__sub { font-size: 18px; margin-top: 0; }
   .problema__punto, .memoria-d__bloque, .frase__pilar, .impacto-caja { padding: 16px; gap: 10px; min-height: 0; }
   .problema__titulo, .memoria-d__titulo, .frase__titulo, .impacto-caja__tipo, .hito__texto { font-size: 21px; }
-  .problema__texto, .memoria-d__detalle, .memoria-d__despues, .frase__detalle, .frase__texto, .impacto-caja__texto, .finanzas__calculo { font-size: 16px; min-width: 0; }
+  .problema__texto, .memoria-d__detalle, .memoria-d__despues, .frase__detalle, .frase__texto, .impacto-caja__texto { font-size: 16px; min-width: 0; }
   .frase__pie { font-size: 20px; }
   .segmento__orden { font-size: 32px; }
   .memoria-d .cifra--l { font-size: min(52px, 12.5vw); }
@@ -401,11 +394,10 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
   .nodo__nombre, .impacto-caja__tipo { font-size: 22px; }
   .nodo__cargo, .nodo__funcion, .impacto-caja__texto { font-size: 15px; }
   .impacto-caja { padding: 16px; }
-  .diapo__cuerpo, .problema, .impacto, .finanzas, .finanzas__bloques, .hitos, .segmentos, .clientes, .equipo, .memoria-d, .frase, .hoja { grid-template-columns: 1fr; grid-template-rows: none; gap: 16px; }
+  .diapo__cuerpo, .problema, .impacto, .finanzas, .hitos, .segmentos, .clientes, .equipo, .memoria-d, .frase, .hoja { grid-template-columns: 1fr; grid-template-rows: none; gap: 16px; }
   .cifra--xl { font-size: min(72px, 18vw); }
-  .finanzas__principal .cifra--xl { font-size: min(64px, 16vw); }
   .problema__cifras .cifra--xl { font-size: min(72px, 18vw); }
-  .finanzas > *, .finanzas__principal > * { min-width: 0; }
+  .finanzas > * { min-width: 0; }
   .subtitulo { overflow-wrap: anywhere; }
   .cifra--l { font-size: 60px; }
   .cifra--m { font-size: 38px; }
@@ -426,7 +418,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
   .hito__cuando { font-size: 14px; }
   .validacion { border-radius: 24px; flex-direction: column; align-items: flex-start; gap: 10px; padding: 18px 20px; }
   .validacion__lista { flex-direction: column; gap: 10px; }
-  .finanzas__recurrente { padding-left: 16px; }
   .hitos { padding-top: 0; gap: 18px; }
   .hitos::before { display: none; }
   .hito::before { width: 18px; height: 18px; border-width: 4px; }

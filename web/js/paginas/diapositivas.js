@@ -224,27 +224,19 @@ const TIPOS = {
     s.append(c);
   },
 
+  // Enfoque financiero: inversiones, gastos operativos, ingresos y financiación
   finanzas(d, s) {
     s.append(titular(d.titular));
     const c = cuerpo('finanzas');
-    const izq = el('div', 'finanzas__principal');
-    const a = entra(el('div'), 2, 'pop');
-    a.append(el('p', 'subtitulo', 'Objetivo'), cifra(d.cifra.valor, 'cifra--xl', d.cifra.sufijo), el('p', 'cifra-texto', d.cifra.texto));
-    const r = d.recurrente;
-    const b = entra(el('div', 'finanzas__recurrente'), 3, 'sube');
-    b.append(el('p', 'finanzas__calculo', r.calculo + ' ='), cifra(r.valor, 'cifra--m', r.sufijo), el('p', 'cifra-texto', r.texto));
-    izq.append(a, b);
-    const lado = el('div', 'finanzas__bloques');
     d.bloques.forEach((x, i) => {
-      const t = entra(el('div', (x.destacado ? 'panel' : 'tarjeta') + ' bloque'), 4 + i * 0.6, 'pop');
+      const t = entra(el('div', (x.destacado ? 'panel' : 'tarjeta') + ' bloque'), 2 + i * 0.6, 'pop');
       const cab = el('div', 'bloque__cab');
       cab.append(iconoRedondo(x.icono), el('h3', 'bloque__titulo', x.titulo));
       t.append(cab);
-      if (x.cifra) t.append(el('p', 'cifra cifra--s', x.cifra));
+      if (x.cifra) t.append(el('p', 'cifra cifra--m', x.cifra));
       t.append(el('p', 'bloque__texto', x.texto));
-      lado.appendChild(t);
+      c.appendChild(t);
     });
-    c.append(izq, lado);
     s.append(c, fuente(d.fuente));
   },
 

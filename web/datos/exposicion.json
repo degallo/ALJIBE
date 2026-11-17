@@ -170,38 +170,32 @@
       "tipo": "finanzas",
       "etiqueta": "Enfoque financiero",
       "titular": "Sin local ni grandes inversiones.",
-      "cifra": {
-        "valor": 12000,
-        "sufijo": " €",
-        "texto": "de facturación el primer año"
-      },
-      "recurrente": {
-        "calculo": "3 suscripciones × 200 €/mes",
-        "valor": 600,
-        "sufijo": " €/mes",
-        "texto": "de ingresos recurrentes"
-      },
       "bloques": [
         {
-          "icono": "documento",
-          "titulo": "Memoria por edición",
-          "cifra": "2.500–3.500 €",
-          "texto": "Precio de partida por fiesta"
+          "icono": "servidor",
+          "titulo": "Principales inversiones",
+          "texto": "Equipos informáticos, licencias de análisis de datos, web, constitución de la empresa y promoción inicial. Sin local ni stock."
         },
         {
           "icono": "deslizadores",
-          "titulo": "Gastos",
-          "texto": "Licencias, web, gestoría y colaboradores externos"
+          "titulo": "Gastos operativos",
+          "texto": "Licencias, web, gestoría y colaboradores externos para cada fiesta."
+        },
+        {
+          "icono": "sube",
+          "titulo": "Ingresos",
+          "cifra": "2.500–3.500 €",
+          "texto": "por cada memoria de una fiesta, más estudios puntuales y suscripciones de seguimiento de 200 €/mes."
         },
         {
           "icono": "euro",
           "titulo": "Financiación",
-          "texto": "Aportaciones de los socios y posibles ayudas públicas",
+          "texto": "Aportaciones de los socios y posibles ayudas públicas, con una reserva para cubrir 3 meses de gastos.",
           "destacado": true
         }
       ],
       "fuente": "Importes antes de IVA.",
-      "nota": "En la parte económica, no necesitamos local físico ni grandes inversiones iniciales. Los gastos principales son licencias, web, gestoría y colaboradores externos. Los ingresos vendrán de la memoria por edición, de estudios puntuales y de suscripciones; partimos de 2.500 a 3.500 euros por memoria. El objetivo es 12.000 euros el primer año y tres suscripciones de 200 euros: 600 euros recurrentes al mes. Empezamos con aportaciones de los socios y posibles ayudas públicas."
+      "nota": "En la parte económica, no necesitamos local físico ni grandes inversiones: equipos, licencias, la web, la constitución y una promoción inicial. Los gastos operativos son licencias, web, gestoría y colaboradores externos. Los ingresos vienen de la memoria de cada fiesta, de 2.500 a 3.500 euros, de estudios puntuales y de suscripciones de 200 euros al mes. Lo financiamos con aportaciones de los socios y posibles ayudas públicas, con una reserva para tres meses de gastos."
     },
     {
       "id": "viabilidad",

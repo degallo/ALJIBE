@@ -233,8 +233,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
 .bloque__titulo { font-size: 32px; font-weight: 700; letter-spacing: -0.01em; }
 .bloque__texto { font-size: 25px; line-height: 1.35; color: var(--tinta-suave); }
 .bloque.panel .bloque__texto { color: var(--texto-oscuro); }
-.bloque__texto--hipotesis { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; color: var(--alerta); }
-.bloque__texto--hipotesis::before { content: ""; width: 12px; height: 12px; border-radius: 50%; border: 2px solid currentColor; }
 
 /* ---------- 8 · Viabilidad y próximos pasos ---------- */
 .hoja { grid-template-rows: auto auto; align-content: center; gap: 56px; }

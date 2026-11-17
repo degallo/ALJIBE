@@ -241,8 +241,7 @@ const TIPOS = {
       cab.append(iconoRedondo(x.icono), el('h3', 'bloque__titulo', x.titulo));
       t.append(cab);
       if (x.cifra) t.append(el('p', 'cifra cifra--s', x.cifra));
-      const txt = el('p', 'bloque__texto' + (x.hipotesis ? ' bloque__texto--hipotesis' : ''), x.texto);
-      t.append(txt);
+      t.append(el('p', 'bloque__texto', x.texto));
       lado.appendChild(t);
     });
     c.append(izq, lado);

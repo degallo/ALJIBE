@@ -138,7 +138,7 @@ test('exposición: cumple las indicaciones de Granada 2031', () => {
   assert.equal(por('clientes').segmentos[0].nombre, 'Ayuntamientos y fiestas municipales', 'empezamos por los ayuntamientos');
   assert.ok(por('clientes').segmentos.every((x) => x.quien && x.porque));
   assert.deepEqual(por('impacto').impactos.map((x) => x.tipo), ['Pueblos', 'Patrocinadores', 'Granada 2031', 'Empleo']);
-  assert.ok(por('finanzas').bloques.some((x) => x.hipotesis), 'el precio va marcado como hipótesis');
+  assert.doesNotMatch(JSON.stringify(expo), /entrevist|hipótesis/i, 'sin referencias a entrevistas ni hipótesis');
   assert.match(por('equipo').cierre, /cambiará .+, porque /, 'cierre: «cambiará ___ porque ___»');
   // Organigrama: una dirección y cada integrante con un cargo, sin repetir
   const org = por('equipo').organigrama;

@@ -452,4 +452,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
   .diapo:last-child { break-after: auto; page-break-after: auto; }
   .entra, .palabra__in { opacity: 1 !important; translate: none !important; }
   body > :not(.escenario) { display: none !important; }
+  /* Sin sombras ni degradados translúcidos: en el PDF se convertirían en decenas de
+     imágenes enormes y el visor iría a trompicones al pasar de página */
+  .tarjeta, .panel, .nodo, .mando { box-shadow: none !important; filter: none !important; }
+  .tarjeta { background: #fff !important; }
+  .diapo__brillo { display: none !important; }
+  .diapo:not(.diapo--oscura) { background-image: none !important; }
+  .diapo--oscura { background: #0A5563 !important; }
+  .panel, .paso--final, .memoria-d__bloque.panel { background: #0A5563 !important; }
+  .portada__arco::after, .gracias .portada__arco::after { background: rgba(46, 140, 156, 0.4) !important; }
 }

@@ -140,3 +140,20 @@
   .entregable, .dato, .artista, .segmento { box-shadow: none !important; border: 1px solid #DCE0DC; break-inside: avoid; }
   .controles { display: none; }
 }
+
+/* Memoria de resultados */
+.memoria { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 16px; }
+.memoria__bloque { display: flex; flex-direction: column; gap: 10px; }
+.memoria__bloque--principal { background: linear-gradient(150deg, var(--aljibe) 0%, #145C68 100%); color: var(--on-aljibe); }
+.memoria__bloque--principal .memoria__detalle, .memoria__bloque--principal .memoria__fuente { color: #DCEBEE; }
+.memoria__cab { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.memoria__titulo { font-size: 18px; line-height: 24px; font-weight: 600; }
+.memoria__cifra { font-family: var(--mono); font-size: 64px; line-height: 1; font-weight: 500; letter-spacing: -0.03em; margin-top: 8px; }
+.memoria__cifra--baja { color: var(--alerta); }
+.memoria__detalle { font-size: 16px; line-height: 24px; color: var(--tinta-suave); }
+.memoria__fuente { font-size: 13px; line-height: 18px; color: var(--tinta-suave); margin-top: auto; padding-top: 8px; }
+.memoria__metodo { list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.memoria__metodo li { display: grid; gap: 4px; font-size: 15px; line-height: 22px; }
+.memoria__siguiente { display: grid; gap: 12px; justify-items: start; }
+.memoria__siguiente h2 { font-size: 22px; line-height: 30px; }
+@media (max-width: 960px) { .memoria { grid-template-columns: 1fr; } .memoria__cifra { font-size: 48px; } }

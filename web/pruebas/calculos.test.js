@@ -131,13 +131,14 @@ test('exposición: cumple las indicaciones de Granada 2031', () => {
   assert.deepEqual(d.map((x) => x.etiqueta), ['Identidad del proyecto', 'Problema u oportunidad', 'Solución', 'Propuesta de valor', 'Clientes y usuarios objetivo', 'Impacto', 'Enfoque financiero', 'Viabilidad y próximos pasos', 'Equipo', 'Gracias']);
   assert.ok(d.every((x) => x.nota && x.titular), 'cada diapositiva tiene titular y notas');
   const por = (id) => d.find((x) => x.id === id);
-  assert.ok(por('problema').necesidad && por('problema').merece, 'necesidad y por qué merece la pena');
-  assert.ok(por('clientes').segmentos.every((x) => x.quien && x.porque) && por('clientes').validacion.length, 'quiénes, por qué comprarían y validación');
-  assert.deepEqual(por('impacto').impactos.map((x) => x.tipo), ['Económico', 'Social', 'Cultural', 'Territorial']);
-  assert.ok(por('impacto').capitalidad.pasos.length, 'conexión con Granada 2031');
-  const titulos = por('finanzas').bloques.map((x) => x.titulo);
-  for (const t of ['Inversión inicial', 'Gastos operativos', 'Ingresos', 'Financiación']) assert.ok(titulos.includes(t), 'falta ' + t);
-  assert.ok(por('viabilidad').porque.length && por('viabilidad').necesitamos.length, 'por qué es factible y qué hace falta');
+  // Propuesta de valor sin precio: el precio solo aparece en el enfoque financiero
+  const sinPrecio = d.filter((x) => x.id !== 'finanzas').map((x) => JSON.stringify(x).replace(x.nota, '')).join(' ');
+  assert.doesNotMatch(sinPrecio, /\d\s?€|precio|barat/i, 'sin precio fuera del enfoque financiero');
+  assert.doesNotMatch(JSON.stringify(expo), /mejores decisiones/i);
+  assert.equal(por('clientes').segmentos[0].nombre, 'Ayuntamientos y fiestas municipales', 'empezamos por los ayuntamientos');
+  assert.ok(por('clientes').segmentos.every((x) => x.quien && x.porque));
+  assert.deepEqual(por('impacto').impactos.map((x) => x.tipo), ['Pueblos', 'Patrocinadores', 'Granada 2031', 'Empleo']);
+  assert.ok(por('finanzas').bloques.some((x) => x.hipotesis), 'el precio va marcado como hipótesis');
   assert.match(por('equipo').cierre, /cambiará .+, porque /, 'cierre: «cambiará ___ porque ___»');
   // Organigrama: una dirección y cada integrante con un cargo, sin repetir
   const org = por('equipo').organigrama;
@@ -145,8 +146,7 @@ test('exposición: cumple las indicaciones de Granada 2031', () => {
   assert.equal(personas.length, 5);
   assert.ok(personas.every((x) => x.cargo && x.nombre && x.funcion));
   assert.equal(new Set(personas.map((x) => x.nombre)).size, 5, 'cada integrante una vez');
-  // Los indicadores de impacto existen en los datos del prototipo
-  const fiesta = leer('fiesta-2027');
+  // Las cifras de la memoria existen en los datos del prototipo
   const informe = leer('impacto').dimensiones.flatMap((dim) => dim.indicadores);
-  por('impacto').impactos.forEach((x) => assert.ok(fiesta.impacto.some((k) => k.nombre === x.dato) || informe.some((k) => k.nombre === x.dato), x.dato));
+  por('solucion').bloques.filter((x) => x.dato !== 'comparacion').forEach((x) => assert.ok(informe.some((k) => k.nombre === x.dato), x.dato));
 });

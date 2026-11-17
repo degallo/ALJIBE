@@ -1,0 +1,21 @@
+{
+  "titulo": "Memoria de resultados",
+  "servicio": "Memoria de resultados",
+  "para": "Para el pleno y los patrocinadores",
+  "bloques": {
+    "asistencia": { "titulo": "Cuánta gente vino", "dato": "Asistentes", "detalle": "contadas en los accesos" },
+    "gasto": { "titulo": "Cuánto gasto generó en el pueblo", "dato": "Gasto en comercios del pueblo", "detalle": "gastados en los comercios del pueblo" },
+    "comparacion": { "titulo": "Cómo fue frente a la edición anterior" }
+  },
+  "metodo": [
+    { "titulo": "Asistencia", "texto": "Contadores en cada acceso, la misma noche de la fiesta." },
+    { "titulo": "Gasto", "texto": "Encuesta de gasto en los accesos, multiplicada por los asistentes contados." },
+    { "titulo": "Comparación", "texto": "Mismo método cada edición, para que las cifras se puedan comparar año a año." }
+  ],
+  "siguiente": {
+    "titulo": "Siguiente fase: prever la próxima edición",
+    "texto": "Con varias ediciones medidas con el mismo método, ALJIBE puede prever la asistencia y recomendar la mejor fecha.",
+    "enlace": "Ver la previsión 2027",
+    "href": "fiesta-del-vino.html"
+  }
+}

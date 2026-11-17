@@ -46,39 +46,39 @@
     {
       "id": "solucion",
       "etiqueta": "Solución",
-      "titular": "Tu fiesta, con cifras.",
+      "titular": "Analizamos tus datos y predecimos tu próxima edición.",
       "tipo": "solucion",
       "ofrecemos": {
         "titulo": "Qué ofrecemos",
-        "texto": "La memoria de resultados de cada fiesta, lista para presentar en el pleno o a un patrocinador.",
+        "texto": "Análisis de los datos de cada evento y predicción de su próxima edición, en un informe y un cuadro de mando fáciles de usar.",
         "incluye": [
-          "Cuánta gente vino",
-          "Cuánto gasto generó en el pueblo",
-          "Cómo fue frente a la edición anterior"
+          "Análisis: patrones y tendencias de tu público",
+          "Predicción: la asistencia prevista, con su rango",
+          "Recomendación: la mejor fecha y los recursos"
         ]
       },
       "funciona": {
         "titulo": "Cómo funciona",
         "pasos": [
           {
-            "icono": "usuarios",
-            "texto": "Contamos la asistencia en los accesos de la fiesta"
+            "icono": "descarga",
+            "texto": "Recogemos tus datos: entradas, redes, web, encuestas e históricos"
           },
           {
-            "icono": "euro",
-            "texto": "Estimamos el gasto que genera en el pueblo"
+            "icono": "cuadricula",
+            "texto": "Los ordenamos en un cuadro de mando"
           },
           {
-            "icono": "historico",
-            "texto": "Lo comparamos con la edición anterior, con el mismo método"
+            "icono": "pulso",
+            "texto": "Los analizamos y predecimos la asistencia"
           },
           {
-            "icono": "documento",
-            "texto": "Entregamos la memoria en 15 días"
+            "icono": "diana",
+            "texto": "Te entregamos el informe con recomendaciones"
           }
         ]
       },
-      "nota": "¿Qué ofrecemos? Una memoria de resultados de cada fiesta, lista para presentar en el pleno o a un patrocinador: cuánta gente vino, cuánto gasto generó en el pueblo y cómo fue frente a la edición anterior. ¿Cómo funciona? Contamos la asistencia en los accesos de la fiesta, estimamos el gasto que genera en el pueblo, lo comparamos con la edición anterior con el mismo método y entregamos la memoria en 15 días."
+      "nota": "¿Qué ofrecemos? Análisis de los datos de cada evento y predicción de su próxima edición, en un informe y un cuadro de mando fáciles de usar: qué patrones y tendencias tiene tu público, cuánta gente prevemos, con su rango, y cuál es la mejor fecha. ¿Cómo funciona? Recogemos tus datos de entradas, redes, web, encuestas e históricos; los ordenamos en un cuadro de mando; los analizamos y predecimos la asistencia, y te entregamos un informe con recomendaciones."
     },
     {
       "id": "valor",

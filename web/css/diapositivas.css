@@ -164,15 +164,15 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
 
 /* ---------- 3 · Solución: memoria de resultados ---------- */
 .solucion { grid-template-columns: 0.9fr 1.1fr; gap: 40px; }
-.solucion__ofrecemos { display: grid; gap: 28px; align-content: center; padding: 48px 52px; }
-.solucion__texto { font-size: 40px; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; }
-.solucion__incluye { display: grid; gap: 18px; padding-top: 28px; border-top: 1px solid rgba(246, 243, 238, 0.3); }
-.solucion__incluye .check { font-size: 30px; }
+.solucion__ofrecemos { display: grid; gap: 22px; align-content: center; padding: 40px 48px; }
+.solucion__texto { font-size: 34px; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; }
+.solucion__incluye { display: grid; gap: 14px; padding-top: 22px; border-top: 1px solid rgba(246, 243, 238, 0.3); }
+.solucion__incluye .check { font-size: 27px; }
 .solucion__funciona { display: grid; gap: 22px; align-content: center; }
 .solucion__pasos { display: grid; gap: 16px; }
-.solucion__paso { display: flex; align-items: center; gap: 26px; padding: 22px 34px; border-radius: 32px; }
+.solucion__paso { display: flex; align-items: center; gap: 24px; padding: 18px 30px; border-radius: 32px; }
 .solucion__num { font-family: var(--mono); font-size: 48px; line-height: 1; font-weight: 500; color: var(--agua); min-width: 40px; }
-.solucion__pasotexto { font-size: 30px; line-height: 1.25; font-weight: 600; }
+.solucion__pasotexto { font-size: 28px; line-height: 1.25; font-weight: 600; }
 .cifra--baja { color: var(--alerta); }
 
 /* ---------- 4 · Propuesta de valor ---------- */

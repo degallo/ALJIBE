@@ -7,7 +7,7 @@ Tomamos como referencia cómo trabajan las identidades de las mejores empresas t
 - **Una paleta corta y reconocible.** Como Databricks (un azul marino profundo, un acento y neutros cálidos), ALJIBE usa un color de marca, un acento y neutros. Nada de paletas de diez colores.
 - **Un sistema, no piezas sueltas.** Como IBM Carbon o Atlassian, cada color, tamaño de letra y espacio tiene un nombre (un *token*) y se usa siempre igual.
 - **La claridad manda.** Como Stripe o Linear, mucho espacio en blanco, jerarquía tipográfica clara y un solo elemento destacado por pantalla.
-- **Una familia tipográfica y una monoespaciada para los datos.** Una sans para todo el texto y una mono para cifras y código, igual que hacen las marcas de datos.
+- **Una paleta tipográfica corta.** Un tipo display para los titulares y una grotesca para todo lo demás, incluidas las cifras con números tabulares (Kane, *Manual de tipografía*).
 - **Los datos se ven bien.** La visualización de datos es parte de la marca, no un añadido.
 - **Accesible por defecto.** Todo texto cumple un contraste mínimo de 4,5:1 en los dos temas.
 
@@ -31,12 +31,14 @@ Tomamos como referencia cómo trabajan las identidades de las mejores empresas t
 
 ## Tipografía
 
-- Todo el texto en **Schibsted Grotesk** (Google Fonts). Cifras, datos y código en **JetBrains Mono**.
+- Titulares en **Gloock** (Google Fonts), un tipo display: solo a partir de 18 pt y siempre en su único peso, nunca en negrita falsa.
+- Texto, etiquetas, cifras y datos en **Archivo** (Google Fonts), en su versión semiestrecha (`font-stretch: 87.5%`). Las cifras usan números tabulares (`tabular-nums`) para que se alineen en tablas y gráficos.
 - Portadas y títulos de diapositiva: `display-xl` o `display-l`, en `aljibe` o `tinta`.
 - Títulos de sección: `titulo`. Párrafos: `cuerpo`, con un máximo de 65 caracteres por línea.
 - Etiquetas y antetítulos: `etiqueta`, en mayúsculas y con espaciado de letra de 0,08em.
-- KPIs y cifras grandes: `cifra-xl` en `aljibe`; cifras en tablas: `dato` con números tabulares.
-- En Canva o PowerPoint, si no está Schibsted Grotesk, usa Arial o Helvetica.
+- KPIs y cifras grandes: `cifra-xl` en `aljibe`, en Archivo; cifras en tablas: `dato` con números tabulares.
+- En Canva o PowerPoint, si no están Gloock o Archivo, usa Georgia para los titulares y Arial o Helvetica para el resto.
+- El logotipo no cambia: su nombre está dibujado en Schibsted Grotesk y convertido a trazos (ver «Logotipo»).
 
 ## Espacio y forma
 

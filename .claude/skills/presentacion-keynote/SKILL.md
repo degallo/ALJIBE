@@ -10,7 +10,7 @@ La demo se expone en clase. Los profesores no leen tablas: miran una pantalla y 
 ## Principios
 
 1. **Una idea por pantalla.** Si una pantalla necesita dos explicaciones, son dos pantallas.
-2. **La cifra es la protagonista.** Un número enorme (7.600, 20 feb) en JetBrains Mono, con una frase corta debajo. Nada de tablas densas.
+2. **La cifra es la protagonista.** Un número enorme (7.600, 20 feb) en Archivo con números tabulares, con una frase corta debajo. Nada de tablas densas.
 3. **Aire.** Márgenes generosos, pocos elementos, un solo color de acento (agua #2E8C9C) sobre aljibe #004C59 o cal #F6F3EE.
 4. **Titulares que afirman**, no que describen: "El 20 de febrero llenaremos el aljibe", no "Resultados de la previsión".
 5. **Movimiento con intención.** Una animación suave por pantalla (una cifra que sube, una barra que se llena), máximo 600 ms. Respeta `prefers-reduced-motion`.

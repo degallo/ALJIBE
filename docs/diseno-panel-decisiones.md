@@ -13,7 +13,7 @@ Idea clave para la exposición: los KPIs no son fijos, **se adaptan a cada tipo 
 - Nueva pantalla "Decisiones", al mismo nivel que el cuadro de mando de la Fiesta del Vino.
 - Enlaces: un icono nuevo en la barra lateral (diana u objetivo) y una pestaña "Decisiones" en el menú de píldoras del cuadro de mando.
 - Referencia visual: la pantalla "Fiesta del Vino: previsión 2027" (`diseno/boceto-web/Main.dc.html` en este repositorio; estilo app: barra lateral de iconos redondos, pestañas tipo píldora, cifras grandes, tarjetas blancas con radio 28–32 px, panel lateral oscuro con degradado de marca).
-- Identidad: `marca/` en este repositorio (colores `aljibe` #004C59, `agua` #2E8C9C, `agua-soft` #CFE6EA, `cal` #F6F3EE, `arena` #E6DFD3, `tinta` #10262B, `alerta` #B4521A; Schibsted Grotesk y JetBrains Mono para cifras). Logo: versión Nivel de agua.
+- Identidad: `marca/` en este repositorio (colores `aljibe` #004C59, `agua` #2E8C9C, `agua-soft` #CFE6EA, `cal` #F6F3EE, `arena` #E6DFD3, `tinta` #10262B, `alerta` #B4521A; Gloock para titulares y Archivo para texto y cifras). Logo: versión Nivel de agua.
 - Los datos son simulados y no se marcan como tales en pantalla (decisión del equipo para la demo).
 
 ## Estructura de la pantalla

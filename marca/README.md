@@ -32,12 +32,12 @@ Tomamos como referencia cómo trabajan las identidades de las mejores empresas t
 ## Tipografía
 
 - Titulares en **Gloock** (Google Fonts), un tipo display: solo a partir de 18 pt y siempre en su único peso, nunca en negrita falsa.
-- Texto, etiquetas, cifras y datos en **Familjen Grotesk** (Google Fonts). Las cifras usan números tabulares (`tabular-nums`) para que se alineen en tablas y gráficos.
+- Texto, etiquetas, cifras y datos en **Archivo** (Google Fonts), en su versión semiestrecha (`font-stretch: 87.5%`). Las cifras usan números tabulares (`tabular-nums`) para que se alineen en tablas y gráficos.
 - Portadas y títulos de diapositiva: `display-xl` o `display-l`, en `aljibe` o `tinta`.
 - Títulos de sección: `titulo`. Párrafos: `cuerpo`, con un máximo de 65 caracteres por línea.
 - Etiquetas y antetítulos: `etiqueta`, en mayúsculas y con espaciado de letra de 0,08em.
-- KPIs y cifras grandes: `cifra-xl` en `aljibe`, en Familjen Grotesk; cifras en tablas: `dato` con números tabulares.
-- En Canva o PowerPoint, si no están Gloock o Familjen Grotesk, usa Georgia para los titulares y Arial o Helvetica para el resto.
+- KPIs y cifras grandes: `cifra-xl` en `aljibe`, en Archivo; cifras en tablas: `dato` con números tabulares.
+- En Canva o PowerPoint, si no están Gloock o Archivo, usa Georgia para los titulares y Arial o Helvetica para el resto.
 - El logotipo no cambia: su nombre está dibujado en Schibsted Grotesk y convertido a trazos (ver «Logotipo»).
 
 ## Espacio y forma

@@ -16,9 +16,9 @@
   --fondo: #EEF0EC;
   --oscuro-fin: #145C68;
   --texto-oscuro: #DCEBEE;
-  --sans: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --display: "Gloock", Georgia, "Times New Roman", serif;
-  --mono: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif; /* cifras: Familjen Grotesk con números tabulares */
+  --mono: "Archivo", "Helvetica Neue", Arial, sans-serif; /* cifras: Archivo con números tabulares */
   --ease: cubic-bezier(.28, .11, .32, 1);
   --rebote: cubic-bezier(.34, 1.4, .64, 1);
   --escala: 1;
@@ -471,3 +471,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
 .titular, .portada__claim, .gracias__titulo, .valor__nombre, .cierre__frase {
   font-family: var(--display); font-weight: 400; font-synthesis: none; letter-spacing: -0.01em;
 }
+
+/* Archivo en su versión semiestrecha (87,5 %) para todo el texto */
+body { font-stretch: 87.5%; }

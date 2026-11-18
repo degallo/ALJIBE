@@ -13,9 +13,9 @@
   --alerta: #B4521A;
   --foco: #004C59;
 
-  --sans: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --display: "Gloock", Georgia, "Times New Roman", serif;
-  --mono: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif; /* cifras: Familjen Grotesk con números tabulares */
+  --mono: "Archivo", "Helvetica Neue", Arial, sans-serif; /* cifras: Archivo con números tabulares */
 
   /* Valores propios del diseño estilo app */
   --fondo: #EEF0EC;

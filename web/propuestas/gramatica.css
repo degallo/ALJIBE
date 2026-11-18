@@ -10,7 +10,7 @@
   --agua: #2E8C9C;
   --agua-soft: #CFE6EA;
   --arena: #E6DFD3;
-  --sans: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --display: "Gloock", Georgia, "Times New Roman", serif;
   --escala: 1;
 }
@@ -82,3 +82,6 @@ ul, ol { list-style: none; }
   .sube { transform-box: fill-box; transform-origin: bottom; animation: sube 1200ms cubic-bezier(.3, 0, .2, 1) both; animation-delay: calc(var(--i, 0) * 60ms + 200ms); }
   @keyframes sube { from { transform: scaleY(0); } }
 }
+
+/* Archivo en su versión semiestrecha (87,5 %) para todo el texto */
+body { font-stretch: 87.5%; }

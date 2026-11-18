@@ -3,7 +3,7 @@
    - retícula visible de fondo y formas planas, sin sombras ni desenfoques;
    - esquinas rectas: la única curva es la del arco del aljibe (botones y módulos);
    - bloques de color planos de la paleta de marca en lugar de degradados;
-   - Gloock para titulares y Familjen Grotesk con números tabulares para todo lo demás;
+   - Gloock para titulares y Archivo con números tabulares para todo lo demás;
    - etiquetas pequeñas como leyendas de lámina. */
 
 :root {
@@ -154,3 +154,6 @@ h1, h2, .titulo-pagina, .portada h1, .bloque__titulo, .pestana__titulo, .caja h2
   .app { background-image: none !important; }
   .oscuro::after, .portada__panel::after { display: none; }
 }
+
+/* Archivo en su versión semiestrecha (87,5 %) para todo el texto */
+body { font-stretch: 87.5%; }

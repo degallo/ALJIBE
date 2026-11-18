@@ -16,7 +16,7 @@ Vas a construir el prototipo web de ALJIBE a partir de los diseños de este repo
 
 ## Reglas de marca
 
-- Colores, tipografía y espacios: `marca/tokens.json`. Gloock para titulares y Familjen Grotesk para texto y cifras, con números tabulares (Google Fonts). Diseño según `docs/directrices-diseno.md`.
+- Colores, tipografía y espacios: `marca/tokens.json`. Gloock para titulares y Archivo para texto y cifras, con números tabulares (Google Fonts). Diseño según `docs/directrices-diseno.md`.
 - Logos: usa los SVG de `marca/logos/` tal cual; nunca los redibujes ni cambies sus colores.
 - Iconos de línea estilo Lucide; sin emojis.
 - Contraste mínimo de 4,5:1, botones reales con estado accesible y diseño que funcione en móvil.

@@ -57,16 +57,16 @@ Wong: la anomalía es «un elemento singular dentro de una organización uniform
 
 ## 8. Tipografía (John Kane, *Manual de tipografía*)
 
-**Gloock** para titulares y **Familjen Grotesk** para todo lo demás. Se eligió frente a otras ocho combinaciones probadas sobre la diapositiva de «Los pueblos».
+**Gloock** para titulares y **Archivo** para todo lo demás. Se eligió frente a otras dieciséis combinaciones probadas sobre la diapositiva de «Los pueblos» y sobre elementos de la web (pestañas, leyendas y alertas). Archivo se usa en su versión semiestrecha (87,5 %): es la grotesca de los carteles argentinos de Omnibus-Type y aguanta bien en tamaños pequeños.
 
 - **Paleta corta** (p. 13): Kane observa que los buenos tipógrafos trabajan con muy pocos tipos. Aquí, dos.
-- **Contraste con remates / de palo seco** (pp. 62-63): Gloock es una romana de alto contraste y Familjen Grotesk, una grotesca. El contraste entre ambas es la jerarquía; no hacen falta más colores ni tamaños intermedios.
+- **Contraste con remates / de palo seco** (pp. 62-63): Gloock es una romana de alto contraste y Archivo, una grotesca. El contraste entre ambas es la jerarquía; no hacen falta más colores ni tamaños intermedios.
 - **Tipos display solo para titulares** (p. 14): están hechos «para ser vistos» más que para ser leídos. Gloock solo se usa a partir de 18 pt. Tiene un único peso: se fija en 400 y se desactiva la negrita falsa (`font-synthesis: none`).
-- **Cifras con números tabulares** (p. 156): Familjen Grotesk sustituye a la monoespaciada; con `tabular-nums lining-nums` las cifras se alinean en tablas y gráficos.
-- **Jerarquía en pocos niveles** (p. 146): titular (Gloock), texto (Familjen 400) y dato o etiqueta (Familjen 500-700, números tabulares).
+- **Cifras con números tabulares** (p. 156): Archivo sustituye a la monoespaciada; con `tabular-nums lining-nums` las cifras se alinean en tablas y gráficos.
+- **Jerarquía en pocos niveles** (p. 146): titular (Gloock), texto (Archivo 400) y dato o etiqueta (Archivo 500-700, números tabulares).
 - **Interlineado ajustado a mano** (p. 100): no se deja el 120 % por defecto. Titulares a 1-1,05; texto de lectura a 1,35-1,45 y líneas de unos 65 caracteres.
 - **Escala corta y radical:** titular enorme (120-160 px) o texto pequeño (24-28 px) en las diapositivas, sin tamaños intermedios que compitan.
-- Las etiquetas imitan las leyendas de las láminas de Wong (`fig. 04a`) y van en Familjen Grotesk con números tabulares.
+- Las etiquetas imitan las leyendas de las láminas de Wong (`fig. 04a`) y van en Archivo con números tabulares.
 - Alineación a la izquierda, en bandera, sobre la retícula. Nada centrado salvo la radiación.
 - El logotipo no se toca: su nombre ya está convertido a trazos.
 

@@ -1,0 +1,156 @@
+/* Gramática del aljibe aplicada a toda la web (docs/directrices-diseno.md).
+   Se carga la última en cada página y sustituye el estilo «app» anterior:
+   - retícula visible de fondo y formas planas, sin sombras ni desenfoques;
+   - esquinas rectas: la única curva es la del arco del aljibe (botones y módulos);
+   - bloques de color planos de la paleta de marca en lugar de degradados;
+   - Gloock para titulares y Familjen Grotesk con números tabulares para todo lo demás;
+   - etiquetas pequeñas como leyendas de lámina. */
+
+:root {
+  --fondo: #F6F3EE;
+  --borde-suave: rgba(16, 38, 43, 0.16);
+  --borde-seccion: rgba(16, 38, 43, 0.22);
+  --vidrio: #F6F3EE;
+  --vidrio-suave: #F6F3EE;
+  --sombra-tarjeta: none;
+  --linea-r: rgba(16, 38, 43, 0.07);
+  --arco: 999px 999px 0 0; /* la bóveda del aljibe */
+}
+
+/* Fuera curvas, sombras y desenfoques en todo el sistema */
+*, *::before, *::after { border-radius: 0 !important; box-shadow: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+/* Excepciones: puntos de datos y marcadores, que son círculos por significado */
+.punto, .rango__punto, .pie__estado::before, .icono-redondo__punto, [class*="punto"]:not(.punto--libre), .leyenda__color, .semaforo { border-radius: 50% !important; }
+
+/* ---------- Fondo: cal plana con la retícula visible ---------- */
+.app {
+  background-color: var(--cal) !important;
+  background-image:
+    linear-gradient(to right, var(--linea-r) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--linea-r) 1px, transparent 1px) !important;
+  background-size: 80px 80px !important;
+  background-attachment: fixed;
+}
+.app::before, .app::after { display: none !important; }
+.progreso { background: var(--aljibe) !important; height: 4px; }
+
+/* ---------- Barra lateral: columna de marca en aljibe ---------- */
+.lateral { background: var(--aljibe) !important; border-right: 0 !important; }
+@media (min-width: 721px) { .lateral { height: 100vh; overflow-y: auto; } }
+.lateral .icono-nav { background: transparent !important; border: 1px solid rgba(246, 243, 238, 0.35) !important; color: var(--on-aljibe) !important; }
+.lateral .icono-nav:hover { background: rgba(246, 243, 238, 0.14) !important; }
+.lateral .icono-nav[aria-current="page"] { background: var(--cal) !important; color: var(--aljibe) !important; border-color: var(--cal) !important; border-radius: var(--arco) !important; }
+.lateral .icono-nav--presentar { background: var(--agua) !important; border-color: var(--agua) !important; color: #fff !important; }
+.lateral__sello { background: transparent !important; border: 1px solid rgba(246, 243, 238, 0.5) !important; color: var(--on-aljibe) !important; }
+.lateral__logo { background: var(--cal); padding: 6px; }
+.lateral__logo img { filter: none; }
+.icono-nav[data-tip]::after { background: var(--tinta) !important; }
+
+/* ---------- Pestañas: de píldoras a pestañas con filete ---------- */
+.barra { background: transparent !important; border-bottom: 1px solid var(--borde-seccion); padding-bottom: 0 !important; }
+.pildora {
+  background: transparent !important; border: 0 !important; border-bottom: 3px solid transparent !important;
+  color: var(--tinta) !important; font-weight: 500; padding: 10px 14px 12px !important;
+}
+.pildora:hover { border-bottom-color: var(--borde-seccion) !important; }
+.pildora--activa, .pildora--activa:hover, .pildora[aria-current] { background: transparent !important; color: var(--aljibe) !important; border-bottom-color: var(--aljibe) !important; font-weight: 600; }
+.pildora--presentar, .pildora--presentar:hover { color: var(--aljibe) !important; border-bottom-color: var(--agua) !important; }
+.etiqueta-proto { background: transparent !important; border: 1px solid var(--borde-seccion) !important; }
+
+/* ---------- Titulares en Gloock, más grandes ---------- */
+h1, h2, .titulo-pagina, .portada h1, .bloque__titulo, .pestana__titulo, .caja h2, .oscuro__titulo, .oscuro__grande {
+  font-family: var(--display) !important; font-weight: 400 !important; font-synthesis: none; letter-spacing: -0.015em;
+}
+.titulo-pagina { font-size: clamp(36px, 4.4vw, 64px) !important; line-height: 1.02 !important; }
+.titulo-pagina span { color: var(--aljibe) !important; font-weight: 400 !important; }
+.portada h1 { font-size: clamp(48px, 7vw, 112px) !important; line-height: 0.98 !important; }
+.portada h1 > span:not(.palabra) { color: var(--aljibe) !important; font-weight: 400 !important; }
+.bloque__titulo, .pestana__titulo { font-size: clamp(28px, 3vw, 40px) !important; line-height: 1.1 !important; }
+.caja h2 { font-size: 26px !important; line-height: 1.15 !important; }
+
+/* Etiquetas como leyendas de lámina */
+.etiqueta, .opcion__para, .resultado-hero__etiqueta {
+  background: transparent !important; color: var(--aljibe) !important; padding: 0 !important;
+  font-family: var(--sans); font-size: 14px !important; font-weight: 600; letter-spacing: 0.02em !important; text-transform: none !important;
+}
+.etiqueta::before { content: "( "; } .etiqueta::after { content: " )"; }
+.chip-contorno { border: 1px solid var(--tinta) !important; background: transparent !important; }
+
+/* ---------- Bloques planos en lugar de tarjetas ---------- */
+.caja, .mini, .tarjeta, .kpi, .opcion, .servicio, .dato, .alerta-item, .fecha-card, .entregable, .caso, .paquete, .producto {
+  background-image: none !important; border: 1px solid var(--borde-suave) !important; transform: none !important;
+}
+.caja, .mini, .tarjeta, .kpi, .dato, .alerta-item { background-color: #FBFAF7 !important; }
+.caja--vidrio { background-color: transparent !important; }
+.opcion:hover, .servicio:hover, .entregable:hover { border-color: var(--tinta) !important; }
+.opcion[aria-pressed="true"] { outline: 3px solid var(--aljibe); outline-offset: -3px; }
+.luz::before, .servicio::before, .servicio::after { display: none !important; }
+
+/* Tonos: colores planos de la paleta (Wong: dos valores y una nota de color) */
+.tono-marca, .servicio--marca, .kpi--principal, .dato--oscuro, .memoria__bloque--principal { background: var(--aljibe) !important; color: var(--on-aljibe) !important; border-color: var(--aljibe) !important; }
+.tono-agua, .servicio--agua { background: var(--agua-soft) !important; }
+.tono-arena, .servicio--arena { background: var(--arena) !important; }
+.tono-calido, .servicio--calido { background: #EFE3D6 !important; }
+.tono-blanco { background: #FBFAF7 !important; }
+.tono-salvia { background: #DCE6E2 !important; }
+
+/* Paneles oscuros: aljibe con un degradado de atmósfera y grano (única excepción) */
+.oscuro, .portada__panel, .panel-oscuro {
+  background: radial-gradient(130% 100% at 0% 100%, #1F7684 0%, #0A4F5C 40%, #062F37 100%) !important;
+  color: var(--on-aljibe); border: 0 !important; position: relative; isolation: isolate;
+}
+.oscuro::after, .portada__panel::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0.2; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.oscuro .icono-redondo { border-color: rgba(246, 243, 238, 0.5) !important; }
+
+/* Iconos: cuadrados de línea, no círculos */
+.icono-redondo { border: 1px solid var(--borde-suave) !important; background: transparent !important; }
+.flecha { background: var(--tinta) !important; color: var(--on-aljibe) !important; border-radius: var(--arco) !important; }
+
+/* ---------- Botones: la forma del arco del aljibe ---------- */
+.boton, button.boton, .boton-claro, .pildora--presentar[data-presentar] { border-radius: var(--arco) !important; }
+.boton--primario { background: var(--aljibe) !important; color: var(--on-aljibe) !important; padding: 18px 28px 14px !important; }
+.boton--primario:hover { background: var(--tinta) !important; opacity: 1 !important; }
+.boton--contorno { border: 1.5px solid var(--aljibe) !important; color: var(--aljibe) !important; background: transparent !important; padding: 17px 28px 13px !important; }
+.boton--contorno:hover { background: var(--agua-soft) !important; }
+.boton-claro { background: var(--cal) !important; color: var(--aljibe) !important; }
+
+/* Formularios: líneas, sin cajas redondas */
+.entrada, input, select, textarea { border: 0 !important; border-bottom: 1.5px solid var(--tinta-suave) !important; background-color: transparent !important; }
+.entrada:focus, input:focus, select:focus, textarea:focus { border-bottom-color: var(--aljibe) !important; }
+
+/* Cifras: números tabulares y más peso */
+.mini__cifra, .kpi__previsto, .oscuro__cifra, .resultado-hero__cifra, .cifra-hero__valor, .memoria__cifra, .dato__valor {
+  font-family: var(--sans) !important; font-variant-numeric: tabular-nums lining-nums; font-weight: 600 !important; letter-spacing: -0.03em !important;
+}
+
+/* Tablas: filetes finos y cabecera en leyenda */
+.tabla th { background: transparent !important; color: var(--tinta-suave); font-weight: 600; border-bottom: 1.5px solid var(--tinta) !important; }
+.tabla td { border-bottom: 1px solid var(--borde-suave) !important; }
+
+/* Barras de datos y rangos: planas */
+.barras-h__pista { background: var(--arena) !important; }
+.barras-h__pista span { background: var(--aljibe) !important; }
+
+/* Pie: leyenda de lámina */
+.pie { border-top: 1.5px solid var(--tinta) !important; }
+.pie__estado { background: transparent !important; border: 1px solid var(--borde-seccion) !important; }
+
+/* Móvil: la retícula se ajusta y la cabecera es plana */
+@media (max-width: 760px) {
+  .app { background-size: 40px 40px !important; }
+}
+@media (max-width: 720px) {
+  .lateral { height: auto; border-top: 0 !important; }
+  .lateral .lateral__nav .icono-nav { border: 0 !important; flex: 1 1 0; min-width: 0 !important; padding: 6px 2px !important; color: #DCEBEE !important; }
+  .lateral .lateral__nav .icono-nav[aria-current="page"] { background: var(--cal) !important; color: var(--aljibe) !important; }
+  .icono-nav__nombre { font-size: 10px !important; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+  .cabecera-movil { background: var(--cal) !important; border-bottom: 1px solid var(--borde-seccion); }
+}
+
+@media print {
+  .app { background-image: none !important; }
+  .oscuro::after, .portada__panel::after { display: none; }
+}

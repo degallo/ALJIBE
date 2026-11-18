@@ -13,8 +13,9 @@
   --alerta: #B4521A;
   --foco: #004C59;
 
-  --sans: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  --sans: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --display: "Gloock", Georgia, "Times New Roman", serif;
+  --mono: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif; /* cifras: Familjen Grotesk con números tabulares */
 
   /* Valores propios del diseño estilo app */
   --fondo: #EEF0EC;
@@ -224,7 +225,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .flecha svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
 .panel__cifra { display: flex; flex-direction: column; gap: 4px; }
 .panel__etiqueta { font-size: 14px; color: #EAF3F4; }
-.panel__valor { font-family: var(--mono); font-size: 56px; line-height: 58px; font-weight: 500; letter-spacing: -0.03em; }
+.panel__valor { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 56px; line-height: 58px; font-weight: 500; letter-spacing: -0.03em; }
 .panel__barras { height: 96px; display: flex; align-items: flex-end; gap: 5px; }
 .panel__barras span { flex: 1; background: rgba(246, 243, 238, 0.35); border-radius: 4px 4px 0 0; }
 .panel__barras span:last-child { background: var(--agua-soft); }

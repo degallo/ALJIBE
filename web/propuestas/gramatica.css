@@ -9,8 +9,9 @@
   --agua: #2E8C9C;
   --agua-soft: #CFE6EA;
   --linea: #C9CFCC;
-  --sans: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  --sans: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --display: "Gloock", Georgia, "Times New Roman", serif;
+  --mono: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif; /* cifras: Familjen Grotesk con números tabulares */
   --escala: 1;
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -44,13 +45,13 @@ ul, ol { list-style: none; }
   position: absolute; left: 120px; right: 120px; top: 48px; height: 36px;
   display: flex; justify-content: space-between; align-items: center;
   background: var(--tinta); color: var(--cal);
-  font-family: var(--mono); font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase; padding: 0 16px;
+  font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase; padding: 0 16px;
 }
 .lamina--negativa .cabecera { background: var(--cal); color: var(--aljibe); }
 
 /* Posición sobre la retícula: columnas de 140 px y filas de 145 px desde (120, 120) */
 .celda { position: absolute; left: calc(120px + (var(--c) - 1) * 140px); top: calc(120px + (var(--f) - 1) * 145px); width: calc(var(--ac) * 140px); }
-.fig { font-family: var(--mono); font-size: 20px; letter-spacing: 0.04em; color: var(--tinta-suave); }
+.fig { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 20px; letter-spacing: 0.04em; color: var(--tinta-suave); }
 .lamina--negativa .fig { color: var(--agua-soft); }
 
 /* Tipografía: escala corta y radical */
@@ -99,5 +100,11 @@ ul, ol { list-style: none; }
 .i-lista .es-anomalia strong { color: var(--agua-soft); }
 .anillo { fill: none; stroke: #F6F3EE; stroke-width: 2; }
 .anillo--anomalia { stroke: var(--agua-soft); stroke-width: 8; }
-.anillo-nombre { font-family: var(--mono); font-size: 22px; letter-spacing: 0.08em; text-transform: uppercase; fill: #F6F3EE; }
+.anillo-nombre { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 22px; letter-spacing: 0.08em; text-transform: uppercase; fill: #F6F3EE; }
 .anillo-nombre--anomalia { fill: var(--agua-soft); font-weight: 500; }
+
+/* Titulares en Gloock (tipo display, solo para tamaños grandes, como pide Kane).
+   Tiene un único peso: se fija en 400 para que el navegador no invente una negrita. */
+.enorme, .grande, .v-pueblos {
+  font-family: var(--display); font-weight: 400; font-synthesis: none; letter-spacing: -0.01em;
+}

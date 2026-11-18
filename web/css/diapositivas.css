@@ -16,8 +16,9 @@
   --fondo: #EEF0EC;
   --oscuro-fin: #145C68;
   --texto-oscuro: #DCEBEE;
-  --sans: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  --sans: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --display: "Gloock", Georgia, "Times New Roman", serif;
+  --mono: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif; /* cifras: Familjen Grotesk con números tabulares */
   --ease: cubic-bezier(.28, .11, .32, 1);
   --rebote: cubic-bezier(.34, 1.4, .64, 1);
   --escala: 1;
@@ -75,7 +76,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
 
 .diapo__cabecera { display: flex; align-items: center; justify-content: space-between; min-height: 64px; }
 .etiqueta {
-  font-family: var(--mono); font-size: 24px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 24px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--aljibe); display: flex; gap: 18px; align-items: center;
 }
 .etiqueta__num { color: var(--tinta-suave); }
@@ -92,7 +93,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
 .diapo--oscura .fuente { color: var(--texto-oscuro); }
 
 /* ---------- Piezas comunes ---------- */
-.cifra { font-family: var(--mono); font-weight: 500; letter-spacing: -0.04em; line-height: 0.95; color: var(--aljibe); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cifra { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-weight: 500; letter-spacing: -0.04em; line-height: 0.95; color: var(--aljibe); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .cifra--xl { font-size: 200px; }
 .cifra--l { font-size: 128px; }
 .cifra--m { font-size: 64px; letter-spacing: -0.03em; }
@@ -171,7 +172,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
 .solucion__funciona { display: grid; gap: 22px; align-content: center; }
 .solucion__pasos { display: grid; gap: 16px; }
 .solucion__paso { display: flex; align-items: center; gap: 24px; padding: 18px 30px; border-radius: 32px; }
-.solucion__num { font-family: var(--mono); font-size: 48px; line-height: 1; font-weight: 500; color: var(--agua); min-width: 40px; }
+.solucion__num { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 48px; line-height: 1; font-weight: 500; color: var(--agua); min-width: 40px; }
 .solucion__pasotexto { font-size: 28px; line-height: 1.25; font-weight: 600; }
 .cifra--baja { color: var(--alerta); }
 
@@ -191,7 +192,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
 .segmentos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
 .segmento { display: grid; align-content: start; gap: 10px; padding: 28px 34px; border-radius: 36px; }
 .segmento__cab { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-.segmento__orden { font-family: var(--mono); font-size: 64px; line-height: 1; font-weight: 500; color: var(--agua); }
+.segmento__orden { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 64px; line-height: 1; font-weight: 500; color: var(--agua); }
 .segmento.panel .segmento__orden { color: var(--agua-soft); }
 .segmento__nombre { font-size: 34px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.12; }
 .segmento__quien { font-size: 24px; color: var(--tinta-suave); }
@@ -232,7 +233,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
 .hito { position: relative; display: grid; gap: 14px; padding-right: 40px; align-content: start; }
 .hito::before { content: ""; width: 30px; height: 30px; border-radius: 50%; background: var(--cal); border: 6px solid var(--aljibe); position: relative; z-index: 1; }
 .hito--clave::before { background: var(--agua); }
-.hito__cuando { font-family: var(--mono); font-size: 28px; color: var(--aljibe); font-weight: 500; }
+.hito__cuando { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 28px; color: var(--aljibe); font-weight: 500; }
 .hito__texto { font-size: 34px; line-height: 1.25; font-weight: 600; }
 .hoja__viable { display: grid; gap: 22px; align-content: center; padding: 40px 48px; }
 .hoja__porque { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -262,7 +263,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
 .gracias__titulo { font-size: 180px; line-height: 1; font-weight: 700; letter-spacing: -0.04em; }
 .gracias__sub { font-size: 40px; color: var(--agua-soft); font-weight: 600; }
 .gracias__pie { display: flex; justify-content: space-between; align-items: center; font-size: 26px; color: var(--texto-oscuro); padding-top: 24px; border-top: 1px solid rgba(246, 243, 238, 0.3); }
-.gracias__pie .web-chip { font-family: var(--mono); }
+.gracias__pie .web-chip { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; }
 
 /* ---------- Movimiento ----------
    Al cambiar de diapositiva, la nueva entra deslizándose y enfocándose desde
@@ -347,9 +348,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
 .mando--principal:hover { background: #fff; }
 .mando[aria-expanded="true"], .mando[aria-pressed="true"] { background: var(--on-aljibe); color: var(--tinta); }
 .mando:disabled { opacity: 0.4; cursor: default; transform: none; }
-.mando--reloj { width: auto; min-width: 76px; padding: 0 14px; border-radius: 999px; font-family: var(--mono); font-size: 16px; }
+.mando--reloj { width: auto; min-width: 76px; padding: 0 14px; border-radius: 999px; font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 16px; }
 .mando--reloj.pasado { background: var(--alerta); color: #fff; }
-.mandos__contador { font-family: var(--mono); font-size: 15px; color: var(--on-aljibe); min-width: 56px; text-align: center; }
+.mandos__contador { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 15px; color: var(--on-aljibe); min-width: 56px; text-align: center; }
 .mandos__notas {
   max-width: min(760px, calc(100vw - 24px)); padding: 18px 22px; border-radius: 20px;
   background: rgba(16, 38, 43, 0.94); color: var(--on-aljibe); font-size: 18px; line-height: 1.5;
@@ -463,4 +464,10 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--agua-soft); out
   .diapo--oscura { background: #0A5563 !important; }
   .panel, .paso--final, .memoria-d__bloque.panel { background: #0A5563 !important; }
   .portada__arco::after, .gracias .portada__arco::after { background: rgba(46, 140, 156, 0.4) !important; }
+}
+
+/* Titulares en Gloock (tipo display, solo para tamaños grandes, como pide Kane).
+   Tiene un único peso: se fija en 400 para que el navegador no invente una negrita. */
+.titular, .portada__claim, .gracias__titulo, .valor__nombre, .cierre__frase {
+  font-family: var(--display); font-weight: 400; font-synthesis: none; letter-spacing: -0.01em;
 }

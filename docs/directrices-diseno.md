@@ -1,6 +1,6 @@
 # Directrices de diseño: la gramática del aljibe
 
-Guía del rediseño de la web y de la exposición. Se basa en *Fundamentos del diseño* de Wucius Wong (primera parte, «Diseño bi-dimensional»). Las páginas citadas son las del libro.
+Guía del rediseño de la web y de la exposición. Se basa en *Fundamentos del diseño* de Wucius Wong (primera parte, «Diseño bi-dimensional») y, para la tipografía, en el *Manual de tipografía* de John Kane (2.ª ed.). Las páginas citadas son las de cada libro.
 
 ## 1. Por qué parecía hecho por una IA
 
@@ -55,12 +55,20 @@ Wong: la anomalía es «un elemento singular dentro de una organización uniform
 - En cada diapositiva hay **una sola anomalía**: el módulo distinto (en `agua`, girado o lleno) que marca la idea principal. Ejemplo: en una fila de arcos vacíos, el de **los pueblos** está lleno.
 - Es la regla que sustituye a «la tarjeta destacada en oscuro» del diseño anterior.
 
-## 8. Tipografía
+## 8. Tipografía (John Kane, *Manual de tipografía*)
 
-- Las tipografías de la marca no cambian: Schibsted Grotesk para el texto, JetBrains Mono para cifras y etiquetas.
-- **Escala corta y radical:** titular enorme (120-160 px) o texto pequeño (24-28 px). No hay tamaños intermedios que compitan.
-- Las etiquetas imitan las leyendas de las láminas del libro: número de figura en mono (`fig. 04a`) junto a cada elemento.
+**Gloock** para titulares y **Familjen Grotesk** para todo lo demás. Se eligió frente a otras ocho combinaciones probadas sobre la diapositiva de «Los pueblos».
+
+- **Paleta corta** (p. 13): Kane observa que los buenos tipógrafos trabajan con muy pocos tipos. Aquí, dos.
+- **Contraste con remates / de palo seco** (pp. 62-63): Gloock es una romana de alto contraste y Familjen Grotesk, una grotesca. El contraste entre ambas es la jerarquía; no hacen falta más colores ni tamaños intermedios.
+- **Tipos display solo para titulares** (p. 14): están hechos «para ser vistos» más que para ser leídos. Gloock solo se usa a partir de 18 pt. Tiene un único peso: se fija en 400 y se desactiva la negrita falsa (`font-synthesis: none`).
+- **Cifras con números tabulares** (p. 156): Familjen Grotesk sustituye a la monoespaciada; con `tabular-nums lining-nums` las cifras se alinean en tablas y gráficos.
+- **Jerarquía en pocos niveles** (p. 146): titular (Gloock), texto (Familjen 400) y dato o etiqueta (Familjen 500-700, números tabulares).
+- **Interlineado ajustado a mano** (p. 100): no se deja el 120 % por defecto. Titulares a 1-1,05; texto de lectura a 1,35-1,45 y líneas de unos 65 caracteres.
+- **Escala corta y radical:** titular enorme (120-160 px) o texto pequeño (24-28 px) en las diapositivas, sin tamaños intermedios que compitan.
+- Las etiquetas imitan las leyendas de las láminas de Wong (`fig. 04a`) y van en Familjen Grotesk con números tabulares.
 - Alineación a la izquierda, en bandera, sobre la retícula. Nada centrado salvo la radiación.
+- El logotipo no se toca: su nombre ya está convertido a trazos.
 
 ## 9. Movimiento
 

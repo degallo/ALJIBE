@@ -136,7 +136,7 @@ a.chip-contorno:hover { background: rgba(255, 255, 255, .7); }
 .opcion__para { font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; max-width: 14em; }
 .opcion__nombre { font-size: 22px; line-height: 28px; font-weight: 500; }
 .opcion__texto { font-size: 15px; line-height: 21px; }
-.opcion__precio { align-self: flex-start; font-family: var(--mono); font-size: 13px; font-weight: 500; border-radius: 999px; padding: 5px 12px; background: rgba(255, 255, 255, 0.8); }
+.opcion__precio { align-self: flex-start; font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 13px; font-weight: 500; border-radius: 999px; padding: 5px 12px; background: rgba(255, 255, 255, 0.8); }
 .tono-marca .opcion__precio { background: rgba(0, 0, 0, 0.2); }
 .tono-marca { background: linear-gradient(150deg, #004C59 0%, #1F6F7D 100%); color: var(--on-aljibe); }
 .tono-agua { background: linear-gradient(150deg, #CFE6EA 0%, #F2F7F7 100%); }
@@ -275,7 +275,7 @@ select.entrada { appearance: none; padding-right: 40px; background-image: linear
 
 /* ---------- Gráficos ---------- */
 .grafico { width: 100%; height: auto; display: block; overflow: visible; }
-.grafico text { font-family: var(--mono); font-size: 11px; fill: var(--tinta-suave); }
+.grafico text { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 11px; fill: var(--tinta-suave); }
 .leyenda { display: flex; flex-wrap: wrap; gap: 18px; font-size: 13px; color: var(--tinta-suave); }
 .leyenda span { display: inline-flex; align-items: center; gap: 6px; }
 .leyenda i { width: 8px; height: 8px; border-radius: 999px; background: var(--tinta); }
@@ -286,10 +286,10 @@ select.entrada { appearance: none; padding-right: 40px; background-image: linear
 .barras-h__fila { display: grid; grid-template-columns: minmax(110px, 160px) 1fr 52px; align-items: center; gap: 12px; font-size: 14px; }
 .barras-h__pista { height: 12px; border-radius: 4px; background: #ECEEEB; overflow: hidden; }
 .barras-h__pista span { display: block; height: 100%; width: var(--v); background: var(--aljibe); border-radius: 4px; transition: width .8s var(--ease); }
-.barras-h__fila .num { text-align: right; font-family: var(--mono); }
+.barras-h__fila .num { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; }
 
 /* ---------- Cifras ---------- */
-.cifra-xl { font-family: var(--mono); font-size: 48px; line-height: 52px; font-weight: 500; color: var(--aljibe); letter-spacing: -0.02em; }
+.cifra-xl { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 48px; line-height: 52px; font-weight: 500; color: var(--aljibe); letter-spacing: -0.02em; }
 .cifras { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
 .cifra { display: flex; flex-direction: column; gap: 6px; }
 .cifra__etiqueta { font-size: 14px; color: var(--tinta-suave); }
@@ -312,7 +312,7 @@ select.entrada { appearance: none; padding-right: 40px; background-image: linear
   -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
 }
 .presenta__texto { flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 12px; padding: 0 6px; }
-.presenta__contador { font-family: var(--mono); font-size: 13px; color: #EAF3F4; flex: none; }
+.presenta__contador { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 13px; color: #EAF3F4; flex: none; }
 .presenta__titulo { font-size: 16px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .presenta__boton {
   width: 44px; height: 44px; border-radius: 999px; border: 0; flex: none;
@@ -409,7 +409,7 @@ select.entrada { appearance: none; padding-right: 40px; background-image: linear
   transition: transform .25s var(--ease), background-color .2s;
 }
 a.paso:hover { transform: translateY(-3px); background: #E8ECE9; }
-.paso__cuando { font-family: var(--mono); font-size: 13px; color: var(--tinta-suave); }
+.paso__cuando { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 13px; color: var(--tinta-suave); }
 .paso__que { font-size: 16px; line-height: 22px; font-weight: 500; }
 .paso__ver { margin-top: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--aljibe); }
 .paso--destacado { background: var(--agua-soft); }
@@ -457,7 +457,7 @@ a.paso--destacado:hover { background: #BFDDE2; }
 .rango__punto { position: absolute; top: 22px; width: 12px; height: 12px; border-radius: 999px; background: var(--agua); box-shadow: 0 0 0 5px rgba(46, 140, 156, 0.25); }
 .js .rango__punto { animation: latir 2.4s ease-in-out 1.2s infinite; }
 @keyframes latir { 50% { box-shadow: 0 0 0 10px rgba(46, 140, 156, 0.1); } }
-.rango__eje { position: relative; height: 18px; font-family: var(--mono); font-size: 12px; color: var(--tinta-suave); }
+.rango__eje { position: relative; height: 18px; font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 12px; color: var(--tinta-suave); }
 .rango__eje span { position: absolute; }
 .rango__eje .actual { color: var(--tinta); font-weight: 500; }
 .buscador {
@@ -469,7 +469,7 @@ a.paso--destacado:hover { background: #BFDDE2; }
 .buscador input::placeholder { color: var(--tinta-suave); opacity: 1; }
 .puntos { font-size: 14px; color: var(--aljibe); background: var(--agua-soft); border-radius: 999px; padding: 4px 10px; }
 .fecha-card { min-height: 230px; }
-.fecha-card__puesto { width: 46px; height: 46px; border-radius: 999px; border: 1.5px solid rgba(16, 38, 43, 0.4); display: inline-flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 16px; flex: none; }
+.fecha-card__puesto { width: 46px; height: 46px; border-radius: 999px; border: 1.5px solid rgba(16, 38, 43, 0.4); display: inline-flex; align-items: center; justify-content: center; font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 16px; flex: none; }
 .tono-marca .fecha-card__puesto { border-color: rgba(246, 243, 238, 0.7); }
 .fecha-card__dia { font-size: 18px; line-height: 22px; font-weight: 500; }
 .fecha-card__cifra { font-size: 40px; line-height: 44px; font-weight: 500; letter-spacing: -0.02em; }
@@ -490,7 +490,7 @@ a.paso--destacado:hover { background: #BFDDE2; }
 .metodologia h2 { flex: 1 1 200px; }
 .metodo { flex: 999 1 600px; min-width: 0; margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
 .metodo li { display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 999px; padding: 10px 18px; font-size: 14px; }
-.metodo li span { font-family: var(--mono); color: #1F7180; }
+.metodo li span { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; color: #1F7180; }
 .punto-grafico { cursor: default; }
 .punto-grafico circle.diana { fill: transparent; }
 .punto-grafico:hover circle.visible, .punto-grafico:focus circle.visible { r: 5; }
@@ -515,14 +515,14 @@ a.paso--destacado:hover { background: #BFDDE2; }
 @keyframes cambio { 30% { color: var(--agua); transform: translateY(-2px); } }
 .kpi__etq { font-size: 13px; color: var(--tinta-suave); }
 .kpi__objetivo { display: flex; justify-content: space-between; font-size: 14px; color: var(--tinta-suave); }
-.kpi__objetivo strong { color: var(--tinta); font-weight: 500; font-family: var(--mono); }
+.kpi__objetivo strong { color: var(--tinta); font-weight: 500; font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; }
 .decisiones { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
 .decision { display: flex; gap: 14px; align-items: flex-start; background: rgba(246, 243, 238, 0.08); border-radius: 20px; padding: 14px 16px; transition: background-color .25s, opacity .25s; }
 .decision--off { background: rgba(246, 243, 238, 0.03); }
 .decision--off .decision__texto { opacity: .78; }
 .decision__texto { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
 .decision__titulo { font-size: 15px; line-height: 21px; font-weight: 500; }
-.decision__coste { font-family: var(--mono); font-size: 13px; color: #EAF3F4; }
+.decision__coste { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 13px; color: #EAF3F4; }
 .decision__efecto { font-size: 13px; line-height: 19px; color: #EAF3F4; }
 .decision .interruptor { margin-top: 2px; }
 .retorno { font-size: 15px; line-height: 22px; }
@@ -575,3 +575,9 @@ html.listo body[data-espera] .contenido > :not(.barra):not(.cabecera-movil) { vi
 .kpi--principal .kpi__previsto { font-size: 64px; line-height: 64px; }
 .kpi--principal .kpi__objetivo, .kpi--principal .kpi__hoy, .kpi--principal .kpi__etq { color: #EAF3F4; }
 .kpi--principal .kpi__objetivo strong { color: var(--on-aljibe); }
+
+/* Titulares en Gloock (tipo display, solo para tamaños grandes, como pide Kane).
+   Tiene un único peso: se fija en 400 para que el navegador no invente una negrita. */
+h1, .titulo-pagina, .portada h1, .bloque__titulo, .pestana__titulo {
+  font-family: var(--display); font-weight: 400; font-synthesis: none; letter-spacing: -0.01em;
+}

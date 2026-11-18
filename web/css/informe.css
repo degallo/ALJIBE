@@ -32,7 +32,7 @@
   -webkit-print-color-adjust: exact; print-color-adjust: exact;
 }
 .arco small { font-size: 13px; color: #EAF3F4; }
-.arco strong { font-family: var(--mono); font-size: 52px; line-height: 56px; font-weight: 500; }
+.arco strong { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 52px; line-height: 56px; font-weight: 500; }
 .arco span { font-size: 13px; color: #EAF3F4; }
 .portada-doc .cifras-doc { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .ficha { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding-top: 14px; border-top: 1px solid var(--linea); }
@@ -43,11 +43,11 @@
 .cifras-doc { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
 .cifra-doc { border: 1px solid #DCE0DC; border-radius: 14px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; break-inside: avoid; }
 .cifra-doc small { font-size: 12px; line-height: 16px; color: var(--tinta-suave); }
-.cifra-doc strong { font-family: var(--mono); font-size: 22px; line-height: 26px; font-weight: 500; color: var(--aljibe); }
+.cifra-doc strong { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 22px; line-height: 26px; font-weight: 500; color: var(--aljibe); }
 .cifra-doc .nivel { align-self: flex-start; font-size: 11px; padding: 2px 8px; }
 .nota-doc { font-size: 12px; line-height: 17px; color: var(--tinta-suave); }
 .propuestas { margin: 0; padding-left: 20px; display: grid; gap: 8px; font-size: 15px; line-height: 22px; }
-.propuestas li::marker { font-family: var(--mono); color: var(--aljibe); font-weight: 600; }
+.propuestas li::marker { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; color: var(--aljibe); font-weight: 600; }
 .calendario-doc { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
 .calendario-doc li { display: grid; grid-template-columns: 150px 1fr auto; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid #ECEEEB; }
 .calendario-doc .mono { font-size: 12px; color: var(--tinta-suave); }
@@ -55,7 +55,7 @@
 .firma img { height: 32px; width: auto; }
 .barra-doc { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; width: min(210mm, 100%); }
 .mini-historico { width: 100%; height: auto; }
-.mini-historico text { font-family: var(--mono); font-size: 9px; fill: var(--tinta-suave); }
+.mini-historico text { font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; font-size: 9px; fill: var(--tinta-suave); }
 .estado--hecho { background: var(--agua-soft); color: var(--aljibe); }
 
 @media (max-width: 720px) {

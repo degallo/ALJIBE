@@ -1,5 +1,5 @@
-// Muestra de la gramática del aljibe (docs/directrices-diseno.md): tres
-// diapositivas con el contenido real de datos/exposicion.json.
+// Muestra de la gramática del aljibe (docs/directrices-diseno.md), segunda
+// versión: tres diapositivas con el contenido real de datos/exposicion.json.
 import { datos } from '../js/nucleo/api.js';
 
 const SVG = 'http://www.w3.org/2000/svg';
@@ -18,132 +18,134 @@ const svg = (tag, attrs = {}) => {
 // El módulo: rectángulo coronado por un semicírculo (la bóveda del aljibe)
 const arco = (x, y, w, h) => `M${x} ${y + h}V${y + w / 2}A${w / 2} ${w / 2} 0 0 1 ${x + w} ${y + w / 2}V${y + h}Z`;
 
-// Un arco con su lámina de agua; nivel entre 0 y 1
-function modulo(g, x, y, w, h, nivel, { clase = 'agua', trazo = '', i = 0 } = {}) {
-  const id = 'c' + Math.random().toString(36).slice(2);
-  const clip = svg('clipPath', { id });
-  clip.appendChild(svg('path', { d: arco(x, y, w, h) }));
-  g.appendChild(clip);
-  if (nivel > 0) {
-    const r = svg('rect', { x, y: y + h * (1 - nivel), width: w, height: h * nivel, class: clase + ' sube', 'clip-path': `url(#${id})` });
-    r.style.setProperty('--i', i);
-    g.appendChild(r);
-  }
-  g.appendChild(svg('path', { d: arco(x, y, w, h), class: 'arco ' + trazo }));
-}
-
-function lamina(numero, seccion, negativa = false) {
-  const s = el('section', 'lamina' + (negativa ? ' lamina--negativa' : ''));
+function lamina(numero, seccion, clase = '') {
+  const s = el('section', 'lamina ' + clase);
   s.setAttribute('aria-label', numero + ' · ' + seccion);
   s.append(el('div', 'reticula'));
-  const cab = el('header', 'cabecera');
-  cab.append(el('span', null, seccion), el('span', null, numero));
-  s.append(cab);
   return s;
 }
 
-function lienzo(x, y, w, h) {
-  const s = svg('svg', { class: 'modulos', viewBox: `0 0 ${w} ${h}`, width: w, height: h, 'aria-hidden': 'true' });
-  s.style.left = x + 'px';
-  s.style.top = y + 'px';
-  return s;
-}
-
-// 1 · Portada: un solo módulo grande, en negativo (Wong, pp. 47-48)
+// 1 · Portada: el lema es la imagen. Cada palabra cae en una fila de la
+// retícula, empujada a un borde, con su número de figura (referencia 1)
 function portada(d) {
-  const s = lamina('01', d.etiqueta, true);
-  const t = el('h1', 'celda enorme p-titulo', d.titular);
-  const p = el('p', 'celda texto p-pregunta', d.pregunta);
+  const s = lamina('01', d.etiqueta, 'lamina--noche grano');
+  const filas = el('div', 'p-filas');
+  filas.setAttribute('aria-hidden', 'true');
+  const lineas = [['Convertimos', 'los'], ['datos', 'de la'], ['cultura', 'en'], ['', 'decisiones.']];
+  let n = 0;
+  lineas.forEach((par, f) => {
+    const fila = el('div', 'p-fila');
+    fila.style.top = f * 180 + 80 + 'px';
+    par.forEach((palabra, i) => {
+      const p = el('span', 'p-palabra display' + (i === 0 ? ' p-palabra--izq' : ''), palabra);
+      if (palabra) p.append(el('sup', 'num', '(' + String(++n).padStart(2, '0') + ')'));
+      fila.append(p);
+    });
+    filas.append(fila);
+  });
+  const h1 = el('h1', null, d.titular);
+  h1.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)';
+  const centro = el('div', 'p-centro');
+  centro.append(el('p', null, d.pregunta), el('p', 'etq', '(01) ' + d.etiqueta));
+  const pie = el('div', 'p-pie');
+  pie.append(el('p', null, d.propuesta + ' Como los aljibes del Albaicín recogían el agua y la repartían, recogemos los datos de la cultura y los devolvemos como decisiones.'), el('p', 'etq', d.pie));
+  pie.lastChild.style.marginTop = '14px';
   const logo = el('img', 'p-logo');
   logo.src = '../logos/aljibe-lockup-inverse.svg';
   logo.alt = 'ALJIBE';
-  const pie = el('p', 'celda fig p-pie', d.pie);
-  // Arco de 4 columnas por 5 filas, con el agua a media altura
-  const c = lienzo(120 + 8 * 140, 175, 560, 702);
-  const g = svg('g', { color: '#F6F3EE' });
-  modulo(g, 1, 1, 558, 700, 0.42);
-  c.appendChild(g);
-  const fig = el('p', 'celda fig');
-  fig.style.cssText = '--c:9;--f:6;--ac:4;top:895px';
-  fig.textContent = 'fig. 01 · módulo: el arco del aljibe';
-  s.append(t, p, c, fig, logo, pie);
+  s.append(h1, filas, centro, pie, logo);
   return s;
 }
 
-// 4 · Propuesta de valor: repetición y anomalía (Wong, pp. 51 y 99).
-// Cada arco es un municipio de la provincia de Granada; los llenos son los
-// de menos de 5.000 habitantes: «los pueblos».
+// 4 · Propuesta de valor: bloques de color con módulos (referencia 4).
+// Repetición del arco y una sola anomalía: el arco lleno en agua.
 function valor(d, municipios) {
   const s = lamina('04', d.etiqueta);
-  s.append(el('h2', 'celda grande v-titulo', d.titular));
-  const clave = el('div', 'celda v-clave');
-  clave.append(el('p', 'fig', d.clave.etiqueta), el('p', 'v-pueblos', d.clave.titulo), el('p', 'texto texto--fuerte', d.clave.texto));
-  s.append(clave);
+  const b = el('div', 'bloques');
 
-  const cols = 29, filas = 6, w = 26, h = 38, gx = 10, gy = 14;
-  const c = lienzo(120 + 4 * 140 + 70, 450, cols * (w + gx), filas * (h + gy));
-  c.setAttribute('aria-hidden', 'false');
-  c.setAttribute('role', 'img');
-  c.setAttribute('aria-label', municipios.pequenos + ' de los ' + municipios.total + ' municipios de la provincia de Granada tienen menos de 5.000 habitantes');
-  const g = svg('g', { color: '#004C59' });
-  for (let i = 0; i < municipios.total; i++) {
-    const x = (i % cols) * (w + gx) + 1;
-    const y = Math.floor(i / cols) * (h + gy) + 1;
-    const pequeno = i < municipios.pequenos;
-    modulo(g, x, y, w, h, pequeno ? 1 : 0, { clase: 'anomalia', trazo: pequeno ? 'anomalia-trazo' : '', i });
-  }
-  c.appendChild(g);
-  s.append(c);
-  const fig = el('p', 'celda fig');
-  fig.style.cssText = '--c:5;--f:6;--ac:7;top:770px;padding-left:70px';
-  fig.textContent = 'fig. 04a · ' + municipios.pequenos + ' de ' + municipios.total + ' municipios de Granada tienen menos de 5.000 habitantes · ' + municipios.fuente;
-  s.append(fig);
-
-  const tres = el('ol', 'celda v-tres');
+  const t = el('div', 'bloque b-titular');
+  const tl = el('p', 'b-etq etq');
+  tl.append(el('span', null, '(04) ' + d.etiqueta), el('span', null, 'fig. 04a'));
+  const tres = el('ol', 'b-tres');
   d.dimensiones.forEach((x) => {
     const li = el('li');
     li.append(el('strong', null, x.titulo), el('span', null, x.texto));
     tres.append(li);
   });
-  s.append(tres);
+  t.append(tl, el('h2', 'display', d.titular), tres);
+
+  // Columna de arcos: repetición con una anomalía (Wong, pp. 51 y 99)
+  const a = el('div', 'bloque b-arcos');
+  const lien = svg('svg', { viewBox: '0 0 640 540', width: 640, height: 540, 'aria-hidden': 'true' });
+  const cols = 4, w = 120, h = 160, gx = 32, x0 = 40, y0 = 40;
+  for (let f = 0; f < 3; f++) {
+    for (let c = 0; c < cols; c++) {
+      const x = x0 + c * (w + gx), y = y0 + f * (h + 10);
+      const anom = f === 2 && c === 1;
+      const lleno = (f + c) % 2 === 0;
+      lien.appendChild(svg('path', { d: arco(x, y, w, h), fill: anom ? '#2E8C9C' : lleno ? '#004C59' : 'none', stroke: '#004C59', 'stroke-width': 3, class: lleno || anom ? 'sube' : '' }));
+    }
+  }
+  a.append(lien);
+
+  const c = el('div', 'bloque b-cifra');
+  const cl = el('p', 'b-etq etq');
+  cl.append(el('span', null, 'fig. 04b'), el('span', null, municipios.fuente));
+  c.append(cl, el('p', 'gigante display num', String(municipios.pequenos)), el('p', null, 'de los ' + municipios.total + ' municipios de Granada tienen menos de 5.000 habitantes.'));
+
+  const p = el('div', 'bloque b-pueblos');
+  const pl = el('p', 'b-etq etq');
+  pl.append(el('span', null, d.clave.etiqueta), el('span', null, 'fig. 04c'));
+  const cuerpo = el('div');
+  cuerpo.append(el('p', 'gigante display', d.clave.titulo), el('p', null, d.clave.texto));
+  cuerpo.lastChild.style.marginTop = '28px';
+  p.append(pl, cuerpo, el('p', 'b-pie', d.pie));
+
+  b.append(t, a, c, p);
+  s.append(b);
   return s;
 }
 
-// 6 · Impacto: radiación concéntrica desde el evento (Wong, pp. 87-88).
-// Cada anillo es un alcance; Granada 2031 es la anomalía.
+// 6 · Impacto: la cifra «2031» troceada en formas del sistema (referencia 5).
+// Cada dígito, un color de la marca; el arco del aljibe corta el conjunto.
 function impacto(d) {
-  const s = lamina('06', d.etiqueta, true);
-  s.append(el('h2', 'celda grande i-titulo', d.titular));
-  const lista = el('ol', 'celda i-lista');
+  const s = lamina('06', d.etiqueta);
+  s.style.background = '#ECEEEA';
+  const txt = el('div', 'i-texto');
+  const lista = el('ol', 'i-lista');
   d.impactos.forEach((x, i) => {
     const li = el('li', x.tipo === 'Granada 2031' ? 'es-anomalia' : '');
-    li.append(el('span', 'fig', 'fig. 0' + (i + 1)), el('strong', null, x.tipo), el('span', null, x.texto));
+    li.append(el('span', 'etq', '(0' + (i + 1) + ')'), el('strong', null, x.tipo), el('span', null, x.texto));
     lista.append(li);
   });
-  s.append(lista);
+  txt.append(el('p', 'etq', '(06) ' + d.etiqueta), el('h2', 'display', d.titular), lista);
 
-  const W = 980, H = 870;
-  const c = lienzo(120 + 5 * 140 + 120, 120 + 30, W, H);
-  const g = svg('g', { color: '#F6F3EE' });
-  const anillos = d.impactos.length;
-  for (let i = anillos - 1; i >= 0; i--) {
-    const w = 220 + i * 190;
-    const h = 300 + i * 175;
-    const x = (W - w) / 2;
-    const y = H - h - 2;
-    const esG = d.impactos[i].tipo === 'Granada 2031';
-    g.appendChild(svg('path', { d: arco(x, y + 4, w, h - 4), class: 'anillo' + (esG ? ' anillo--anomalia' : '') }));
-    const t = svg('text', { x: W / 2, y: y + 52, 'text-anchor': 'middle', class: 'anillo-nombre' + (esG ? ' anillo-nombre--anomalia' : '') });
-    t.textContent = d.impactos[i].tipo;
-    g.appendChild(t);
-  }
-  // El centro: el evento, con su agua
-  modulo(g, W / 2 - 60, H - 182, 120, 180, 0.55, { clase: 'anomalia' });
-  const ev = svg('text', { x: W / 2, y: H - 200, 'text-anchor': 'middle', class: 'anillo-nombre' });
-  ev.textContent = 'La fiesta';
-  g.appendChild(ev);
-  c.appendChild(g);
-  s.append(c);
+  const W = 860, H = 960;
+  const c = svg('svg', { class: 'i-cifra', viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: 'img', 'aria-label': 'Granada 2031' });
+  const defs = svg('defs');
+  // Los dígitos se recortan en dos mitades para que parezcan piezas
+  const piezas = [
+    { t: '2', x: 0, y: 440, color: '#10262B' },
+    { t: '0', x: 430, y: 440, color: '#004C59' },
+    { t: '3', x: 0, y: 920, color: '#2E8C9C' },
+    { t: '1', x: 430, y: 920, color: '#10262B' }
+  ];
+  piezas.forEach((p, i) => {
+    const id = 'corte' + i;
+    const cp = svg('clipPath', { id });
+    cp.appendChild(svg('rect', { x: p.x, y: p.y - 470 + (i % 2 ? 0 : 60), width: 430, height: i % 2 ? 470 : 410 }));
+    defs.appendChild(cp);
+    const tx = svg('text', { x: p.x + 10, y: p.y, fill: p.color, 'font-family': 'Gloock, Georgia, serif', 'font-size': 560, 'clip-path': `url(#${id})` });
+    tx.textContent = p.t;
+    c.appendChild(tx);
+  });
+  c.prepend(defs);
+  // El arco del aljibe, en contorno, superpuesto (interrelación: superposición, Wong p. 49)
+  c.appendChild(svg('path', { d: arco(470, 60, 330, 420), fill: 'none', stroke: '#2E8C9C', 'stroke-width': 26 }));
+  // Un bloque de agua como anomalía, a media altura
+  c.appendChild(svg('rect', { x: 250, y: 860, width: 260, height: 70, fill: '#CFE6EA', class: 'sube' }));
+
+  s.append(txt, c, el('p', 'i-vertical num', 'Granada · Capital Europea de la Cultura 2031'));
   return s;
 }
 
@@ -154,7 +156,6 @@ const por = (id) => expo.diapositivas.find((x) => x.id === id);
 const muestra = document.getElementById('muestra');
 muestra.append(portada(por('identidad')), valor(por('valor'), MUNICIPIOS), impacto(por('impacto')));
 
-// Ajusta la escala al ancho de la ventana
 const escalar = () => document.documentElement.style.setProperty('--escala', Math.min(1, (window.innerWidth - 48) / 1920).toFixed(4));
 escalar();
 window.addEventListener('resize', escalar);

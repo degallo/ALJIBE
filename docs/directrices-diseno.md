@@ -6,7 +6,7 @@ Guía del rediseño de la web y de la exposición. Se basa en *Fundamentos del d
 
 El diseño anterior no tenía **estructura** en el sentido de Wong: era una suma de piezas sueltas (tarjetas redondeadas con sombra, iconos en círculos, fondos difuminados) colocadas por costumbre. Wong lo describe como el enfoque intuitivo: decidir «sobre la marcha lo que es hermoso o atractivo, sin saber conscientemente cómo y por qué» (p. 13). El rediseño sigue el enfoque contrario, el intelectual: cada decisión visual responde a una regla que se puede explicar.
 
-**Prohibido a partir de ahora:** sombras, degradados, desenfoques, tarjetas con esquinas redondeadas, iconos dentro de círculos, emojis y adornos que no formen parte del sistema.
+**Prohibido a partir de ahora:** sombras, desenfoques, tarjetas con esquinas redondeadas, iconos dentro de círculos, emojis y adornos que no formen parte del sistema. Los degradados solo se admiten como **atmósfera de fondo** de las láminas oscuras, con grano, nunca sobre tarjetas ni botones (ver «Referencias del equipo»).
 
 ## 2. El módulo: el arco del aljibe
 
@@ -74,6 +74,20 @@ Wong: la anomalía es «un elemento singular dentro de una organización uniform
 
 - Una sola animación por diapositiva y con significado: el agua sube hasta su nivel (gradación) o la retícula se traza (estructura).
 - Respeta `prefers-reduced-motion`: sin animación, el diseño se ve completo.
+
+## Referencias del equipo
+
+El equipo eligió cinco piezas de referencia (carteles e infografías editoriales). Lo que se toma de ellas:
+
+| Referencia | Qué se toma |
+|---|---|
+| Cartel «I want to think less and do more» | La tipografía enorme como imagen, palabra a palabra sobre una retícula visible a sangre, con etiquetas numeradas (01), (02). Fondo oscuro con un solo degradado de atmósfera y grano. |
+| Campaña «opac» | Líneas de retícula finas que cruzan la imagen; etiquetas pequeñas de editorial. |
+| Infografía de métricas con barras | La cifra grande como protagonista del dato; formas rotundas para comparar valores. |
+| Infografía «83 %» en bloques de color | Bloques de color planos sobre una retícula, cada uno con una cifra o un módulo geométrico (círculos, semicírculos). |
+| Cartel «nuevas voces 2023» | La cifra troceada en piezas de distintos colores de una paleta corta, con formas geométricas que la cortan. |
+
+Aplicado en la muestra: la portada sigue al primer cartel, la propuesta de valor a los bloques de color y el impacto al «2023» troceado, convertido en «2031».
 
 ## 10. Cómo se aplica
 
